@@ -1,14 +1,11 @@
 {
   "name": "hongik-interview-atelier",
+  "version": "1.1.0",
   "private": true,
-  "version": "1.0.0",
   "type": "module",
+  "description": "GitHub Pages mobile PWA",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "deploy": "npm run build && wrangler deploy",
-    "check": "node --check worker/index.js && node --check scripts/build.mjs"
-  },
-  "devDependencies": {
-    "wrangler": "^4.45.0"
+    "check": "node --check scripts/build.mjs"
   }
 }
