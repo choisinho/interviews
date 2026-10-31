@@ -1,5 +1,5 @@
 /*
- * HTML 단일 소스를 수정하지 않고 Cloudflare용 정적 산출물만 만든다.
+ * HTML 단일 소스를 수정하지 않고 GitHub Pages용 정적 산출물만 만든다.
  * PNG 아이콘은 Node 표준 라이브러리(zlib)로 생성하므로 추가 그래픽 의존성이 없다.
  */
 import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises'
@@ -30,11 +30,6 @@ function icon(size){
    const row=y*(1+4*size);raw[row]=0
    for(let x=0;x<size;x++){
      const fx=x/size, fy=y/size
-     const roundRect=(l,t,r,b,rad)=>{
-       const px=Math.max(l,Math.min(x/size,r)),py=Math.max(t,Math.min(y/size,b))
-       return Math.hypot(x/size-px,y/size-py)<=rad
-     }
-     const soft=(Math.hypot(fx-.52,fy-.48)<.55)
      let rgb=[16,34,27]
      if(fx>.26&&fx<.49&&fy>.26&&fy<.49)rgb=[205,232,166]
      if(fx>.52&&fx<.74&&fy>.26&&fy<.49 && (fx<.545||fx>.715||fy<.285||fy>.465))rgb=[205,232,166]
