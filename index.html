@@ -74,9 +74,9 @@ window.HONGIK_DATA = {"scripts":[{"id":"motivation","no":"01","title":"자기소
 </script>
   
   <!-- Android 홈 화면 설치 및 Cloudflare 읽기 문 -->
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./icon-192.png">
   <meta name="application-name" content="면접 아틀리에">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -104,9 +104,6 @@ window.HONGIK_DATA = {"scripts":[{"id":"motivation","no":"01","title":"자기소
 <button class="nav-btn" data-page="dossier"><span class="nav-num">＋</span>심층 검증 자료실<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="archive"><span class="nav-num">08</span>원문·조사 기록<span class="nav-arrow">↗</span></button>
       </nav>
-      <form id="cloudLock" method="post" action="/logout" hidden style="margin:26px 10px 0">
-        <button type="submit" style="background:transparent;color:#a2c09f;border:1px solid #536d56;border-radius:10px;padding:10px 12px;width:100%;font-size:12px;text-align:left;cursor:pointer">↙ 개인 공간 잠그기</button>
-      </form>
       <div class="sidebar-bottom"><span class="status-dot"></span> LOCAL-FIRST · 개인 학습용<br><span class="micro">학습 체크는 현재 브라우저에만 저장돼.</span></div>
     </aside>
 
@@ -296,25 +293,23 @@ nav(location.hash.slice(1)||'home',false);
 
 </script>
 <script>
-/* Cloudflare에서 HTTPS로 열렸을 때만 앱 설치와 개인 공간 잠금 기능을 켠다. */
+/* GitHub Pages의 /interviews/ 하위 주소에 설치할 때 상대 경로를 사용한다. */
 (function(){
-  const lock=document.getElementById('cloudLock');
-  if(lock && location.protocol==='https:') lock.hidden=false;
-  if(location.protocol!=='https:' || !('serviceWorker' in navigator)) return;
-  window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js',{scope:'/'})
-    .catch(e=>console.warn('Install helper unavailable',e)));
-  let promptEvent;
-  const install=document.getElementById('installPromptBtn');
+  if(location.protocol!=='https:' || !('serviceWorker' in navigator))return;
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{scope:'./'})
+    .catch(e=>console.warn('PWA registration skipped',e)));
+  let deferred;
+  const button=document.getElementById('installPromptBtn');
   window.addEventListener('beforeinstallprompt',e=>{
-    e.preventDefault();promptEvent=e;if(install)install.hidden=false;
+    e.preventDefault();deferred=e;if(button)button.hidden=false;
   });
-  if(install)install.addEventListener('click',async()=>{
-    if(!promptEvent)return;
-    promptEvent.prompt();
-    await promptEvent.userChoice.catch(()=>null);
-    install.hidden=true;promptEvent=null;
+  button?.addEventListener('click',async()=>{
+    if(!deferred)return;
+    deferred.prompt();
+    await deferred.userChoice.catch(()=>undefined);
+    deferred=null;button.hidden=true;
   });
-  window.addEventListener('appinstalled',()=>{if(install)install.hidden=true;});
+  window.addEventListener('appinstalled',()=>{if(button)button.hidden=true;});
 })();
 </script>
 </body>
