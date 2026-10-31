@@ -29,6 +29,44 @@
 
 .overlay.menu-backdrop{z-index:25}
 
+
+/* V3 atelier extensions */
+.atelier-launch{background:#e5f0dd;padding:17px 20px;border-radius:16px;display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin:16px 0 27px}
+.atelier-launch strong{font-size:15px;color:#1e4631}.atelier-launch p{margin:3px 0;color:#5d745e;font-size:12px;line-height:1.7}.atelier-launch .btn{margin-left:auto}
+.mock-card{background:#182c24;border-radius:22px;color:#f3f8ea;padding:clamp(25px,4vw,55px);margin:20px 0}
+.mock-card h2{font-size:clamp(27px,3.2vw,44px);line-height:1.45;letter-spacing:-.05em;color:#f4f9ec;margin:30px 0;word-break:keep-all}
+.mock-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:#bfe2b4}
+.mock-time{font-size:40px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.mock-controls{display:flex;flex-wrap:wrap;gap:8px}.mock-controls button{border:1px solid #cad9be;background:#f8fcf2;border-radius:9px;color:#213d30;padding:10px 14px;font-size:12px;cursor:pointer}
+.mock-controls button.primary{background:#d2eda8;border-color:#d2eda8}
+.mock-answer{background:#f5f8f1;border:1px solid #e2e8df;border-radius:16px;padding:25px;line-height:1.95;margin:17px 0}
+.mock-answer p{line-height:2;word-break:keep-all}
+.mock-ratings{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.mock-ratings button{padding:9px 13px;border:1px solid #d8e2d5;border-radius:9px;background:#fffefa;font-size:12px}
+.mock-ratings button.active{background:#273e32;color:#eef8e9}
+.brief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.brief-card{background:#fffefa;border:1px solid #e4ebe0;border-radius:16px;padding:25px}.brief-card h3{margin:10px 0 12px;font-size:21px}
+.brief-card p{line-height:1.94;color:#46584b;font-size:13px}
+.brief-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.brief-list .check-row{background:#fffefa;padding:13px;border-radius:10px}
+.fact-audit{width:100%;border-collapse:collapse;font-size:12px;line-height:1.7}
+.fact-audit th,.fact-audit td{text-align:left;padding:11px 9px;border-bottom:1px solid #e2e9dd;vertical-align:top;word-break:keep-all}
+.fact-audit th{background:#edf2e8;color:#50715d;font-weight:800}.fact-audit td:first-child{font-weight:750}
+.fact-audit .audit-badge{display:inline-block;border-radius:6px;padding:2px 7px;font-size:11px;background:#e0edda;white-space:nowrap}
+.fact-audit .audit-badge.pending{background:#fff0d7;color:#85632b}.fact-audit .audit-badge.previous{background:#e5ebf2;color:#42607a}
+.fact-audit a{color:#2f664a;text-decoration:underline;text-underline-offset:2px}
+.brief-alert{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:13px 0;border-bottom:1px solid #ede3d8;font-size:13px;line-height:1.8}
+.brief-alert b{color:#9c6441}.brief-alert span{color:#37624a}
+.research-dossier{background:#fffefa;border-radius:18px;border:1px solid #e5ebde;padding:clamp(20px,4vw,40px);font-size:14px;line-height:1.95;word-break:keep-all}
+.research-dossier h2{font-size:25px;margin:38px 0 13px;line-height:1.5;letter-spacing:-.045em}
+.research-dossier h3{font-size:20px;margin:28px 0 10px}
+.research-dossier .table-wrapper{max-width:100%;overflow-x:auto}
+.research-dossier table{min-width:520px;border-collapse:collapse;font-size:12px;line-height:1.7;width:100%}
+.research-dossier th,.research-dossier td{padding:9px;border-bottom:1px solid #dfe8da;text-align:left;vertical-align:top}
+.research-dossier th{background:#eaf0e5}.research-dossier aside.insight{background:#223f34;color:#f1f8ef;padding:20px}
+.research-dossier .diagram{border:1px solid #d7e0d3;background:#eef4e9;padding:20px;max-width:600px;margin:auto}
+.research-dossier .diagram div{background:white;margin:7px auto;padding:9px;text-align:center}
+@media(max-width:700px){.brief-grid,.brief-list,.brief-alert{grid-template-columns:1fr}.mock-card{padding:24px}.mock-time{font-size:32px}.fact-audit th,.fact-audit td{padding:7px}.atelier-launch .btn{margin-left:0}}
+@media print{.mock-controls,.mock-ratings,.brief-list input{display:none!important}.mock-answer{display:block}.research-dossier{border:0;padding:0}}
+
 </style>
   <script>
 /* Readable, offline-first content. No external dependencies. */
@@ -47,6 +85,8 @@ window.HONGIK_DATA = {"scripts":[{"id":"motivation","no":"01","title":"자기소
         <button class="nav-btn active" data-page="home"><span class="nav-num">00</span>대시보드<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="interview"><span class="nav-num">01</span>핵심 4문항<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="followups"><span class="nav-num">02</span>꼬리질문 훈련<span class="nav-arrow">↗</span></button>
+<button class="nav-btn" data-page="mock"><span class="nav-num">＋</span>실전 모의면접<span class="nav-arrow">↗</span></button>
+<button class="nav-btn" data-page="briefing"><span class="nav-num">★</span>면접 직전 한 장<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="cases"><span class="nav-num">03</span>실무 경험 정리<span class="nav-arrow">↗</span></button>
         <div class="nav-group-label in-nav">STUDY & RESEARCH</div>
         <button class="nav-btn" data-page="roadmap"><span class="nav-num">04</span>2년 대학원 시뮬레이션<span class="nav-arrow">↗</span></button>
@@ -54,6 +94,7 @@ window.HONGIK_DATA = {"scripts":[{"id":"motivation","no":"01","title":"자기소
         <button class="nav-btn" data-page="reality"><span class="nav-num">06</span>현실성 점검<span class="nav-arrow">↗</span></button>
         <div class="nav-group-label in-nav">REFERENCE</div>
         <button class="nav-btn" data-page="facts"><span class="nav-num">07</span>팩트체크와 근거<span class="nav-arrow">↗</span></button>
+<button class="nav-btn" data-page="dossier"><span class="nav-num">＋</span>심층 검증 자료실<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="archive"><span class="nav-num">08</span>원문·조사 기록<span class="nav-arrow">↗</span></button>
       </nav>
       <div class="sidebar-bottom"><span class="status-dot"></span> LOCAL-FIRST · 개인 학습용<br><span class="micro">학습 체크는 현재 브라우저에만 저장돼.</span></div>
@@ -90,15 +131,46 @@ function getProgress(prefix,total){let n=Object.keys(saved).filter(k=>k.startsWi
 function progress(n,max){return `<div class="progress-track"><div style="width:${max?100*n/max:0}%"></div></div><div class="progress-meta">${n} / ${max} 완료 · 이 브라우저에 저장됨</div>`}
 function openSearch(){const modal=$('#searchModal');modal.hidden=false;$('#overlay').hidden=false;$('#globalSearch').value='';search('');setTimeout(()=>$('#globalSearch').focus(),30)}
 function closeSearch(){const modal=$('#searchModal');modal.hidden=true;$('#overlay').hidden=true}
-function nav(page,hash=true){if(!pages[page])page='home';state.page=page;clearTimer();render();if(hash)history.replaceState(null,'','#'+page);window.scrollTo({top:0,behavior:'instant'});$('#sidebar').classList.remove('mobile-open');$('#overlay').classList.remove('menu-backdrop');$('#overlay').hidden=true;$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#breadcrumbCurrent').textContent=pages[page].tag;}
-const pages={home:{tag:'OVERVIEW',fn:home},interview:{tag:'CORE QUESTIONS',fn:interview},followups:{tag:'FOLLOW-UP TRAINING',fn:followups},cases:{tag:'FIELD EXPERIENCE',fn:cases},roadmap:{tag:'TWO-YEAR PLAN',fn:roadmap},research:{tag:'RESEARCH LAB',fn:research},reality:{tag:'FEASIBILITY',fn:reality},facts:{tag:'EVIDENCE',fn:facts},archive:{tag:'SOURCE ARCHIVE',fn:archive}};
+function nav(page,hash=true){stopMock();if(!pages[page])page='home';state.page=page;clearTimer();render();if(hash)history.replaceState(null,'','#'+page);window.scrollTo({top:0,behavior:'instant'});$('#sidebar').classList.remove('mobile-open');$('#overlay').classList.remove('menu-backdrop');$('#overlay').hidden=true;$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#breadcrumbCurrent').textContent=pages[page].tag;}
+
+state.mockPool='전체';state.mockId='core-motivation';state.mockReveal=false;state.mockSeconds=0;state.mockInterval=null;
+function stopMock(){if(state.mockInterval){clearInterval(state.mockInterval);state.mockInterval=null}}
+function bank(){return [...D.scripts.map(s=>({id:'core-'+s.id,type:'핵심 4문항',q:s.title,a:s.short,tip:s.tip,risk:s.risk})),...D.followups.map((s,i)=>({id:'follow-'+i,type:s.tag,q:s.question,a:s.answer,tip:'핵심부터 먼저 답하고 확인된 근거로 뒷받침해.',risk:'미확인 사항이나 군 내부 정보를 단정하지 말기.'}))]}
+function filteredBank(){const items=bank();if(state.mockPool==='핵심 4문항')return items.filter(x=>x.id.startsWith('core-'));if(state.mockPool==='꼬리질문')return items.filter(x=>x.id.startsWith('follow-'));if(state.mockPool==='약점만')return items.filter(x=>saved['confidence-'+x.id]&&Number(saved['confidence-'+x.id])<=2);return items}
+function nextMock(){stopMock();state.mockSeconds=0;const p=filteredBank();const options=p.filter(x=>x.id!==state.mockId);state.mockId=(options.length?options:p)[Math.floor(Math.random()*(options.length||p.length))]?.id||'';state.mockReveal=false;render()}
+function formatMockTime(){let n=state.mockSeconds;const el=$('#mockClock');if(el){el.textContent=String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');el.style.color=n>90?'#f2aaa0':n>60?'#f1c988':'#cceca7'}}
+function mock(){const pool=filteredBank();const q=pool.find(x=>x.id===state.mockId)||pool[0];const completed=bank().filter(x=>saved['confidence-'+x.id]).length;return title('09 / MOCK INTERVIEW','실전 모의면접','답변을 보기 전에 실제로 말하고, 타이머를 확인한 다음 자기평가를 기록해. 1·2점은 약점만 모드에서 다시 출제돼.',pill('무작위 출제')+pill('답변 숨김')+pill('자신감 1~5'))
++'<div class="atelier-launch"><div><strong>연습한 질문 '+completed+' / '+bank().length+'개</strong><p>학습 상태는 이 브라우저에만 저장되며 다른 기기로 동기화되지 않아.</p></div>'+btn('면접 직전 한 장 →','go:briefing','tiny')+'</div>'
++'<div class="question-tools"><div class="chips">'+['전체','핵심 4문항','꼬리질문','약점만'].map(t=>'<button class="filter-chip '+(state.mockPool===t?'active':'')+'" data-mock-pool="'+escape(t)+'">'+escape(t)+'</button>').join('')+'</div></div>'
++(q?'<section class="mock-card"><div class="mock-head"><span>'+escape(q.type)+' / '+pool.length+'문항</span><span class="mock-time" id="mockClock">'+String(Math.floor(state.mockSeconds/60)).padStart(2,'0')+':'+String(state.mockSeconds%60).padStart(2,'0')+'</span></div><h2>'+escape(q.q)+'</h2><div class="mock-controls"><button class="primary" data-action="mockTimer">'+(state.mockInterval?'■ 일시정지':'▶ 말하기 시작')+'</button><button data-action="mockReset">↺ 타이머 초기화</button><button data-action="mockReveal">'+(state.mockReveal?'답변 숨기기':'답변 확인하기')+'</button><button class="primary" data-action="mockNext">다음 무작위 질문 →</button></div></section>'
++(state.mockReveal?'<div class="mock-answer"><div class="overline">EXPECTED DIRECTION / 답변 비교</div><p>'+escape(q.a)+'</p><div class="note-row"><div class="note-box"><b>핵심</b>'+escape(q.tip)+'</div><div class="note-box warn"><b>피할 표현</b>'+escape(q.risk)+'</div></div></div>':'<div class="callout navy">답변은 가려져 있어. 먼저 직접 말한 뒤 <b>답변 확인하기</b>를 눌러 대조해.</div>')
++'<div class="card"><h3>방금 답변은 어땠어?</h3><p>정확성·논리·근거·속도를 함께 판단해. 약했던 질문은 다시 나와.</p><div class="mock-ratings">'+['전혀 모름','어려움','보통','괜찮음','자신'].map((x,i)=>'<button data-confidence="'+(i+1)+'" data-confidence-id="'+q.id+'" class="'+(Number(saved['confidence-'+q.id])===i+1?'active':'')+'">'+(i+1)+' · '+x+'</button>').join('')+'</div></div>'
+:'<div class="card"><h3>약점으로 표시된 질문이 아직 없어.</h3>'+btn('전체 질문으로 돌아가기','mockAll','primary')+'</div>')+'<div class="callout warn">이 답변은 유일한 정답이 아니라 연습 기준이야. 교수의 질문을 들은 뒤 실제 경험과 확인된 사실만 선택해서 말하는 게 중요해.</div>';}
+function briefing(){const count=D.lastMinute.filter((x,i)=>checked('last-'+i)).length;return title('10 / LAST-MINUTE','면접 직전 한 장','시험장 앞에서는 새로운 내용을 늘리지 말고, 네 실무 경험에서 출발한 이야기의 연결만 확인해.',pill('30초 핵심 4문항')+pill('위험 표현')+pill('준비 체크'))
++'<div class="card dark big"><div class="overline">ONE NARRATIVE</div><h2 style="color:#eef9e6;line-height:1.6">현장의 진입장벽 발견 → AI·데이터 검증 학습 → 읽기전용 RAG 비교실험 → 인수인계 개선으로 환류</h2><p>단순히 AI가 좋다는 말이 아니라, 신규 담당자의 원인 탐색이 얼마나 개선되는지 직접 검증한다.</p></div>'
++section('30초 핵심 네 문항','기본기를 지탱하는 가장 짧은 문장')
++'<div class="brief-grid">'+D.scripts.map(s=>'<article class="brief-card"><div class="overline">'+escape(s.no)+' / '+escape(s.eng)+'</div><h3>'+escape(s.title)+'</h3><p>'+escape(s.micro)+'</p></article>').join('')+'</div>'
++section('하지 않을 주장','과장 대신 검증 가능한 문장')
++'<div class="card">'+D.badPhrases.map(x=>'<div class="brief-alert"><b>× '+escape(x[0])+'</b><span>✓ '+escape(x[1])+'</span></div>').join('')+'</div>'
++section('마지막 확인','현재 브라우저에 저장됨')
++'<div class="card"><h3>'+count+' / '+D.lastMinute.length+'개 확인</h3>'+progress(count,D.lastMinute.length)+'<div class="brief-list" style="margin-top:17px">'+D.lastMinute.map((x,i)=>check('last-'+i,x)).join('')+'</div></div>'
++'<div class="banner"><div class="badge-icon">↗</div><div><b>준비한 내용이 실제로 나오는지 확인해 보자.</b><p>연구설계와 대학원 현실성은 팩트체크 화면에서 근거까지 다시 읽을 수 있어.</p></div>'+btn('모의면접 시작 →','go:mock','primary')+'</div>';}
+function dossier(){return title('11 / RESEARCH DOSSIER','심층 검증 자료실','실제 대학원 2년을 가정한 학사·근무·연구 보고서를 아틀리에 안에서 읽을 수 있어. 제출 원문은 별도 아카이브 화면에서 그대로 확인해.',pill('4학기 시나리오')+pill('학사·연구 근거')+pill('원문 보존'))
++'<div class="callout warn"><strong>중요.</strong> 아래 보고서는 검토에 사용한 기존 자료를 통합한 것으로, 과거 금액·시간표·전형상태·학과별 비논문 허용 여부는 최종 확정사실이 아닐 수 있어. 사실관계가 충돌하면 최신 ‘팩트체크와 근거’ 표와 공식 공고를 우선해.</div>'
++'<div class="research-dossier">'+D.dossierHTML+'</div>'
++'<div class="banner"><div class="badge-icon">↗</div><div><b>심층 자료는 답변의 근거를 만들기 위한 거야.</b><p>실전에서는 원리와 연구범위를 짧게 설명하는 게 더 설득력 있어.</p></div>'+btn('핵심 4문항 →','go:interview','primary')+'</div>';}
+function audit(){return section('심층조사 핵심 팩트체크 '+D.factAudit.length+'건','자료의 시점·적용범위 구분')
++'<div class="card" style="overflow-x:auto"><table class="fact-audit"><thead><tr><th>쟁점</th><th>검증 결과</th><th>판정</th><th>근거</th></tr></thead><tbody>'+D.factAudit.map(f=>{const src=D.sources.find(s=>s.id===f.ref);return '<tr><td>'+escape(f.topic)+'</td><td>'+escape(f.statement)+'</td><td><span class="audit-badge '+(/미확정|주의/.test(f.status)?'pending':/이전|부분/.test(f.status)?'previous':'')+'">'+escape(f.status)+'</span></td><td>'+(src?'<a target="_blank" rel="noopener noreferrer" href="'+escape(src.url)+'">'+escape(f.ref)+' ↗</a>':escape(f.ref))+'</td></tr>'}).join('')+'</tbody></table></div>';}
+
+const pages={home:{tag:'OVERVIEW',fn:home},interview:{tag:'CORE QUESTIONS',fn:interview},followups:{tag:'FOLLOW-UP TRAINING',fn:followups},cases:{tag:'FIELD EXPERIENCE',fn:cases},roadmap:{tag:'TWO-YEAR PLAN',fn:roadmap},research:{tag:'RESEARCH LAB',fn:research},reality:{tag:'FEASIBILITY',fn:reality},facts:{tag:'EVIDENCE',fn:facts},archive:{tag:'SOURCE ARCHIVE',fn:archive},mock:{tag:'MOCK INTERVIEW',fn:mock},briefing:{tag:'LAST-MINUTE',fn:briefing},dossier:{tag:'DOSSIER',fn:dossier}};
 function render(){root.innerHTML=`<div class="view-transition">${pages[state.page].fn()}</div>`;refreshChecks()}
 function home(){const [q,t]=getProgress('question-',D.followups.length);const days=Math.ceil((new Date('2026-11-07T00:00:00+09:00').getTime()-Date.now())/86400000);return `
 <div class="hero"><div><div class="section-eyebrow">PERSONAL INTERVIEW PREPARATION · 2027 SPRING</div><h1>현장의 문제를,<br><em>연구의 질문으로.</em></h1><p>홍익대학교 일반대학원 · 세종캠퍼스 · 국방AI융합학과. 단순 암기장이 아니라 네 수학계획서와 실무 경험, 47개 조사 이력, 실제 대학원 2년을 하나로 연결한 준비 공간이야.</p></div><div class="hero-side"><div class="side-label">INTERVIEW / 2026.11.07 SAT</div><strong>${days>=0?'D-'+days:'D+'+Math.abs(days)}</strong><small>세종캠퍼스 · 대면 구술면접<br>세부 시각·장소는 최종 공지 확인</small></div></div>
 <div class="grid grid-4"><div class="card kpi"><div class="kpi-name">핵심 면접 답변</div><div class="kpi-value">04<span class="mark-number">/</span>04</div><small>60초 / 상세 버전, 타이머</small></div><div class="card kpi"><div class="kpi-name">예상 꼬리질문</div><div class="kpi-value">${String(D.followups.length).padStart(2,'0')}</div><small>학습 완료 ${q}개 · 질문별 답변</small></div><div class="card kpi"><div class="kpi-name">석사 학업 시뮬레이션</div><div class="kpi-value">04</div><small>학기 · 학점 · 산출물 · 실패 대안</small></div><div class="card kpi"><div class="kpi-name">보존한 조사 이력</div><div class="kpi-value">47</div><small>원문 전체 · 자료별 검증 표시</small></div></div>
 <div class="quote-strip"><div class="quote-mark">“</div><p>${escape(D.overviewKey)}</p><div class="quote-note">CORE NARRATIVE</div></div>
+<div class="atelier-launch"><div><strong>하나로 끝내는 면접 준비</strong><p>핵심 4문항 → 꼬리질문 ${D.followups.length}개 → 무작위 모의면접 → 면접 직전 한 장. 필요한 근거는 심층 검증 자료실에 남겨뒀어.</p></div>${btn('실전 모의면접 →','go:mock','primary')}${btn('직전 한 장','go:briefing','tiny')}</div>
 ${section('면접 4문항 · 바로 연습','가장 먼저 익힐 핵심 메시지')}
-<div class="grid grid-2">${D.scripts.map(s=>`<article class="card"><div class="card-top"><div class="overline">${s.no} / ${escape(s.eng)}</div><span class="thin-pill">60초 · 90초</span></div><h2>${escape(s.title)}</h2><p>${escape(s.core)}</p><div class="pill-row">${s.hooks.map(x=>pill(x)).join('')}</div><div class="rule"></div>${btn('답변 연습하기 →','go:interview:'+s.id,'primary')}</article>`).join('')}</div>
+<div class="grid grid-2">${D.scripts.map(s=>`<article class="card"><div class="card-top"><div class="overline">${s.no} / ${escape(s.eng)}</div><span class="thin-pill">30 · 60 · 90초</span></div><h2>${escape(s.title)}</h2><p>${escape(s.core)}</p><div class="pill-row">${s.hooks.map(x=>pill(x)).join('')}</div><div class="rule"></div>${btn('답변 연습하기 →','go:interview:'+s.id,'primary')}</article>`).join('')}</div>
 ${section('이 이야기의 인과관계','지원동기 → 학업 → 졸업')}
 <div class="flow"><div class="flow-step"><div class="flow-num">01 · THE FIELD</div><h3>문제를 발견했다</h3><p>노후 WMS · 화면과 서버/DB의 복잡한 연결 · 신규 담당자의 높은 진입장벽</p></div><div class="flow-step"><div class="flow-num">02 · THE STUDY</div><h3>검증 방법을 배운다</h3><p>데이터·AI 기초, 군수·공급망 이해, 근거검색 기반 작은 비교실험</p></div><div class="flow-step"><div class="flow-num">03 · THE RETURN</div><h3>조직의 지식으로 남긴다</h3><p>장애분류·근거기록·인수인계 개선, 사람 중심 AI 활용기준</p></div></div>
 ${section('가장 먼저 주의할 3가지','기존 조사와 공식 공지 차이')}
@@ -106,10 +178,10 @@ ${section('가장 먼저 주의할 3가지','기존 조사와 공식 공지 차�
 ${section('면접 직전 7일','하루에 하나씩 끝내기')}
 <div class="card"><div class="checklist">${D.practice.map((x,i)=>check('practice-'+i,`${x[0]} — ${x[1]}`)).join('')}</div><div style="margin-top:16px" id="weeklyProgress"></div></div>
 <div class="section-gap"></div><div class="banner"><div class="badge-icon">↗</div><div><b>조사를 암기로 끝내지 않기</b><p>문항별 첫 문장과 마지막 문장을 익힌 뒤, 중간은 실제 경험의 흐름대로 말하는 것이 좋아.</p></div>${btn('25개 꼬리질문 →','go:followups','primary')}</div>`}
-function interview(){return `${title('01 / SPEAKING PRACTICE','핵심 4문항','실제 면접장에서 길게 쓰인 문장이 아니라 자연스럽게 말할 수 있도록 만든 답변이야. 숨기고 말해 본 뒤 열어서 비교하면 돼.',pill('60초·90초 전환')+pill('말하기 타이머')+pill('답변 복사'))}
-<div class="question-tools"><div class="segmented"><button data-duration="short" class="segment ${state.duration==='short'?'active':''}">기본 답변 · 약 60초</button><button data-duration="long" class="segment ${state.duration==='long'?'active':''}">확장 답변 · 약 90초+</button></div>${btn(state.focus?'집중모드 종료':'집중모드','focus','tiny')}</div>
+function interview(){return `${title('01 / SPEAKING PRACTICE','핵심 4문항','실제 면접장에서 길게 쓰인 문장이 아니라 자연스럽게 말할 수 있도록 만든 답변이야. 숨기고 말해 본 뒤 열어서 비교하면 돼.',pill('30초·60초·90초 전환')+pill('말하기 타이머')+pill('답변 복사'))}
+<div class="question-tools"><div class="segmented"><button data-duration="micro" class="segment ${state.duration==='micro'?'active':''}">압축 답변 · 약 30초</button><button data-duration="short" class="segment ${state.duration==='short'?'active':''}">기본 답변 · 약 60초</button><button data-duration="long" class="segment ${state.duration==='long'?'active':''}">확장 답변 · 약 90초+</button></div>${btn(state.focus?'집중모드 종료':'집중모드','focus','tiny')}</div>
 <div class="callout navy"><strong>실전 요령.</strong> 답변 속도에 따라 소요 시간은 달라져. 초 단위로 맞추는 것보다 핵심 논리가 자연스럽게 전달되는지 점검해. 스크립트 안의 격식체는 실제 면접에서 말할 문장이야.</div>
-${D.scripts.map(s=>`<section class="script-card" id="script-${s.id}"><div class="script-heading"><div><div class="overline">${escape(s.no)} · ${escape(s.eng)}</div><h2>${escape(s.title)}</h2></div><span class="thin-pill">${escape(s.core)}</span></div><div class="script-body"><div class="script-core">기억할 세 지점</div><div class="pill-row">${s.hooks.map(x=>pill(x,'a')).join('')}</div><div class="script-text ${checked('blur-'+s.id)?'hidden-text':''}" id="txt-${s.id}">${escape(state.duration==='short'?s.short:s.long)}</div><div class="timerbar" id="timer-${s.id}"><span class="timer-digits">00:00</span><div class="timer-track"><div class="timer-fill"></div></div><div class="timer-controls"><button class="btn-quiet" data-action="timer:${s.id}">▶ 시작</button><button class="btn-quiet" data-action="resetTimer:${s.id}">↺</button></div></div><div class="script-footer"><div class="script-btns">${btn(checked('blur-'+s.id)?'답변 표시':'답변 가리기','blur:'+s.id,'tiny')}${btn('전체 답변 복사','copy:'+s.id,'tiny')}${btn(checked('script-'+s.id)?'✓ 연습 완료':'연습 완료 표시','mark:'+s.id,'tiny')}</div><div class="meta">${state.duration==='short'?'기본':'확장'} · 출처: 제출 수학계획서 + 면접 조사</div></div><div class="note-row"><div class="note-box"><b>말하기 메모</b>${escape(s.tip)}</div><div class="note-box warn"><b>피해야 할 주장</b>${escape(s.risk)}</div></div></div></section>`).join('')}
+${D.scripts.map(s=>`<section class="script-card" id="script-${s.id}"><div class="script-heading"><div><div class="overline">${escape(s.no)} · ${escape(s.eng)}</div><h2>${escape(s.title)}</h2></div><span class="thin-pill">${escape(s.core)}</span></div><div class="script-body"><div class="script-core">기억할 세 지점</div><div class="pill-row">${s.hooks.map(x=>pill(x,'a')).join('')}</div><div class="script-text ${checked('blur-'+s.id)?'hidden-text':''}" id="txt-${s.id}">${escape(state.duration==='micro'?s.micro:state.duration==='short'?s.short:s.long)}</div><div class="timerbar" id="timer-${s.id}"><span class="timer-digits">00:00</span><div class="timer-track"><div class="timer-fill"></div></div><div class="timer-controls"><button class="btn-quiet" data-action="timer:${s.id}">▶ 시작</button><button class="btn-quiet" data-action="resetTimer:${s.id}">↺</button></div></div><div class="script-footer"><div class="script-btns">${btn(checked('blur-'+s.id)?'답변 표시':'답변 가리기','blur:'+s.id,'tiny')}${btn('전체 답변 복사','copy:'+s.id,'tiny')}${btn(checked('script-'+s.id)?'✓ 연습 완료':'연습 완료 표시','mark:'+s.id,'tiny')}</div><div class="meta">${state.duration==='micro'?'압축':state.duration==='short'?'기본':'확장'} · 출처: 제출 수학계획서 + 면접 조사</div></div><div class="note-row"><div class="note-box"><b>말하기 메모</b>${escape(s.tip)}</div><div class="note-box warn"><b>피해야 할 주장</b>${escape(s.risk)}</div></div></div></section>`).join('')}
 <div class="banner"><div class="badge-icon">↗</div><div><b>네 실무사례가 답변의 설득력을 만든다</b><p>바코드·조회 화면 수정 경험은 “기술 역량 자랑”보다 연구문제의 출발점으로 연결할 때 강해져.</p></div>${btn('사례 보기 →','go:cases','primary')}</div>`}
 function followups(){const tags=['전체',...new Set(D.followups.map(x=>x.tag))];const items=D.followups.map((q,i)=>({...q,i})).filter(x=>(state.followFilter==='전체'||x.tag===state.followFilter)&&(`${x.question} ${x.answer}`.includes(state.qSearch)));const [n,max]=getProgress('question-',D.followups.length);return `${title('02 / FOLLOW-UP LAB','꼬리질문 훈련','교수가 실제로 되물을 법한 질문을 주제별로 묶었어. 정답을 외우기보다 20~35초 안에 핵심을 설명하는 연습이 목표야.',pill(String(D.followups.length)+'문항')+pill('무작위 문제')+pill('진도 저장'))}
 <div class="card" style="margin-bottom:20px"><div class="card-top"><div><div class="overline">MASTERY TRACKER</div><h3>${n} / ${max} 답변 연습 완료</h3></div>${btn('무작위 질문 →','randomQuestion','primary')}</div>${progress(n,max)}</div>
@@ -150,6 +222,7 @@ ${section('2026년 11월 면접 직전 점검','학교와 소속기관의 절차
 function facts(){const types=['전체','확인','이전 기록','미확정','원칙'];const items=D.facts.filter(x=>state.factFilter==='전체'||x.status===state.factFilter);return `${title('07 / EVIDENCE & SOURCES','팩트체크와 근거','사용자 제공 조사자료와 새로 확인한 홍익대 공식 자료를 분리했어. 모든 값이 최신 확정 사실이라는 뜻은 아니므로 상태 표시부터 확인하면 돼.',pill('공식 자료')+pill('이전 조사')+pill('미확정 사항'))}
 <div class="question-tools"><div class="chips">${types.map(x=>`<button class="filter-chip ${state.factFilter===x?'active':''}" data-fact-filter="${x}">${x}</button>`).join('')}</div></div>
 <div class="card" style="overflow-x:auto"><table class="data-table"><thead><tr><th>항목</th><th>확인 내용</th><th>상태</th><th>출처</th></tr></thead><tbody>${items.map(f=>`<tr><th>${escape(f.topic)}</th><td>${escape(f.value)}</td><td><span class="status ${f.status.replace(' ','-')}">${escape(f.status)}</span></td><td>${escape(f.source)}</td></tr>`).join('')}</tbody></table></div>
+${audit()}
 ${section('놓치기 쉬운 확인사항','내용이 달라질 수 있는 부분')}
 <div class="grid grid-2">${D.alerts.map((x,i)=>`<div class="card ${i===0?'warm':''}"><div class="overline">NOTICE / ${String(i+1).padStart(2,'0')}</div><p>${escape(x)}</p></div>`).join('')}</div>
 ${section('홍익대학교 공식 출처','누르면 해당 사이트로 이동')}
@@ -166,6 +239,8 @@ function runTimer(id){if(state.activeScript && state.activeScript!==id){clearTim
 async function copy(v){try{await navigator.clipboard.writeText(v);toast('전체 내용을 복사했어.')}catch{const ta=document.createElement('textarea');ta.value=v;ta.style.position='fixed';ta.style.opacity=0;document.body.append(ta);ta.select();try{document.execCommand('copy');toast('전체 내용을 복사했어.')}catch{toast('복사 권한이 없어. 브라우저에서 선택해줘.')}ta.remove()}}
 function toggleFocus(){state.focus=!state.focus;document.body.classList.toggle('fullscreen-mode',state.focus);render()}
 document.addEventListener('click',e=>{
+ const pool=e.target.closest('[data-mock-pool]');if(pool){state.mockPool=pool.dataset.mockPool;stopMock();state.mockSeconds=0;state.mockReveal=false;state.mockId=filteredBank()[0]?.id||'';render();return}
+ const rating=e.target.closest('[data-confidence]');if(rating){setcheck('confidence-'+rating.dataset.confidenceId,Number(rating.dataset.confidence));render();return}
  const nb=e.target.closest('[data-page]');if(nb){nav(nb.dataset.page);return}
  const dur=e.target.closest('[data-duration]');if(dur){state.duration=dur.dataset.duration;clearTimer();render();return}
  const fil=e.target.closest('[data-filter]');if(fil){state.followFilter=fil.dataset.filter;render();const x=$('#qSearch');if(x){x.focus();x.setSelectionRange(x.value.length,x.value.length)}return}
@@ -175,6 +250,11 @@ document.addEventListener('click',e=>{
  const sr=e.target.closest('[data-search-page]');if(sr){closeSearch();const pg=sr.dataset.searchPage,an=sr.dataset.searchAnchor;nav(pg);if(an){if(pg==='followups'){state.followFilter='전체';state.qSearch='';render()}setTimeout(()=>{const target=document.getElementById(an);if(target){target.scrollIntoView({behavior:'smooth',block:'center'});if(target.classList.contains('q-item'))target.classList.add('open')}},70)}return}
  const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action;
  if(a.startsWith('go:')){const[,pg,anchor]=a.split(':');nav(pg);if(anchor)setTimeout(()=>$('#script-'+anchor)?.scrollIntoView({behavior:'smooth',block:'center'}),65);return}
+ if(a==='mockNext'){nextMock();return}
+ if(a==='mockAll'){state.mockPool='전체';nextMock();return}
+ if(a==='mockReveal'){state.mockReveal=!state.mockReveal;render();return}
+ if(a==='mockReset'){stopMock();state.mockSeconds=0;render();return}
+ if(a==='mockTimer'){if(state.mockInterval){stopMock();render();return}const then=Date.now()-state.mockSeconds*1000;state.mockInterval=setInterval(()=>{state.mockSeconds=Math.floor((Date.now()-then)/1000);formatMockTime()},250);e.target.textContent='■ 일시정지';return}
  if(a==='focus'){toggleFocus();return}
  if(a==='randomQuestion'){state.followFilter='전체';state.qSearch='';render();const i=Math.floor(Math.random()*D.followups.length),el=$('#question-'+i);el?.classList.add('open');el?.scrollIntoView({behavior:'smooth',block:'center'});return}
  if(a.startsWith('timer:')){runTimer(a.split(':')[1]);return}
