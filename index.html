@@ -67,6 +67,34 @@
 @media(max-width:700px){.brief-grid,.brief-list,.brief-alert{grid-template-columns:1fr}.mock-card{padding:24px}.mock-time{font-size:32px}.fact-audit th,.fact-audit td{padding:7px}.atelier-launch .btn{margin-left:0}}
 @media print{.mock-controls,.mock-ratings,.brief-list input{display:none!important}.mock-answer{display:block}.research-dossier{border:0;padding:0}}
 
+
+.course-alert{padding:18px 20px;border-left:3px solid #9b7848;background:#f4ecdb;border-radius:0 12px 12px 0;color:#635848;line-height:1.85;margin:12px 0 25px;font-size:13px}
+.course-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.course-stats .card{padding:20px}.course-stats b{display:block;font-size:31px;color:#2e523b;margin:6px 0}
+.course-filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.course-filters button{border:1px solid #cad9c5;background:#f8faf5;color:#3b5849;border-radius:30px;padding:9px 13px;font-weight:700;font-size:12px}
+.course-filters button.active{background:#203a2d;color:#f5fbef}
+.course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.course-card{border:1px solid #dee7d9;background:#fffefa;border-radius:17px;overflow:hidden}
+.course-card.selected{border-color:#699b5c;box-shadow:0 0 0 1px #699b5c inset}
+.course-card .course-inner{padding:22px}.course-card .course-tags{display:flex;gap:6px;flex-wrap:wrap;font-size:10px}
+.course-card .course-tags span{padding:3px 7px;background:#eaf0e6;color:#44644a;border-radius:5px}
+.course-card h3{font-size:19px;letter-spacing:-.04em;line-height:1.5;margin:11px 0}
+.course-card .slot{font-size:13px;font-weight:800;color:#46634c;margin:8px 0 13px}
+.course-card .bridge{font-size:13px;color:#536758;line-height:1.85}
+.course-card button.select{width:100%;background:#ebf3e4;border:1px solid #b9ceb1;padding:10px;border-radius:9px;color:#365b3e;font-weight:750;font-size:12px;margin-top:8px}
+.course-card.selected button.select{background:#254333;color:#fff;border-color:#254333}
+.course-card details{padding:12px 22px 18px;border-top:1px solid #e4e9e0;font-size:12px;color:#536658;line-height:1.85}
+.course-card summary{cursor:pointer;color:#3d6148;font-weight:800}
+.course-card details p{margin:10px 0}
+.course-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.course-plan{background:#fffefa;border:1px solid #dfe7d9;border-radius:14px;padding:17px;text-align:left}
+.course-plan.active,.course-plan:hover{background:#edf5e8;border-color:#7da56d}
+.course-plan strong{display:block;font-size:14px;color:#2a513b;margin-bottom:9px}.course-plan small{display:block;color:#596d5c;line-height:1.8}.course-plan .fine{font-size:11px;color:#77907b;margin-top:10px;line-height:1.7}
+.course-result{background:#1d3328;color:#e8f6e2;border-radius:18px;padding:25px;line-height:1.85}
+.course-result h3{color:#d6ecc5;margin:0 0 10px}
+.course-result .metrics{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0}.course-result .metrics span{border:1px solid #55705b;border-radius:7px;padding:8px 12px;font-size:12px}
+.course-result .warn{color:#f6bc9f}.course-result .ok{color:#d6f1aa}
+@media(max-width:740px){.course-grid,.course-plans{grid-template-columns:1fr}.course-stats .card{padding:11px}.course-stats b{font-size:24px}.course-card .course-inner{padding:18px}}
+
 </style>
   <script>
 /* Readable, offline-first content. No external dependencies. */
@@ -96,6 +124,7 @@ window.HONGIK_DATA = {"scripts":[{"id":"motivation","no":"01","title":"자기소
 <button class="nav-btn" data-page="briefing"><span class="nav-num">★</span>면접 직전 한 장<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="cases"><span class="nav-num">03</span>실무 경험 정리<span class="nav-arrow">↗</span></button>
         <div class="nav-group-label in-nav">STUDY & RESEARCH</div>
+<button class="nav-btn" data-page="coursebook"><span class="nav-num">◎</span>실제 교과목 탐구<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="roadmap"><span class="nav-num">04</span>2년 대학원 시뮬레이션<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="research"><span class="nav-num">05</span>연구 설계 실험실<span class="nav-arrow">↗</span></button>
         <button class="nav-btn" data-page="reality"><span class="nav-num">06</span>현실성 조사 결과<span class="nav-arrow">↗</span></button>
@@ -169,7 +198,40 @@ function dossier(){return title('11 / RESEARCH DOSSIER','심층 검증 자료실
 function audit(){return section('심층조사 핵심 팩트체크 '+D.factAudit.length+'건','자료의 시점·적용범위 구분')
 +'<div class="card" style="overflow-x:auto"><table class="fact-audit"><thead><tr><th>쟁점</th><th>검증 결과</th><th>판정</th><th>근거</th></tr></thead><tbody>'+D.factAudit.map(f=>{const src=D.sources.find(s=>s.id===f.ref);return '<tr><td>'+escape(f.topic)+'</td><td>'+escape(f.statement)+'</td><td><span class="audit-badge '+(/미확정|주의/.test(f.status)?'pending':/이전|부분/.test(f.status)?'previous':'')+'">'+escape(f.status)+'</span></td><td>'+(src?'<a target="_blank" rel="noopener noreferrer" href="'+escape(src.url)+'">'+escape(f.ref)+' ↗</a>':escape(f.ref))+'</td></tr>'}).join('')+'</tbody></table></div>';}
 
-const pages={home:{tag:'OVERVIEW',fn:home},interview:{tag:'CORE QUESTIONS',fn:interview},followups:{tag:'FOLLOW-UP TRAINING',fn:followups},cases:{tag:'FIELD EXPERIENCE',fn:cases},roadmap:{tag:'TWO-YEAR PLAN',fn:roadmap},research:{tag:'RESEARCH LAB',fn:research},reality:{tag:'FEASIBILITY',fn:reality},facts:{tag:'EVIDENCE',fn:facts},archive:{tag:'SOURCE ARCHIVE',fn:archive},mock:{tag:'MOCK INTERVIEW',fn:mock},briefing:{tag:'LAST-MINUTE',fn:briefing},dossier:{tag:'DOSSIER',fn:dossier}};
+
+state.courseTerm=1;
+state.courseGroup='전체';
+state.courseChoices=Array.isArray(saved['course-choices-v1'])?saved['course-choices-v1'].filter(id=>D.actualCourses.some(c=>c.code===id)):[...D.coursePlans[0].items];
+function selectedCourses(){return D.actualCourses.filter(c=>state.courseChoices.includes(c.code))}
+function courseCollision(a,b){return a.day===b.day&&a.start<b.end&&b.start<a.end}
+function courseCalc(){const items=selectedCourses(),pairs=[];for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++)if(courseCollision(items[i],items[j]))pairs.push([items[i],items[j]]);
+return {items,pairs,days:new Set(items.map(c=>c.day)),early:items.filter(c=>c.start<19),credits:items.reduce((n,c)=>n+c.credits,0)}}
+function coursebook(){
+const courses=D.actualCourses.filter(c=>(state.courseTerm==='전체'||c.semester===state.courseTerm)&&(state.courseGroup==='전체'||state.courseGroup===c.group));
+const r=courseCalc();
+let evaluated=r.items.length?'<div class="metrics"><span>'+r.items.length+'과목</span><span>'+r.credits+'학점</span><span>주 강의 '+r.items.length*3+'시간</span><span>출석 '+r.days.size+'일</span><span>강의+자율학습 약 '+(r.items.length*5)+'~'+(r.items.length*6)+'시간/주</span></div>'
++(r.pairs.length?'<p class="warn">⚠ 같은 시간 수업 '+r.pairs.length+'건: '+r.pairs.map(x=>escape(x[0].name)+' ↔ '+escape(x[1].name)).join(' / ')+'</p>':'<p class="ok">✓ 선택한 강의들의 시간은 겹치지 않아.</p>')
++(r.early.length?'<p class="warn">⚠ 19시 이전 시작 과목: '+r.early.map(c=>escape(c.name)+' '+escape(c.day)+c.start+':00').join(', ')+'</p>':'')
++(r.credits>9?'<p class="warn">⚠ 2026 주간 석사 안내의 학기당 일반 수강 상한 9학점 초과.</p>':'')
++(r.items.some(c=>c.semester!==r.items[0].semester)?'<p class="warn">⚠ 서로 다른 학기를 함께 선택했어.</p>':'')
+:'<p>과목을 선택하거나 추천 조합을 눌러봐.</p>';
+return title('09 / REAL COURSE EVIDENCE','실제 교과목 탐구','2026학년도 1·2학기 시간표 캡처를 바탕으로 23과목의 의미·실무 연관성을 정리했어. 학점과 시간 충돌은 실제 2026 편성 기준으로 계산해.',pill('1학기 11과목')+pill('2학기 12과목')+pill('2027 미확정'))
++'<div class="course-alert"><strong>팩트 구분:</strong> 1학기 캡처에는 국방AI융합학과 필터가 보이지만, 2학기는 필터가 “선택하세요”로 표시돼 학과 귀속을 같은 수준으로 확정할 수 없어. 과목별 내용은 <b>강의계획서 원문이 아니라 일반 학문적 의미에 대한 해설</b>이야. 2027 편성·대면 여부를 보장하지 않아. <a href="'+escape(D.courseEvidence.officialTimeUrl)+'" target="_blank">홍익대 시간표 원본 ↗</a></div>'
++'<div class="course-stats"><div class="card"><small>2026-1</small><b>11</b><small>학과 필터 확인</small></div><div class="card"><small>2026-2</small><b>12</b><small>필터 주의</small></div><div class="card"><small>학점</small><b>3</b><small>화면의 과목별 기준</small></div></div>'
++section('시간표의 실제 과목','학기·연구 분야를 선택해 봐')
++'<div class="course-filters">'+['전체',1,2].map(t=>'<button class="'+(state.courseTerm===t?'active':'')+'" data-course-term="'+t+'">'+(t==='전체'?'전체 보기':'2026년 '+t+'학기')+'</button>').join('')+'</div>'
++'<div class="course-filters">'+['전체','데이터·AI','SW 유지보수','연구방법','보안','군수·운영','국방 운영','국방 기획','경영','프로젝트','국방 기술'].map(g=>'<button class="'+(state.courseGroup===g?'active':'')+'" data-course-group="'+escape(g)+'">'+escape(g)+'</button>').join('')+'</div>'
++'<div class="course-grid">'+courses.map(c=>'<article class="course-card '+(state.courseChoices.includes(c.code)?'selected':'')+'"><div class="course-inner"><div class="overline">'+escape(c.code)+' · '+c.semester+'학기</div><div class="course-tags"><span>'+escape(c.priority)+'</span><span>'+escape(c.group)+'</span><span>'+(c.semester===1?'학과 필터 확인':'2학기 필터 주의')+'</span></div><h3>'+escape(c.name)+'</h3><div class="slot">'+escape(c.day)+'요일 '+c.start+':00–'+c.end+':00 · '+c.credits+'학점</div><p class="bridge">'+escape(c.bridge)+'</p><button class="select" data-course-select="'+c.code+'">'+(state.courseChoices.includes(c.code)?'✓ 조합에서 빼기':'＋ 수강조합에 넣기')+'</button></div><details><summary>교과목 해설·근거 수준 보기</summary><p><b>과목명에서 추론할 수 있는 학습영역:</b> '+escape(c.learning)+'</p><p><b>시간표 캡처에서 확인:</b> 2026년 '+c.semester+'학기 '+escape(c.day)+' '+c.start+'–'+c.end+'시 / 3학점 / 세종. '+escape(c.status)+'</p><p><b>확인되지 않은 내용:</b> 실제 강의계획서 주차별 내용·평가방식, 2027 개설.</p></details></article>').join('')+'</div>'
++section('추천 수강조합','실제로 겹치지 않는 2026 편성 기준 예시')
++'<div class="course-plans">'+D.coursePlans.map((p,i)=>'<button class="course-plan '+(p.items.join(',')===state.courseChoices.join(',')?'active':'')+'" data-course-plan="'+i+'"><strong>'+escape(p.name)+'</strong><small>'+p.items.map(id=>escape(D.actualCourses.find(c=>c.code===id)?.name)).join(' · ')+'</small><div class="fine">'+escape(p.notes)+'</div></button>').join('')+'</div>'
++section('선택한 조합 판정','학점·요일·시간 충돌 계산')
++'<div class="course-result"><h3>'+(r.items.length?r.items.map(c=>escape(c.name)).join(' · '):'아직 선택한 과목이 없어')+'</h3>'+evaluated+'<p style="font-size:12px;color:#cbdaca">자율학습량은 과목당 주 2~3시간을 더한 계획상의 가정이고, 2027 실제 개설을 보증하지 않아.</p></div>'
++section('연구와의 연결','수업명을 연구목표의 언어로')
++'<div class="grid grid-2"><div class="card"><h3>RAG 기반 유지보수 연구</h3><p>SW 관리 → 코드·변경이력, 데이터마이닝/데이터사이언스 → 검색자료·실험평가, 연구방법론 → 비교실험, 정보보호 → 접근통제·자료 경계. 각 과목은 연구의 다른 단계를 뒷받침하는 선택지야.</p></div><div class="card warm"><h3>군수·공급사슬 확장</h3><p>AI 기반 의사결정 및 최적화 모델·국방경제학 등은 군수 운영을 이해하는 보조영역이야. <b>공급사슬관리라는 명칭의 과목은 네가 보낸 2026 두 시간표에는 없어.</b> 실제 개설이라고 말하지 않도록 주의해.</p></div></div>'
++'<div class="banner"><div class="badge-icon">↗</div><div><b>과목 선택의 이유를 면접에서 설명해 보자.</b><p>먼저 학습목표와 실제 수업 편성을 구분해 말하는 것이 핵심이야.</p></div>'+btn('입학 후 계획 답변 →','go:interview:study','primary')+'</div>';
+}
+
+const pages={home:{tag:'OVERVIEW',fn:home},coursebook:{tag:'COURSES 2026',fn:coursebook},interview:{tag:'CORE QUESTIONS',fn:interview},followups:{tag:'FOLLOW-UP TRAINING',fn:followups},cases:{tag:'FIELD EXPERIENCE',fn:cases},roadmap:{tag:'TWO-YEAR PLAN',fn:roadmap},research:{tag:'RESEARCH LAB',fn:research},reality:{tag:'FEASIBILITY',fn:reality},facts:{tag:'EVIDENCE',fn:facts},archive:{tag:'SOURCE ARCHIVE',fn:archive},mock:{tag:'MOCK INTERVIEW',fn:mock},briefing:{tag:'LAST-MINUTE',fn:briefing},dossier:{tag:'DOSSIER',fn:dossier}};
 function render(){root.innerHTML=`<div class="view-transition">${pages[state.page].fn()}</div>`;refreshChecks()}
 function home(){const [q,t]=getProgress('question-',D.followups.length);const days=Math.ceil((new Date('2026-11-07T00:00:00+09:00').getTime()-Date.now())/86400000);return `
 <div class="hero"><div><div class="section-eyebrow">PERSONAL INTERVIEW PREPARATION · 2027 SPRING</div><h1>현장의 문제를,<br><em>연구의 질문으로.</em></h1><p>홍익대학교 일반대학원 · 세종캠퍼스 · 국방AI융합학과. 단순 암기장이 아니라 네 수학계획서와 실무 경험, 47개 조사 이력, 실제 대학원 2년을 하나로 연결한 준비 공간이야.</p></div><div class="hero-side"><div class="side-label">INTERVIEW / 2026.11.07 SAT</div><strong>${days>=0?'D-'+days:'D+'+Math.abs(days)}</strong><small>세종캠퍼스 · 대면 구술면접<br>세부 시각·장소는 최종 공지 확인</small></div></div>
@@ -245,13 +307,17 @@ function archive(){return `${title('08 / PRIMARY MATERIAL','원문·조사 기�
 <div class="archive-switch"><button class="btn ${state.archiveTab==='plan'?'primary':''}" data-archive="plan">제출 수학계획서 원문</button><button class="btn ${state.archiveTab==='history'?'primary':''}" data-archive="history">47개 주제 · 전체 조사 원문</button>${btn('현재 원문 전체 복사','copyArchive','tiny')}</div>
 <div class="archive-container"><div class="md">${state.archiveTab==='plan'?D.planHTML:D.archiveHTML}</div></div>`}
 function refreshChecks(){if(state.page==='home'){let n=D.practice.filter((_,i)=>checked('practice-'+i)).length;const el=$('#weeklyProgress');if(el)el.innerHTML=progress(n,D.practice.length)}}
-function search(s){const q=s.trim().toLocaleLowerCase();const all=[...D.factAudit.map(x=>({title:x.topic,summary:x.statement+' / '+x.status,page:'facts'})),...D.scripts.map(x=>({title:x.title,summary:x.core,page:'interview',anchor:'script-'+x.id})),...D.followups.map((x,i)=>({title:x.question,summary:x.answer,page:'followups',anchor:'question-'+i})),...D.sources.map(x=>({title:x.name,summary:x.what,page:'facts'})),...D.terms.map(x=>({title:x.term,summary:x.meaning,page:'cases'})),...D.semesters.map(x=>({title:x.phase+' '+x.title,summary:x.goals.join(' '),page:'roadmap'})),...D.facts.map(x=>({title:x.topic,summary:x.value,page:'facts'}))];const res=all.filter(x=>!q||`${x.title} ${x.summary}`.toLocaleLowerCase().includes(q)).slice(0,18);$('#searchResults').innerHTML=res.map(x=>`<button class="search-result" data-search-page="${x.page}" data-search-anchor="${x.anchor||''}"><strong>${escape(x.title)}</strong><p>${escape(x.summary.slice(0,96))}${x.summary.length>96?'…':''}</p></button>`).join('')||'<p style="padding:15px;color:#79927d">검색 결과가 없어.</p>'}
+function search(s){const q=s.trim().toLocaleLowerCase();const all=[...D.actualCourses.map(x=>({title:x.name,summary:x.semester+'학기 '+x.day+' '+x.start+'–'+x.end+'시 / '+x.bridge,page:'coursebook'})),...D.factAudit.map(x=>({title:x.topic,summary:x.statement+' / '+x.status,page:'facts'})),...D.scripts.map(x=>({title:x.title,summary:x.core,page:'interview',anchor:'script-'+x.id})),...D.followups.map((x,i)=>({title:x.question,summary:x.answer,page:'followups',anchor:'question-'+i})),...D.sources.map(x=>({title:x.name,summary:x.what,page:'facts'})),...D.terms.map(x=>({title:x.term,summary:x.meaning,page:'cases'})),...D.semesters.map(x=>({title:x.phase+' '+x.title,summary:x.goals.join(' '),page:'roadmap'})),...D.facts.map(x=>({title:x.topic,summary:x.value,page:'facts'}))];const res=all.filter(x=>!q||`${x.title} ${x.summary}`.toLocaleLowerCase().includes(q)).slice(0,18);$('#searchResults').innerHTML=res.map(x=>`<button class="search-result" data-search-page="${x.page}" data-search-anchor="${x.anchor||''}"><strong>${escape(x.title)}</strong><p>${escape(x.summary.slice(0,96))}${x.summary.length>96?'…':''}</p></button>`).join('')||'<p style="padding:15px;color:#79927d">검색 결과가 없어.</p>'}
 function timerDisplay(s){const el=$('#timer-'+s);if(!el)return;const n=state.elapsed;const mm=String(Math.floor(n/60)).padStart(2,'0'),ss=String(n%60).padStart(2,'0');const digits=el.querySelector('.timer-digits');digits.textContent=`${mm}:${ss}`;digits.classList.toggle('over',n> (state.duration==='short'?60:110));el.querySelector('.timer-fill').style.width=Math.min(100,(n/(state.duration==='short'?60:110))*100)+'%';const b=el.querySelector('[data-action^="timer:"]');if(b)b.textContent=state.timer?'Ⅱ 일시정지':'▶ 시작'}
 function clearTimer(){if(state.timer)clearInterval(state.timer);state.timer=null;state.timerStart=null;state.elapsed=0;state.activeScript=null}
 function runTimer(id){if(state.activeScript && state.activeScript!==id){clearTimer();for(const s of D.scripts)timerDisplay(s.id)}state.activeScript=id;if(state.timer){clearInterval(state.timer);state.timer=null;timerDisplay(id);return}const start=Date.now(),before=state.elapsed;state.timer=setInterval(()=>{state.elapsed=before+Math.floor((Date.now()-start)/1000);timerDisplay(id)},200);timerDisplay(id)}
 async function copy(v){try{await navigator.clipboard.writeText(v);toast('전체 내용을 복사했어.')}catch{const ta=document.createElement('textarea');ta.value=v;ta.style.position='fixed';ta.style.opacity=0;document.body.append(ta);ta.select();try{document.execCommand('copy');toast('전체 내용을 복사했어.')}catch{toast('복사 권한이 없어. 브라우저에서 선택해줘.')}ta.remove()}}
 function toggleFocus(){state.focus=!state.focus;document.body.classList.toggle('fullscreen-mode',state.focus);render()}
 document.addEventListener('click',e=>{
+ const ct=e.target.closest('[data-course-term]');if(ct){state.courseTerm=ct.dataset.courseTerm==='전체'?'전체':Number(ct.dataset.courseTerm);render();return}
+ const cg=e.target.closest('[data-course-group]');if(cg){state.courseGroup=cg.dataset.courseGroup;render();return}
+ const cp=e.target.closest('[data-course-plan]');if(cp){const p=D.coursePlans[Number(cp.dataset.coursePlan)];state.courseChoices=[...p.items];state.courseTerm=p.term;state.courseGroup='전체';saved['course-choices-v1']=[...state.courseChoices];persist();render();document.querySelector('.course-result')?.scrollIntoView({behavior:'smooth',block:'center'});return}
+ const cs=e.target.closest('[data-course-select]');if(cs){const code=cs.dataset.courseSelect,c=D.actualCourses.find(x=>x.code===code);if(c){if(state.courseChoices.includes(code))state.courseChoices=state.courseChoices.filter(x=>x!==code);else{if(selectedCourses().length&&selectedCourses()[0].semester!==c.semester){state.courseChoices=[];toast('학기가 달라 기존 조합을 비웠어.');}state.courseChoices.push(code)}saved['course-choices-v1']=[...state.courseChoices];persist();render();}return}
  const pool=e.target.closest('[data-mock-pool]');if(pool){state.mockPool=pool.dataset.mockPool;stopMock();state.mockSeconds=0;state.mockReveal=false;state.mockId=filteredBank()[0]?.id||'';render();return}
  const rating=e.target.closest('[data-confidence]');if(rating){setcheck('confidence-'+rating.dataset.confidenceId,Number(rating.dataset.confidence));render();return}
  const nb=e.target.closest('[data-page]');if(nb){nav(nb.dataset.page);return}
