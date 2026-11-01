@@ -1,8 +1,15 @@
 # GitHub 단독 모바일 웹앱 배포.
-# 안전상 자동 배포하지 않는다: Pages를 켜면 비공개 저장소의 웹 자료도 공개될 수 있어.
-# 사용자가 Settings → Pages → GitHub Actions를 선택한 다음 수동 실행.
-name: Publish interview atelier (manual)
+# 저장소 공개와 GitHub Pages 활성화 완료 후, 웹앱 코드 변경마다 자동 배포한다.
+# 주의: Pages로 배포한 HTML은 공개 웹사이트로 누구나 열람할 수 있다.
+name: Publish interview atelier
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'public/**'
+      - 'scripts/**'
+      - '.github/workflows/publish-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -21,7 +28,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout private repository
+      - name: Checkout repository
         uses: actions/checkout@v4
       - name: Generate PWA manifest and PNG icons
         run: node scripts/build.mjs
