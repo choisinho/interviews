@@ -47,18 +47,3 @@ for(const size of [192,512])await writeFile(join(output,'icon-'+size+'.png'),ico
 const html=await readFile(join(output,'index.html'),'utf8')
 if(!html.includes('window.HONGIK_DATA')||!html.includes('</html>'))throw Error('index.html missing main app')
 console.log('Built protected PWA assets:',html.length,'characters')
-
-const readerFiles=['study-reader-guide.js','study-reader-course.js','study-reader-research.js','study-reader-metrics.js','study-reader-reality.js'];
-const css=await readFile('scripts/study-reader.css','utf8');
-let withReader=html.replace('</head>','<style>\n'+css+'\n</style>\n</head>');
-for(const file of readerFiles){
- const js=await readFile(join('scripts',file),'utf8');
- new Function(js);
- withReader=withReader.replace('</body>','<script>\n'+js+'\n</script>\n</body>');
-}
-withReader=withReader.replace('v3.7 ↻','v3.8 ↻')
- .replace('2026.11.01 · 초상 로고 반영 · v3.7','2026.11.01 · 쉬운 학습 해설 · v3.8')
- .replace('20261101-logo-woojae-v37#home','20261101-readable-v38#home');
-if(!withReader.includes('reader-guide')||!withReader.includes('v3.8 ↻'))throw Error('Reader assets missing');
-await writeFile(join(output,'index.html'),withReader);
-console.log('Reader-friendly explanations embedded in deployed HTML:',readerFiles.length);
