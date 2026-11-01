@@ -6,19 +6,19 @@
 
 - 저장소: `choisinho/interviews` (현재 Private)
 - 사이트: **GitHub Pages** — 별도의 Cloudflare, Vercel, Render, 로그인 서버를 쓰지 않아.
-- 빌드·배포: **GitHub Actions** 수동 워크플로(`.github/workflows/publish-pages.yml`).
+- 빌드·배포: **GitHub Actions** 자동 배포 및 수동 재배포 워크플로(`.github/workflows/publish-pages.yml`).
 - 앱 설치: `manifest.webmanifest` + 서비스 워커 + 자동 생성되는 192/512px PNG 아이콘.
-- 배포 후 예상 주소: `https://choisinho.github.io/interviews/`. **Pages가 켜지기 전에는 이 주소가 작동하지 않아.**
+- 배포 후 주소: `https://choisinho.github.io/interviews/`. **Pages가 켜지기 전에는 이 주소가 작동하지 않아.**
 
 ### 가장 중요한 공개 범위 안내
 
 **개인 계정의 GitHub Pages 사이트는 공개 웹사이트야. Private 저장소에서 Pages를 운영할 수 있는 유료 GitHub 플랜이어도, 게시한 HTML은 누구나 열고 내려받을 수 있어.**
-이 앱의 HTML에는 지원 수학계획서 원문과 군 물류정보체계 관련 본인 진술 및 과거 조사자료가 포함돼 있어. 별도 서버 인증 없이 HTML·JavaScript에서 비밀번호를 검증하는 방식은 실제 비공개 보호가 아니므로 구현하지 않았어.
+이 앱의 HTML에는 지원 수학계획서 원문과 군 물류정보체계 관련 본인 진술 및 과거 조사자료가 포함돼 있어. 사용자가 공개를 선택했기 때문에 **현재 인터넷에서 열람할 수 있는 상태**야. 별도 서버 인증 없이 HTML·JavaScript에서 비밀번호를 검증하는 방식은 실제 비공개 보호가 아니므로 구현하지 않았어.
 
 - Github Free 계정: 일반적으로 **공개 저장소**에서만 Pages 지원.
 - GitHub Pro 등 지원 플랜: **비공개 저장소에서도 Pages 생성 가능**, 단 **게시된 사이트는 공개**.
 - 보안상 공개해도 되는 자료만 남기는 별도 공개판을 만들거나, 개인정보를 공개해도 되는지 먼저 충분히 검토해야 해.
-- **현재는 배포를 자동으로 실행하지 않아. 저장소 visibility도 변경하지 않았어.**
+- **현재 저장소는 Public으로 전환돼 있으며 Pages 배포가 활성화됐어. 따라서 모든 게시 HTML과 부록의 수학계획서 자료는 외부에서 읽을 수 있어.**
 
 ## 휴대폰 홈 화면에서 앱처럼 실행하기
 
@@ -26,7 +26,7 @@
 
 1. `choisinho/interviews` 저장소 → **Settings** → **Pages**.
 2. **Build and deployment → Source**를 **GitHub Actions**로 설정. 현재 플랜과 저장소 설정에 따라 Pages가 제공되지 않을 수 있어.
-3. 저장소의 **Actions** 탭 → **Publish interview atelier (manual)** → **Run workflow**. 처음 배포는 수동 실행이야.
+3. 저장소의 **main** 브랜치에서 `index.html`이나 PWA 파일이 수정되면 자동으로 Pages 재배포돼. 필요하면 **Actions → Publish interview atelier → Run workflow**로 수동 실행할 수도 있어.
 4. 성공하면 `https://choisinho.github.io/interviews/` 접속.
 5. **안드로이드 Chrome**에서 사이트를 열고, 메뉴 `⋮` → **홈 화면에 추가** 또는 **앱 설치**.
 6. 설치되면 휴대폰 홈 화면에 '면접 아틀리에' 아이콘이 생겨. 이후에는 다운로드 없이 그 아이콘으로 들어오면 돼.
