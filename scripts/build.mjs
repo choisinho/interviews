@@ -67,6 +67,6 @@ publishedHTML=publishedHTML.replace('</head>','<style>\n'+foreignCSS+'\n</style>
 publishedHTML=publishedHTML.replace('v3.7 ↻','v3.9 ↻').replace('20261101-logo-woojae-v37#home','20261101-foreign-exam-v39#foreign').replace('2026.11.01 · 초상 로고 반영 · v3.7','2026.11.01 · 외국어시험 탭 추가 · v3.9');
 const foreignCopyJS="<script>\n(function(){document.addEventListener('click',async function(e){var b=e.target.closest('[data-lang-copy]');if(!b)return;var el=document.getElementById('lang-inquiry');if(!el)return;try{await navigator.clipboard.writeText(el.innerText);b.textContent='복사 완료 ✓';}catch(err){b.textContent='길게 눌러 선택해서 복사';}});})();\n</script>\n";
 publishedHTML=publishedHTML.replace('</body>',foreignCopyJS+'</body>');
-if(!publishedHTML.includes("foreign:{tag:'FOREIGN LANGUAGE',fn:foreignExam}")||!publishedHTML.includes('id=\"lang-inquiry\"')||!publishedHTML.includes('v3.9 ↻'))throw Error('Foreign exam tab missing from output');
+if(!publishedHTML.includes("foreign:{tag:'FOREIGN LANGUAGE',fn:foreignExam}")||!foreignHTML.includes('id="lang-inquiry"')||!publishedHTML.includes('v3.9 ↻'))throw Error('Foreign exam tab missing from output');
 await writeFile(join(output,'index.html'),publishedHTML);
 console.log('Added standalone foreign exam tab:',foreignHTML.length,'chars');
