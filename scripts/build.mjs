@@ -5,6 +5,7 @@
 import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { deflateSync } from 'node:zlib'
+import { Script } from 'node:vm'
 const output='dist'
 await mkdir(output,{recursive:true})
 await copyFile('index.html',join(output,'index.html'))
@@ -46,27 +47,24 @@ function icon(size){
 for(const size of [192,512])await writeFile(join(output,'icon-'+size+'.png'),icon(size))
 const html=await readFile(join(output,'index.html'),'utf8')
 if(!html.includes('window.HONGIK_DATA')||!html.includes('</html>'))throw Error('index.html missing main app')
-console.log('Built protected PWA assets:',html.length,'characters')
+console.log('Built PWA assets:',html.length,'characters')
 
 
-// New self-study tab is assembled in the deployment artifact; index.html stays untouched.
-const foreignLanguageParts=[
-  '01-summary.html','02-rules.html','03-contact.html'
-];
-const foreignHTML=(await Promise.all(foreignLanguageParts.map(f=>readFile(join('public','foreign-language',f),'utf8')))).join('\n');
-const foreignCSS=await readFile(join('public','foreign-language','foreign-language.css'),'utf8');
+// Keep the graduation view in focused source files and inline it in the offline app.
+const graduationJS=await readFile(join('public','graduation','graduation.js'),'utf8');
+const graduationCSS=await readFile(join('public','graduation','graduation.css'),'utf8');
 let publishedHTML=html;
-const foreignNavAnchor='<button class="nav-btn" data-page="research">';
-const foreignRouteAnchor="const pages={home:{tag:'OVERVIEW',fn:home}";
-const foreignRouteEnd="dossier:{tag:'DOSSIER',fn:dossier}};";
-if(!publishedHTML.includes(foreignNavAnchor)||!publishedHTML.includes(foreignRouteAnchor)||!publishedHTML.includes(foreignRouteEnd))throw Error('Foreign exam tab integration anchors have changed');
-publishedHTML=publishedHTML.replace(foreignNavAnchor,'<button class="nav-btn" data-page="foreign"><span class="nav-num">語</span>외국어시험·JLPT<span class="nav-arrow">↗</span></button>\n'+foreignNavAnchor);
-publishedHTML=publishedHTML.replace(foreignRouteAnchor,'function foreignExam(){return '+JSON.stringify(foreignHTML).replace(/<\/script/gi,'<\\/script')+';}\n'+foreignRouteAnchor);
-publishedHTML=publishedHTML.replace(foreignRouteEnd,"dossier:{tag:'DOSSIER',fn:dossier},foreign:{tag:'FOREIGN LANGUAGE',fn:foreignExam}};");
-publishedHTML=publishedHTML.replace('</head>','<style>\n'+foreignCSS+'\n</style>\n</head>');
-publishedHTML=publishedHTML.replace('v3.7 ↻','v3.9 ↻').replace('20261101-logo-woojae-v37#home','20261101-foreign-exam-v39#foreign').replace('2026.11.01 · 초상 로고 반영 · v3.7','2026.11.01 · 외국어시험 탭 추가 · v3.9');
-const foreignCopyJS="<script>\n(function(){document.addEventListener('click',async function(e){var b=e.target.closest('[data-lang-copy]');if(!b)return;var el=document.getElementById('lang-inquiry');if(!el)return;try{await navigator.clipboard.writeText(el.innerText);b.textContent='복사 완료 ✓';}catch(err){b.textContent='길게 눌러 선택해서 복사';}});})();\n</script>\n";
-publishedHTML=publishedHTML.replace('</body>',foreignCopyJS+'</body>');
-if(!publishedHTML.includes("foreign:{tag:'FOREIGN LANGUAGE',fn:foreignExam}")||!foreignHTML.includes('id="lang-inquiry"')||!publishedHTML.includes('v3.9 ↻'))throw Error('Foreign exam tab missing from output');
+const navAnchor='<button class="nav-btn" data-page="research">';
+const routeAnchor="const pages={home:{tag:'OVERVIEW',fn:home}";
+const routeEnd="dossier:{tag:'DOSSIER',fn:dossier}};";
+for(const anchor of [navAnchor,routeAnchor,routeEnd])if(!publishedHTML.includes(anchor))throw Error('Graduation integration anchor changed: '+anchor);
+publishedHTML=publishedHTML.replace(navAnchor,'<button class="nav-btn" data-page="graduation"><span class="nav-num">学</span>졸업요건<span class="nav-arrow">↗</span></button>\n'+navAnchor);
+publishedHTML=publishedHTML.replace(routeAnchor,()=>graduationJS+'\n'+routeAnchor);
+publishedHTML=publishedHTML.replace(routeEnd,"dossier:{tag:'DOSSIER',fn:dossier},graduation:{tag:'GRADUATION',fn:graduation}};");
+publishedHTML=publishedHTML.replace('</head>','<style>\n'+graduationCSS+'\n</style>\n</head>');
+await mkdir(join(output,'graduation'),{recursive:true});
+for(const file of ['degree-methods-page2.jpg','foreign-subjects.pdf'])await copyFile(join('public','graduation',file),join(output,'graduation',file));
+if(!publishedHTML.includes('data-page="graduation"')||!publishedHTML.includes('function graduation()'))throw Error('Graduation tab missing');
+for(const [i,script] of [...publishedHTML.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].entries())new Script(script[1],{filename:'published-inline-'+i});
 await writeFile(join(output,'index.html'),publishedHTML);
-console.log('Added standalone foreign exam tab:',foreignHTML.length,'chars');
+console.log('Added verified graduation guide and original evidence.');
