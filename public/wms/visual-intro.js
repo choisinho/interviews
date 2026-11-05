@@ -1,6 +1,7 @@
 function wmsVisualIntro() {
   return `<section class="wms-visual-intro" aria-labelledby="wms-visual-title">
-    <header><h1 id="wms-visual-title">WMS 오류 대응 경험을<br><em>후임자에게 전하는 방법</em></h1></header>
+    <header><p class="wms-visual-context">홍익대학교 국방AI융합학과 면접 연구계획</p>
+      <h1 id="wms-visual-title">WMS 오류를 만난 후임자는<br><em>숙련자의 점검 순서를 따라갈 수 있을까?</em></h1></header>
     <ol class="wms-visual-path" aria-label="실무 경험에서 연구 목표까지">
       <li>
         <svg class="wms-visual-drawing" viewBox="0 0 146 88" aria-hidden="true" focusable="false">
@@ -14,7 +15,7 @@ function wmsVisualIntro() {
             <path d="M33 55h32" stroke="#2e5644" stroke-width="3"/><path d="M33 62h20" stroke="#51765c" stroke-width="2"/>
           </g>
         </svg>
-        <div class="wms-visual-caption"><span>실무 경험</span><h2>오류 기록 약 40건</h2><p>증상 · 원인 · 조치 결과</p></div>
+        <div class="wms-visual-caption"><span>실무 경험</span><h2>오류 기록 약 40건</h2><p>증상과 조치 결과를 기록했고, 군 내부 AI로 ZPL 라벨 명령을 해석했다.</p></div>
       </li>
       <li>
         <svg class="wms-visual-drawing" viewBox="0 0 146 88" aria-hidden="true" focusable="false">
@@ -31,7 +32,7 @@ function wmsVisualIntro() {
             <path d="M95 41h14m-14 6h9" stroke="#c3d6bf" stroke-width="1.7"/>
           </g>
         </svg>
-        <div class="wms-visual-caption"><span>시제품 구상</span><h2>증상으로 사례 검색</h2><p>RAG로 유사 기록과 근거 제시</p></div>
+        <div class="wms-visual-caption"><span>연구 방법</span><h2>증상으로 근거 찾기</h2><p>유사 사례를 찾아 당시 확인한 항목과 그 근거를 제시하는 RAG 방식을 검증한다.</p></div>
       </li>
       <li>
         <svg class="wms-visual-drawing" viewBox="0 0 146 88" aria-hidden="true" focusable="false">
@@ -45,9 +46,9 @@ function wmsVisualIntro() {
             <path d="M16 72v-6c0-12 8-17 19-17s18 6 18 17v6z" fill="#82ab90" stroke="#1c3d33" stroke-width="2"/>
           </g>
         </svg>
-        <div class="wms-visual-caption"><span>연구 목표</span><h2>후임자의 원인 판단</h2><p>원인 후보와 다음 점검 항목 선택</p></div>
+        <div class="wms-visual-caption"><span>현장 활용 목표</span><h2>인수인계와 교육</h2><p>후임자에게 점검 절차를 남기고, 지휘부의 교육·인력 지원 검토에 근거를 제공하고자 한다.</p></div>
       </li>
     </ol>
-    <footer class="wms-visual-test"><strong>검증 계획</strong><span>모의 오류 과제에서 기존 문서 검색과 RAG를 비교해, <b>원인 탐색 시간과 판단 정확도</b>를 측정합니다.</span></footer>
+    <footer class="wms-visual-test"><strong>검증 계획</strong><span>모의 오류에서 기존 문서를 직접 찾는 경우와 RAG로 같은 자료를 찾는 경우의 <b>원인 탐색 시간과 판단 정확도</b>를 비교한다.</span></footer>
   </section>`;
 }

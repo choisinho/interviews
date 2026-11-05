@@ -1,4 +1,4 @@
-function createWmsReader({ source, guides, root, escape }) {
+function createWmsReader({ source, guides, plates, root, escape }) {
   const route = 'wms-practice';
   const wide = window.matchMedia('(min-width: 1121px)');
   const lines = source.split(/\r?\n/);
@@ -96,13 +96,13 @@ function createWmsReader({ source, guides, root, escape }) {
     return `<div class="wms-reader-layout">
       <nav class="wms-reader-toc" aria-label="연구 원문 목차"><details ${wide.matches ? 'open' : ''}>
         <summary>목차 · 전체 ${parts.length}부</summary><div class="wms-toc-body"><ol>${toc}</ol></div>
-      </details></nav>
+      </details><a class="wms-transcript-extra" data-wms-route href="#${route}/guide-12/speech">보충 발언 · 데이터 한마당 ↗</a></nav>
       ${body}</div><div class="wms-reader-end"><a href="#${route}/full" data-wms-top>문서 처음으로 ↑</a></div>`;
   }
 
   const chapterUrl = i => '#' + route + '/guide-' + (i + 1);
   function setRoute(anchor) {
-    const found = /^wms-practice\/guide-(\d+)$/.exec(anchor);
+    const found = /^wms-practice\/guide-(\d+)(?:\/(?:fig-\d+|contest|speech))?$/.exec(anchor);
     full = !!anchor && !found;
     chapter = found ? Math.min(parts.length - 1, Math.max(0, Number(found[1]) - 1)) : 0;
   }
@@ -114,9 +114,29 @@ function createWmsReader({ source, guides, root, escape }) {
     return paragraphs.find(p => p.textContent.startsWith(guide.excerptStart))?.innerHTML || '';
   });
 
+  // Source section numbers and browser heading IDs differ (IDs include subheadings).
+  const detailChapters = parts.map((item, i) => plates[i + 1].map((plate, j) => {
+    const section = item.sections.find(s => typeof plate.section === 'number'
+      ? s.title.startsWith(plate.section + '. ') : s.title === plate.section);
+    if (!section) throw Error('WMS diagram source section missing: ' + plate.section);
+    const id = route + '/guide-' + (i + 1) + '/fig-' + (j + 1);
+    searchItems.push({ title: plate.title, summary: guides[i].short + ' · ' + plate.takeaway, page: route, anchor: id });
+    return { id, title: plate.title, html: wmsDetailPlate(plate, section, id, escape) };
+  }));
+  const additions = {
+    8: { title: '데이터 한마당 출품 구상', id: route + '/guide-8/contest' },
+    12: { title: '데이터 한마당 면접 발언', id: route + '/guide-12/speech' }
+  };
+  for (const entry of Object.values(additions)) {
+    searchItems.push({ title: entry.title, summary: '논문 산출물 · 대회 출품 · 지휘부에 인수인계 개선 제안', page: route, anchor: entry.id });
+  }
+
   function guideView() {
     const guide = guides[chapter];
     const item = parts[chapter];
+    const details = detailChapters[chapter];
+    const addition = additions[chapter + 1];
+    const topics = addition ? [...details, addition] : details;
     const optionLabel = (entry, i) => `제${i + 1}부 · ${escape(entry.short)}`;
     const chapterList = guides.map((entry, i) => `<li><a href="${chapterUrl(i)}" data-wms-route ${i === chapter ? 'aria-current="location"' : ''}>
       <span>${i + 1}부</span>${escape(entry.short)}</a></li>`).join('');
@@ -131,6 +151,10 @@ function createWmsReader({ source, guides, root, escape }) {
           <p>${escape(guide.intro)}</p></header>
           ${wmsChapterFigure(chapter, guide, escape)}
           ${excerpts[chapter] ? `<aside class="wms-passage"><h3>원문에서</h3><blockquote>${excerpts[chapter]}</blockquote></aside>` : ''}
+          <nav class="wms-plate-links" aria-label="이 부의 세부 도해">${topics.map(topic =>
+            `<a href="#${topic.id}" data-wms-route>${escape(topic.title)}</a>`).join('')}</nav>
+          <section class="wms-detail-plates" aria-label="원문 절별 도해">${details.map(d => d.html).join('')}</section>
+          ${wmsOutreach(chapter + 1)}
           <details class="wms-chapter-original"><summary>제${chapter + 1}부 원문 읽기</summary>
           <div class="wms-document wms-inline-document">${item.html}</div></details>
           <nav class="wms-guide-paging" aria-label="이전 부와 다음 부">
@@ -151,6 +175,12 @@ function createWmsReader({ source, guides, root, escape }) {
 
   function jump(id) {
     if (id?.startsWith(route + '/guide-')) {
+      const detail = document.getElementById(id);
+      if (detail && detail.closest('.wms-guide')) {
+        detail.focus({ preventScroll: true });
+        detail.scrollIntoView({ block: 'start', behavior: 'instant' });
+        return;
+      }
       root.querySelector('#wms-guide-title')?.focus({ preventScroll: true });
       root.querySelector('#wms-guides')?.scrollIntoView({ block: 'start', behavior: 'instant' });
       return;
@@ -183,6 +213,8 @@ function createWmsReader({ source, guides, root, escape }) {
     if (!anchor || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     // Let the app router select the view before scrolling to a deep link.
     if (anchor.hasAttribute('data-wms-route')) {
+      const fromPlate = anchor.closest('.wms-plate-source')?.closest('figure');
+      if (fromPlate && location.hash !== '#' + fromPlate.id) history.replaceState(null, '', '#' + fromPlate.id);
       if (location.hash === anchor.hash) {
         event.preventDefault();
         if (anchor.hash === '#' + route || anchor.hash === '#' + route + '/full') {

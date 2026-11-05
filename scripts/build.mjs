@@ -63,8 +63,9 @@ publishedHTML=publishedHTML.replace(routeAnchor,()=>graduationJS+'\n'+routeAncho
 publishedHTML=publishedHTML.replace(routeEnd,"dossier:{tag:'DOSSIER',fn:dossier},graduation:{tag:'GRADUATION',fn:graduation}};");
 publishedHTML=publishedHTML.replace('</head>','<style>\n'+graduationCSS+'\n</style>\n</head>');
 // Embed the full WMS manuscript and reader so the published HTML also runs as a downloaded file.
-for (const file of ['content.js', 'overview-data.js', 'visual-intro.js', 'chapter-figure.js', 'reader.js',
-  'practice.css', 'guide.css', 'visual-intro.css', 'chapter-figure.css']) {
+for (const file of ['content.js', 'overview-data.js', 'visual-intro.js', 'chapter-figure.js',
+  'plates-early.js', 'plates-middle.js', 'plates-late.js', 'detail-plates.js', 'reader.js',
+  'practice.css', 'guide.css', 'visual-intro.css', 'chapter-figure.css', 'plates.css']) {
   const path = 'public/wms/' + file;
   const css = file.endsWith('.css');
   const tag = css ? '<link rel="stylesheet" href="./' + path + '">' : '<script src="./' + path + '"></script>';

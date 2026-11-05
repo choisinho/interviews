@@ -20,11 +20,13 @@ function wmsChapterFigure(chapterIndex, guide, escape) {
     const layers = [
       ['screen', '사용자 화면', 'DFM · PAS', '버튼에 연결된 이벤트와 서버에 보내는 입력값을 찾는다.'],
       ['server', '서버 프로그램', 'Pro*C', '호출된 함수가 어떤 SQL을 실행하고 무엇을 반환하는지 본다.'],
-      ['database', '데이터베이스', 'SQL · 업무 코드', '조회한 값이 실제 입고·출고 단계에서 뜻하는 바를 대조한다.']
+      ['database', '데이터베이스', 'SQL · 업무 코드', '어떤 불출 건과 품목을 조회했는지 확인하고, 해당 값이 있어야 하는 업무 단계를 살핀다.']
     ];
     return figure('화면에 보인 값을 따라가는 점검 경로', '<ol class="wcf-stack">' + layers.map(([key, name, tech, detail]) =>
       '<li><span class="wcf-stack-icon">' + icon(key) + '</span><div><strong>' + name +
-      '</strong><span class="wcf-tech">' + tech + '</span><p>' + detail + '</p></div></li>').join('') + '</ol>');
+      '</strong><span class="wcf-tech">' + tech + '</span><p>' + detail + '</p></div></li>').join('') +
+      '</ol><div class="wcf-branch"><div><small>회신 경로</small><strong>서버 반환값 → 응답 버퍼 → 화면 표시</strong><p>버퍼에 값이 있으면 화면의 해당 칸에 올바르게 매핑됐는지 확인한다.</p></div>' +
+      '<div><small>현장 대조</small><strong>표시 상태 ↔ 실제 출고 단계</strong><p>화면에 표시된 상태를 실제 작업 진행 상황과 대조해 어디서 어긋났는지 좁힌다.</p></div></div>');
   }
 
   if (chapterIndex === 3) {
@@ -51,18 +53,18 @@ function wmsChapterFigure(chapterIndex, guide, escape) {
   }
 
   if (chapterIndex === 5) {
-    return figure('시제품의 핵심 범위와 확장 계획', `<div class="wcf-scope">
-      <div class="wcf-core">${icon('search')}<div><small>첫 시제품</small><strong>유사 오류 사례와 근거 검색</strong></div></div>
+    return figure('오류 대응 연구의 핵심 범위와 확장 계획', `<div class="wcf-scope">
+      <div class="wcf-core">${icon('search')}<div><small>우선 검증할 기능</small><strong>유사 오류 사례와 근거 검색</strong></div></div>
       <div class="wcf-branch"><div><small>확장 후보</small><strong>데이터·코드 분석</strong><p>이상값 탐지, SQL 작성·해석, 관련 함수 탐색</p></div>
       <div><small>장기 구상</small><strong>여러 도구의 연계</strong><p>사례·코드·데이터 검색을 순서대로 수행하는 에이전트</p></div></div>
     </div>`);
   }
 
   if (chapterIndex === 8) {
-    return figure('기존 방식과 연구 시제품의 비교 실험 설계', `<div class="wcf-trial">
+    return figure('기존 문서 탐색과 RAG 기반 근거 검색의 비교 실험 설계', `<div class="wcf-trial">
       <div class="wcf-task">난도가 비슷한 모의 오류 과제</div>
       <div class="wcf-arms"><div>${icon('manual')}<strong>기존 방식</strong><span>담당자가 문서에서 직접 탐색</span></div>
-        <div>${icon('search')}<strong>RAG 시제품</strong><span>같은 자료에서 근거를 검색해 제시</span></div></div>
+        <div>${icon('search')}<strong>RAG 기반 검색</strong><span>같은 자료에서 관련 사례와 근거를 찾아 제시</span></div></div>
       <div class="wcf-measures">${icon('time')}<strong>비교할 지표</strong><span>원인 탐색 시간</span><span>판단 정확도</span></div>
     </div>`);
   }
