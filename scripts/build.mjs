@@ -62,8 +62,8 @@ publishedHTML=publishedHTML.replace(navAnchor,'<button class="nav-btn" data-page
 publishedHTML=publishedHTML.replace(routeAnchor,()=>graduationJS+'\n'+routeAnchor);
 publishedHTML=publishedHTML.replace(routeEnd,"dossier:{tag:'DOSSIER',fn:dossier},graduation:{tag:'GRADUATION',fn:graduation}};");
 publishedHTML=publishedHTML.replace('</head>','<style>\n'+graduationCSS+'\n</style>\n</head>');
-// Embed the practice tab so the published HTML also runs as a downloaded file.
-for (const file of ['content.js', 'practice.js', 'practice.css']) {
+// Embed the full WMS manuscript and reader so the published HTML also runs as a downloaded file.
+for (const file of ['content.js', 'reader.js', 'practice.css']) {
   const path = 'public/wms/' + file;
   const css = file.endsWith('.css');
   const tag = css ? '<link rel="stylesheet" href="./' + path + '">' : '<script src="./' + path + '"></script>';
