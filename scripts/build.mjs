@@ -62,6 +62,15 @@ publishedHTML=publishedHTML.replace(navAnchor,'<button class="nav-btn" data-page
 publishedHTML=publishedHTML.replace(routeAnchor,()=>graduationJS+'\n'+routeAnchor);
 publishedHTML=publishedHTML.replace(routeEnd,"dossier:{tag:'DOSSIER',fn:dossier},graduation:{tag:'GRADUATION',fn:graduation}};");
 publishedHTML=publishedHTML.replace('</head>','<style>\n'+graduationCSS+'\n</style>\n</head>');
+// Embed the practice tab so the published HTML also runs as a downloaded file.
+for (const file of ['content.js', 'practice.js', 'practice.css']) {
+  const path = 'public/wms/' + file;
+  const css = file.endsWith('.css');
+  const tag = css ? '<link rel="stylesheet" href="./' + path + '">' : '<script src="./' + path + '"></script>';
+  if (!publishedHTML.includes(tag)) throw Error('WMS asset tag missing: ' + path);
+  const source = await readFile(path, 'utf8');
+  publishedHTML = publishedHTML.replace(tag, () => css ? '<style>\n' + source + '\n</style>' : '<script>\n' + source + '\n</script>');
+}
 await mkdir(join(output,'graduation'),{recursive:true});
 for(const file of ['degree-methods-page2.jpg','foreign-subjects.pdf'])await copyFile(join('public','graduation',file),join(output,'graduation',file));
 if(!publishedHTML.includes('data-page="graduation"')||!publishedHTML.includes('function graduation()'))throw Error('Graduation tab missing');

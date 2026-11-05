@@ -6,6 +6,6 @@
   "description": "GitHub Pages mobile PWA",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check scripts/build.mjs && node --check public/graduation/graduation.js"
+    "check": "node --check scripts/build.mjs && node --check public/graduation/graduation.js && node --check public/wms/content.js && node --check public/wms/practice.js"
   }
 }

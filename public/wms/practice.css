@@ -1,0 +1,93 @@
+.wms-practice {
+  --wms-border: #d5dfd1;
+  max-width: 1240px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.wms-practice .page-intro { margin-bottom: 24px; }
+.wms-practice .page-intro p { max-width: 700px; color: #53665a; }
+.wms-practice button, .wms-practice select, .wms-practice summary { min-height: 44px; }
+.wms-practice button, .wms-practice summary { touch-action: manipulation; }
+.wms-practice button, .wms-practice select { font-size: .9em; }
+.wms-practice :is(summary,select):focus-visible { outline: 3px solid #78a46a; outline-offset: 2px; }
+.wms-modes, .wms-choices, .wms-buttons, .wms-keywords { display: flex; flex-wrap: wrap; gap: 8px; }
+.wms-modes { border-bottom: 1px solid var(--wms-border); gap: clamp(8px,2.5vw,30px); }
+.wms-modes button {
+  padding: 0 3px 10px; border: 0; border-bottom: 3px solid transparent; background: none;
+  color: #5c6c60; font-weight: 650;
+}
+.wms-modes button[aria-pressed=true] { border-color: #456a47; color: #213d2b; }
+.wms-tools, .wms-step, .wms-stagehead, .wms-clockbar, .wms-readout { display: flex; align-items: center; }
+.wms-tools, .wms-step, .wms-stagehead, .wms-clockbar { justify-content: space-between; gap: 12px; }
+.wms-tools { min-height: 76px; flex-wrap: wrap; padding: 10px 0; }
+.wms-tools label, .wms-status { color: #536459; font-size: .85em; }
+.wms-tools select { margin-left: 6px; padding: 0 12px; border: 1px solid var(--wms-border); border-radius: 8px; background: var(--paper); color: var(--ink); font-size: 1em; }
+.wms-status b { color: #2e5039; }
+.wms-layout { display: grid; grid-template-columns: minmax(0,1.85fr) minmax(230px,1fr); gap: clamp(14px,2vw,26px); align-items: start; }
+.wms-main { min-width: 0; }
+.wms-stage {
+  padding: clamp(21px,3.2vw,44px); border-radius: 20px;
+  background: #1c342a; color: #f4faee;
+}
+.wms-stagehead { color: #c1d3bf; font-size: .84em; font-weight: 600; }
+.wms-stage h2 { margin: 22px 0 31px; max-width: 24em; font-size: clamp(24px,2.3vw,38px); line-height: 1.48; letter-spacing: -.05em; }
+.wms-stage h2:focus { outline: none; }
+.wms-clockbar { flex-wrap: wrap; border-top: 1px solid #486052; padding-top: 18px; }
+.wms-readout { flex-direction: column; align-items: flex-start; gap: 2px; }
+.wms-target { color: #cedacb; font-size: .78em; }
+.wms-readout [role=timer] { font: 550 clamp(26px,2.3vw,36px)/1.2 ui-monospace,Consolas,monospace; letter-spacing: -.055em; color: #ddf6b4; }
+.wms-readout [role=timer].wms-over { color: #ffd39d; }
+.wms-buttons button, .wms-choices button {
+  border: 1px solid var(--wms-border); border-radius: 9px; padding: 8px 15px;
+  background: var(--paper); color: #2a4433; font-weight: 650;
+}
+.wms-buttons button.wms-start { background: #d2edaa; color: #233c27; border-color: #d2edaa; }
+.wms-buttons button.wms-reset { border-color: #657d6d; color: #e1ecdf; background: transparent; }
+.wms-practice button:disabled { opacity: .44; cursor: default; }
+.wms-reveal, .wms-list, .wms-script, .wms-notes { background: var(--paper); border: 1px solid var(--wms-border); border-radius: 15px; }
+.wms-reveal, .wms-script { margin-top: 14px; }
+.wms-practice summary {
+  display: flex; gap: 10px; align-items: center; padding: 15px 20px;
+  list-style: none; cursor: pointer; font-weight: 700; color: #2d4737;
+}
+.wms-practice summary::-webkit-details-marker { display: none; }
+.wms-practice summary::after { content: "＋"; margin-left: auto; color: #42614a; }
+.wms-practice details[open] > summary::after { content: "−"; }
+.wms-reveal details + details, .wms-notes details + details { border-top: 1px solid var(--wms-border); }
+.wms-summary-hint, .wms-list summary span { color: #637869; font-size: .78em; font-weight: 500; }
+.wms-copy { max-width: 76ch; padding: 0 20px 20px; line-height: 1.9; color: #304338; }
+.wms-copy p { margin: 0; }
+.wms-copy p + p { margin-top: .95em; }
+.wms-keywords { margin-bottom: 10px; }
+.wms-keywords span { padding: 2px 9px; background: #edf2e7; color: #3b593e; border-radius: 5px; font-size: .8em; }
+.wms-step { flex-wrap: wrap; margin: 15px 0 0; }
+.wms-check { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #465e4d; cursor: pointer; }
+.wms-check input { width: 17px; height: 17px; accent-color: #325b40; }
+.wms-index { position: relative; max-height: 380px; overflow-y: auto; scrollbar-width: thin; border-top: 1px solid var(--wms-border); padding: 4px 0; }
+.wms-index button {
+  width: 100%; display: grid; grid-template-columns: 2ch 1fr auto; align-items: baseline; gap: 9px;
+  text-align: left; border: 0; border-left: 3px solid transparent; background: transparent; padding: 11px 13px;
+  color: #4d6253; font-size: .88em; line-height: 1.6;
+}
+.wms-index button[aria-current=true] { color: #213d2a; background: #eaf1e3; border-left-color: #709361; font-weight: 700; }
+.wms-index button:focus-visible { outline-offset: -3px; }
+.wms-index-num { color: #63786a; font-family: ui-monospace,Consolas,monospace; font-size: .85em; }
+.wms-done { color: #336442; font-weight: 800; }
+.wms-choices button[aria-pressed=true] { background: #2e4f3b; border-color: #2e4f3b; color: #f3f7ef; }
+.wms-notes { margin-top: 18px; }
+.wms-pitch, .wms-script, .wms-notes { max-width: 840px; }
+@media (max-width: 1000px) and (min-width: 851px), (max-width: 740px) {
+  .wms-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .wms-stage { padding: 21px 18px; }
+  .wms-stage h2 { margin: 17px 0 24px; }
+  .wms-practice summary { padding: 14px 15px; }
+  .wms-copy { padding: 0 15px 17px; }
+  .wms-buttons { gap: 5px; }
+  .wms-buttons button { padding: 7px 10px; }
+}
+@media print {
+  .wms-modes, .wms-buttons, .wms-list, .wms-step, .wms-tools { display: none; }
+  .wms-stage { background: white; color: black; border: 1px solid #bbb; }
+}
