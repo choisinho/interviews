@@ -52,19 +52,80 @@
 
 **군 내부자료, 실제 코드·로그·IP·부대·품목 식별값을 이 저장소에 추가하거나 GitHub Pages에 게시하지 마.**
 
-## 개발 구조
+## 개발 구조 (v5.0 · 2026-11-07)
+
+`index.html`은 **셸**(head 메타, 사이드바·topbar 틀, 검색 창)과 로컬 `./public/...` 스크립트·스타일 태그만 가진다. 실제 화면은 `public/` 아래 소스에서 만들어지고, 빌드가 모두 인라인해 **오프라인 단일 HTML**(`dist/index.html`, `file://`에서도 동작)을 만든다.
 
 ```text
-index.html                     전체 웹앱 (단일 HTML)
-public/manifest.webmanifest     안드로이드 홈 화면 설치 정보
-public/sw.js                    앱 설치를 돕는 서비스 워커
-public/favicon.svg              아이콘 원형
-scripts/build.mjs               Node 표준기능으로 dist/와 PNG 아이콘 생성
-.github/workflows/publish-pages.yml  GitHub Actions 수동 배포
-package.json                    GitHub 내부 빌드 명령만 정의
+index.html                         셸 + 로컬 public/ 태그 (빌드 시 모두 인라인)
+public/app/app.css                 디자인 시스템: 토큰(:root·학교 테마·다크 모드) → 기본 → 레이아웃 → 컴포넌트 → 페이지 블록 → 미디어 → 인쇄
+public/app/app.js                  앱: 학교 모드 라우팅, 페이지 레지스트리(PAGES), 렌더 함수, 학습 기록, 검색, 테마 토글, 버전 상수
+public/schools/hongik.js           홍익대 자료 (ATELIER_SCHOOLS.hongik = {meta, data}, window.HONGIK_DATA 호환 별칭)
+public/schools/ajou.js             아주대 자료 골격 (status: planned, data는 홍익대와 같은 키를 빈 값으로)
+public/graduation/                 졸업요건 화면(graduation.js·graduation.css) + 원문 이미지·PDF (dist/graduation/로 복사)
+public/wms/                        WMS 연구 도해: 원고(content.js, 수정 금지) · 가이드 · 도판 · 그림 · 리더
+public/manifest.webmanifest        안드로이드 홈 화면 설치 정보
+public/sw.js                       서비스 워커 (빌드 해시가 캐시 이름에 들어감)
+public/favicon.svg                 아이콘 원형 (실행 중에는 학교 테마 색으로 다시 그림)
+scripts/build.mjs                  dist/ 생성 · 인라인 · 문법 검사 · 학교 자료 키 파리티 검사 · PNG 아이콘
+scripts/content-atoms.mjs          내용 보존 검사 (기준 텍스트 조각이 결과물에 남아 있는지)
+.github/workflows/publish-pages.yml  GitHub Actions 배포
 ```
 
-로컬 빌드는 Node.js가 있을 때 `npm run build`로 수행할 수 있어. Cloudflare 파일/설정은 제거했어.
+### 빌드와 검사
+
+```bash
+node scripts/build.mjs      # = npm run build → dist/index.html, dist/sw.js, 아이콘, 졸업요건 원문 자료
+npm run check               # 모든 JS 소스 문법 검사 (node --check)
+node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # 내용 보존 검사 (missing 목록 출력)
+```
+
+빌드는 다음이 어긋나면 실패해: 인라인되지 않은 `./public/` 태그, 인라인 스크립트 문법 오류, `ATELIER_SCHOOLS.hongik`/`ajou` 누락, 홍익대 저장 키(`hongik-study-v2`) 변경, **아주대 data에 홍익대 data의 최상위 키(객체면 그 안의 필드까지)가 빠진 경우**.
+
+### 학교 모드
+
+- 주소는 `#<학교>/<화면>[/<위치>]` 형식이야(예: `#hongik/followups`, `#ajou/home`). **접두사 없는 예전 주소**(`#interview`, `#graduation`, `#wms-practice/...`)는 홍익대로 열려.
+- 사이드바 브랜드 아래(모바일은 topbar)의 **[홍익대 | 아주대]** 스위치로 전환해. 같은 화면이 있으면 그 화면, 없으면 대시보드로 가고, 마지막 학교는 `atelier-prefs`에 저장돼.
+- 학교마다 학습 기록 키가 따로야: 홍익대 `hongik-study-v2`(내부 키 이름 불변), 아주대 `ajou-study-v1`.
+- `<html data-school>`이 테마 토큰을 바꿔: 홍익대는 소나무 녹색, 아주대는 남색(#0b2f6b 계열) + 하늘색 액센트. 사이드바·버튼·칩·표지(파비콘)까지 같은 토큰을 따른다.
+- WMS 연구 도해와 실무 경험(`experiences`, `terms`)은 개인 자료라 **학교 공통**으로 아주대 모드에서도 열려(사이드바에 '공유' 표시).
+- 화면 목록·번호·breadcrumb·검색은 `app.js`의 페이지 레지스트리 `PAGES`에서 자동으로 만들어져. 손으로 쓴 번호는 없어.
+
+### 아주대 자료 채우기 (`public/schools/ajou.js`)
+
+자료가 비어 있는 화면은 '준비 중' 카드로, 아주대 대시보드는 **준비 현황 보드**(섹션별 채운 키 0/N, 들어갈 내용, 바로가기)로 보여. 아래 키를 `public/schools/hongik.js`와 **같은 형식**으로 채우면 해당 화면이 실제 내용으로 바뀌어.
+
+| 화면 (`PAGES` id) | 채울 키 | 들어갈 내용 |
+|---|---|---|
+| 대시보드 (home) | `data.narrative`, `data.alerts`, `data.practice` | 면접일 D-day · 핵심 이야기 한 줄 · 면접 직전 7일 체크 |
+| 면접 직전 한 장 (briefing) | `data.scripts`, `data.narrative`, `data.badPhrases`, `data.lastMinute` | 30초 핵심 문항 요약 · 하지 않을 주장과 대체 표현 · 면접 직전 확인 목록 |
+| 핵심 문항 (interview) | `data.scripts` | 지원동기·자기소개 핵심 문항 · 30초·60초·90초 답변 · 문항별 팩트체크와 출처 |
+| 꼬리질문 훈련 (followups) | `data.followups`, `data.followupClusters` | 예상 꼬리질문 · 주제 태그별 답변 · 주제 클러스터와 변형 질문 · 학습 완료 체크 |
+| 실전 모의면접 (mock) | `data.scripts`, `data.followups` | 무작위 출제 · 타이머와 자신감 1~5 자기평가 · 약점만 다시 풀기 |
+| 실무 경험 정리 (cases) | `data.experiences`, `data.terms` | 비어 있으면 홍익대 준비 때 정리한 공유 경험을 표시 |
+| 연구 설계 실험실 (research) | `data.research` | 연구질문 · 비교 조건·평가지표·실험 단계 · 연구 범위 안/밖 |
+| 실제 교과목 (coursebook) | `data.actualCourses`, `data.coursePlans`, `data.courseEvidence`, `data.curriculum` | 개설 교과목과 시간표 · 추천 조합과 충돌 계산 · 근거 수준 · 교육과정 전체 |
+| 졸업요건 (graduation) | — (학교별 졸업요건 모듈 필요) | `public/graduation/graduation.js` 형식의 모듈을 따로 추가 |
+| 2년 시뮬레이션 (roadmap) | `data.semesters`, `data.week` | 4학기 시뮬레이션 · 학기별 현실 부담 · 생활 리듬과 주간 시간예산 |
+| 근거·출처 (facts) | `data.facts`, `data.sources`, `data.alerts`, `data.notices`, `data.revisions` | 출처(URL당 1개 + 별칭) · 팩트 레지스트리 · 주의 공지 · 정정 기록 |
+| 원문·조사 기록 (archive) | `data.planHTML`, `data.archiveHTML` | 제출 학업계획서 원문 · 조사 기록 원문 |
+
+순서: ① `meta`에 학과·캠퍼스·면접일(`interviewDate`)을 적고 ② 위 키를 채우고 ③ 모두 갖춰지면 `meta.status`를 `'ready'`로 바꿔(준비 현황 보드 대신 대시보드가 열림) ④ `node scripts/build.mjs`로 키 파리티를 검사해. 이 표는 `meta.plannedSections`와 같은 내용이야 — 화면 구성을 바꾸면 둘 다 고쳐.
+
+### 정정 기록 (revision log)
+
+말하기 대본·자료를 고칠 때 **이전 문구를 지우지 않아**. `data.revisions`에 `{id, area, where, before, after, reason, source, issues, date}`로 원래 문구 전문과 고친 문구, 이유와 근거를 남기고, '근거·출처' 화면 맨 아래 **정정 기록**(영역별로 접히는 표, 상단 영역 바로가기)으로 보여 줘. `where`는 가능한 한 현재 id(예: 팩트 레지스트리 `credits`)를 쓰고 옛 배열 번호는 괄호로 남겨.
+원문 3종(수학계획서 `planHTML`, 47항목 조사 `archiveHTML`, 심층 보고서 `dossierHTML`)과 WMS 원고 본문(`public/wms/content.js`)은 고치지 않고, 화면 위 '이후 정정' 안내(`data.notices`)나 WMS 가이드 주석으로 처리해. 여러 화면에 같은 내용이 생기면 한 곳(정본)에만 두고 나머지는 링크로 바꾸며, 그때 사라지는 문장도 정정 기록에 '중복 통합'으로 보존해.
+
+### 디자인 시스템 · 화면 테마
+
+- 색·반경·간격·글자 크기는 `app.css` 맨 위 `:root` 토큰 한 곳에서 정해(`--bg --surface --surface-2 --ink --ink-2 --muted --line --brand --brand-ink --accent --warn --warn-bg --info --info-bg` 등). 졸업요건·WMS CSS의 접두 토큰(`--wms-*`, `--plate-*`, `--cf-*`)도 이 토큰을 가리켜.
+- **다크 모드**: 시스템 설정을 따르고, topbar의 테마 버튼으로 **시스템 → 라이트 → 다크**를 순환해(`atelier-prefs.theme`, `<html data-theme>`).
+- 글자는 최소 12px, 본문 15–16px·행간 약 1.75, 긴 글은 약 68자 폭, 한글은 `word-break: keep-all`. 흐린 글씨도 두 테마 모두 대비 4.5:1 이상.
+- 브레이크포인트는 1200 / 850 / 560px. 850px 이하에서는 사이드바가 서랍으로 바뀌고 학교 스위치가 topbar에 나와. 375px 폭에서도 가로 스크롤이 생기지 않아.
+- 버전 표시(topbar `v5.0 ↻`, footer)는 `app.js`의 `APP_VERSION` 상수 하나에서 만들어져.
+
+Cloudflare 파일/설정은 제거했어.
 
 2026-11-01 · GitHub-only mobile PWA edition
 

@@ -58,7 +58,7 @@
 }
 .wms-visual-caption > span {
   color: #c1d2b5;
-  font-size: calc(.74rem * var(--text-scale, 1));
+  font-size: calc(.75rem * var(--text-scale, 1));
   font-weight: 600;
 }
 .wms-visual-caption h2 {
@@ -88,7 +88,7 @@
 }
 .wms-visual-test strong { flex: none; color: #ebd5a5; }
 .wms-visual-test b { color: #f5f4e8; font-weight: 650; }
-@media (max-width: 650px) {
+@media (max-width: 560px) {
   .wms-visual-intro { padding: 20px 16px 0; border-radius: 15px; }
   .wms-visual-intro h1 { font-size: clamp(1.53rem, 5.7vw, 1.95rem); line-height: 1.23; }
   .wms-visual-path { grid-template-columns: 1fr; gap: 15px; }
@@ -102,7 +102,7 @@
     top: auto; left: calc(clamp(25px,7vw,39px) - 2px); bottom: -9px;
     width: 5px; height: 5px; transform: rotate(135deg);
   }
-  .wms-visual-caption > span { font-size: calc(.7rem * var(--text-scale, 1)); }
+  .wms-visual-caption > span { font-size: calc(.75rem * var(--text-scale, 1)); }
   .wms-visual-caption h2 { font-size: clamp(.9rem, 3.6vw, 1.1rem); }
   .wms-visual-caption p { font-size: calc(.76rem * var(--text-scale, 1)); line-height: 1.4; }
   .wms-visual-test { gap: 8px; font-size: calc(.76rem * var(--text-scale, 1)); }
