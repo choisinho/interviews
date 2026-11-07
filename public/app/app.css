@@ -159,3 +159,48 @@
 [data-school="ajou"] .school-switch button[aria-pressed="true"]{background:#1a4a8f;color:#eaf5ff}
 /* 아주대 모드에서 가장 눈에 띄는 초록 표면만 우선 남색으로 바꾼다. 나머지 초록 리터럴은 Stage 3 토큰 통합에서 정리한다. */
 [data-school="ajou"] .nav-btn.active{background:#163d78;color:#eaf5ff}[data-school="ajou"] .nav-btn.active .nav-num{color:#a9d4ff}[data-school="ajou"] .nav-btn:hover{background:#12325f}[data-school="ajou"] .status-dot{background:#9fd0ff;box-shadow:0 0 0 3px #1d3f70}[data-school="ajou"] .atelier-launch{background:#e3edf8}[data-school="ajou"] .atelier-launch strong{color:#123a6b}[data-school="ajou"] .atelier-launch p{color:#4f6680}[data-school="ajou"] .callout:not(.warn):not(.navy){border-color:#7ea6d0;background:#eaf1f8;color:#43607c}[data-school="ajou"] .callout:not(.warn) strong{color:#1d3d63}[data-school="ajou"] .btn.primary{background:var(--pine);border-color:var(--pine)}[data-school="ajou"] .btn.primary:hover{background:#174a96}
+
+/* 이후 정정 안내(D.notices)와 정정 기록(D.revisions) */
+.notice-stack{margin:0 0 22px}
+.notice-stack .callout{margin:10px 0}
+.notice-stack-head{font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.revision-log .revision-group{padding:0;margin:10px 0;overflow:hidden}
+.revision-group>summary{display:flex;justify-content:space-between;gap:12px;padding:15px 19px;cursor:pointer;font-size:14px}
+.revision-group>summary span{color:var(--muted);font-size:12px}
+.revision-scroll{overflow-x:auto;border-top:1px solid var(--line)}
+.revision-table{min-width:760px;font-size:12px}
+.revision-table th small{display:block;font-weight:500;color:var(--muted);margin-top:4px;line-height:1.5}
+.revision-table td{vertical-align:top;line-height:1.7;word-break:keep-all}
+.revision-table .rev-before{color:#80684a;background:#fbf6ee}
+.revision-table .rev-after{color:#2e4534;background:#f2f7ec}
+/* TASK 2b: 말하기 연습 그룹 — 핵심 서사, 홈 빠른 진입, 꼬리질문 클러스터·변형 질문, 관련 링크 */
+.related-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px}
+.related-label{font-size:10px;font-weight:800;letter-spacing:.06em;color:#75916b;margin-right:4px;white-space:nowrap}
+.script-related{border-top:1px dashed #d6e2d1;margin-top:18px;padding-top:6px}
+.narrative{margin:22px 0}.narrative .quote-strip{margin-top:0}
+.narrative .flow-step .btn{margin-top:10px}
+.narrative-brief-line{background:#f3f7ee;border:1px solid #dbe6d4;border-radius:14px;padding:17px 21px;margin-top:14px}
+.narrative-brief-line p{margin:6px 0;font-size:13px;line-height:1.8;color:#50634c}
+.narrative-brief .btn{margin-top:6px}
+.quick-card h3{margin:10px 0 6px}.quick-card p{margin:0 0 14px}
+.alert-link{margin-top:12px}
+.hero-side.ended strong{font-size:26px;letter-spacing:-.03em;line-height:1.35}
+.interview-day .btn{margin-left:6px}
+.cluster-index{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 18px}
+.cluster-index .filter-chip small{color:#95ad8e;margin-left:3px}
+.q-clusters{display:grid;gap:18px}
+.q-cluster{background:#f6f9f2;border:1px solid #e0e8dc;border-radius:18px;padding:18px 18px 16px;scroll-margin-top:90px}
+.q-cluster-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.q-cluster-head h3{margin:4px 0 4px;font-size:17px}
+.q-cluster-head p{margin:0;font-size:12px;line-height:1.8;color:#68796b}
+.q-cluster-meta{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+.q-cluster-links{margin:10px 0 12px}
+.q-cluster .q-list{margin-top:12px}
+.q-variants{border:1px dashed #c5d8bb;border-radius:14px;padding:12px;margin-top:12px;background:#fbfdf8}
+.q-variants-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11px;color:#68796b;margin-bottom:10px}
+.q-variant-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;align-items:start}
+.q-variant-grid .q-answer{margin:0 16px 16px 16px}
+.brief-refs{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.case-card,.glossary,.term-card,#bad-phrases{scroll-margin-top:90px}
+@media(max-width:560px){.q-cluster{padding:14px 12px}.q-cluster-head{flex-direction:column}.q-cluster-meta{justify-content:flex-start}.q-variants-head{flex-direction:column;align-items:flex-start}.q-variant-grid{grid-template-columns:1fr}}
+@media print{.q-cluster{break-inside:auto;background:white}.cluster-index,.related-row{display:none!important}}

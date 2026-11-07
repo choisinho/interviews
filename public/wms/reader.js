@@ -97,10 +97,21 @@ function createWmsReader({ source, guides, plates, root, escape }) {
       <nav class="wms-reader-toc" aria-label="연구 원문 목차"><details ${wide.matches ? 'open' : ''}>
         <summary>목차 · 전체 ${parts.length}부</summary><div class="wms-toc-body"><ol>${toc}</ol></div>
       </details><a class="wms-transcript-extra" data-wms-route href="#${route}/guide-12/speech">보충 발언 · 데이터 한마당 ↗</a></nav>
-      ${body}</div><div class="wms-reader-end"><a href="#${route}/full" data-wms-top>문서 처음으로 ↑</a></div>`;
+      ${allNotes()}${body}</div><div class="wms-reader-end"><a href="#${route}/full" data-wms-top>문서 처음으로 ↑</a></div>`;
   }
 
   const chapterUrl = i => '#' + route + '/guide-' + (i + 1);
+  // 가이드 주석(overview-data.js의 WMS_GUIDE_NOTES): 원고 본문은 그대로 두고 이후 정정만 보여 준다.
+  const noteItem = n => `<li><b>${escape(n.at)} · ${escape(n.title)}</b> ${escape(n.body)}</li>`;
+  function guideNotes(guide) {
+    const list = guide.notes || [];
+    return list.length ? `<aside class="wms-guide-notes" aria-label="가이드 주석"><h3>가이드 주석 · 이후 정정</h3>
+      <p>원고 본문은 대화 기록이라 그대로 두고, 면접에서 말할 때 바꿀 점만 적었어.</p><ul>${list.map(noteItem).join('')}</ul></aside>` : '';
+  }
+  function allNotes() {
+    const items = guides.flatMap((g, i) => (g.notes || []).map(n => `<li><a href="${chapterUrl(i)}" data-wms-route>제${i + 1}부</a> ${noteItem(n).slice(4)}`));
+    return items.length ? `<details class="wms-guide-notes wms-guide-notes-all"><summary>가이드 주석 ${items.length}건 · 원고를 읽기 전에 (이후 정정)</summary><ul>${items.join('')}</ul></details>` : '';
+  }
   function setRoute(anchor) {
     const found = /^wms-practice\/guide-(\d+)(?:\/(?:fig-\d+|contest|speech))?$/.exec(anchor);
     full = !!anchor && !found;
@@ -149,6 +160,7 @@ function createWmsReader({ source, guides, plates, root, escape }) {
           <header><div class="wms-guide-kicker">제${chapter + 1}부 · ${escape(guide.short)}</div>
           <h2 id="wms-guide-title" tabindex="-1">${escape(guide.headline)}</h2>
           <p>${escape(guide.intro)}</p></header>
+          ${guideNotes(guide)}
           ${wmsChapterFigure(chapter, guide, escape)}
           ${excerpts[chapter] ? `<aside class="wms-passage"><h3>원문에서</h3><blockquote>${excerpts[chapter]}</blockquote></aside>` : ''}
           <nav class="wms-plate-links" aria-label="이 부의 세부 도해">${topics.map(topic =>

@@ -21,7 +21,7 @@ const GRAD_ROUTES={
  project:{name:'개별연구과제',credits:24,output:'연구과제보고서 + 심사',label:'연구를 보고서로 완성',steps:['교과 9학점 · 지도교수 상담','교과 9학점 · 연구과제 설계','교과 6학점 · 지도·종합시험','보고서 작성·심사·최종 제출'],note:'지도교수가 보고서를 심사해. 공동지도교수가 있으면 2인이 심사해. 일반대학원 공식 근거는 24학점과 과제 심사이며, 별도 과제 6학점 수강을 필수로 추가하지 않았어.',checks:[['adviser','심사 전 1개 지도학기를 완료했다'],['eligibility','논문제출자격 조회의 모든 항목이 PASS다'],['project-review','개별연구과제보고서 심사에 합격했다'],['project-final','최종 PDF·인준지 업로드와 학과 제출서류를 완료했다']]},
  coursework:{name:'교과목이수학점',credits:30,output:'추가 교과목 이수',label:'논문·보고서 없이 학위 취득',steps:['교과 9학점','교과 9학점 · 방법 변경 신청','교과 6학점 · 종합시험','교과 6학점 · 졸업요건 조회'],note:'논문·개별연구보고서 제출과 그 심사는 없어. 다만 종합시험·영어·연구윤리·지정 선수과목은 그대로 필요해. 청구방법 신청·승인이 없으면 30학점을 채워도 이 방식의 졸업사정에서 제외돼.',checks:[['coursework-approval','교과목이수학점 방식의 신청·승인이 완료됐다'],['coursework-final','교과목이수학점 졸업요건 조회에서 최종 PASS를 확인했다']]}
 };
-state.graduationTrack=Object.hasOwn(GRAD_ROUTES,saved['graduation-route'])?saved['graduation-route']:'coursework';
+state.graduationTrack=Object.hasOwn(GRAD_ROUTES,saved['graduation-route'])?saved['graduation-route']:'thesis';
 function gradRef(...ids){return '<span class="graduation-refs">'+ids.map(id=>{const s=GRAD_SOURCES.find(x=>x[0]===id);return `<a href="${escape(s[2])}" target="_blank" rel="noopener noreferrer" title="${escape(s[1])}">${id} ↗</a>`}).join(' ')+'</span>'}
 function gradChecklist(){const r=GRAD_ROUTES[state.graduationTrack];return [
  ['registration','정규 4학기 이상 등록했다'],['credits-'+state.graduationTrack,`필수과목을 포함한 교과 ${r.credits}학점 이상과 평균 B0(3.0)를 충족했다`],
@@ -38,6 +38,7 @@ return `<div class="graduation-page">
 
 <section id="graduation-route"><div class="section-heading"><h2>01. 어떤 방식으로 졸업할까?</h2><span>선택하면 아래 일정·체크리스트가 바뀌어</span></div>
 <div class="graduation-route-grid" role="group" aria-label="졸업 경로 선택">${Object.entries(GRAD_ROUTES).map(([key,x])=>`<button class="graduation-route ${key===route?'selected':''}" data-grad-route="${key}" aria-pressed="${key===route}"><span class="overline">${escape(x.label)}</span><strong>${x.credits}<small>교과학점</small></strong><h3>${escape(x.name)}</h3><span>${escape(x.output)}</span><b>${key===route?'선택한 경로 ✓':'경로 살펴보기 →'}</b></button>`).join('')}</div>
+<p class="graduation-route-default"><b>면접 답변 기준:</b> 논문 24학점을 우선 목표로, 교과목이수 30학점은 방법 신청·승인 시 대안으로 말한다.</p>
 <div class="graduation-route-note" role="status"><strong>${escape(r.name)}</strong><p>${escape(r.note)} ${gradRef('G2','G5')}</p></div>
 <details class="graduation-details"><summary>24학점과 30학점을 정확히 구분하기</summary><p>논문 경로의 <b>교과 24학점 + 별도 논문·작품 6학점</b> 표기는 학칙 제29조①의 내용이야. 교과목 30학점 경로와는 다르며, 논문 6학점을 일반 수업 2과목으로 바꿔 계산하지 않아. 개별연구과제는 같은 조④와 안내책자에서 <b>24학점 + 보고서 심사</b>로 규정해. 특수대학원의 별도 연구과제 학점 규정을 이 학과에 적용하지 않았어. ${gradRef('G2','G5')}</p></details>
 <h3 class="graduation-subtitle">4학기 계획 예시 · ${escape(r.name)}</h3><div class="graduation-timeline">${r.steps.map((s,i)=>`<article><span>0${i+1} / ${i+1}학기</span><strong>${coursework?[9,9,6,6][i]:[9,9,6,0][i]}<small>교과학점</small></strong><p>${escape(s)}</p></article>`).join('')}</div>

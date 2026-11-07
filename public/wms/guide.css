@@ -67,3 +67,12 @@
   .wms-guides { display: block; }
   .wms-guide { padding: 0; border: 0; }
 }
+
+/* 가이드 주석(이후 정정) */
+.wms-guide-notes { margin: 1.1em 0; padding: .85em 1.1em; border-radius: 12px; background: #fbf1e4; border-left: 3px solid #c7a37c; color: #6d5840; font-size: .88em; line-height: 1.8; }
+.wms-guide-notes h3 { margin: 0 0 .2em; font-size: .95em; color: #725037; }
+.wms-guide-notes p { margin: 0 0 .4em; }
+.wms-guide-notes ul { margin: 0; padding-left: 1.1em; }
+.wms-guide-notes li { margin: .35em 0; word-break: keep-all; }
+.wms-guide-notes b { color: #5b4129; }
+.wms-guide-notes-all summary { cursor: pointer; font-weight: 700; color: #725037; }
