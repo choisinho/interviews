@@ -204,3 +204,53 @@
 .case-card,.glossary,.term-card,#bad-phrases{scroll-margin-top:90px}
 @media(max-width:560px){.q-cluster{padding:14px 12px}.q-cluster-head{flex-direction:column}.q-cluster-meta{justify-content:flex-start}.q-variants-head{flex-direction:column;align-items:flex-start}.q-variant-grid{grid-template-columns:1fr}}
 @media print{.q-cluster{break-inside:auto;background:white}.cluster-index,.related-row{display:none!important}}
+/* 입학 후 계획 그룹 (2c): 근거 수준 박스, 교육과정 전체 목록, 졸업 경로 요약, 학기 카드 현실 부담, 주간 시간예산, 장학·학비 흐름 */
+.course-evidence{margin-bottom:8px}.evidence-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:-8px 0 10px}.evidence-head small{font-size:12px;color:var(--muted)}
+.evidence-levels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}.evidence-level{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--paper)}.evidence-level p{margin:6px 0 0;font-size:12.5px;line-height:1.8;color:#4d5f52}.evidence-supply,.evidence-termLimit{background:#fbf6ec}
+.curr-intro .metrics span{border-color:var(--line)}.curr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}.curr-topic-head{margin-bottom:10px}.curr-topic-head h3{margin:4px 0}.curr-topic-head small{font-size:12px;color:var(--muted)}
+.curr-list{list-style:none;margin:0;padding:0;display:grid;gap:7px}.curr-course{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;font-size:13px;background:#fafaf6}.curr-course.opened{background:#f1f7ea;border-color:#cfe0c4}.curr-name{font-weight:650;color:#2d4535}
+.curr-badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#dcebd0;color:#365a3a}.curr-badge.muted{background:#eeeee8;color:#7b847d}.curr-desc{flex-basis:100%;font-size:12px;color:#5f6f63;line-height:1.7}
+.curr-exam-rule{margin-top:14px}.curr-exam{margin-top:12px}.curr-exam summary{cursor:pointer;font-weight:700;color:#7a5b33}
+.route-summary-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}.route-summary-head h3{margin:4px 0 0}
+.route-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.route-summary-item{text-align:left;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:14px;cursor:pointer;display:grid;gap:3px;font:inherit;color:inherit}.route-summary-item strong{font-size:28px;color:#2e523b}.route-summary-item strong small{font-size:11px;margin-left:4px;color:var(--muted)}.route-summary-item span{font-size:12px;color:var(--muted)}.route-summary-item.selected{border-color:#6b8f53;box-shadow:inset 0 0 0 1px #6b8f53;background:#f1f7ea}
+.burden{margin-top:12px;padding:11px 14px;border-radius:11px;background:#f6efe2;font-size:12px;line-height:1.75;color:#5f5444}.burden b{margin-right:8px;color:#7a5b33}.burden span{font-weight:700}.burden p{margin:4px 0 0}
+.time-budget{margin-top:14px}.time-budget-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}.time-budget-metrics>div{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:2px}.time-budget-metrics small,.time-budget-metrics span{font-size:12px;color:var(--muted)}.time-budget-metrics strong{font-size:20px;color:#2e523b}.time-budget-sub{margin:18px 0 8px}
+.table-scroll{overflow-x:auto}.link-card .pill-row{margin-top:10px}
+.money-step{margin:0 0 18px}.money-step-label{display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px;color:#2d4535;margin-bottom:10px}.money-step-label span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#172521;color:#d2edaa;font-size:12px}
+.money-table td{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.money-question{margin-top:12px;padding:14px 16px;border-left:3px solid #9b7848;background:#f4ecdb;border-radius:0 12px 12px 0;font-size:13px;line-height:1.8}.money-question blockquote{margin:8px 0;font-weight:650;color:#4f4433}
+@media(max-width:740px){.evidence-levels,.curr-grid,.route-summary-grid,.time-budget-metrics{grid-template-columns:1fr}}
+/* 근거·출처: 팩트 레지스트리, 출처(URL당 1개 + 별칭), 이후 정정 하위 항목 */
+.status.부분{background:#e6eef4;color:#4f6f86}.status.주의{background:#f6e2d6;color:#8c5a42}
+.notice-items{margin:8px 0 0;padding-left:18px}.notice-items li{margin:6px 0;line-height:1.8}
+.evidence-jumps{margin:0 0 6px}
+.registry-card{overflow-x:auto;padding:8px 14px}
+.registry-table{min-width:760px}.registry-table>tbody>tr>th{min-width:130px;color:#2e4534;font-size:12px;white-space:normal;line-height:1.6}
+.registry-table td{width:42%}
+.reg-item{padding:8px 0;border-top:1px dashed #e2e8df}.reg-item:first-child{border-top:0;padding-top:0}
+.reg-item p{margin:4px 0;color:#3f5144}.reg-head{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.reg-sub{font-size:11px;font-weight:800;color:#68836a}.reg-ref{font-size:11px;color:var(--muted)}
+.reg-dim{opacity:.42}.reg-none{color:var(--muted)}.reg-review{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px}
+.ref-chip{border:1px solid #cfdccb;background:#f4f8f0;color:#36573f;border-radius:6px;padding:0 5px;font:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.ref-chip:hover{background:#e2eedb}
+.source-aliases{font-size:11px;color:var(--muted);margin-bottom:6px}.source-aliases span{display:inline-block;margin-left:5px;padding:1px 6px;border-radius:6px;background:#eef3e8;color:#4a7246;font-weight:800}
+.source-record{padding:6px 0}.source-record+.source-record{border-top:1px dashed #e2e8df;margin-top:6px;padding-top:10px}
+.source-rec-id{display:inline-block;font-size:11px;font-weight:800;color:#607d91;margin-bottom:2px}.source-tools{margin:6px 0}
+/* 심층 보고서 프레이밍(예전 research-report.html의 표지·범례·부록 안내·콜로폰) */
+.dossier-cover{background:#172521;color:#edf6e6;border-radius:18px;padding:clamp(22px,4vw,40px);margin:0 0 16px}
+.dossier-cover .overline{color:#bde795}.dossier-toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center;font-size:12px;color:#c9d8c4;margin-bottom:18px}
+.dossier-toolbar strong{color:#fff}.dossier-hero{font-size:clamp(28px,4.4vw,46px);line-height:1.3;letter-spacing:-.045em;margin:8px 0 14px;color:#fff}.dossier-hero em{color:#d2edaa;font-style:normal}
+.dossier-lead{font-size:15px;line-height:1.85;max-width:62ch;color:#e2ecdd}.dossier-meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.dossier-meta span{border:1px solid #3d5a49;border-radius:20px;padding:4px 11px;font-size:12px}
+.dossier-sidenote{font-size:13px;color:#b9cbb4;line-height:1.8}.dossier-doctitle{font-size:12px;color:#b9cbb4;margin-top:10px}.dossier-doctitle span{display:inline-block;margin-right:8px;font-weight:800;color:#d2edaa}
+.dossier-legend-row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;margin:12px 0 16px}
+.dossier-legend{display:flex;flex-wrap:wrap;gap:8px}.dossier-legend span{font-size:12px;padding:5px 11px;border-radius:20px;background:#d9eed2;color:#4a7246;font-weight:700}.dossier-legend span.old{background:#e2eaf2;color:#607d91}.dossier-legend span.hypo{background:#f7e9d7;color:#9b764c}
+.dossier-evidence{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:#5e6d61;align-items:center}.dossier-evidence small{color:var(--muted)}
+.dossier-toc ol{margin:8px 0 0;padding-left:0;list-style:none;columns:2;column-gap:24px}.dossier-toc li{break-inside:avoid}
+.dossier-toc button,.archive-index button{background:none;border:0;padding:5px 0;text-align:left;font:inherit;font-size:13px;color:#2e4534;cursor:pointer;line-height:1.6}.dossier-toc button:hover,.archive-index button:hover{text-decoration:underline}
+.dossier-appendix{margin:28px 0 10px}.dossier-appendix h2{font-size:22px;margin:6px 0 8px}
+.dossier-annex{text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px;font:inherit}.dossier-annex span{font-size:12px;color:var(--muted)}
+.dossier-endnote{margin:22px 0 8px;padding:16px 19px;border-top:1px solid var(--line);font-size:13px;line-height:1.9;color:#50634c}
+.dossier-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:11px;letter-spacing:.06em;color:var(--muted);margin-bottom:18px}
+.archive-index{padding:12px 18px;margin:0 0 12px}.archive-index summary{cursor:pointer;font-weight:800;font-size:13px}.archive-index ol{list-style:none;padding:0;margin:8px 0 0;columns:2;column-gap:22px}
+.research-links{margin:0 0 16px}
+@media(max-width:740px){.dossier-toc ol,.archive-index ol{columns:1}}
+@media print{.dossier-cover{background:white;color:black;border:1px solid #ddd}.dossier-hero,.dossier-toolbar strong{color:black}.dossier-toc,.evidence-jumps,.research-links,.archive-index{display:none!important}}

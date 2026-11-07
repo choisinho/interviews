@@ -28,10 +28,10 @@ window.ATELIER_SCHOOLS.ajou = {
   "briefing": {"keys": ["scripts", "narrative", "badPhrases", "lastMinute"], "items": ["30초 핵심 문항 요약", "하지 않을 주장과 대체 표현", "면접 직전 확인 목록"]},
   "cases": {"keys": ["experiences", "terms"], "items": ["실무 경험 카드(비어 있으면 홍익대 준비 때 정리한 공유 경험을 표시)", "기술 용어 풀이"]},
   "research": {"keys": ["research"], "items": ["아주대 학과·연구실에 맞춘 연구질문", "비교 조건·평가지표·실험 단계", "연구 범위 안/밖"]},
-  "coursebook": {"keys": ["actualCourses", "coursePlans", "courseEvidence"], "items": ["실제 개설 교과목과 시간표", "추천 수강조합과 시간 충돌 계산", "교과목 근거 수준"]},
+  "coursebook": {"keys": ["actualCourses", "coursePlans", "courseEvidence", "curriculum"], "items": ["실제 개설 교과목과 시간표", "추천 수강조합과 시간 충돌 계산", "교과목 근거 수준", "교육과정 전체 과목과 실제 개설 여부"]},
   "graduation": {"keys": [], "items": ["학위청구 방법(논문·비논문 등)", "학점·시험·연구윤리 요건", "졸업 체크리스트와 원문 출처"]},
-  "roadmap": {"keys": ["semesters", "week"], "items": ["4학기 학업·연구 시뮬레이션", "학기별 과목·산출물", "직장 병행 생활 리듬"]},
-  "facts": {"keys": ["facts", "factAudit", "sources", "alerts"], "items": ["아주대 공식 출처 목록", "팩트 레지스트리와 상태", "주의할 공지"]},
+  "roadmap": {"keys": ["semesters", "week"], "items": ["4학기 학업·연구 시뮬레이션", "학기별 과목·산출물·현실 부담", "직장 병행 생활 리듬과 주간 시간예산"]},
+  "facts": {"keys": ["facts", "sources", "alerts", "notices", "revisions"], "items": ["아주대 공식 출처 목록(URL당 1개, 별칭 번호)", "주제별 팩트 레지스트리와 상태", "주의할 공지", "정정 기록"]},
   "archive": {"keys": ["planHTML", "archiveHTML"], "items": ["제출 학업계획서 원문", "아주대 조사 기록 원문"]},
   "home": {"keys": ["narrative", "alerts", "practice"], "items": ["면접일 D-day", "핵심 이야기 한 줄", "면접 직전 7일 체크"]}
  }
@@ -55,7 +55,8 @@ window.ATELIER_SCHOOLS.ajou = {
   "layers": [],
   "conditions": [],
   "metrics": [],
-  "method": []
+  "method": [],
+  "links": []
  },
  "archiveHTML": "",
  "planHTML": "",
@@ -66,14 +67,70 @@ window.ATELIER_SCHOOLS.ajou = {
  "alerts": [],
  "dossierHTML": "",
  "version": "",
- "factAudit": [],
  "lastMinute": [],
  "badPhrases": [],
  "feasibility": {
   "checkedAt": "",
   "rows": [],
   "scenarios": [],
-  "unanswered": []
+  "unanswered": [],
+  "notes": {
+   "overall": {
+    "label": "",
+    "lines": [],
+    "body": ""
+   },
+   "burden": {
+    "title": "",
+    "sub": "",
+    "summary": "",
+    "basis": ""
+   },
+   "timeBudget": "",
+   "timeBudgetMoved": "",
+   "interview": {
+    "title": "",
+    "body": ""
+   }
+  },
+  "money": {
+   "title": "",
+   "sub": "",
+   "ruleRows": [],
+   "amountRow": null,
+   "unanswered": [],
+   "rule": {
+    "label": "",
+    "title": "",
+    "body": "",
+    "refs": []
+   },
+   "budgetTitle": "",
+   "budgetLead": "",
+   "budgetNote": "",
+   "budgetSource": "",
+   "amount": {
+    "label": "",
+    "title": "",
+    "body": "",
+    "note": "",
+    "refs": []
+   },
+   "question": {
+    "source": "",
+    "conflict": "",
+    "text": ""
+   }
+  },
+  "weekTable": {
+   "row": null,
+   "metrics": [],
+   "title": "",
+   "source": "",
+   "head": [],
+   "rows": [],
+   "calc": ""
+  }
  },
  "actualCourses": [],
  "courseEvidence": {
@@ -83,7 +140,21 @@ window.ATELIER_SCHOOLS.ajou = {
   "first": "",
   "second": "",
   "termLimit": "",
-  "supply": ""
+  "supply": "",
+  "summary": "",
+  "levelLabels": {
+   "first": "",
+   "second": "",
+   "termLimit": "",
+   "supply": ""
+  },
+  "terms": [],
+  "creditStat": {
+   "label": "",
+   "value": "",
+   "note": ""
+  },
+  "planNote": ""
  },
  "coursePlans": [],
  "studyNotesVersion": "",
@@ -101,6 +172,56 @@ window.ATELIER_SCHOOLS.ajou = {
   "detail": {"label": "", "go": ""}
  },
  "followupClusters": [],
- "revisions": []
+ "revisions": [],
+ "dossierFrame": {
+  "docTitle": "",
+  "eyebrow": "",
+  "heroLead": "",
+  "heroEm": "",
+  "lead": "",
+  "meta": [],
+  "sidenote": "",
+  "toolbarTitle": "",
+  "toolbarSub": "",
+  "printLabel": "",
+  "readFirstLabel": "",
+  "readFirst": "",
+  "legend": [],
+  "evidenceTitle": "",
+  "evidenceKeys": [],
+  "checkedAt": "",
+  "tocLabel": "",
+  "appendixNav": "",
+  "appendixPart": "",
+  "appendixTitle": "",
+  "appendixExplainer": "",
+  "appendix": [],
+  "appendixNote": "",
+  "colophonLabel": "",
+  "colophon": "",
+  "footer": [],
+  "codeLegendTitle": "",
+  "codeLegendNote": "",
+  "localCodes": []
+ },
+ "curriculum": {
+  "title": "",
+  "basis": "",
+  "lead": "",
+  "format": "",
+  "matchNote": "",
+  "outsideLabel": "",
+  "topicSource": "",
+  "topics": [],
+  "descriptions": [],
+  "descSource": "",
+  "exam": {
+   "summary": "",
+   "lead": "",
+   "tag": "",
+   "rule": "",
+   "source": ""
+  }
+ }
 }
 };

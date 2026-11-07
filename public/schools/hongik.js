@@ -553,7 +553,12 @@ window.ATELIER_SCHOOLS.hongik = {
     "군 자료와 완전히 독립된 모사 사례 2~3개 구성"
    ],
    "deliver": "문제정의서 1쪽 + 선행연구 표 + 모사 사례",
-   "caveat": "2026년 1학기 실편성에 근거한 '연구설계 우선' 예시. 국방소프트웨어관리도 화 19~22시여서 연구방법론과 동시 수강 불가. 2027 재개설 미확정."
+   "caveat": "2026년 1학기 실편성에 근거한 '연구설계 우선' 예시. 국방소프트웨어관리도 화 19~22시여서 연구방법론과 동시 수강 불가. 2027 재개설 미확정.",
+   "burden": {
+    "term": "2027-1",
+    "credits": "9학점",
+    "tasks": "AI·데이터 기초, 정보보호, 지도교수 면담 및 연구질문 1쪽"
+   }
   },
   {
    "phase": "2학기",
@@ -573,7 +578,12 @@ window.ATELIER_SCHOOLS.hongik = {
     "필요시 타과전공 0~1과목 가능성 검토"
    ],
    "deliver": "실험설계서 + 모사 데이터셋 v1 + 평가 체크리스트",
-   "caveat": "2026년 2학기 캡처 기준의 예시(학과 필터 미선택 주의). 공급사슬관리 직접 과목의 2026 실개설은 확인되지 않음. 2027 재편성 미확정. 계획서의 군수·물류 과목 약속: 2026 편성 기준 후보는 AI 기반 의사결정 및 최적화 모델(화 19~22, 국방 AI기술 응용과 택1)과 국방경제학(수 18~21)이다. 공급사슬관리·국방기획론은 2026 시간표에 없다."
+   "caveat": "2026년 2학기 캡처 기준의 예시(학과 필터 미선택 주의). 공급사슬관리 직접 과목의 2026 실개설은 확인되지 않음. 2027 재편성 미확정. 계획서의 군수·물류 과목 약속: 2026 편성 기준 후보는 AI 기반 의사결정 및 최적화 모델(화 19~22, 국방 AI기술 응용과 택1)과 국방경제학(수 18~21)이다. 공급사슬관리·국방기획론은 2026 시간표에 없다.",
+   "burden": {
+    "term": "2027-2",
+    "credits": "9학점",
+    "tasks": "합성 코드·DB·로그 구축, 평가용 장애유형 정리, 검색기준선"
+   }
   },
   {
    "phase": "3학기",
@@ -592,7 +602,12 @@ window.ATELIER_SCHOOLS.hongik = {
     "필요한 학위시험·연구윤리·학위청구 요건 준비"
    ],
    "deliver": "실험 결과표 + 실패사례 분석 + 보고서 초안",
-   "caveat": "2026년 개설 학기 반복을 가정하면 화·수 6학점이며 1·2학기 수강 과목과 중복되지 않음. 2028 실제 편성·학과 학점요건 미확정."
+   "caveat": "2026년 개설 학기 반복을 가정하면 화·수 6학점이며 1·2학기 수강 과목과 중복되지 않음. 2028 실제 편성·학과 학점요건 미확정.",
+   "burden": {
+    "term": "2028-1",
+    "credits": "6학점",
+    "tasks": "논문 목표라면 누적 24학점 완료, 종합시험·외국어시험·RAG 비교평가"
+   }
   },
   {
    "phase": "4학기",
@@ -611,405 +626,1024 @@ window.ATELIER_SCHOOLS.hongik = {
     "업무자료 반출 없는 연구결과 및 인수인계 템플릿 정리"
    ],
    "deliver": "학위 산출물 + 인수인계·장애기록 템플릿",
-   "caveat": "2026.9.1 국방AI 현황표에서 세 방식 모두 허용 확인. 논문·과제는 교과24학점과 심사, 교과목이수는 30학점 및 공통요건. 개인 승인과 2027~2028 개설은 별도. 4학기 0학점은 추가 교과수강의 예시이며 등록 면제가 아니다."
+   "caveat": "2026.9.1 국방AI 현황표에서 세 방식 모두 허용 확인. 논문·과제는 교과24학점과 심사, 교과목이수는 30학점 및 공통요건. 개인 승인과 2027~2028 개설은 별도. 4학기 0학점은 추가 교과수강의 예시이며 등록 면제가 아니다.",
+   "burden": {
+    "term": "2028-2",
+    "credits": "논문 0학점(추가 수강 없음) / 교과목이수 6학점",
+    "tasks": "논문 경로: 심사·근거검증·오류분석 / 교과목이수 경로: 잔여 2과목·졸업요건 조회. 졸업과 현장 도입은 별개"
+   }
   }
  ],
  "sources": [
   {
    "id": "S1",
-   "name": "2027학년도 전기 대학원 신입생 모집 (군위탁 포함)",
    "url": "https://www.hongik.ac.kr/kr/admission/notice-military.do?article.offset=0&articleLimit=10&articleNo=157298&mode=view",
-   "what": "2027 전기 모집 공지: 세종 면접 11/7. 구체사항 11/5 예정과 학과별 면접 시작시각 11/6 예정은 서로 다른 공지 단계.",
-   "kind": "공식",
-   "date": "2026.09.18"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S1",
+     "name": "2027학년도 전기 대학원 신입생 모집 (군위탁 포함)",
+     "what": "2027 전기 모집 공지: 세종 면접 11/7. 구체사항 11/5 예정과 학과별 면접 시작시각 11/6 예정은 서로 다른 공지 단계.",
+     "kind": "공식",
+     "date": "2026.09.18",
+     "dossierCode": "S01"
+    }
+   ]
   },
   {
    "id": "S2",
-   "name": "2027학년도 전기 대학원 신입생 모집 안내",
    "url": "https://www.hongik.ac.kr/kr/newscenter/notice.do?articleNo=157416&mode=view&noCat=381",
-   "what": "세종 대면 구술면접 2026-11-07",
-   "kind": "공식",
-   "date": "2026.09.21"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S2",
+     "name": "2027학년도 전기 대학원 신입생 모집 안내",
+     "what": "세종 대면 구술면접 2026-11-07",
+     "kind": "공식",
+     "date": "2026.09.21"
+    }
+   ]
   },
   {
    "id": "S3",
-   "name": "국방AI융합학과 공식 교육과정",
    "url": "https://gbai.hongik.ac.kr/gbai/0401.do",
-   "what": "교육과정 목록 (동적 사이트라 표시된 과목은 추가 학기별 확인 필요)",
-   "kind": "공식",
-   "date": "상시"
+   "aliases": [
+    "G10"
+   ],
+   "records": [
+    {
+     "id": "S3",
+     "name": "국방AI융합학과 공식 교육과정",
+     "what": "교육과정 목록 (동적 사이트라 표시된 과목은 추가 학기별 확인 필요)",
+     "kind": "공식",
+     "date": "상시",
+     "dossierCode": "S06"
+    },
+    {
+     "id": "G10",
+     "name": "국방AI융합학과 교육과정",
+     "what": "학과 공개 교육과정 · 개인별 선수 지정 및 졸업학기 공지와 구별",
+     "kind": "졸업요건 원문",
+     "date": "확인 2026.11.02",
+     "gradName": "국방AI융합학과 교육과정",
+     "gradNote": "학과 공개 교육과정 · 개인별 선수 지정 및 졸업학기 공지와 구별"
+    }
+   ]
   },
   {
    "id": "S4",
-   "name": "2026학년도 1학기 대학원 수강 안내",
    "url": "https://www.hongik.ac.kr/kr/newscenter/notice.do?articleNo=147598&mode=view",
-   "what": "대면 원칙·군위탁 예외, 주간 석사 6~9학점, 타과 9학점, 학위 조건",
-   "kind": "공식",
-   "date": "2026.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S4",
+     "name": "2026학년도 1학기 대학원 수강 안내",
+     "what": "대면 원칙·군위탁 예외, 주간 석사 6~9학점, 타과 9학점, 학위 조건",
+     "kind": "공식",
+     "date": "2026.02",
+     "dossierCode": "S02"
+    }
+   ]
   },
   {
    "id": "S5",
-   "name": "2026학년도 2학기 대학원 수강신청 정정 안내",
    "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=155808&mode=view",
-   "what": "타과 전공 총 9학점 등 운영 규정 재확인",
-   "kind": "공식",
-   "date": "2026.08"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S5",
+     "name": "2026학년도 2학기 대학원 수강신청 정정 안내",
+     "what": "타과 전공 총 9학점 등 운영 규정 재확인",
+     "kind": "공식",
+     "date": "2026.08"
+    }
+   ]
   },
   {
    "id": "S6",
-   "name": "석사학위청구 교과목이수 안내",
    "url": "https://grad00.hongik.ac.kr/common_pdf/guide06_06.pdf",
-   "what": "학교 공통 24/30학점 안내. 국방AI 허용은 별도 최신 현황표 G1에서 확인",
-   "kind": "공식",
-   "date": "안내자료"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S6",
+     "name": "석사학위청구 교과목이수 안내",
+     "what": "학교 공통 24/30학점 안내. 국방AI 허용은 별도 최신 현황표 G1에서 확인",
+     "kind": "공식",
+     "date": "안내자료",
+     "dossierCode": "S03"
+    }
+   ]
   },
   {
    "id": "S7",
-   "name": "국방AI융합학과 설립 소개",
    "url": "https://gbai.hongik.ac.kr/gbai/0301.do?articleNo=119562&mode=view",
-   "what": "2025년 신설과 군 재직자 대상 과정 방향, 취학추천 장학 관련 소개",
-   "kind": "공식",
-   "date": "2024.10.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S7",
+     "name": "국방AI융합학과 설립 소개",
+     "what": "2025년 신설과 군 재직자 대상 과정 방향, 취학추천 장학 관련 소개",
+     "kind": "공식",
+     "date": "2024.10.02"
+    }
+   ]
   },
   {
    "id": "S8",
-   "name": "국방AI융합학과 공식 사이트",
    "url": "https://gbai.hongik.ac.kr/gbai/index.do",
-   "what": "학과/교수진/공지/교육과정 최신 공지 확인",
-   "kind": "공식",
-   "date": "상시"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S8",
+     "name": "국방AI융합학과 공식 사이트",
+     "what": "학과/교수진/공지/교육과정 최신 공지 확인",
+     "kind": "공식",
+     "date": "상시"
+    }
+   ]
   },
   {
    "id": "S9",
-   "name": "학과 AI 활용 윤리 가이드라인",
    "url": "https://gbai.hongik.ac.kr/gbai/0301.do?articleNo=156353&mode=view",
-   "what": "AI 이용 연구의 윤리·저작권·책임성 확인 출발점",
-   "kind": "공식",
-   "date": "2026.09.04"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S9",
+     "name": "학과 AI 활용 윤리 가이드라인",
+     "what": "AI 이용 연구의 윤리·저작권·책임성 확인 출발점",
+     "kind": "공식",
+     "date": "2026.09.04",
+     "dossierCode": "S07"
+    }
+   ]
   },
   {
    "id": "S10",
-   "name": "졸업자격시험 공식 안내",
    "url": "https://www.hongik.ac.kr/kr/education/graduation-examination.do",
-   "what": "종합시험·외국어시험 및 자격요건",
-   "kind": "학교 공식",
-   "date": "상시"
+   "aliases": [
+    "F-EXAM",
+    "G6"
+   ],
+   "records": [
+    {
+     "id": "S10",
+     "name": "졸업자격시험 공식 안내",
+     "what": "종합시험·외국어시험 및 자격요건",
+     "kind": "학교 공식",
+     "date": "상시"
+    },
+    {
+     "id": "F-EXAM",
+     "name": "홍익대 졸업자격시험(종합/외국어)",
+     "what": "종합시험 3학기·18학점·2과목, 외국어시험 대체 기준",
+     "kind": "공식·현재 공개",
+     "date": "웹 확인 2026.11.01"
+    },
+    {
+     "id": "G6",
+     "name": "졸업자격시험·학과별 외국어과목",
+     "what": "종합2과목, 국방AI 한국인 영어",
+     "kind": "공식 원문 직접 확인",
+     "date": "확인 2026.11.02",
+     "gradName": "졸업자격시험 공식 학사안내",
+     "gradNote": "종합시험·영어 대체점수·석사과목확인 PDF"
+    }
+   ]
   },
   {
    "id": "S11",
-   "name": "지도교수 신청 안내(2026-1)",
    "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=148909&mode=view",
-   "what": "신청 시기·제도 사례, 2027은 별도 공지",
-   "kind": "학교 공식",
-   "date": "2026.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S11",
+     "name": "지도교수 신청 안내(2026-1)",
+     "what": "신청 시기·제도 사례, 2027은 별도 공지",
+     "kind": "학교 공식",
+     "date": "2026.02"
+    }
+   ]
   },
   {
    "id": "S12",
-   "name": "석사학위청구방법 신청 안내(2026-1)",
    "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=148916&mode=view",
-   "what": "학교 공통 방식과 학과 허용 여부 구별",
-   "kind": "학교 공식",
-   "date": "2026.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S12",
+     "name": "석사학위청구방법 신청 안내(2026-1)",
+     "what": "학교 공통 방식과 학과 허용 여부 구별",
+     "kind": "학교 공식",
+     "date": "2026.02"
+    }
+   ]
   },
   {
    "id": "S13",
-   "name": "군 위탁교육 관리 훈령",
    "url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000236998",
-   "what": "취학추천 행정규정. 적용 현행판 별도 확인",
-   "kind": "국가법령정보센터",
-   "date": "공개본"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S13",
+     "name": "군 위탁교육 관리 훈령",
+     "what": "취학추천 행정규정. 적용 현행판 별도 확인",
+     "kind": "국가법령정보센터",
+     "date": "공개본"
+    }
+   ]
   },
   {
    "id": "S14",
-   "name": "국방AI융합학과 신설 보도",
    "url": "https://www.hongik.ac.kr/kr/newscenter/news.do?articleNo=134371&mode=view",
-   "what": "2025년 신설, 국방AI 융합교육 방향",
-   "kind": "학교 공식",
-   "date": "2025.04"
+   "aliases": [],
+   "records": [
+    {
+     "id": "S14",
+     "name": "국방AI융합학과 신설 보도",
+     "what": "2025년 신설, 국방AI 융합교육 방향",
+     "kind": "학교 공식",
+     "date": "2025.04",
+     "dossierCode": "S04"
+    }
+   ]
   },
   {
    "id": "S15",
-   "name": "국방일보 학교·학과 소개",
-   "what": "국방AI융합학과의 융합영역, Webex·야간 운영 소개사례, 50% 감면 안내를 다룬 언론 기사. 2026.10.31 심층 보고서의 출처 S05. 학교 공지·학칙보다 근거 수준이 낮은 소개 기사",
-   "kind": "언론 보도",
-   "date": "2025.12.08",
-   "url": "https://kookbang.dema.mil.kr/newsWeb/m/20251209/1/ATCE_CTGR_0010010000/view.do"
+   "url": "https://kookbang.dema.mil.kr/newsWeb/m/20251209/1/ATCE_CTGR_0010010000/view.do",
+   "aliases": [],
+   "records": [
+    {
+     "id": "S15",
+     "name": "국방일보 학교·학과 소개",
+     "what": "국방AI융합학과의 융합영역, Webex·야간 운영 소개사례, 50% 감면 안내를 다룬 언론 기사. 2026.10.31 심층 보고서의 출처 S05. 학교 공지·학칙보다 근거 수준이 낮은 소개 기사",
+     "kind": "언론 보도",
+     "date": "2025.12.08",
+     "dossierCode": "S05"
+    }
+   ]
   },
   {
    "id": "R01",
-   "name": "Lewis 외 — RAG",
    "url": "https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
-   "what": "검색과 생성의 결합 모델",
-   "kind": "NeurIPS",
-   "date": "2020"
+   "aliases": [],
+   "records": [
+    {
+     "id": "R01",
+     "name": "Lewis 외 — RAG",
+     "what": "검색과 생성의 결합 모델",
+     "kind": "NeurIPS",
+     "date": "2020",
+     "dossierCode": "R01"
+    }
+   ]
   },
   {
    "id": "R02",
-   "name": "Self-RAG",
    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html",
-   "what": "검색 필요성 및 근거 성찰",
-   "kind": "ICLR",
-   "date": "2024"
+   "aliases": [],
+   "records": [
+    {
+     "id": "R02",
+     "name": "Self-RAG",
+     "what": "검색 필요성 및 근거 성찰",
+     "kind": "ICLR",
+     "date": "2024"
+    }
+   ]
   },
   {
    "id": "R03",
-   "name": "ReAct",
    "url": "https://mlanthology.org/iclr/2023/yao2023iclr-react/",
-   "what": "추론과 도구 사용 연결",
-   "kind": "ICLR",
-   "date": "2023"
+   "aliases": [],
+   "records": [
+    {
+     "id": "R03",
+     "name": "ReAct",
+     "what": "추론과 도구 사용 연결",
+     "kind": "ICLR",
+     "date": "2023"
+    }
+   ]
   },
   {
    "id": "R04",
-   "name": "Think-Search-Patch",
    "url": "https://aclanthology.org/2025.emnlp-industry.109/",
-   "what": "저장소 단위 코드 검색 후 수리 연구",
-   "kind": "EMNLP",
-   "date": "2025"
+   "aliases": [],
+   "records": [
+    {
+     "id": "R04",
+     "name": "Think-Search-Patch",
+     "what": "저장소 단위 코드 검색 후 수리 연구",
+     "kind": "EMNLP",
+     "date": "2025"
+    }
+   ]
   },
   {
    "id": "R05",
-   "name": "NIST 생성형 AI 위험관리 프로파일",
    "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
-   "what": "안전·신뢰성·거버넌스",
-   "kind": "NIST",
-   "date": "2024"
+   "aliases": [],
+   "records": [
+    {
+     "id": "R05",
+     "name": "NIST 생성형 AI 위험관리 프로파일",
+     "what": "안전·신뢰성·거버넌스",
+     "kind": "NIST",
+     "date": "2024",
+     "dossierCode": "R04"
+    }
+   ]
   },
   {
    "id": "R06",
-   "name": "OWASP LLM Top 10",
    "url": "https://genai.owasp.org/llm-top-10/",
-   "what": "인젝션·자료유출·권한 문제",
-   "kind": "OWASP",
-   "date": "2025"
+   "aliases": [
+    "F-SEC"
+   ],
+   "records": [
+    {
+     "id": "R06",
+     "name": "OWASP LLM Top 10",
+     "what": "인젝션·자료유출·권한 문제",
+     "kind": "OWASP",
+     "date": "2025",
+     "dossierCode": "R03"
+    },
+    {
+     "id": "F-SEC",
+     "name": "OWASP LLM 2025·연구자료 반출 주의",
+     "what": "생성형 AI에서 민감정보 유출·권한 위험의 일반적 보안 근거. 군 내부 규정을 대체하지 않음",
+     "kind": "일반 원칙",
+     "date": "2025"
+    }
+   ]
   },
   {
    "id": "R07",
-   "name": "RAGAS 평가 프레임워크",
    "url": "https://arxiv.org/abs/2309.15217",
-   "what": "검색·생성 답변·근거충실성 평가",
-   "kind": "학술논문",
-   "date": "2023"
+   "aliases": [],
+   "records": [
+    {
+     "id": "R07",
+     "name": "RAGAS 평가 프레임워크",
+     "what": "검색·생성 답변·근거충실성 평가",
+     "kind": "학술논문",
+     "date": "2023",
+     "dossierCode": "R02"
+    }
+   ]
   },
   {
    "id": "S16",
-   "name": "2026학년도 2학기 종합시험 안내",
    "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154826&mode=view",
-   "what": "일반대학원 석사 종합시험: 주간 3학기 이상·18학점 이상·선수과목·평균 B0 이상 등",
-   "kind": "학교 공식",
-   "date": "2026.08"
+   "aliases": [
+    "G12"
+   ],
+   "records": [
+    {
+     "id": "S16",
+     "name": "2026학년도 2학기 종합시험 안내",
+     "what": "일반대학원 석사 종합시험: 주간 3학기 이상·18학점 이상·선수과목·평균 B0 이상 등",
+     "kind": "학교 공식",
+     "date": "2026.08"
+    },
+    {
+     "id": "G12",
+     "name": "2026-2 종합시험 안내",
+     "what": "신청·시험 공통요건 · 해당 학기 응시과목은 클래스넷 조회",
+     "kind": "졸업요건 원문",
+     "date": "확인 2026.11.02",
+     "gradName": "2026-2 종합시험 안내",
+     "gradNote": "신청·시험 공통요건 · 해당 학기 응시과목은 클래스넷 조회",
+     "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154826&mode=view&noCat=377"
+    }
+   ]
   },
   {
    "id": "F-SCH",
-   "name": "홍익대 대학원 장학금안내",
    "url": "https://www.hongik.ac.kr/kr/education/scholarship-guide.do",
-   "what": "현역군인장학금 20%/학군협약 취학추천 50% 등 자격조건",
-   "kind": "공식·현재 공개",
-   "date": "웹 확인 2026.11.01"
+   "aliases": [],
+   "records": [
+    {
+     "id": "F-SCH",
+     "name": "홍익대 대학원 장학금안내",
+     "what": "현역군인장학금 20%/학군협약 취학추천 50% 등 자격조건",
+     "kind": "공식·현재 공개",
+     "date": "웹 확인 2026.11.01"
+    }
+   ]
   },
   {
    "id": "F-SCHA",
-   "name": "홍익대 대학원 장학금신청방법",
    "url": "https://www.hongik.ac.kr/kr/education/how-to.do",
-   "what": "장학 신청 시기와 신청서·복무 확인서 안내",
-   "kind": "공식·현재 공개",
-   "date": "웹 확인 2026.11.01"
+   "aliases": [],
+   "records": [
+    {
+     "id": "F-SCHA",
+     "name": "홍익대 대학원 장학금신청방법",
+     "what": "장학 신청 시기와 신청서·복무 확인서 안내",
+     "kind": "공식·현재 공개",
+     "date": "웹 확인 2026.11.01"
+    }
+   ]
   },
   {
    "id": "F-TUITION",
-   "name": "홍익대 대학원 입학 FAQ · 등록금",
    "url": "https://www.hongik.ac.kr/kr/admission/faq-admission.do",
-   "what": "2026 한 학기 등록금표는 이미지 형태. 이번 조회에서 세부 수업료 직접 검증 제한",
-   "kind": "공식·부분확인",
-   "date": "웹 확인 2026.11.01"
-  },
-  {
-   "id": "F-SEC",
-   "name": "OWASP LLM 2025·연구자료 반출 주의",
-   "url": "https://genai.owasp.org/llm-top-10/",
-   "what": "생성형 AI에서 민감정보 유출·권한 위험의 일반적 보안 근거. 군 내부 규정을 대체하지 않음",
-   "kind": "일반 원칙",
-   "date": "2025"
-  },
-  {
-   "id": "F-EXAM",
-   "name": "홍익대 졸업자격시험(종합/외국어)",
-   "url": "https://www.hongik.ac.kr/kr/education/graduation-examination.do",
-   "what": "종합시험 3학기·18학점·2과목, 외국어시험 대체 기준",
-   "kind": "공식·현재 공개",
-   "date": "웹 확인 2026.11.01"
+   "aliases": [],
+   "records": [
+    {
+     "id": "F-TUITION",
+     "name": "홍익대 대학원 입학 FAQ · 등록금",
+     "what": "2026 한 학기 등록금표는 이미지 형태. 이번 조회에서 세부 수업료 직접 검증 제한",
+     "kind": "공식·부분확인",
+     "date": "웹 확인 2026.11.01"
+    }
+   ]
   },
   {
    "id": "F-ADMISSION",
-   "name": "홍익대 대학원 입시캘린더",
    "url": "https://www.hongik.ac.kr/kr/admission/entrance-exam-calender.do",
-   "what": "2026.11.07 세종 면접, 2026.12.07 발표 예정",
-   "kind": "공식",
-   "date": "2026.11.01"
+   "aliases": [],
+   "records": [
+    {
+     "id": "F-ADMISSION",
+     "name": "홍익대 대학원 입시캘린더",
+     "what": "2026.11.07 세종 면접, 2026.12.07 발표 예정",
+     "kind": "공식",
+     "date": "2026.11.01"
+    }
+   ]
   },
   {
    "id": "T26-A",
-   "name": "2026-1 홍익대 대학원 시간표(지원자 제공 화면)",
    "url": "https://cn.hongik.ac.kr/grad/ex/time",
-   "what": "2026년 1학기 세종 국방AI융합학과(주간) 필터 11과목·요일/교시·3학점, 2026.11.01 화면 캡처",
-   "kind": "학교 조회 화면 캡처",
-   "date": "2026.11.01"
-  },
-  {
-   "id": "T26-B",
-   "name": "2026-2 홍익대 대학원 시간표(지원자 제공 화면)",
-   "url": "https://cn.hongik.ac.kr/grad/ex/time",
-   "what": "2026년 2학기 12과목·요일/교시·3학점, 필터 선택 상태 불명확",
-   "kind": "학교 조회 화면 캡처·학과 귀속 주의",
-   "date": "2026.11.01"
+   "aliases": [
+    "T26-B"
+   ],
+   "records": [
+    {
+     "id": "T26-A",
+     "name": "2026-1 홍익대 대학원 시간표(지원자 제공 화면)",
+     "what": "2026년 1학기 세종 국방AI융합학과(주간) 필터 11과목·요일/교시·3학점, 2026.11.01 화면 캡처",
+     "kind": "학교 조회 화면 캡처",
+     "date": "2026.11.01"
+    },
+    {
+     "id": "T26-B",
+     "name": "2026-2 홍익대 대학원 시간표(지원자 제공 화면)",
+     "what": "2026년 2학기 12과목·요일/교시·3학점, 필터 선택 상태 불명확",
+     "kind": "학교 조회 화면 캡처·학과 귀속 주의",
+     "date": "2026.11.01"
+    }
+   ]
   },
   {
    "id": "T25-F",
-   "name": "2025-2 홍익대 겸초빙교원 채용표",
    "url": "https://applicant.hongik.ac.kr/pdf/202525/202525_chobing.pdf",
-   "what": "국방AI융합학과 담당예정 과목에 데이터사이언스·국방소프트웨어관리 등 표기. 실제 수업내용/진행 여부의 근거는 아님",
-   "kind": "공식 대학 채용자료",
-   "date": "2025"
+   "aliases": [],
+   "records": [
+    {
+     "id": "T25-F",
+     "name": "2025-2 홍익대 겸초빙교원 채용표",
+     "what": "국방AI융합학과 담당예정 과목에 데이터사이언스·국방소프트웨어관리 등 표기. 실제 수업내용/진행 여부의 근거는 아님",
+     "kind": "공식 대학 채용자료",
+     "date": "2025"
+    }
+   ]
   },
   {
    "id": "G1",
-   "name": "국방AI 학위청구방법 허용표",
    "url": "https://ibook.hongik.ac.kr/Viewer/SKHSIBY3H5QR",
-   "what": "2/2쪽 세 방식 모두 ○, 승인 조건",
-   "kind": "공식 원문 직접 확인",
-   "date": "확인 2026.11.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "G1",
+     "name": "국방AI 학위청구방법 허용표",
+     "what": "2/2쪽 세 방식 모두 ○, 승인 조건",
+     "kind": "공식 원문 직접 확인",
+     "date": "확인 2026.11.02",
+     "gradName": "학과별 석사학위청구방법 현황",
+     "gradNote": "2/2쪽 · 국방AI융합학과 ○/○/○ · 2026.9.1 기준"
+    }
+   ]
   },
   {
    "id": "G2",
-   "name": "일반대학원 학칙",
    "url": "https://www.hongik.ac.kr/kr/introduction/regulations-book.do?mode=list&srCategoryId=111",
-   "what": "제29조 등 학위별 학점과 요건",
-   "kind": "공식 원문 직접 확인",
-   "date": "확인 2026.11.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "G2",
+     "name": "일반대학원 학칙",
+     "what": "제29조 등 학위별 학점과 요건",
+     "kind": "공식 원문 직접 확인",
+     "date": "확인 2026.11.02",
+     "gradName": "일반대학원 학칙",
+     "gradNote": "제12·13·18·20·22·24·29~35조 · 기간·학점·학위"
+    }
+   ]
   },
   {
    "id": "G4",
-   "name": "2026-2 석사학위청구방법 신청",
    "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=155587&mode=view",
-   "what": "2차부터 방법 신청·승인",
-   "kind": "공식 원문 직접 확인",
-   "date": "확인 2026.11.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "G4",
+     "name": "2026-2 석사학위청구방법 신청",
+     "what": "2차부터 방법 신청·승인",
+     "kind": "공식 원문 직접 확인",
+     "date": "확인 2026.11.02",
+     "gradName": "2026-2 석사학위청구방법 신청·변경",
+     "gradNote": "2026.8.24 · 신청 시기·승인·교과목이수 신청 의무"
+    }
+   ]
   },
   {
    "id": "G5",
-   "name": "2026-2 논문·개별연구과제 심사 안내",
    "url": "https://ibook.hongik.ac.kr/Viewer/COVWAKL776FU",
-   "what": "3·12·37·44쪽 학위별 자격·최종 제출",
-   "kind": "공식 원문 직접 확인",
-   "date": "확인 2026.11.02"
-  },
-  {
-   "id": "G6",
-   "name": "졸업자격시험·학과별 외국어과목",
-   "url": "https://www.hongik.ac.kr/kr/education/graduation-examination.do",
-   "what": "종합2과목, 국방AI 한국인 영어",
-   "kind": "공식 원문 직접 확인",
-   "date": "확인 2026.11.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "G5",
+     "name": "2026-2 논문·개별연구과제 심사 안내",
+     "what": "3·12·37·44쪽 학위별 자격·최종 제출",
+     "kind": "공식 원문 직접 확인",
+     "date": "확인 2026.11.02",
+     "gradName": "2026-2 논문·개별연구과제 심사 안내책자",
+     "gradNote": "3쪽 비교 / 5~6쪽 지도교수 / 12쪽 자격 / 31쪽 심사료 / 37쪽 제출 / 44쪽 교과목이수"
+    }
+   ]
   },
   {
    "id": "G11",
-   "name": "2026 학과 소개자료",
    "url": "https://gbai.hongik.ac.kr/gbai/0301.do?articleNo=155331&mode=view",
-   "what": "PDF4쪽·11쪽: 전 과목 선택 운영",
-   "kind": "공식 원문 직접 확인",
-   "date": "확인 2026.11.02"
+   "aliases": [],
+   "records": [
+    {
+     "id": "G11",
+     "name": "2026 학과 소개자료",
+     "what": "PDF4쪽·11쪽: 전 과목 선택 운영",
+     "kind": "공식 원문 직접 확인",
+     "date": "확인 2026.11.02",
+     "gradName": "학과 공식 소개자료 · 국방과 기술 제570호",
+     "gradNote": "2026.8.19 게시 · 첨부 PDF 4/12쪽(인쇄73쪽), 11/12쪽(인쇄80쪽): 모든 교과목 선택 운영"
+    }
+   ]
+  },
+  {
+   "id": "G3",
+   "url": "https://www.hongik.ac.kr/kr/introduction/regulations-book.do?mode=list&srCategoryId=112",
+   "aliases": [],
+   "records": [
+    {
+     "id": "G3",
+     "name": "일반대학원 학사내규",
+     "what": "제4·17~24조 · 선수과목·시험 자격과 합격기준",
+     "kind": "졸업요건 원문",
+     "date": "확인 2026.11.02",
+     "gradName": "일반대학원 학사내규",
+     "gradNote": "제4·17~24조 · 선수과목·시험 자격과 합격기준"
+    }
+   ]
+  },
+  {
+   "id": "G7",
+   "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154829&mode=view&noCat=377",
+   "aliases": [],
+   "records": [
+    {
+     "id": "G7",
+     "name": "2026-2 외국어시험 안내",
+     "what": "2026.8.4 · 대체성적의 제출일 유효성·방식별 마감",
+     "kind": "졸업요건 원문",
+     "date": "확인 2026.11.02",
+     "gradName": "2026-2 외국어시험 안내",
+     "gradNote": "2026.8.4 · 대체성적의 제출일 유효성·방식별 마감"
+    }
+   ]
+  },
+  {
+   "id": "G8",
+   "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154973&mode=view",
+   "aliases": [],
+   "records": [
+    {
+     "id": "G8",
+     "name": "2026-2 연구윤리교육 안내",
+     "what": "2026.8.10 · 2시간 이상·교과목이수 졸업자도 의무",
+     "kind": "졸업요건 원문",
+     "date": "확인 2026.11.02",
+     "gradName": "2026-2 연구윤리교육 안내",
+     "gradNote": "2026.8.10 · 2시간 이상·교과목이수 졸업자도 의무"
+    }
+   ]
+  },
+  {
+   "id": "G9",
+   "url": "https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=159627&mode=view",
+   "aliases": [],
+   "records": [
+    {
+     "id": "G9",
+     "name": "2026-2 논문·개별연구과제 양식과 심사 안내",
+     "what": "2026.10.27 · 심사·표절검사·인쇄본 의무 제출 폐지",
+     "kind": "졸업요건 원문",
+     "date": "확인 2026.11.02",
+     "gradName": "2026-2 논문·개별연구과제 양식과 심사 안내",
+     "gradNote": "2026.10.27 · 심사·표절검사·인쇄본 의무 제출 폐지"
+    }
+   ]
   }
  ],
  "facts": [
   {
-   "topic": "2027 세종 구술면접",
-   "value": "2026.11.07(토)",
-   "status": "확인",
-   "source": "S1, S2"
+   "id": "interview-date",
+   "topic": "면접 일자",
+   "facts": [
+    {
+     "topic": "2027 세종 구술면접",
+     "value": "2026.11.07(토)",
+     "status": "확인",
+     "source": "S1, S2"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "면접 날짜",
+     "statement": "2026.11.07(토)",
+     "status": "확인",
+     "ref": "S1"
+    }
+   ],
+   "review": []
   },
   {
-   "topic": "면접 세부 시작시각 공지",
-   "value": "공식 모집안내상 구체사항 11/5(목)·학과별 면접 시작시각 11/6(금) 공지. 면접 당일 기준으로는 11/6 공지분과 수험표 시각을 최종 기준으로 삼음. 과거 조사 원문의 「11월 7일 10시부터(전 학과)」 표기는 공식 시각이 아님",
-   "status": "부분확인",
-   "source": "S1"
+   "id": "interview-time",
+   "topic": "면접 시작시각",
+   "facts": [
+    {
+     "topic": "면접 세부 시작시각 공지",
+     "value": "공식 모집안내상 구체사항 11/5(목)·학과별 면접 시작시각 11/6(금) 공지. 면접 당일 기준으로는 11/6 공지분과 수험표 시각을 최종 기준으로 삼음. 과거 조사 원문의 「11월 7일 10시부터(전 학과)」 표기는 공식 시각이 아님",
+     "status": "부분확인",
+     "source": "S1"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "면접 시작시각",
+     "statement": "과거 자료의 10:00 표기, 최종 상세공지 필요",
+     "status": "미확정",
+     "ref": "P47"
+    }
+   ],
+   "review": []
   },
   {
-   "topic": "일반대학원 학제",
-   "value": "세종캠퍼스 석사, 통상 4학기 / 학위 경로별 요건 다름",
-   "status": "확인",
-   "source": "S1, S6"
+   "id": "program",
+   "topic": "학과·학제",
+   "facts": [
+    {
+     "topic": "일반대학원 학제",
+     "value": "세종캠퍼스 석사, 통상 4학기 / 학위 경로별 요건 다름",
+     "status": "확인",
+     "source": "S1, S6"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "국방AI융합학과",
+     "statement": "세종캠퍼스 일반대학원, 2025 신설",
+     "status": "확인",
+     "ref": "S14"
+    }
+   ],
+   "review": [
+    0
+   ]
   },
   {
-   "topic": "수업 운영 원칙",
-   "value": "2026년 대학원 공지: 대면 원칙. 군위탁 학생 등은 비대면 예외로 명시",
-   "status": "확인",
-   "source": "S4"
+   "id": "class-mode",
+   "topic": "수업 운영 · 대면·야간·온라인",
+   "facts": [
+    {
+     "topic": "수업 운영 원칙",
+     "value": "2026년 대학원 공지: 대면 원칙. 군위탁 학생 등은 비대면 예외로 명시",
+     "status": "확인",
+     "source": "S4"
+    },
+    {
+     "topic": "2027 수업 시각·온라인 여부",
+     "value": "개설·강의별로 미정. 전과목 야간/온라인 보장 불가",
+     "status": "미확정",
+     "source": "새 학기 시간표"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "2027 전과목 야간·온라인",
+     "statement": "확정된 근거 없음",
+     "status": "미확정",
+     "ref": "S4"
+    }
+   ],
+   "review": [
+    7
+   ]
   },
   {
-   "topic": "실제 지난 시간표",
-   "value": "지원자 첨부 2026 시간표: 1학기 11과목(학과 필터 확인) / 2학기 12과목(필터 미선택 주의), 19~22시 중심이나 18~21시·화 16~19시·토 10~13시 있음",
-   "status": "사용자 제공 화면",
-   "source": "T26-A / T26-B"
+   "id": "timetable-2026",
+   "topic": "2026 실제 시간표 · 시각과 충돌",
+   "facts": [
+    {
+     "topic": "실제 지난 시간표",
+     "value": "지원자 첨부 2026 시간표: 1학기 11과목(학과 필터 확인) / 2학기 12과목(필터 미선택 주의), 19~22시 중심이나 18~21시·화 16~19시·토 10~13시 있음",
+     "status": "사용자 제공 화면",
+     "source": "T26-A / T26-B"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "세종 실제 저녁 수업",
+     "statement": "2026-1·2 시간표 화면: 19~22시 다수, 수 18~21시·화 16~19시·토 10~13시 예외 있음. 2027 편성은 미확정",
+     "status": "사용자 제공 화면",
+     "ref": "T26-A"
+    },
+    {
+     "topic": "2026-1 동시간대 충돌",
+     "statement": "국방소프트웨어관리와 AI·빅데이터 경영연구방법론은 화요일 19~22시로 겹쳐 동일 학기 동시 수강 불가.",
+     "status": "사용자 제공 화면",
+     "ref": "T26-A"
+    }
+   ],
+   "review": [
+    8
+   ]
   },
   {
-   "topic": "2027 수업 시각·온라인 여부",
-   "value": "개설·강의별로 미정. 전과목 야간/온라인 보장 불가",
-   "status": "미확정",
-   "source": "새 학기 시간표"
+   "id": "courses-open",
+   "topic": "과목 개설 여부 · 2026 확인과 2027 미정",
+   "facts": [
+    {
+     "topic": "과목 개설 여부",
+     "value": "2026 1학기 과목 11개·2학기 화면 과목 12개 확인. 공급사슬관리 명칭 과목은 캡처에 없음; 2027년 편성 미확정",
+     "status": "부분확인",
+     "source": "T26-A / T26-B"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "2026-1 시간표 11과목",
+     "statement": "지원자가 제출한 공식 시간표 화면에 세종 국방AI융합학과(주간) 필터가 설정된 상태로 11개 전공선택 3학점 과목이 표시됨.",
+     "status": "사용자 제공 화면",
+     "ref": "T26-A"
+    },
+    {
+     "topic": "2026-2 시간표 12과목",
+     "statement": "지원자 화면에 12개 과목이 보이나 학과·캠퍼스 검색필터의 선택값이 ‘선택하세요’로 표시돼 전공귀속까지 독립 확정할 수 없음.",
+     "status": "부분확인",
+     "ref": "T26-B"
+    },
+    {
+     "topic": "공급사슬관리 2026 개설",
+     "statement": "첨부된 2026-1·2 화면에 공급사슬관리 명칭의 교과목은 없음. 교육과정 후보와 학기 개설을 구별할 것.",
+     "status": "미확정",
+     "ref": "T26-A"
+    },
+    {
+     "topic": "2027 과목 개설",
+     "statement": "34개 이전 교과목 기록 ≠ 실제 개설",
+     "status": "미확정",
+     "ref": "S3"
+    }
+   ],
+   "review": [
+    9
+   ]
   },
   {
-   "topic": "주간 석사 학점",
-   "value": "2026 공지: 1~3학기 6~9학점, 4학기 6학점 이하 신청 가능",
-   "status": "확인",
-   "source": "S4"
+   "id": "credits",
+   "topic": "학기당 학점 · 4학기 논문 발표",
+   "facts": [
+    {
+     "topic": "주간 석사 학점",
+     "value": "2026 공지: 1~3학기 6~9학점, 4학기 6학점 이하 신청 가능",
+     "status": "확인",
+     "source": "S4"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "학기당 수강학점",
+     "statement": "2026 주간 석사 6~9학점 일반 안내",
+     "status": "확인",
+     "ref": "S4"
+    },
+    {
+     "topic": "논문 4학기 발표",
+     "statement": "2026 수강안내: 주간 석사는 24학점 취득 다음 학기에 논문 발표 가능 → 4학기 발표는 3학기 말까지 24학점(과 심사 전 1개 지도학기) 필요. 2027 적용은 별도 확인",
+     "status": "확인",
+     "ref": "S4"
+    }
+   ],
+   "review": [
+    1,
+    2,
+    13
+   ]
   },
   {
-   "topic": "타과전공",
-   "value": "2026 공지: 석사 통산 9학점 인정. 실제 과목별 수강제한 별도",
-   "status": "확인",
-   "source": "S4, S5"
+   "id": "other-dept",
+   "topic": "타과 수강",
+   "facts": [
+    {
+     "topic": "타과전공",
+     "value": "2026 공지: 석사 통산 9학점 인정. 실제 과목별 수강제한 별도",
+     "status": "확인",
+     "source": "S4, S5"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "타과 수강",
+     "statement": "2026 석사 타과 인정 9학점 안내",
+     "status": "확인",
+     "ref": "S4"
+    }
+   ],
+   "review": []
   },
   {
-   "topic": "논문/개별연구과제",
-   "value": "국방AI 두 방식 허용. 교과24학점과 해당 심사. 논문의 별도6학점 표기를 개별연구과제에 전용하지 않음",
-   "status": "확인",
-   "source": "G1, G2, G5"
+   "id": "degree-routes",
+   "topic": "학위청구 경로 · 논문·개별연구과제·교과목이수",
+   "facts": [
+    {
+     "topic": "논문/개별연구과제",
+     "value": "국방AI 두 방식 허용. 교과24학점과 해당 심사. 논문의 별도6학점 표기를 개별연구과제에 전용하지 않음",
+     "status": "확인",
+     "source": "G1, G2, G5"
+    },
+    {
+     "topic": "교과목이수 학위",
+     "value": "국방AI에서 30학점 방식 허용 확인. 평균 B0·4학기 등록·종합/영어·윤리·선수·방법 신청/승인 필요",
+     "status": "확인",
+     "source": "G1, G4, G5"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "비논문 30학점",
+     "statement": "국방AI 허용 확인(2026.9.1). 신청·승인과 공통요건 필요",
+     "status": "확인",
+     "ref": "G1"
+    }
+   ],
+   "review": [
+    6
+   ]
   },
   {
-   "topic": "교과목이수 학위",
-   "value": "국방AI에서 30학점 방식 허용 확인. 평균 B0·4학기 등록·종합/영어·윤리·선수·방법 신청/승인 필요",
-   "status": "확인",
-   "source": "G1, G4, G5"
+   "id": "exams",
+   "topic": "종합시험·외국어시험",
+   "facts": [],
+   "audit": [
+    {
+     "topic": "외국어·종합시험",
+     "statement": "국방AI 한국인 영어. 종합2과목·윤리교육은 세 경로 공통",
+     "status": "확인",
+     "ref": "G6"
+    },
+    {
+     "topic": "2026 종합시험 구체 자격",
+     "statement": "주간 석사 3학기 이상 등록·18학점·선수과목 및 평균 B0 이상 등",
+     "status": "확인",
+     "ref": "S16"
+    }
+   ],
+   "review": [
+    3,
+    4
+   ]
   },
   {
-   "topic": "정원외 취학추천/군위탁 상태",
-   "value": "내부 진행과 대학 전형 반영은 분리 확인. 자료 시점이 달라 현재 완료로 단정하지 않음",
-   "status": "미확정",
-   "source": "사용자 제출 내용"
+   "id": "advisor",
+   "topic": "지도교수",
+   "facts": [],
+   "audit": [
+    {
+     "topic": "지도교수",
+     "statement": "1차 학기 신청 사례, 실제 배정 별도",
+     "status": "부분확인",
+     "ref": "S11"
+    }
+   ],
+   "review": [
+    5
+   ]
   },
   {
-   "topic": "장학 비율",
-   "value": "일반 군무원 등 재직자 수업료 20%, 학군협약에 따른 교육부장관 취학추천 요건을 충족한 군인·군무원 50%(자동 지급·4학기 자동 유지 아님)",
-   "status": "확인",
-   "source": "F-SCH, F-SCHA"
+   "id": "recommendation",
+   "topic": "취학추천 · 군위탁 상태",
+   "facts": [
+    {
+     "topic": "정원외 취학추천/군위탁 상태",
+     "value": "내부 진행과 대학 전형 반영은 분리 확인. 자료 시점이 달라 현재 완료로 단정하지 않음",
+     "status": "미확정",
+     "source": "사용자 제출 내용"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "취학추천",
+     "statement": "행정 절차와 대학 전형 반영 구분 필요",
+     "status": "미확정",
+     "ref": "S1"
+    }
+   ],
+   "review": []
   },
   {
-   "topic": "등록금 액수",
-   "value": "수업료 7,643,000원·입학금 996,000원은 과거 조사 기록. 학교 표가 이미지라 독립 검증 못 함. 2027 고지액과 개인별 50% 적용 여부는 미확정",
-   "status": "이전 기록",
-   "source": "F-TUITION / P47"
+   "id": "money",
+   "topic": "장학·등록금",
+   "facts": [
+    {
+     "topic": "장학 비율",
+     "value": "일반 군무원 등 재직자 수업료 20%, 학군협약에 따른 교육부장관 취학추천 요건을 충족한 군인·군무원 50%(자동 지급·4학기 자동 유지 아님)",
+     "status": "확인",
+     "source": "F-SCH, F-SCHA"
+    },
+    {
+     "topic": "등록금 액수",
+     "value": "수업료 7,643,000원·입학금 996,000원은 과거 조사 기록. 학교 표가 이미지라 독립 검증 못 함. 2027 고지액과 개인별 50% 적용 여부는 미확정",
+     "status": "이전 기록",
+     "source": "F-TUITION / P47"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "수업료 50% 감면 유지",
+     "statement": "이전 안내는 있으나 학기별 조건 확인 필요",
+     "status": "미확정",
+     "ref": "F-SCH"
+    }
+   ],
+   "review": [
+    10,
+    11,
+    12
+   ]
   },
   {
-   "topic": "연구용 군 자료",
-   "value": "기관 승인 없는 외부반출 불가; 비식별만으로 허가가 성립하지 않음",
-   "status": "원칙",
-   "source": "보안 준수 설계"
+   "id": "military-data",
+   "topic": "군 자료 연구 활용 · 보안",
+   "facts": [
+    {
+     "topic": "연구용 군 자료",
+     "value": "기관 승인 없는 외부반출 불가; 비식별만으로 허가가 성립하지 않음",
+     "status": "원칙",
+     "source": "보안 준수 설계"
+    }
+   ],
+   "audit": [
+    {
+     "topic": "군 자료 연구 활용",
+     "statement": "취학추천과 무관하게 승인 필요",
+     "status": "주의",
+     "ref": "S13"
+    },
+    {
+     "topic": "Private GitHub",
+     "statement": "군 자료 저장 승인영역이 아님",
+     "status": "주의",
+     "ref": "R06"
+    }
+   ],
+   "review": [
+    14
+   ]
   },
   {
-   "topic": "과목 개설 여부",
-   "value": "2026 1학기 과목 11개·2학기 화면 과목 12개 확인. 공급사슬관리 명칭 과목은 캡처에 없음; 2027년 편성 미확정",
-   "status": "부분확인",
-   "source": "T26-A / T26-B"
+   "id": "rag-scope",
+   "topic": "RAG·에이전틱 연구 범위",
+   "facts": [],
+   "audit": [
+    {
+     "topic": "RAG 성능",
+     "statement": "검색증강 구조이나 환각 방지 보장 아님",
+     "status": "확인",
+     "ref": "R01"
+    },
+    {
+     "topic": "에이전틱 연구",
+     "statement": "읽기전용 도구 선택/순차 호출 확장 가능",
+     "status": "부분확인",
+     "ref": "R03"
+    }
+   ],
+   "review": [
+    15
+   ]
   }
  ],
  "courses": [
@@ -1285,11 +1919,33 @@ window.ATELIER_SCHOOLS.hongik = {
    "동일 문제에 세 조건을 비교하고 순서를 섞어 편향 줄이기",
    "시간·정확도와 실패사례를 함께 보고",
    "표본의 크기와 일반화 한계를 명시"
+  ],
+  "links": [
+   {
+    "label": "전체 설계 · 심층 보고서 §5",
+    "go": "dossier:chapter-05",
+    "note": "RQ1~3, 6단계 파이프라인, A/B/C 비교표, 7개 지표, 네 가지 함정"
+   },
+   {
+    "label": "원문 아이디어 · 조사 기록 #27 연구 성과지표까지 설계",
+    "go": "archive:archive-item-27",
+    "note": ""
+   },
+   {
+    "label": "원문 아이디어 · 조사 기록 #28 실험 비교조건",
+    "go": "archive:archive-item-28",
+    "note": ""
+   },
+   {
+    "label": "원문 아이디어 · 조사 기록 #29 대표 장애유형",
+    "go": "archive:archive-item-29",
+    "note": ""
+   }
   ]
  },
  "archiveHTML": "<p>맞아. 이번엔 <strong>현재 이 대화 세션과 여기서 만들어진 조사자료에서 회수 가능한 홍대 관련 내용을 전부</strong> 한 덩어리로 정리할게. 모집요강만이 아니라 우리가 실제로 한 판단·수학계획서·연구설계·시간표 분석·취학추천 진행 변화까지 포함한다.</p>\n<h1>1. 지원 대상 자체</h1>\n<table>\n<thead>\n<tr>\n  <th>항목</th>\n  <th>내용</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>학교</td>\n  <td><strong>홍익대학교</strong></td>\n</tr>\n<tr>\n  <td>대학원</td>\n  <td><strong>일반대학원</strong></td>\n</tr>\n<tr>\n  <td>캠퍼스</td>\n  <td><strong>세종캠퍼스</strong></td>\n</tr>\n<tr>\n  <td>계열</td>\n  <td><strong>공학계열</strong></td>\n</tr>\n<tr>\n  <td>학과</td>\n  <td><strong>국방AI융합학과</strong></td>\n</tr>\n<tr>\n  <td>과정</td>\n  <td><strong>석사과정</strong></td>\n</tr>\n<tr>\n  <td>입학</td>\n  <td><strong>신입학</strong></td>\n</tr>\n<tr>\n  <td>모집상태</td>\n  <td>2027학년도 전기 석사 모집</td>\n</tr>\n<tr>\n  <td>박사</td>\n  <td>해당 모집에서 미모집</td>\n</tr>\n<tr>\n  <td>석박통합</td>\n  <td>미모집</td>\n</tr>\n<tr>\n  <td>표준 수학기간</td>\n  <td><strong>4학기 / 2년</strong></td>\n</tr>\n<tr>\n  <td>수학예정기간</td>\n  <td><strong>2027.03 ~ 2029.02</strong></td>\n</tr>\n<tr>\n  <td>학위 성격</td>\n  <td>일반대학원 공학계열 석사, 즉 학술 석사 성격</td>\n</tr>\n</tbody>\n</table>\n<p>국방AI융합학과는 세종캠퍼스 일반대학원 공학계열에서 석사과정을 모집하는 것으로 확인했어.  일반대학원 석사는 학위청구 방식에 따라 4학기 체계로 운영돼.</p>\n<hr />\n<h1>2. 학과가 어떤 곳인지</h1>\n<p>학과 자체는 2025학년도에 신설된 비교적 새로운 과정이고, 단순히 AI 코딩만 배우는 학과가 아니라 <strong>AI + 국방정책 + 군사 + 경영 + 군수·공급망 + 획득·사업관리</strong>를 묶어 놓은 융합과정으로 파악했어.</p>\n<p>우리가 확보했던 학과 소개자료에서는 교육영역을 크게 이렇게 봤어.</p>\n<table>\n<thead>\n<tr>\n  <th>영역</th>\n  <th>내용</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>국방AI소프트웨어융합</td>\n  <td>데이터사이언스, 머신러닝, 정보보호, AI 활용</td>\n</tr>\n<tr>\n  <td>국방AI융합기획</td>\n  <td>국방정책, 국방기획, AI 정책, 군사전략, 무인체계·우주·사이버</td>\n</tr>\n<tr>\n  <td>국방AI융합경영</td>\n  <td>AI 서비스경영, 공급사슬관리, 조직·자원운영, 사업관리</td>\n</tr>\n</tbody>\n</table>\n<p>학과는 <strong>AI 기술 자체보다 국방 현장에 어떻게 적용할지 판단하는 능력</strong>을 강조했고, 프로젝트 주제로 AI 기반 의사결정, 국방데이터 분석, 군수·공급망 최적화, 획득·사업관리, 무인체계 등을 제시하고 있었어.</p>\n<p>그래서 네 현재 WMS 업무와 연결성이 상당히 높다고 봤지.</p>\n<hr />\n<h1>3. 공식 교육과정 — 우리가 확인한 과목 전체</h1>\n<p>홍대 국방AI융합학과 홈페이지에서 실제 교육과정도 확인했어. 확인된 일반 전공선택은 모두 <strong>석사 1학기 / 전공선택 / 3학점 / 3시간</strong>으로 표시돼 있었어.</p>\n<table>\n<thead>\n<tr>\n  <th>과목</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>데이터 사이언스</td>\n</tr>\n<tr>\n  <td>우주위성 통신체계</td>\n</tr>\n<tr>\n  <td>블록체인</td>\n</tr>\n<tr>\n  <td>정보보호 및 보안</td>\n</tr>\n<tr>\n  <td>국방 사물인터넷 특론</td>\n</tr>\n<tr>\n  <td>빅데이터 마이닝</td>\n</tr>\n<tr>\n  <td>스마트시티와 기술융합</td>\n</tr>\n<tr>\n  <td>국방 소프트웨어 관리</td>\n</tr>\n<tr>\n  <td>국방 지능형 정보보호 특론</td>\n</tr>\n<tr>\n  <td>국방 AI기술 응용</td>\n</tr>\n<tr>\n  <td>국방 IT 융합·정책</td>\n</tr>\n<tr>\n  <td>국방 AI 정책 세미나</td>\n</tr>\n<tr>\n  <td>국방 AI 프로젝트 관리</td>\n</tr>\n<tr>\n  <td>AI와 빅데이터를 활용한 경영연구방법론</td>\n</tr>\n<tr>\n  <td>인공지능과 서비스 경영</td>\n</tr>\n<tr>\n  <td>생성형 AI와 전략경영</td>\n</tr>\n<tr>\n  <td>인공지능 솔루션: 생성형 AI 활용</td>\n</tr>\n<tr>\n  <td>빅데이터를 이용한 비즈니스 분석</td>\n</tr>\n<tr>\n  <td>무인체계와 미래산업</td>\n</tr>\n<tr>\n  <td>국방 AI 무인체계</td>\n</tr>\n<tr>\n  <td>자율드론과 로봇</td>\n</tr>\n<tr>\n  <td>국가안보론</td>\n</tr>\n<tr>\n  <td>군사학 이론</td>\n</tr>\n<tr>\n  <td>군 조직이론</td>\n</tr>\n<tr>\n  <td>국방정책론</td>\n</tr>\n<tr>\n  <td>국방기획론</td>\n</tr>\n<tr>\n  <td>조직 리더십</td>\n</tr>\n<tr>\n  <td>인적자원관리</td>\n</tr>\n<tr>\n  <td>국방경영전략과 자율무기체계</td>\n</tr>\n<tr>\n  <td>국방경제학</td>\n</tr>\n<tr>\n  <td>국방 마케팅 전략</td>\n</tr>\n<tr>\n  <td><strong>AI 기반 의사결정 및 최적화 모델</strong></td>\n</tr>\n<tr>\n  <td><strong>AI 및 데이터 기반 공급사슬관리</strong></td>\n</tr>\n<tr>\n  <td><strong>국방획득 및 사업관리</strong></td>\n</tr>\n</tbody>\n</table>\n<p>특히 마지막 세 과목은 네 업무랑 진짜 직접 맞닿아 있어.</p>\n<p><strong>AI 기반 의사결정 및 최적화 모델</strong>은 선형·정수계획, 네트워크 최적화, 시뮬레이션, 머신러닝·강화학습 등을 다루고, <strong>AI 및 데이터 기반 공급사슬관리</strong>는 수요예측, 재고·보급정책, 자원배분, 수송·경로, 창고·물류센터 운영, 공급망 리스크를 다뤄. 국방획득 및 사업관리는 획득 전 과정과 AI·SW 중심 체계의 사업관리까지 다루고 있어.</p>\n<p>종합시험용 0학점 과목으로 확인된 것은 <strong>국방사물인터넷특론, 조직리더십, 인적자원관리, 공급사슬관리, 인공지능과 서비스 경영, 빅데이터 마이닝, 국방 소프트웨어 관리, 국방 지능형 정보보호 특론, 국방 IT 융합·정책, 국방 AI 프로젝트 관리, AI와 빅데이터를 활용한 경영연구방법론, 무인체계와 미래산업, 군사학 이론, 국방정책론, 국방 마케팅 전략</strong>이었어.</p>\n<hr />\n<h1>4. 실제 시간표를 네가 직접 보여줬던 내용</h1>\n<p>이게 이전 정리에서 빠졌던 중요한 부분이야.</p>\n<p>네가 <strong>2026학년도 실제 국방AI융합학과 시간표</strong>를 보여줬고, 그걸 보고 행정상 주간과 실제 운영이 다르다는 걸 분석했어.</p>\n<p>확인했던 패턴은:</p>\n<table>\n<thead>\n<tr>\n  <th>구분</th>\n  <th>실제 확인 내용</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>다수 과목</td>\n  <td><strong>19:00~22:00</strong></td>\n</tr>\n<tr>\n  <td>일부 과목</td>\n  <td><strong>18:00~21:00</strong></td>\n</tr>\n<tr>\n  <td>예외 주간</td>\n  <td>화요일 <strong>국방 AI 무인체계 16:00~19:00</strong></td>\n</tr>\n<tr>\n  <td>토요일 수업</td>\n  <td><strong>10:00~13:00</strong> 과목 존재</td>\n</tr>\n<tr>\n  <td>학점</td>\n  <td>화면에서 본 과목들은 대부분 <strong>3학점</strong></td>\n</tr>\n</tbody>\n</table>\n<p>그래서 우리가 내린 결론은 아주 명확했어.</p>\n<p><strong>행정상 = 주간 과정</strong><br />\n<strong>실제 운영 = 평일 저녁·실시간 온라인 중심 + 일부 낮수업·토요일 존재</strong></p>\n<p>따라서 “100% 야간대학원”이라고 하면 틀리고, 반대로 일반적인 의미의 “평일 낮에만 다니는 주간대학원”이라고 이해해도 틀린다는 결론이었어.</p>\n<hr />\n<h1>5. 온라인 수업 문제</h1>\n<p>학과 공식·홍보자료에서는 재직 군인·군무원을 위해 <strong>주중 저녁 실시간 온라인 강의</strong>와 직무·학업 병행 환경을 강조하고 있었어.</p>\n<p>우리 조사에서도 학과 자체가 <strong>실시간 온라인 학습체계 + 저녁수업</strong>을 활용한다고 확인했어.</p>\n<p>다만 중요하게 계속 선을 그었던 게 있어.</p>\n<p><strong>모든 과목이 온라인이라는 보장은 없음.</strong></p>\n<p>실제 시간표도 일부 주간·토요일 수업이 있었고, 매 학기 시간표는 달라질 수 있으므로 수학계획서에서도 “모든 과목이 야간·온라인”이라고 쓰지 않았어.</p>\n<hr />\n<h1>6. 취학추천 신청할 때 ‘주간/야간’ 문제</h1>\n<p>이건 네가 학교에 직접 전화까지 했던 부분.</p>\n<p>홍익대에 전화해서 확인한 결과:</p>\n<p><strong>정원외 취학추천 가능</strong><br />\n<strong>국방인사정보관리체계에서는 <code>주간</code>으로 선택</strong></p>\n<p>이라고 안내받았어.</p>\n<p>즉 실제 강의가 저녁·온라인이어도 <strong>행정상 과정분류는 주간</strong>이야.</p>\n<p>이 부분 때문에 한때 군 내부에서 취학추천이 막힐 가능성을 걱정했고, 처음 전략도:</p>\n<p><strong>4차 취학추천 → 홍대 우선</strong><br />\n<strong>홍대가 ‘주간’ 때문에 군에서 안 되면 → 다음 차수 아주대</strong></p>\n<p>식으로 잡았었어.</p>\n<hr />\n<h1>7. 군위탁전형과 일반전형은 별개라는 문제</h1>\n<p>이것도 꽤 깊게 조사했어.</p>\n<p>홍익대 원서접수에는 실제로</p>\n<p><strong>일반전형(군위탁전형 아님)</strong><br />\nvs<br />\n<strong>군위탁전형(정원외)</strong></p>\n<p>이 구분돼 있었어.</p>\n<p>군위탁전형은 단순히 “군무원이 대학원 다닌다”는 의미가 아니라:</p>\n<p><strong>교육부장관의 취학추천을 받은 현역군인·군무원</strong></p>\n<p>이 대상이야.</p>\n<p>그래서 이미 일반전형으로 접수한 뒤 취학추천이 나온다고 해서 <strong>자동으로 군위탁전형으로 전환된다는 근거는 못 찾았고</strong>, 그 경우 학교 교학팀 확인이 필요하다고 정리했어.</p>\n<hr />\n<h1>8. 취학추천 진행 상태 변화</h1>\n<p>이 세션에서 홍대 취학추천 상태도 몇 번 바뀌었어.</p>\n<p>처음에는 홍대를 우선으로 취학추천하려고 했고, 이후 취학추천 절차를 진행했어.</p>\n<p>그러다가 네가:</p>\n<p><strong>“홍대 취학추천 취소됐어 이제 아주대만 남았어”</strong></p>\n<p>라고 알려줘서 한 번 홍대를 제외했지.</p>\n<p>그런데 다시:</p>\n<p><strong>“다시 도전해보자 홍대”</strong></p>\n<p>라고 했고, 그래서 취학추천 입력값을 다시 정리했어.</p>\n<p>현재 이 대화의 가장 마지막 홍대 상태는:</p>\n<p><strong>홍대 취학추천 재도전</strong></p>\n<p>이야.</p>\n<p>취학추천 시스템에 넣기로 정리한 내용은 다음이야.</p>\n<table>\n<thead>\n<tr>\n  <th>항목</th>\n  <th>입력내용</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>취학희망 학교명</td>\n  <td>홍익대학교</td>\n</tr>\n<tr>\n  <td>학과명</td>\n  <td><strong>국방AI융합학과</strong></td>\n</tr>\n<tr>\n  <td>학위과정</td>\n  <td>석사과정</td>\n</tr>\n<tr>\n  <td>신입/편입</td>\n  <td>신입</td>\n</tr>\n<tr>\n  <td>원서접수기간</td>\n  <td><strong>2026.09.30. 09:00 ~ 2026.10.14. 24:00</strong></td>\n</tr>\n<tr>\n  <td>수학예정기간</td>\n  <td><strong>2027.03 ~ 2029.02</strong></td>\n</tr>\n<tr>\n  <td>증빙</td>\n  <td>2027학년도 전기 대학원 신입생 모집요강</td>\n</tr>\n<tr>\n  <td>과정분류</td>\n  <td>행정상 <strong>주간</strong></td>\n</tr>\n</tbody>\n</table>\n<p>원서접수 기간은 모집요강과 일치해.</p>\n<hr />\n<h1>9. 장학금</h1>\n<p>홍대를 고민한 중요한 이유 중 하나였지.</p>\n<p>공식 모집요강에서는:</p>\n<table>\n<thead>\n<tr>\n  <th>대상</th>\n  <th style=\"text-align:right\">수업료 감면</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>현역 장교·준사관·부사관 및 군무원</td>\n  <td style=\"text-align:right\"><strong>20%</strong></td>\n</tr>\n<tr>\n  <td>학군협약에 따라 교육부장관 추천을 받은 군인·군무원</td>\n  <td style=\"text-align:right\"><strong>50%</strong></td>\n</tr>\n</tbody>\n</table>\n<p>기간 표기는 둘 다 <strong>재직중</strong>이야.</p>\n<hr />\n<h1>10. 50% 장학 유지 방식의 미해결 문제</h1>\n<p>여기서 한 번 충돌이 있었어.</p>\n<p>공식 모집요강에는 50% 장학의 기간이 <strong>“재직중”</strong>이라고 되어 있는데, 학교 담당자와 통화 과정에서는 <strong>매 학기 취학추천을 다시 받아야 한다는 취지</strong>의 설명을 들었다고 했지.</p>\n<p>그래서 이 부분은 확정하지 않았어.</p>\n<p>우리가 만들어둔 정확한 확인 질문은:</p>\n<p><strong>“최초 입학 시 교육부장관 취학추천을 받아 군위탁전형으로 입학한 경우, 이후 학기에도 50% 장학을 받으려면 국방인사정보관리체계에서 취학추천을 매 학기 새로 받아야 하는지, 아니면 군 재직증명서만 매 학기 제출하면 되는지?”</strong></p>\n<p>였어.</p>\n<p>즉 현재 상태는:</p>\n<p><strong>50% 장학 존재 → 확정</strong><br />\n<strong>매 학기 취학추천 재발급 필요 여부 → 미확정</strong></p>\n<hr />\n<h1>11. 등록금</h1>\n<p>홍익대 일반대학원 공학계열 2026 기준:</p>\n<p><strong>수업료: 7,643,000원 / 학기</strong></p>\n<p>입학금은 별도로:</p>\n<p><strong>996,000원</strong></p>\n<p>이었어.</p>\n<p>네가 입학금을 등록금 비교에 섞는 걸 싫어해서 항상 분리해서 계산했어.</p>\n<table>\n<thead>\n<tr>\n  <th>적용</th>\n  <th style=\"text-align:right\">학기 수업료</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>감면 없음</td>\n  <td style=\"text-align:right\">7,643,000원</td>\n</tr>\n<tr>\n  <td>20% 감면</td>\n  <td style=\"text-align:right\"><strong>6,114,400원</strong></td>\n</tr>\n<tr>\n  <td>50% 감면</td>\n  <td style=\"text-align:right\"><strong>3,821,500원</strong></td>\n</tr>\n</tbody>\n</table>\n<hr />\n<h1>12. 입학전형 일정</h1>\n<table>\n<thead>\n<tr>\n  <th>일정</th>\n  <th>날짜</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>온라인 원서접수</td>\n  <td><strong>9/30 09:00 ~ 10/14 24:00</strong></td>\n</tr>\n<tr>\n  <td>수학계획서 등 온라인 입력</td>\n  <td>동일</td>\n</tr>\n<tr>\n  <td>등기 제출</td>\n  <td><strong>10/14 우체국 소인분까지</strong></td>\n</tr>\n<tr>\n  <td>퀵</td>\n  <td><strong>10/15 16:00까지</strong></td>\n</tr>\n<tr>\n  <td>방문</td>\n  <td><strong>10/15 16:00까지</strong></td>\n</tr>\n<tr>\n  <td>세종 면접 상세공지</td>\n  <td><strong>11/5 예정</strong></td>\n</tr>\n<tr>\n  <td>세종 일반대학원 면접</td>\n  <td><strong>11/7 토요일 10:00~</strong></td>\n</tr>\n<tr>\n  <td>합격발표</td>\n  <td><strong>12/7 18:00 예정</strong></td>\n</tr>\n<tr>\n  <td>예치금</td>\n  <td><strong>12/8~12/10 예정</strong></td>\n</tr>\n</tbody>\n</table>\n<p>세종캠퍼스 전 학과 면접은 11월 7일 10시부터야.</p>\n<hr />\n<h1>13. 면접</h1>\n<p>면접은 <strong>대면 구술면접</strong>으로 진행.</p>\n<p>모집요강상:</p>\n<p><strong>수험표 + 신분증 필수</strong><br />\n<strong>개인사정으로 면접시간 변경 불가</strong><br />\n<strong>전형과목 중 하나라도 결시하면 결격</strong></p>\n<p>으로 안내돼 있었어.</p>\n<p>네 홍대 면접일은 <strong>11월 7일</strong>로 확정해서 계속 준비 일정을 잡았고, 이 시기 전체 대학원 준비전략도 사실상 홍대 면접을 중심으로 움직였어.</p>\n<hr />\n<h1>14. 네가 잡았던 면접 준비 전략</h1>\n<p>홍대 면접을 앞두고 네가 세운 우선순위는:</p>\n<p><strong>“감기 걸리지 말자.”</strong></p>\n<p>였어.</p>\n<p>그래서 면접 전 약 2주 동안 야외 체단을 피하고, 퇴근 후 아파트 헬스장 정도로 관리하고, 수·목 야근은 수용하되 금요일은 칼퇴, 주말에는 면접노트를 완성한 뒤 평일에 암기한다는 계획을 세웠어.</p>\n<p>목표는 화려하게 잘하는 것보다:</p>\n<p><strong>결격 방지</strong></p>\n<p>였고.</p>\n<p>“이번 주는 혼란주 → 다음 주는 홍대 준비주 → 면접주”처럼 프레임을 잡기도 했어.</p>\n<hr />\n<h1>15. 원서 제출서류</h1>\n<p>국방AI융합학과 일반대학원 석사 기준으로 확인한 기본 서류는:</p>\n<table>\n<thead>\n<tr>\n  <th>서류</th>\n  <th>비고</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>입학원서</td>\n  <td>온라인 원서접수 후 출력</td>\n</tr>\n<tr>\n  <td>학사 졸업(예정)증명서</td>\n  <td>1부</td>\n</tr>\n<tr>\n  <td>학부 전 학년 성적증명서</td>\n  <td>평점평균 명시</td>\n</tr>\n<tr>\n  <td>수학계획서</td>\n  <td>온라인 입력</td>\n</tr>\n<tr>\n  <td>사진</td>\n  <td>3×4 상반신 컬러사진 파일 업로드</td>\n</tr>\n</tbody>\n</table>\n<p>공식 모집요강의 일반대학원 석사 공통서류가 이 구조야.</p>\n<hr />\n<h1>16. 서류 제출 주소</h1>\n<p>세종캠퍼스 지원자 제출처도 확인했어.</p>\n<p><strong>(30016) 세종특별자치시 조치원읍 세종로 2639<br />\n홍익대학교 대학원 교학팀<br />\nA동 2층 211호 입시담당</strong></p>\n<p>이 주소로 등기·택배·퀵 또는 방문 제출하도록 돼 있었어.</p>\n<hr />\n<h1>17. 교학팀 연락처</h1>\n<p>세종캠퍼스 일반대학원 전 학과:</p>\n<p><strong>044-860-2616</strong></p>\n<p>모집요강 기준 평일 운영시간은 <strong>09:00~17:30</strong>.</p>\n<hr />\n<h1>18. 전형료</h1>\n<p>원서접수 조사 과정에서 확인했던 전형료는:</p>\n<p><strong>80,000원 + 인터넷접수 수수료 5,000원 별도</strong></p>\n<p>였어.</p>\n<hr />\n<h1>19. 수학계획서 — 단순히 “쓴 적 있음” 정도가 아니었음</h1>\n<p>여기가 꽤 컸어.</p>\n<p>우리는 실제 홍대 지원용 <strong>수학계획서의 방향을 여러 차례 수정하고, 학교 제도상 실제 가능한지 별도 팩트체크까지 했어.</strong></p>\n<p>가장 큰 구조는:</p>\n<p><strong>현장 WMS 문제 → 대학원 연구문제로 변환 → AI·데이터·연구방법 학습 → 현장에서 다시 적용</strong></p>\n<p>이었어.</p>\n<p>그리고 학업 전체 흐름은:</p>\n<p><strong>군 취학추천 → 재직 상태에서 수업 → 1학기부터 지도교수 → WMS 실무경험의 연구문제화 → 학술DB·연구지원 활용 → 필요시 타과전공 → 현장 재적용</strong></p>\n<p>으로 정리했어.</p>\n<hr />\n<h1>20. 수학계획서의 ‘학업 수행 계획’ 문안</h1>\n<p>실제로 정교화했던 문안은 이런 흐름이었어.</p>\n<p>현재 세종 지역에서 근무하고 있고 근무지 인근에 안정적 거주기반이 있어 퇴근 이후 학업시간을 확보할 수 있다는 점.</p>\n<p>실제 개설 시간표를 확인했더니 평일 저녁 과목이 다수라 직무와 학업을 병행할 현실적 여건이 있다는 점.</p>\n<p>세종캠퍼스와 가까워 수업뿐 아니라 세미나·지도교수 면담에도 참여할 수 있다는 점.</p>\n<p>군 취학추천제도를 이용해 정식 절차로 학업을 병행하고, 수업에서 배운 내용을 WMS 실무와 연결한다는 점.</p>\n<p>현장에서 생긴 질문과 사례를 연구 가능한 문제로 가져오고, 대학원에서 익힌 분석방법을 다시 실무로 돌려보낸다는 구조였어.</p>\n<p>후반에는 이걸 더 발전시켜서:</p>\n<p><strong>국방AI융합학과 정규수업 + 지도교수 연구지도</strong>를 본진으로 두고,<br />\n<strong>중앙·문정도서관 학술DB와 연구지원</strong>을 상시 활용하고,<br />\n필요할 때만 <strong>일반대학원 타과전공</strong>을 활용하는 계획으로 바꿨어.</p>\n<hr />\n<h1>21. 네 수학계획서에서 가장 핵심적인 연구문제</h1>\n<p>네 실제 업무에서 출발했어.</p>\n<p>우리가 정의한 문제는:</p>\n<p><strong>군 WMS 유지보수가 숙련자의 머릿속 지식과 탐색능력에 지나치게 의존한다.</strong></p>\n<p>였어.</p>\n<p>WMS 장애 하나를 보려면 단순히 화면만 보는 게 아니라:</p>\n<p><strong>화면 → Delphi/BDS → Pro*C → SQL/Oracle → 테이블·컬럼 → 로그 → 자동화설비/PLC → 타 체계 → 과거 장애사례</strong></p>\n<p>를 따라가야 하니까 신규 담당자가 엄청 헤매게 된다는 거였어.</p>\n<hr />\n<h1>22. 연구주제의 방향 변화</h1>\n<p>처음에는 막연히 “AI로 WMS 유지보수를 지원한다” 정도였다면, 점점 범위를 줄였어.</p>\n<p>최종적으로 가장 현실적이라고 본 건:</p>\n<p><strong>AI가 WMS를 자동 유지보수하는 체계가 아니라<br />\n신규 담당자가 원인을 찾는 탐색과정을 줄여주는 읽기 전용 AI 진단보조체계</strong></p>\n<p>야.</p>\n<p>즉 AI에게 운영 DB 수정권한 주고 자동배포하는 식의 위험한 연구가 아니고,</p>\n<p><strong>검색 → 근거 제공 → 원인 후보 제시 → 사람이 판단</strong></p>\n<p>하는 구조였어.</p>\n<hr />\n<h1>23. 에이전틱 RAG 구상</h1>\n<p>여기서 에이전틱 RAG 아이디어가 나왔어.</p>\n<p>기존 LLM은 WMS 전체 구조를 모름.</p>\n<p>그래서 모델 앞에 별도 검색계층을 붙여:</p>\n<p><strong>코드 인덱스</strong><br />\n<strong>DB 스키마 지식카탈로그</strong><br />\n<strong>로그 검색계층</strong><br />\n<strong>과거 장애사례 지식베이스</strong></p>\n<p>를 검색하게 하고,</p>\n<p>LLM이 그 결과를 이용해 원인 후보를 제시하도록 만드는 구조를 설계했어.</p>\n<hr />\n<h1>24. AI에게 연결하려고 한 정보</h1>\n<p>우리가 연구용으로 구조화하려고 한 핵심 정보는:</p>\n<table>\n<thead>\n<tr>\n  <th>영역</th>\n  <th>구조화 내용</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>코드</td>\n  <td>파일명, 화면명, 함수·프로시저, 호출관계</td>\n</tr>\n<tr>\n  <td>DB</td>\n  <td>테이블, 컬럼, 키 관계, 업무 의미</td>\n</tr>\n<tr>\n  <td>SQL</td>\n  <td>프로그램이 참조하는 SQL</td>\n</tr>\n<tr>\n  <td>로그</td>\n  <td>시간, 오류코드, 사용자·업무키</td>\n</tr>\n<tr>\n  <td>장애이력</td>\n  <td>증상, 원인, 확인절차, 조치, 검증</td>\n</tr>\n<tr>\n  <td>연동</td>\n  <td>설비·타체계·인터페이스 상태</td>\n</tr>\n</tbody>\n</table>\n<p>핵심은 <strong>개별 코드를 AI가 잘 설명하느냐보다 연결관계를 찾아주느냐</strong>였어.</p>\n<hr />\n<h1>25. ARVIS / GeDAI 사용 경험도 연구계획에 연결</h1>\n<p>네가 실제 군 업무에서 쓰는 생성형 AI 경험도 반영했어.</p>\n<p>공개적으로 확인되는:</p>\n<p><strong>육군 Arvis</strong><br />\n<strong>국방부 GeDAI</strong></p>\n<p>를 연구 맥락에 넣었고,</p>\n<p>네가 현장에서 확인했다고 말한 모델구성인:</p>\n<p><strong>Arvis — A.X-K1 / Gemma 계열</strong><br />\n<strong>JEDI·GeDAI — GPT-4 계열</strong></p>\n<p>도 검토했어.</p>\n<p>다만 이 구체 모델 매핑은 공개 공식자료로 완전히 검증되지 않아 <strong>논문에서 확정 사실처럼 쓰면 안 된다</strong>고 정리했어.</p>\n<hr />\n<h1>26. 기존 군 AI의 한계라고 본 부분</h1>\n<p>기존 모델은:</p>\n<p>코드 설명<br />\nSQL 초안<br />\n로그 요약<br />\n문서 질의</p>\n<p>는 잘할 수 있어도,</p>\n<p><strong>“이 화면 문제가 어느 Delphi 함수에서 시작돼서 어느 Pro*C 프로그램과 SQL, 어느 테이블, 어느 로그까지 이어지는가”</strong></p>\n<p>를 자동으로 아는 것은 아니야.</p>\n<p>그래서 연구핵심을:</p>\n<p><strong>LLM 모델 성능비교가 아니라<br />\n검색·RAG·도구연동을 추가하면 유지보수자의 탐색과정이 실제로 줄어드는가</strong></p>\n<p>로 잡았어.</p>\n<hr />\n<h1>27. 연구 성과지표까지 설계</h1>\n<p>실험 평가지표도 꽤 구체적으로 잡았어.</p>\n<table>\n<thead>\n<tr>\n  <th>지표</th>\n  <th>의미</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>문제탐색시간</td>\n  <td>정확한 파일·함수·테이블·로그 찾는 시간</td>\n</tr>\n<tr>\n  <td>과업완료시간</td>\n  <td>원인후보 도출까지 총 시간</td>\n</tr>\n<tr>\n  <td>관련자원 식별 정확도</td>\n  <td>맞는 코드·테이블·로그를 찾았는지</td>\n</tr>\n<tr>\n  <td>Top-k 성공률</td>\n  <td>AI 상위 제안 안에 정답이 있는지</td>\n</tr>\n<tr>\n  <td>원인후보 정확도</td>\n  <td>실제 원인과 비교</td>\n</tr>\n<tr>\n  <td>SQL 검증 성공률</td>\n  <td>생성 SQL 정확성</td>\n</tr>\n<tr>\n  <td>숙련자 개입횟수</td>\n  <td>기존 담당자에게 질문한 횟수</td>\n</tr>\n<tr>\n  <td>잘못된 확신률</td>\n  <td>틀린 원인을 확정적으로 말하는 비율</td>\n</tr>\n<tr>\n  <td>권한위반 시도율</td>\n  <td>UPDATE/DELETE 등 위험행동 제안 여부</td>\n</tr>\n</tbody>\n</table>\n<p>특히 핵심 KPI는:</p>\n<p><strong>문제탐색시간 + 자원 식별률 + 숙련자 개입횟수</strong></p>\n<p>가 적합하다고 봤어.</p>\n<hr />\n<h1>28. 실험 비교조건</h1>\n<p>세 조건 비교로 설계했어.</p>\n<table>\n<thead>\n<tr>\n  <th>조건</th>\n  <th>방식</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>기존 방식</td>\n  <td>사람이 직접 코드·DB·문서 검색</td>\n</tr>\n<tr>\n  <td>현행 생성형 AI</td>\n  <td>사람이 자료를 찾아서 AI에 직접 넣음</td>\n</tr>\n<tr>\n  <td>에이전틱 보조</td>\n  <td>AI + 자동 코드/DB/로그/장애이력 검색</td>\n</tr>\n</tbody>\n</table>\n<p>이렇게 해야 <strong>모델 자체 효과와 RAG·검색계층 효과를 구분</strong>할 수 있다는 논리였어.</p>\n<hr />\n<h1>29. 대표 장애유형</h1>\n<p>석사연구 범위를 너무 크게 잡지 않으려고 대표 유형도 좁혔어.</p>\n<p><strong>화면·조회 오류</strong><br />\n<strong>DB·업무데이터 오류</strong><br />\n<strong>자동화·바코드 연동 오류</strong><br />\n<strong>타 체계·서버 연동 오류</strong></p>\n<p>정도로 시작하는 게 좋다고 봤어.</p>\n<p>이건 네 실제 업무인 Delphi, Pro*C, Oracle, ZPL, 자동화설비, 인터페이스 문제와 직접 연결돼.</p>\n<hr />\n<h1>30. 실제 군 WMS 데이터를 연구에 쓸 수 있느냐</h1>\n<p>중요한 보안문제였어.</p>\n<p>결론:</p>\n<p><strong>실제 운영자료를 그대로 학교로 가져가는 걸 전제로 하면 안 됨.</strong></p>\n<p>그래서:</p>\n<p>실제 장애사례에서 구조만 가져와<br />\n프로그램명·테이블명·품목번호·부대정보를 바꾸고<br />\n작은 테스트 DB와 모의 코드·로그를 만들어</p>\n<p><strong>비식별·모사 데이터</strong>로 실험하는 걸 기본으로 잡았어.</p>\n<p>실제 자료가 꼭 필요하면 대학이 아니라 <strong>소속기관의 보안·자료활용 승인절차</strong>가 우선이고.</p>\n<hr />\n<h1>31. 연구 산출물도 논문 하나만 생각하지 않았음</h1>\n<p>실제 업무에 남길 결과물로:</p>\n<p><strong>WMS 유지보수 업무모델</strong><br />\n<strong>장애유형 분류체계</strong><br />\n<strong>검증 데이터셋 명세</strong><br />\n<strong>AI 실험 프로토콜</strong><br />\n<strong>장애·인수인계 템플릿</strong><br />\n<strong>에이전트 요구사항 명세</strong></p>\n<p>까지 구상했어.</p>\n<p>즉 논문이 끝나도 신규 담당자의 인수인계 개선에 남는 연구로 만들려고 했던 거야.</p>\n<hr />\n<h1>32. 입학 후 지도교수</h1>\n<p>홍익대 제도를 따로 조사했더니 <strong>1차 학기부터 논문지도교수 신청 가능</strong>하다는 걸 확인했어.</p>\n<p>그래서:</p>\n<p>입학 → 처음 한두 달 WMS 문제정리 → 지도교수 상담 → 연구범위 조정</p>\n<p>이라는 계획이 현실적으로 가능하다고 봤어.</p>\n<hr />\n<h1>33. 학위청구 방식</h1>\n<p>우리가 조사한 일반대학원 구조에서는 학과가 허용한다면:</p>\n<p><strong>논문</strong><br />\n<strong>개별연구과제</strong><br />\n<strong>교과목 이수학점</strong></p>\n<p>등의 방식이 존재했어.</p>\n<p>모집요강상 일반대학원 석사 기준도:</p>\n<p><strong>논문/개별연구과제 → 24학점 / 4학기</strong><br />\n<strong>교과목이수 → 30학점 / 4학기</strong></p>\n<p>구조가 안내돼 있었어.</p>\n<p>그래서 “홍대 일반대학원 = 무조건 논문”으로 보지 않았어.</p>\n<hr />\n<h1>34. 타 학과 수강</h1>\n<p>이 부분도 실제 규정까지 찾았지.</p>\n<p>홍익대 일반대학원 석사는 <strong>타 학과 교과목을 총 9학점까지 이수학점으로 인정</strong>할 수 있어.</p>\n<p>그래서 수학계획서에:</p>\n<p><strong>“연구 과정에서 추가 학습이 필요하면 일반대학원의 다른 전공과목을 선택적으로 수강한다.”</strong></p>\n<p>는 내용을 넣어도 된다고 팩트체크했어.</p>\n<hr />\n<h1>35. 서울캠퍼스 활용 가능성</h1>\n<p>세종 국방AI융합학과 학생이 서울캠을 얼마나 활용할 수 있는지도 따로 심층조사했어.</p>\n<p>결론은:</p>\n<p><strong>세종학생이라고 서울 일반대학원 과목이 일괄 차단되는 것은 아님.</strong></p>\n<p>다만:</p>\n<p>모든 서울수업을 자유롭게 듣는 것도 아니고<br />\n수업별 제한이 있을 수 있고<br />\nClassNet 신청 가능 여부·학점인정은 확인해야 하고<br />\n서울 대면수업 출석을 지속할 현실성이 있어야 해.</p>\n<p>그래서 최종 컨셉을:</p>\n<p><strong>세종 = 본진</strong><br />\n<strong>서울 = 필요한 전문성을 끌어오는 확장 거점</strong><br />\n<strong>온라인 = 지속적인 연구역량 채널</strong></p>\n<p>로 정리했어.</p>\n<hr />\n<h1>36. 서울에서 특히 본 학과</h1>\n<p>네 연구와 연결해서 서울 일반대학원에서는 <strong>산업·데이터공학과</strong>를 특히 봤어.</p>\n<p>후보 과목으로 조사했던 건:</p>\n<p><strong>의사결정지원시스템</strong><br />\n<strong>생산관리특론</strong><br />\n<strong>지식발견과 데이터마이닝</strong><br />\n<strong>최적화 모형</strong><br />\n<strong>사용성 평가론</strong><br />\n<strong>빅데이터분석</strong><br />\n<strong>PHM 및 설비관리</strong></p>\n<p>등이었어.</p>\n<p>특히:</p>\n<p>사용성 평가론 → AI 보조체계가 신규담당자에게 실제 도움이 되는지 평가<br />\n빅데이터분석 → 장애·운영데이터 분석<br />\nPHM/설비관리 → 자동화설비+정보체계 연계</p>\n<p>로 봤고.</p>\n<hr />\n<h1>37. 서울캠 사용 전략</h1>\n<p>첫 학기부터 욕심내서 서울수업까지 여러 개 넣는 건 비추천했어.</p>\n<p>계획은:</p>\n<p><strong>첫 학기:</strong> 국방AI융합학과 수업과 근무병행 리듬 확인<br />\n<strong>그다음:</strong> 연구 부족영역이 보이면 서울 타과 0~1과목<br />\n<strong>연구주제 확정 후:</strong> 관련 교수·연구실 자문 또는 공동연구 가능성 탐색</p>\n<p>으로 정리했어.</p>\n<hr />\n<h1>38. 서울 연구실·GPU는 자유사용한다고 쓰지 않기로 함</h1>\n<p>홍대 서울캠의 특정 AI 연구실이나 GPU 서버를 <strong>세종 학생이 자유롭게 쓸 수 있다는 근거는 없었어.</strong></p>\n<p>그래서 수학계획서에:</p>\n<p>“서울캠 GPU 클러스터를 활용하겠다”</p>\n<p>같은 표현은 빼자고 했고,</p>\n<p>대신:</p>\n<p><strong>“연구가 구체화되면 지도교수와 협의해 관련 연구실·산학연구와의 교류 가능성을 모색한다.”</strong></p>\n<p>로 바꿨어.</p>\n<hr />\n<h1>39. 도서관·학술DB 활용</h1>\n<p>홍대에서 실제 활용할 연구자원도 조사했어.</p>\n<p><strong>DBpia</strong><br />\n<strong>KISS</strong><br />\n<strong>ScienceDirect</strong><br />\n<strong>Web of Science</strong><br />\n참고문헌 관리도구<br />\n학위논문·개별연구과제 검색<br />\n원문복사·상호대차<br />\nTurnitin·iThenticate 계열 유사도 검사<br />\n대학원생 연구교육·DB 활용교육</p>\n<p>등이 확인됐어.</p>\n<p>그래서 수학계획서의 “연구지원 프로그램”이라는 표현도 너무 두루뭉술하니까:</p>\n<p><strong>“교내 학술DB와 도서관 연구지원 서비스”</strong></p>\n<p>정도로 바꾸는 게 정확하다고 봤어.</p>\n<hr />\n<h1>40. 연구장학·RA</h1>\n<p>홍대에는 교수 연구과제 보조 학생을 대상으로 하는 <strong>R/A 장학금</strong>도 있었고, 확인 당시 수업료 50% 수준의 장학 제도가 존재했어.</p>\n<p>다만 지도교수 연구과제에 참여한다고 자동 지급되는 건 아니고 <strong>연구책임자 선발이 전제</strong>라서, 수학계획서에서 받을 것처럼 쓰지는 않았어.</p>\n<hr />\n<h1>41. 비교과·세미나</h1>\n<p>실제로 세종캠에서 <strong>국방AI융합학과 연계 초빙강연</strong>이 토요일 오전에 열린 사례를 확인했고, AI·데이터 관련 기업탐방 같은 활동도 찾았어.</p>\n<p>그래서 “직장인이면 수업만 듣고 끝”이 아니라 주말이나 비정기 행사를 활용할 여지가 있다고 봤어.</p>\n<hr />\n<h1>42. 입학 후 실제 생활계획까지 짰음</h1>\n<p>학업 수행 가능성을 현실적으로 보여주려고 주간 리듬도 잡았어.</p>\n<p>평일에는:</p>\n<p><strong>근무 → 저녁수업 약 2회</strong></p>\n<p>비수업일에는:</p>\n<p><strong>1~2시간 복습·문헌정리</strong></p>\n<p>주말에는:</p>\n<p><strong>약 4시간 WMS 사례정리·논문읽기·연구기록</strong></p>\n<p>야근이나 출장 주간에는 새 공부를 늘리지 않고:</p>\n<p><strong>수업 출석 + 마감과제 우선</strong></p>\n<p>으로 잡았어.</p>\n<hr />\n<h1>43. 입학 후 첫 반년 계획</h1>\n<p>이것도 따로 만들었어.</p>\n<table>\n<thead>\n<tr>\n  <th>시기</th>\n  <th>내용</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>3월</td>\n  <td>전공수업 적응, 연구주제 1쪽 정리</td>\n</tr>\n<tr>\n  <td>3~5월</td>\n  <td>지도교수 신청·연구방향 조정</td>\n</tr>\n<tr>\n  <td>5월 이후</td>\n  <td>WMS 연구문제·평가지표 구체화</td>\n</tr>\n<tr>\n  <td>3월</td>\n  <td>도서관·교외접속·DB 환경 정리</td>\n</tr>\n<tr>\n  <td>3~8월</td>\n  <td>선행연구 문헌표 구축</td>\n</tr>\n<tr>\n  <td>4월 이후</td>\n  <td>연구특강·DB교육 선택 참여</td>\n</tr>\n<tr>\n  <td>여름</td>\n  <td>부족한 학문영역 판단</td>\n</tr>\n<tr>\n  <td>7~8월</td>\n  <td>서울 타과 개설과목 확인</td>\n</tr>\n<tr>\n  <td>다음 학기</td>\n  <td>필요한 경우 타과 0~1과목</td>\n</tr>\n</tbody>\n</table>\n<p>이 일정 자체는 확정 학사일정이 아니라 <strong>3월 입학을 가정한 실행순서</strong>였어.</p>\n<hr />\n<h1>44. 최종적으로 우리가 만든 홍대 학업 그림</h1>\n<p>한 문장으로 압축하면 이거였어.</p>\n<p><strong>세종의 국방AI융합학과 수업과 지도교수를 중심으로 학업하면서, 현재 WMS 실무를 연구문제로 바꾸고, 학술DB와 타과전공을 필요한 만큼 활용해 에이전틱 AI 기반 유지보수 지원체계를 연구하고, 결과를 다시 업무의 인수인계·장애분석 방식에 환류한다.</strong></p>\n<p>이게 홍대 지원 전체의 핵심이었어.</p>\n<hr />\n<h1>45. 홍대가 아주대와 달랐던 점</h1>\n<p>두 학교를 비교하면서 계속 언급했던 핵심도 있어.</p>\n<p><strong>홍대 국방AI융합학과 = 일반대학원 / 학술석사 성격</strong></p>\n<p><strong>아주대 정보통신대학원 = 특수대학원 / 전문석사 성격</strong></p>\n<p>네가 처음부터 학위 성격을 꽤 중요하게 봤기 때문에, <strong>학문·연구 측면에서는 홍대가 더 끌리는 부분</strong>이 있었어.</p>\n<p>반면 아주대는 직장병행과 실제 전공 선택이 더 명확한 장점이 있었고.</p>\n<hr />\n<h1>46. 아직 완전히 해결되지 않은 홍대 쟁점</h1>\n<p>현재도 남아 있는 건 크게 이 정도야.</p>\n<table>\n<thead>\n<tr>\n  <th>쟁점</th>\n  <th>상태</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n  <td>취학추천 재도전 최종 승인</td>\n  <td><strong>진행/미확정</strong></td>\n</tr>\n<tr>\n  <td>군위탁전형 반영 방식</td>\n  <td>실제 원서 전형구분과 추천명단 반영 확인 필요</td>\n</tr>\n<tr>\n  <td>50% 장학 매학기 재추천 필요 여부</td>\n  <td><strong>미확정</strong></td>\n</tr>\n<tr>\n  <td>2027 실제 시간표</td>\n  <td>입학 후 학기별 확인 필요</td>\n</tr>\n<tr>\n  <td>모든 수업의 온라인 여부</td>\n  <td>보장 안 됨</td>\n</tr>\n<tr>\n  <td>서울캠 타과 실제 신청 가능과목</td>\n  <td>매 학기 ClassNet 확인 필요</td>\n</tr>\n<tr>\n  <td>실제 군 WMS 자료 연구 활용</td>\n  <td>기관 보안승인 범위 확인 필요</td>\n</tr>\n<tr>\n  <td>특정 교수의 WMS/에이전틱 RAG 지도 가능 여부</td>\n  <td>입학 후 상담 필요</td>\n</tr>\n</tbody>\n</table>\n<hr />\n<h1>47. 현재 기준 홍대 상태</h1>\n<p>지금 이 대화 흐름의 마지막 상태는:</p>\n<p><strong>홍익대학교 일반대학원 세종캠퍼스 국방AI융합학과 2027학년도 전기 석사 신입 지원</strong></p>\n<p><strong>11월 7일 10시부터 면접</strong></p>\n<p><strong>취학추천은 한 번 취소됐다가 다시 도전하기로 한 상태</strong></p>\n<p><strong>취학추천 인정 시 수업료 50% 감면을 목표</strong></p>\n<p><strong>수학계획서는 WMS 유지보수 + 생성형 AI/에이전틱 RAG 연구를 중심으로 설계 완료</strong></p>\n<p><strong>실제 시간표·학교 제도까지 팩트체크해서 직장병행 가능성을 검토한 상태</strong></p>\n<p>야.</p>\n<p>그리고 이번에 다시 뒤져보니 네 말이 맞았어. 홍대 관련해서 우리가 한 건 단순히 “지원 일정 알아본 것” 수준이 아니라 <strong>학과 분석 → 시간표 → 지원전략 → 수학계획서 → 연구주제 설계 → 대학원 자원조사 → 서울캠 확장전략 → 취학추천 → 장학 → 면접준비</strong>까지 거의 하나의 프로젝트였어.</p>\n",
  "planHTML": "<h1>홍익대학교 국방AI융합학과 수학계획서 — 제출 문안 원문</h1>\n<h2>1. 진학 동기</h2>\n<p>저는 전산직 군무원으로 군 물류 관련 체계와 창고관리시스템(WMS)의 운영·유지보수를 담당하고 있습니다. 임용 당시 편제상 담당이 아닌 WMS 유지보수 업무를 대리하며 데이터베이스 조회, 서버 프로그램 수정, 자동화설비 연계 문제 해결, 백업체계 점검 등 다양한 실무를 경험하였습니다.</p>\n<p>특히 2000년대 초 개발된 WMS는 오래된 개발환경과 코드, 복잡한 데이터 구조, 군수업무 절차, 타 정보체계와의 연동이 얽혀 있어, 신규 담당자가 업무를 익혀 독립적으로 수행하기까지 진입장벽이 높다는 점을 체감하였습니다. 실제로 무인지게차 카메라가 상자에 붙은 바코드를 잘 인식하지 못해 ZPL 출력구조를 수정하고, 현장에서 요구한 화면 조회 컬럼을 추가하기 위해 오라클 DB를 직접 질의하고 Pro*C 서버 프로그램을 수정하는 등 전산기술과 물류업무를 함께 이해해야 하는 상황을 자주 겪었습니다.</p>\n<p>지금까지는 현장에서 수시로 발생하는 연동 오류 해결에 집중해 왔습니다. 그러나 직무를 수행할수록 신규 담당자의 적응에 왜 많은 시간이 필요한지, 숙련자의 공백이 왜 조직의 운영 부담으로 이어지는지 체계적으로 파악할 필요가 있다고 판단하였습니다. 담당자가 바뀌어도 같은 장애를 처음부터 다시 추적하지 않도록, AI와 데이터 분석에 대한 이해를 바탕으로 문제의 원인과 개선방안을 검토할 역량을 갖추고자 국방AI융합학과에 지원하였습니다.</p>\n<h2>2. 전공영역에 대한 수학계획</h2>\n<h3>가. AI 및 데이터 분야의 기초 역량 보완</h3>\n<p>입학 후 AI와 데이터 분석의 기초를 점진적으로 보완하겠습니다. 이미 실무에서 군이 개발한 생성형 AI를 SQL 작성, 레거시 코드 해석, 로그 분석 등에 보조적으로 활용하고 있지만, AI가 완성된 답을 제시하는 것과 그 답을 신뢰해 실제 상황에 적용하는 것은 별개의 문제임을 인식하고 있습니다.</p>\n<p>따라서 단순한 활용 노하우보다 AI와 데이터 분석의 기본 원리, 결과가 도출되는 과정과 검증 방법, 정보보호와 보안상 제약을 차근차근 학습하겠습니다. 작년 개설 과목 중 데이터사이언스, 정보보호 및 보안 등을 미리 확인하였으며, 내년 개강 후에는 학기별 강의계획서와 교수님의 지도를 바탕으로 학업목표에 맞게 수강하겠습니다.</p>\n<h3>나. 전산 실무자 관점을 군수·물류 운영자 관점으로 확장</h3>\n<p>WMS 유지보수의 어려움은 프로그램 코드만으로 설명되지 않습니다. 입·출고, 재고관리, 자동화설비, 타 군수정보체계와의 연동, 담당자 간 인수인계가 서로 맞물려 있기 때문입니다.</p>\n<p>이에 AI와 데이터 분야의 학습과 더불어 AI 및 데이터 기반 공급사슬관리, 국방기획론, AI 기반 의사결정 및 최적화 모델 등 군수·물류 운영과 연계된 과목도 폭넓게 수강하여, 물류정보체계의 문제를 전산 담당자의 시각에 한정하지 않고 물류 흐름과 자원 운영의 관점에서도 분석하겠습니다.</p>\n<h3>다. 실무 경험의 연구과제화</h3>\n<p>학업이 진행되면 현장에서 반복적으로 경험한 WMS 유지보수 과정을 연구문제로 구체화하겠습니다. 특히 신규 담당자가 이상 현상을 보고받았을 때 사용자 수준 프로그램, 서버 프로그램, SQL 질의를 통한 DB 접근까지 단계적으로 원인을 추적하는 과정에 주목하여, 어떤 지식과 경험이 업무 진입장벽으로 작용하는지 분석하겠습니다.</p>\n<p>이후 군에서 활용 가능한 생성형 AI의 코드 분석 및 도구 사용 수준을 검토하여, 내부 자료 탐색, SQL 조회문 제안, 장애 원인 후보 도출 등 문제해결 과정을 함께할 수 있는 에이전틱 도구를 고안하겠습니다. 실제 적용 가능성은 작업 처리 시간, 데이터 식별의 정확성, 사람의 개입 필요 범위 등을 평가하여 현실적으로 판단하고, 정보체계의 안정과 보안을 고려해 사람의 확인·승인이 필요한 영역까지 구분하겠습니다.</p>\n<h2>3. 학업 수행 계획</h2>\n<p>현재 세종 지역에서 근무·거주하고 있으며, 개설 시간표상 평일 저녁 수업이 충분히 운영되어 직무와 학업을 병행할 수 있는 여건임을 확인하였습니다. 국방AI융합학과가 군 재직자를 위한 학습환경을 갖추고 있고 세종캠퍼스와의 접근성도 높은 만큼, 근무 후 온라인 수업은 물론 대면 세미나와 연구지도에도 성실히 참여하겠습니다.</p>\n<p>군 취학추천 절차를 거쳐 입학한 후에는 연구지도를 바탕으로 현재 수행 중인 WMS 운영 및 유지보수 경험을 연구주제로 정립하겠습니다. 선행연구를 검토할 때는 교내 학술DB와 연구지원 프로그램을 활용하고, 연구 과정에서 추가 학습이 필요하면 일반대학원 타과 전공과목도 선택적으로 수강하겠습니다. 실무에서 발견한 문제는 군 보안 규정에 맞춰 연구 가능한 사례로 정리하고, 학업에서 익힌 분석방법은 다시 현장에 적용하겠습니다.</p>\n<h2>4. 학업 성과의 활용 계획</h2>\n<p>현재 군 내부에서는 Arvis의 A.X K1·Gemma 4 31B, GeDAI 등의 생성형 AI를 활용할 수 있으며, 실무에서도 레거시 코드 해석, SQL 작성, 로그 분석 등에 적용하고 있습니다. 이 모델들은 주어진 코드나 로그 기록을 해석하고 문제의 단서를 찾는 데 유용하지만, 컨텍스트가 부족하면 실제로 쓰이지 않는 데이터나 구조를 원인으로 제시하는 환각(hallucination) 현상이 나타나기도 합니다. 또한 WMS 화면, 서버 프로그램, 데이터베이스가 어떤 관계로 연결되는지 모델이 스스로 알 수 없으므로, 담당자가 필요한 자료를 찾아 제공하고 결과의 타당성을 다시 확인해야 하는 상황입니다.</p>\n<p>따라서 특정 생성형 AI의 성능 자체에 의존하기보다, Arvis와 GeDAI의 모델별 특성과 한계를 파악하여 WMS 유지보수에 필요한 정보를 어떤 방식으로 제공해야 정확한 분석을 이끌어낼 수 있는지를 구체화하겠습니다. 관련 코드와 DB 구조, 로그, 기존 장애기록을 지식베이스로 구축한 뒤 질문에 맞는 내용을 검색해 모델에 제공하고, 답변에 참조 출처를 표시해 검증할 수 있는 검색증강생성(RAG) 아키텍처를 에이전틱 도구의 기반으로 설계하겠습니다. 이 구조에서는 모델이 바뀌더라도 구축한 지식베이스를 그대로 활용할 수 있습니다. 나아가 이를 신규 담당자의 인수인계와 장애 대응 절차에 반영해 숙련자 공백에 따른 운영 부담을 줄이겠습니다.</p>\n",
- "generated": "2026-11-07",
+ "generated": "2026-11-06",
  "practice": [
   [
    "D-7 / 토요일",
@@ -1344,12 +2000,20 @@ window.ATELIER_SCHOOLS.hongik = {
   [
    "50% 감면 4학기 수업료 단순합",
    "15,286,000원"
+  ],
+  [
+   "20% 감면 4학기 수업료 단순합",
+   "24,457,600원"
+  ],
+  [
+   "50% 감면 수업료 + 첫 입학금 합계",
+   "16,282,000원"
   ]
  ],
  "studySummary": "1) 생성형 AI는 이미 실무에 사용했지만 검증 능력은 부족함. 2) WMS는 전산·군수 운영의 결합 문제. 3) 신규 담당자의 원인 탐색과 인수인계가 연구대상. 4) RAG+에이전틱 구성은 사람 승인과 읽기 전용 원칙 아래 단계적 검증.",
  "alerts": [
   {
-   "text": "학교 모집공고는 구체적인 면접 안내 11월 5일 예정, 학과별 시작시각 안내 11월 6일 예정으로 나누어 고지했어. 최종 공고를 확인해야 하지만 두 날짜가 모순되는 건 아니야.",
+   "text": "학교 모집공고는 구체적인 면접 안내를 11월 5일, 학과별 시작시각을 11월 6일 공지로 나눠 고지했어. 면접 당일은 11월 6일 공지분과 수험표 시각이 최종 기준이야.",
    "home": true,
    "overline": "SCHEDULE UPDATE",
    "title": "면접 시작시각은 다시 확인",
@@ -1391,7 +2055,8 @@ window.ATELIER_SCHOOLS.hongik = {
    }
   },
   {
-   "text": "수학계획서 원문 속 특정 모델명·버전, “작년/내년” 표현은 제출 당시 문안 그대로 보존되며 최신 사실로 보증하지 않는다."
+   "text": "수학계획서 원문 속 특정 모델명·버전, “작년/내년” 표현은 제출 당시 문안 그대로 보존되며 최신 사실로 보증하지 않는다.",
+   "notice": "record-vs-current"
   },
   {
    "text": "2027 수업 시간표·지도교수·학위청구 방식·군위탁 장학·취학추천 최종 처리상태는 별도 확인 대상."
@@ -1399,146 +2064,6 @@ window.ATELIER_SCHOOLS.hongik = {
  ],
  "dossierHTML": "<p>이 문서는 면접 답변을 외우는 앱이 아니다. 이미 제출한 수학계획서의 약속을 <strong>실제로 대학원생이 됐을 때 감당할 수 있는 계획</strong>으로 바꾼 기록이다. 네가 말한 WMS 실무 경험과 이전 조사 47개 항목을 원문까지 보존하고, 학교에서 확인된 제도와 아직 가정에 불과한 일을 구별한다. 이 보고서의 판단은 입학·보안승인·과목 개설·교수 배정·학위청구 방식의 확정을 대신하지 않는다.</p>\n<h2 id=\"chapter-00\">00. 먼저 내리는 결론</h2>\n<p><strong>핵심 판단 — 입학과 직무 병행은 충분히 구상할 수 있다. 그러나 연구성과를 약속하려면 범위를 확실히 줄여야 한다.</strong></p>\n<p>홍익대 국방AI융합학과는 2025년 개설된 일반대학원 석사과정이다. 국방기획·경영·소프트웨어를 가로지르는 교육방향과 재직자를 위한 실시간 온라인 야간 수업 사례가 공개돼 있다. 네가 제공한 2026년 시간표 기록에도 19~22시 수업이 다수 있어 <strong>세종에서 일하고 사는 직장인이 계속 수강할 수 있다는 가설</strong>은 합리적이다. 하지만 일반대학원은 행정상 주간으로 분류되고, 일부 16~19시 및 토요일 과목이 있었으며, 2027년 수업표와 교수별 출석 방식은 아직 알 수 없다. 강의 하나만 저녁에 열려도 전체 졸업 가능성을 보장하지 않는다는 점이 중요하다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S02\">S02</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S03\">S03</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P47\">P47</a></sup></p>\n<p>학교의 2026년 수강 안내는 주간 석사 학기당 <strong>6~9학점</strong>, 4학기에는 <strong>6학점 이하</strong>를 안내한다. 논문·개별연구과제 경로라면 <strong>3학기까지 24학점</strong>을 확보해야 4학기에 발표할 수 있다. 그래서 막연히 '주 2회 야간수업'을 기대하기보다 실제 과목 조합과 출석 일수를 계산해야 한다. 수업뿐 아니라 <strong>선수과목, 종합시험, 일반대학원 외국어시험, 학위청구방법 신청</strong>이 별도의 현실적 변수다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S02\">S02</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S03\">S03</a></sup></p>\n<p>연구는 '군 WMS를 AI가 자동 유지보수한다'가 아니다. <strong>신규 담당자가 장애의 증상에서 관련 코드·테이블·로그·이전 조치로 이동할 때 근거를 얼마나 빨리 찾을 수 있는가</strong>를 평가한다. 공개·독립 가상자료로 시작해 사람이 검색하는 방식, 일반 생성형 AI에 직접 자료를 주는 방식, RAG 검색으로 출처를 연결하는 방식을 비교한다. 여기서 의미 있는 개선이 검증되지 않으면 AI 도입을 포기하고 <strong>문서화된 장애 분류체계와 검색 가능한 지식기반</strong>만 남겨도 된다. 그게 오히려 석사 연구다운 결론일 수 있다.</p>\n<aside class=\"insight\"><b>이 보고서의 단 하나의 중심 질문</b><br>“숙련자가 머릿속으로 연결하던 WMS 유지보수 지식을, 다른 담당자도 검증 가능한 근거와 절차로 재사용할 수 있을까?”</br></aside>\n<h2 id=\"chapter-01\">01. 지금 출발점은 어디인가</h2>\n<h3 id=\"sub-24-479793\">1-1. 지원동기의 신뢰도는 경험에서 나온다</h3>\n<p>네가 제출한 수학계획서에는 군 물류정보체계와 WMS 운영·유지보수를 수행한 사실이 구체적으로 나온다. 원래 편제상 담당이 아니던 유지보수 업무를 대리하게 됐고, Oracle DB 질의, 서버 프로그램 수정, 자동화설비 연계 문제, 백업 점검까지 범위를 넓혀 왔다. 바코드 인식 문제에서는 <strong>ZPL 출력구조 수정</strong>, 현장 조회 요구에서는 <strong>DB 질의와 Pro*C 서버 프로그램 수정</strong>을 경험했다. 이 두 장면은 면접 장식이 아니라 <strong>문제가 화면 하나에서 닫히지 않는다는 근거</strong>다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P01\">P01</a></sup></p>\n<p>증상은 바코드 인식 또는 조회 누락처럼 단순하게 보인다. 하지만 확인할 대상은 화면·라벨, 서버 코드, SQL, 테이블과 컬럼, 장비 연동, 입출고·재고업무의 의미까지 이어진다. 숙련자는 이 경로를 대략 알고 있지만 신규 담당자는 어디서 시작해야 할지도 모른다. 담당자가 교체되면 같은 장애가 새 문제처럼 다시 시작된다. 이것이 네가 연구문제로 바꾸려는 <strong>지식 전달의 병목</strong>이다.</p>\n<h3 id=\"sub-30-374953\">1-2. 네 경험을 연구 가능한 질문으로 바꾸는 4단계</h3>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>실무에서 실제로 본 것</th>\n<th>연구자가 다시 묻는 것</th>\n<th>관찰 가능한 자료</th>\n<th>가능한 성과물</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>바코드 인식 불량 후 출력구조 수정</td>\n<td>한 증상에서 어떤 자료를 먼저 찾아야 하나?</td>\n<td>가상 라벨 규격·오류 로그·조치 순서</td>\n<td>진단 경로 맵</td>\n</tr>\n<tr>\n<td>화면 조회 항목 추가</td>\n<td>화면과 DB의 관계를 얼마나 빨리 찾을 수 있나?</td>\n<td>가상 화면·함수·SQL·스키마</td>\n<td>연결관계 카탈로그</td>\n</tr>\n<tr>\n<td>반복되는 연동 오류</td>\n<td>기존 장애이력이 재발 분석에 도움이 되나?</td>\n<td>모사 장애티켓·근거 문서</td>\n<td>재사용 가능한 사례 템플릿</td>\n</tr>\n<tr>\n<td>새로운 담당자의 적응 지연</td>\n<td>자료 검색지원이 숙련자 의존도를 줄이나?</td>\n<td>동일 과제의 해결시간·질문횟수</td>\n<td>비교평가 보고서</td>\n</tr>\n</tbody>\n</table></div>\n<p>네가 해결한 일을 무리하게 'AI 성과'라고 소급해 말할 필요는 없다. <strong>현재의 실무 성과</strong>와 <strong>대학원에서 검증하려는 연구 가설</strong>을 구별해야 답변이 설득력을 얻는다.</p>\n<h3 id=\"sub-25-494937\">1-3. 학습 역량은 강점과 공백을 같이 본다</h3>\n<ul>\n<li><strong>출발 강점:</strong> 실제 데이터 구조를 읽어 SQL을 구성했고, 화면·서버·장비의 연결을 직접 추적한 경험이 있다. 즉 문제정의와 현장 검증 방법을 이미 알고 있다.</li>\n<li><strong>보완할 부분:</strong> 통계적 비교, AI 모델 평가, 정보검색의 정량 지표, 실험 설계, 학술논문 쓰기 등은 대학원에서 체계적으로 배워야 한다.</li>\n<li><strong>하지 않을 약속:</strong> 새로운 대형언어모델 자체를 개발하겠다거나 군 WMS에 AI를 곧바로 설치하겠다고 말하지 않는다.</li>\n</ul>\n<h2 id=\"chapter-02\">02. 학교가 제공하는 것과 제공한다고 가정하면 안 되는 것</h2>\n<h3 id=\"sub-14-636051\">2-1. 교육과정의 정체성</h3>\n<p>학교는 2025학년도 1학기 세종캠퍼스 일반대학원에 국방AI융합학과를 신설했다고 밝혔다. 소개자료에서는 AI·국방기획·운영·경영을 아우르는 융합교육을 제시하며, 공개 보도에는 <strong>국방AI소프트웨어융합·국방AI융합경영·국방AI융합기획</strong>이라는 세부 방향과 Webex 실시간 야간 강의 사례가 등장한다. 그래서 네 주제는 학과 이름에 'AI'가 들어 있어서가 아니라 <strong>기술과 실제 군수 운영 사이의 간극을 연구한다는 점</strong>에서 접점이 크다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S04\">S04</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S05\">S05</a></sup></p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>구분</th>\n<th>네 연구에 주는 의미</th>\n<th>해석할 때 주의할 점</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>AI·데이터 기초</td>\n<td>신뢰도 평가와 검색 알고리즘 이해</td>\n<td>사용법을 배웠다고 연구방법이 저절로 생기지 않음</td>\n</tr>\n<tr>\n<td>국방 SW·정보보호</td>\n<td>레거시 구조, 보안·운영 제약</td>\n<td>실제 군 체계 접근권한이 학교 수업에 따라 생기지 않음</td>\n</tr>\n<tr>\n<td>군수·공급사슬관리</td>\n<td>입고·재고·수송·자원 흐름에서 장애의 의미 이해</td>\n<td>소프트웨어 진단과 물류 최적화는 서로 다른 연구문제</td>\n</tr>\n<tr>\n<td>국방기획·의사결정</td>\n<td>기술도입의 편익·위험·조직 수용성 판단</td>\n<td>모든 분야를 석사과정 하나에 담으려 하면 주제가 흐려짐</td>\n</tr>\n</tbody>\n</table></div>\n<h3 id=\"sub-26-562417\">2-2. 검토했던 교육과정 34개 전공선택 후보</h3>\n<p>이 목록은 네가 보존한 <strong>이전 학과 교육과정 조사 기록</strong>이다. 과목명은 정규 교육과정에 있다는 뜻이지 <strong>2027년 1·2학기에 실제로 열린다는 약속이 아니다</strong>. 학과 홈페이지는 교과목 목록을 동적으로 표시하기 때문에 이번 조사에서 웹 검색 결과만으로 모든 과목의 최신 개설 여부를 재확인할 수는 없었다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P47\">P47</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S06\">S06</a></sup></p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>구분</th>\n<th>교육과정에서 확인·기록된 과목</th>\n<th>네 목적에 따른 우선순위</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>기초·AI·보안</td>\n<td>데이터 사이언스, 정보보호 및 보안, 빅데이터 마이닝, 국방 AI기술 응용, 국방 지능형 정보보호 특론, 국방 사물인터넷 특론, 국방 소프트웨어 관리, 국방 IT 융합·정책</td>\n<td><strong>높음</strong>: 기초·평가·구조 이해</td>\n</tr>\n<tr>\n<td>데이터·경영 분석</td>\n<td>AI와 빅데이터를 활용한 경영연구방법론, 인공지능 솔루션: 생성형 AI 활용, 빅데이터를 이용한 비즈니스 분석, 인공지능과 서비스 경영, 생성형 AI와 전략경영</td>\n<td><strong>높음~중간</strong>: 실험방법과 적용 판단</td>\n</tr>\n<tr>\n<td>군수·의사결정</td>\n<td>AI 및 데이터 기반 공급사슬관리, AI 기반 의사결정 및 최적화 모델, 국방획득 및 사업관리, 국방 AI 프로젝트 관리, 국방기획론, 국방경제학, 국방경영전략과 자율무기체계</td>\n<td><strong>높음~중간</strong>: 현장 전체 맥락</td>\n</tr>\n<tr>\n<td>국방·조직·정책</td>\n<td>국가안보론, 군사학 이론, 군 조직이론, 국방정책론, 국방 AI 정책 세미나, 조직 리더십, 인적자원관리, 국방 마케팅 전략</td>\n<td><strong>선택</strong>: 학습 영역 확장</td>\n</tr>\n<tr>\n<td>기술 확장</td>\n<td>우주위성 통신체계, 블록체인, 스마트시티와 기술융합, 무인체계와 미래산업, 국방 AI 무인체계, 자율드론과 로봇</td>\n<td><strong>주제 전환 시</strong> 검토</td>\n</tr>\n</tbody>\n</table></div>\n<p>위 표는 기존 목록 34과목을 주제별로 재배열한 것이다. 종합시험용 0학점 과목 명칭도 이전 조사에 따로 등장하므로 <strong>강의 수강학점과 시험 과목을 혼동하지 않아야 한다</strong>. 전체 원문은 마지막 부록에 있다.</p>\n<h3 id=\"sub-33-480372\">2-3. 강의가 저녁에 있다는 사실과 '야간대학원'은 다르다</h3>\n<p>이전 기록에서 살펴본 2026년 강의 예시는 <strong>19:00~22:00 다수, 18:00~21:00 일부, 16:00~19:00 예외, 토요일 10:00~13:00</strong>다. 학과가 군 재직자 대상 온라인 교육을 소개한 사실도 별도로 확인된다. 다만 학교의 2026학년도 대학원 수강 안내에는 <strong>대면수업 원칙 + 군위탁 학생 등에 대한 비대면 허용 예외</strong>가 동시에 존재한다. 이것은 <strong>해당 학생이 비대면 수업을 반드시 받을 권리</strong>라는 뜻은 아니다. 실제 과목별 운영은 담당교수·시간표·군위탁전형 반영을 통해 확인해야 한다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S02\">S02</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S05\">S05</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P47\">P47</a></sup></p>\n<p><strong>현실판단:</strong> 세종 거주라는 조건 덕분에 주중 저녁 대면 수업의 부담은 상대적으로 작다. 그러나 학기가 바뀌면 일부 주간수업이나 대면 일정에 대해 소속기관의 합법적인 근무조정·휴가가 필요하다. <strong>야근을 무조건 피할 수 있다는 전제를 쓰면 안 된다.</strong></p>\n<h2 id=\"chapter-03\">03. 학사 제도부터 역산한 4학기 설계</h2>\n<h3 id=\"sub-21-630882\">3-1. 학점이 실제 시간표를 결정한다</h3>\n<p>학교 2026년 공지에 따르면 주간 석사 <strong>학기당 6~9학점</strong>(4학기부터 6학점 이하), 다른 학과 전공수업 인정 <strong>총 9학점 이내</strong>가 안내되어 있다. 논문·개별연구과제 방식은 24학점, 교과목 이수방식은 일반적으로 30학점이라는 안내도 있다. 다만 <strong>국방AI융합학과가 해당 학위청구방법을 어떤 조건으로 허용하는지</strong>는 입학 후 확인해야 한다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S02\">S02</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S03\">S03</a></sup></p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>학위 경로 가정</th>\n<th style=\"text-align:right\">1학기</th>\n<th style=\"text-align:right\">2학기</th>\n<th style=\"text-align:right\">3학기</th>\n<th style=\"text-align:right\">4학기</th>\n<th>반드시 확인할 점</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>논문 / 개별연구과제</strong></td>\n<td style=\"text-align:right\">9</td>\n<td style=\"text-align:right\">9</td>\n<td style=\"text-align:right\">6</td>\n<td style=\"text-align:right\">0</td>\n<td>3학기까지 24학점, 4학기 발표 가능 여부, 해당 학과 허용</td>\n</tr>\n<tr>\n<td><strong>교과목 이수학점</strong></td>\n<td style=\"text-align:right\">9</td>\n<td style=\"text-align:right\">9</td>\n<td style=\"text-align:right\">9</td>\n<td style=\"text-align:right\">3</td>\n<td>30학점과 학위청구방법 신청, 학과 필수·시험 요건</td>\n</tr>\n</tbody>\n</table></div>\n<p>위 조합은 학교의 2026년 일반 규정에 맞춘 <strong>예시 계산</strong>이다. '반드시 이대로 들어야 한다'는 시간표가 아니다. 한 과목 3학점/3시간을 기준으로 9학점이면 강의만 주 9시간이다. 여기에 강의별 예습·과제·논문 읽기가 더해진다. 주 2회만 수업이 열린다는 보장도 없다.</p>\n<h3 id=\"sub-17-77997\">3-2. 놓치기 쉬운 졸업 조건</h3>\n<ul>\n<li><strong>선수과목:</strong> 학부 전공과 다른 경우 별도 선수과목을 지정받을 수 있다. 지정 과목은 일반적으로 졸업학점에 포함되지 않으며, 미이수 시 종합시험·심사·수료에 지장이 생길 수 있다는 학교 공지가 있다.</li>\n<li><strong>종합시험:</strong> 석사 기준 3학기 이상 등록과 일정 학점 취득 요건 및 과목별 신청 절차가 안내돼 있다. 학과별 전공필수 조건은 따로 확인한다.</li>\n<li><strong>외국어시험:</strong> 일반대학원은 외국어시험 또는 면제·대체 제도가 있을 수 있다. 특정 시험 면제 기준을 본인에게 자동 적용한다고 가정하지 않는다.</li>\n<li><strong>학위청구방법 신청:</strong> 논문/개별연구/교과목이수 중 어떤 경로든 지정 기간에 신청해야 한다는 안내가 있다.</li>\n<li><strong>지도교수:</strong> 1차 학기부터 신청 가능하다는 이전 조사가 있지만 실제 배정, 지도 수락, 연구분야 적합성은 입학 후 확인해야 한다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S02\">S02</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S03\">S03</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P47\">P47</a></sup></li>\n</ul>\n<p><strong>합리적인 첫 달 행동:</strong> 입학하자마자 강의계획서뿐 아니라 학과 행정실에 <strong>선수과목 지정 여부·외국어시험·종합시험·학위청구방식·지도교수 일정</strong>을 한 번에 확인한다. 일찍 확인하면 2년 뒤의 문제를 줄일 수 있다.</p>\n<h2 id=\"chapter-04\">04. 2027년 3월의 월요일부터 2029년 2월까지</h2>\n<p>아래는 <strong>합격·등록·취학추천 등 절차가 충족되고 정규 등록했다는 가정</strong>이다. 수강 과목, 일과표, 연구 성과는 대학이 확정한 사실이 아니라 실행 가능한 계획안이다.</p>\n<h3 id=\"sub-31-973738\">1학기 · 2027.03~08 — 모르는 것을 지도화한다</h3>\n<p>수업 후보는 데이터 사이언스, 정보보호 및 보안, 국방 소프트웨어 관리 등이다. 첫 학기의 목표는 화려한 개발이 아니라 <strong>AI를 어떻게 평가하는지 배우고, 문제를 논문 한 페이지로 표현하는 것</strong>이다. 3월에는 실제 시간표를 보고 수강조합을 정하고 선수과목 지정 여부를 확인한다. 4~5월에는 지도 가능 교수와 상담하고, “신규담당자의 자원 식별에 검색 지원이 도움이 되는가”처럼 좁은 연구 질문을 만든다. 여름 전에는 별도의 <strong>독립 가상 코드·DB·로그</strong>로 2~3개 장애유형을 손으로 재현한다.</p>\n<p><strong>끝에 남아야 하는 것:</strong> 1쪽 연구문제서, 선행연구 읽기표, 승인 없이 공개 가능한 독립 모사 사례, 지도교수와 합의한 연구범위. 논문 초안을 바로 완성하지 못해도 괜찮다. 다만 데이터나 참가자가 없으면 무엇으로 실험할지 미리 대안을 세워야 한다.</p>\n<h3 id=\"sub-42-551883\">2학기 · 2027.09~2028.02 — 찾아낼 수 있는 근거부터 정리한다</h3>\n<p>교육과정에 실제 개설된다면 AI 및 데이터 기반 공급사슬관리, AI 기반 의사결정 및 최적화 모델, 경영연구방법론 관련 과목을 선택한다. 현장 화면·서버·DB·장비의 관계를 개념 모형으로 만들되 <strong>실제 군 시스템 구조를 그대로 옮기지 않는다</strong>. 연구 데이터는 독립적으로 창작한 소규모 가상 창고관리 프로그램과 가상 장애기록을 사용한다.</p>\n<p>여기서는 '코드·테이블 이름을 잘 맞혔다'보다 <strong>정답 근거 문서를 얼마나 잘 찾는가</strong>를 먼저 확인한다. 키워드 검색과 단순 문서목록이 기초선이다. 검색 품질이 낮다면 생성형 AI 답변을 붙여도 시스템 전체가 좋아지지 않는다.</p>\n<p><strong>끝에 남아야 하는 것:</strong> 평가문항 10~20개 수준의 파일럿 세트(목표치), 검색·정답 데이터 명세, 검색기준선 결과, 실험 가능성에 대한 지도교수 피드백.</p>\n<h3 id=\"sub-32-319098\">3학기 · 2028.03~08 — 비교해서 유효성을 묻는다</h3>\n<p>논문/개별연구과제를 계획한다면 3학기까지 <strong>24학점 확보</strong>가 가능한 시간표를 역산한다. 학기 중에는 2학기까지 만든 문제·정답 데이터를 확장하고, 세 가지 조건을 비교한다. (A) 사람이 직접 찾기, (B) 관련 자료를 사람이 찾아서 LLM에 넣기, (C) 관련 자료 검색 결과와 근거 위치를 LLM에 붙이기. 에이전트 자동도구 호출은 기본 실험이 제대로 될 때만 <strong>선택적인 확장</strong>으로 둔다.</p>\n<p><strong>끝에 남아야 하는 것:</strong> 데이터셋·실험 프로토콜 고정본, 예비실험, 오류 유형표, 통계분석 초안, 학위청구방법과 종합시험 확인.</p>\n<h3 id=\"sub-39-239318\">4학기 · 2028.09~2029.02 — 주장할 수 있는 것만 남긴다</h3>\n<p>실험에서 탐색시간이 감소했더라도 데이터가 단순하거나 참가자가 익숙해졌기 때문일 수 있다. 검색 결과의 근거 정확도, 실제 원인을 잘못 단정한 횟수, 사람 검증이 필요한 지점까지 함께 보고한다. 논문·개별연구과제 방식이라면 최종 심사와 원고 작성에 시간을 확보하고, 교과목이수 경로라면 남은 학점과 해당 요건을 채운다.</p>\n<p><strong>끝에 남아야 하는 것:</strong> 재현 가능한 연구 기록, 근거기반 인수인계 템플릿, 측정된 결과와 한계, 실제 현장 적용 시 승인 필요사항. <strong>학위 취득과 군 현장 도입은 다른 절차</strong>라는 점을 결론에 명확히 적는다.</p>\n<h3 id=\"sub-20-973595\">4-1. 정말 가능한 평일 한 주인가</h3>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>시간</th>\n<th>수업 있는 날(예시)</th>\n<th>수업 없는 날(예시)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>근무시간</td>\n<td>평소 직무·운영 장애 대응, 학업 때문에 임의 이탈하지 않음</td>\n<td>동일</td>\n</tr>\n<tr>\n<td>퇴근 후</td>\n<td>식사/이동 → 19~22시 강의 혹은 학교가 승인한 실시간 원격</td>\n<td>60~90분 강의 복습·논문 읽기</td>\n</tr>\n<tr>\n<td>주말</td>\n<td>약 3~4시간 과제·문헌·모사 실험</td>\n<td>다음 주 일정과 마감 확인</td>\n</tr>\n<tr>\n<td>야근·출장 발생</td>\n<td>사전에 교수·부서와 규정 범위 내 일정 조정, 대체수강 허용 여부 확인</td>\n<td>새 과제 확대보다 출석·필수 제출물 우선</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>계산의 감각:</strong> 주 9시간 강의 + 강의당 2~3시간 과제·복습을 가정하면 <strong>주 15~18시간 이상</strong> 학업을 위한 시간이 필요하다. 이는 학교가 보장하는 시간이 아니라 계획상의 적정 규모를 가늠하는 예시다. <strong>일시적 과제 집중주에는 훨씬 더 늘어날 수 있다.</strong> 가족·건강·당직·출장의 변동을 고려하면 9학점은 매 학기 자동으로 가능한 선택이 아니다.</p>\n<h2 id=\"chapter-05\">05. 연구를 '에이전트 만들기'에서 '검증 가능한 문제'로 바꾸기</h2>\n<h3 id=\"sub-14-77290\">5-1. 가제와 연구 질문</h3>\n<p><strong>가제:</strong> 「레거시 창고관리시스템 유지보수에서 근거연결형 검색지원이 신규 담당자의 장애 원인 탐색에 미치는 영향」. 이는 교수 지도 전의 작업가제이며 군 현장 데이터 사용을 전제하지 않는다.</p>\n<ul>\n<li><strong>RQ1.</strong> 화면·서버 코드·SQL/스키마·로그·장애이력을 연결해 놓으면, 기존 키워드 검색보다 관련 자료 식별을 개선하는가?</li>\n<li><strong>RQ2.</strong> 기존 검색에 RAG 답변을 추가하면 문제탐색시간과 숙련자 의존 질문 횟수가 감소하는가?</li>\n<li><strong>RQ3.</strong> 출처가 달린 답변은 정말로 오답의 위험을 줄이는가, 아니면 잘못된 근거에 대한 확신을 높일 수도 있는가?</li>\n</ul>\n<p>질문이 셋이라고 연구 셋을 모두 해야 한다는 뜻은 아니다. 지도교수와 상의해 <strong>가장 적은 데이터로 재현 가능한 질문 하나</strong>에 우선순위를 둔다.</p>\n<h3 id=\"sub-24-633280\">5-2. 어디까지를 'AI'라고 부를 것인가</h3>\n<p><strong>지식베이스</strong>는 파일·함수·SQL·테이블·로그·장애기록을 정리한 자료다. <strong>검색층</strong>은 질문에 맞는 근거를 추린다. <strong>RAG</strong>는 검색된 근거를 생성모델의 답변에 제공한다. <strong>에이전트</strong>는 필요할 때 여러 조회·검색 도구를 순서대로 호출하도록 하는 설계다. 이 중 어느 한 단계를 갖췄다는 이유로 나머지 단계가 이미 완성된 것처럼 표현하지 않는다. RAG 원형 연구와 최근 평가연구들도 검색 성능과 생성 답변의 근거충실성을 별도로 본다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 R01\">R01</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 R02\">R02</a></sup></p>\n<div class=\"diagram\"><div>질문·증상 입력</div><span>↓</span><div>검색 계획 <small>키워드 · 메타데이터 · 의미기반</small></div><span>↓</span><div>독립 가상 지식베이스 <small>코드 ↔ SQL ↔ DB ↔ 로그 ↔ 과거 조치</small></div><span>↓</span><div>출처와 근거 구간 제시</div><span>↓</span><div>원인 후보 · 불확실성 · 다음 확인 순서</div><span>↓</span><div>담당자 검증 · 승인 · 이력 남기기</div></div>\n<p><strong>불변 조건:</strong> 운영 DB에 자동 UPDATE/DELETE를 하지 않는다. 근거 없는 SQL 실행을 권하지 않는다. 모델의 '확신'을 승인으로 취급하지 않는다. 연구를 위해 보호 대상 자료를 학교·상용 서비스·개인 저장소로 옮기지 않는다. 프롬프트 인젝션·자료 유출·과도한 권한과 같은 위험은 OWASP의 생성형 AI 보안 분류에서도 별도로 다뤄진다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 R03\">R03</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 R04\">R04</a></sup></p>\n<h3 id=\"sub-18-96920\">5-3. 비교실험을 작게 시작한다</h3>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>비교 조건</th>\n<th>참가자가 무엇을 하나?</th>\n<th>확인하려는 효과</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>A. 기존 탐색</strong></td>\n<td>문서와 모사 코드, DB 명세를 직접 검색</td>\n<td>사람이 자료를 찾는 데 걸리는 기본 비용</td>\n</tr>\n<tr>\n<td><strong>B. LLM 보조</strong></td>\n<td>사람이 직접 근거를 모아 모델에 입력</td>\n<td>모델 언어 이해와 초안 생성의 순수한 보조효과</td>\n</tr>\n<tr>\n<td><strong>C. 근거연결 RAG</strong></td>\n<td>검색기가 관련 코드/명세/로그를 우선 찾아 함께 제공</td>\n<td>자동화된 근거 제공의 추가 효과</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>실험 단위:</strong> 처음엔 8~12개 파일럿 가상 장애, 이후 평가 가능한 20~30개 사례를 <strong>목표</strong>로 삼을 수 있다. 참여자를 확보할 수 있다면 경험 수준을 기록하고 과제 순서를 섞어 연습효과를 통제한다. 근무자를 연구에 참여시키는 것은 소속기관 승인·연구윤리 등 조건을 확인한 뒤 판단한다. 참여자 확보가 어렵다면 사람 실험이라고 꾸미지 말고 <strong>전문가가 검증한 정답 집합을 기준으로 검색결과를 비교하는 오프라인 평가</strong>로 범위를 줄인다.</p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>평가지표</th>\n<th>의미</th>\n<th>어떤 오해를 막는가</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>관련 자원 적중률(Recall@k)</strong></td>\n<td>정답에 해당하는 문서·함수·테이블이 상위 k개 결과에 들어오는지</td>\n<td>그럴듯한 답변이 관련 자료를 못 찾은 일을 가림</td>\n</tr>\n<tr>\n<td><strong>탐색시간(초/분)</strong></td>\n<td>과제 시작부터 검증 가능한 근거를 식별하기까지 걸린 시간</td>\n<td>'빠른 답변 생성'을 '빠른 문제 해결'과 혼동</td>\n</tr>\n<tr>\n<td><strong>원인 후보 정확도</strong></td>\n<td>사전 정답과 비교한 원인 후보의 타당성</td>\n<td>출처가 있다고 정답이 되는 착각</td>\n</tr>\n<tr>\n<td><strong>근거 충실성</strong></td>\n<td>답변의 각 주장이 제시된 근거로 지지되는지</td>\n<td>RAG가 오히려 오류를 포장하는 문제</td>\n</tr>\n<tr>\n<td><strong>잘못된 확신/무근거 단정</strong></td>\n<td>틀린 원인을 확실하다고 말한 사례 비중</td>\n<td>위험을 평균 점수 하나에 숨김</td>\n</tr>\n<tr>\n<td><strong>숙련자 개입 횟수</strong></td>\n<td>참가자가 외부 전문가에게 문의한 횟수</td>\n<td>숙련자의 부담 감소를 성급히 단정</td>\n</tr>\n<tr>\n<td><strong>권한 위반 제안</strong></td>\n<td>쓰기 명령·민감정보 노출 등 금지행동 제안 비중</td>\n<td>운영환경에선 한 건의 심각한 사고가 중요함</td>\n</tr>\n</tbody>\n</table></div>\n<p>해당 지표는 개념 설계안이지 실험 결과가 아니다. 시간 비교는 과제 난이도와 참가자 경험을 통제해야 하고, 작은 규모에서는 우열을 단정하기보다 <strong>효과크기·불확실성·실패 양상</strong>까지 보고하는 편이 타당하다.</p>\n<h3 id=\"sub-29-136296\">5-4. 가능해 보이는 연구에도 네 가지 함정이 있다</h3>\n<ol>\n<li><strong>모사 데이터의 착시.</strong> 독립 가상 시스템에서는 화면·DB 관계가 너무 단순해 검색이 과대평가될 수 있다. 난이도 등급과 잘못된 단서, 누락 자료를 의도적으로 넣되 그 제작 규칙을 공개한다.</li>\n<li><strong>기존 지식의 누출.</strong> 질문·정답이 같은 문서에 그대로 나타나거나 LLM에 사전 노출되면 비교가 공정하지 않다. 평가용 사례를 별도로 보관하고 버전과 프롬프트를 고정한다.</li>\n<li><strong>모델 바꾸면 결과가 바뀌는 문제.</strong> 특정 내부 모델의 이름·버전은 시간이 지나며 바뀐다. 따라서 효과를 '모델 우수성'보다 <strong>근거제공 방식</strong>에 귀속시키도록 설계하고, 모델 조건을 기록한다.</li>\n<li><strong>연구와 시스템 구축의 불균형.</strong> 지식베이스 구축에 1년을 쓰면 실험 시간이 사라진다. 문서를 적게 만들더라도 정답·측정 방법을 먼저 확정해야 한다.</li>\n</ol>\n<h2 id=\"chapter-06\">06. 군 보안과 연구윤리: 할 수 있는 일 / 아직 못 하는 일</h2>\n<p>이 프로젝트에서 가장 중요한 한계는 <strong>실제 군 내부 WMS 자료를 대학원 연구용으로 마음대로 전환할 수 없다는 것</strong>이다. 단순히 품목명이나 부대명을 지운다고 반출 가능 자료가 되지는 않는다. 업무용 코드·스키마·서버 식별자·장애일지에서 유추 가능한 운영 정보도 검토가 필요할 수 있다.</p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>단계</th>\n<th>기본 행동</th>\n<th>필요 조건</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>연구 질문 선택</td>\n<td>실제 경험에서 일반적인 문제 유형만 추출</td>\n<td>군 내부 정보가 외부로 드러나지 않도록 검토</td>\n</tr>\n<tr>\n<td>공개 가능한 실험 원천</td>\n<td>처음부터 독립 가상 코드·테이블·로그 생성</td>\n<td>현실 시스템과 동일한 실제 구조·식별자를 복제하지 않기</td>\n</tr>\n<tr>\n<td>실무 기록 활용</td>\n<td>승인을 받은 제한된 범위 안에서만 검토</td>\n<td>기관 보안·자료활용·연구윤리 규정 확인</td>\n</tr>\n<tr>\n<td>AI 모델 연결</td>\n<td>공개 또는 승인된 자료만 허가된 환경에서 사용</td>\n<td>망 구분, 접근통제, 로깅, 보존정책 확인</td>\n</tr>\n<tr>\n<td>결과의 현장 적용</td>\n<td>시험용 분석 결과 → 조직 검토 → 소규모 시범</td>\n<td>소속기관의 기술·보안·운영 승인. 자동 수정권한은 기본 제외</td>\n</tr>\n</tbody>\n</table></div>\n<p>Arvis·GeDAI 등 내부 생성형 AI의 <strong>실무 사용경험은 네가 직접 제공한 사실</strong>이다. 특정 모델 명칭·파라미터·배포 버전 및 군 내부 접속 구조는 공개 공식자료와 일치한다고 보장할 수 없다. 보고서에서는 이를 <strong>지원자 진술</strong>로 보존하되 학술논문이나 공개 발표에서는 공개·승인된 사실만 남겨야 한다. NIST의 생성형 AI 위험관리 자료는 정확성, 안전성, 정보 거버넌스를 관리하기 위한 참고 틀이지 <strong>군의 별도 보안 규정을 대신하는 승인서</strong>가 아니다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 R04\">R04</a></sup></p>\n<h2 id=\"chapter-07\">07. 연구가 실패해도 학위와 현장이 남도록 만드는 대안</h2>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>문제가 생긴다면</th>\n<th>즉시 줄일 범위</th>\n<th>그때에도 제출 가능한 결과</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>실제 군 데이터 사용승인이 어렵다</td>\n<td>독립 가상 창고관리시스템만 사용</td>\n<td>방법론·검색기술·재현 가능한 공개 실험</td>\n</tr>\n<tr>\n<td>실험 참가자를 구할 수 없다</td>\n<td>사람 대상 시간측정 포기, 전문가 정답기반 평가</td>\n<td>Recall@k·출처 충실도·오류 분석</td>\n</tr>\n<tr>\n<td>에이전트 개발이 과도하다</td>\n<td>검색 + 출처 링크 + 사람이 읽는 요약만</td>\n<td>RAG와 일반 검색의 비교</td>\n</tr>\n<tr>\n<td>2027년 희망 과목이 열리지 않는다</td>\n<td>기초·대체 과목부터 듣고 교수와 연구주제 조정</td>\n<td>학점 요건 내 실제 개설과목 활용</td>\n</tr>\n<tr>\n<td>주간·토요일 강의가 근무와 충돌한다</td>\n<td>수강조합·휴가·공식 출석정책부터 재검토</td>\n<td>2년 계획은 유지하되 선택 과목 조정</td>\n</tr>\n<tr>\n<td>AI가 기존 검색보다 낫지 않다</td>\n<td>과도한 도입 주장을 중단</td>\n<td>효과 없음이라는 실험 결과 + 개선된 문서화 방식</td>\n</tr>\n<tr>\n<td>지도교수가 WMS 자체 전문가는 아니다</td>\n<td>정보검색·SW 유지보수·운영관리 질문으로 일반화</td>\n<td>지도 가능한 학술 질문에 맞춘 연구</td>\n</tr>\n<tr>\n<td>학위청구방법에 제한이 있다</td>\n<td>학교·학과 규정에 맞는 경로로 변경</td>\n<td>지도교수와 일정 재설계</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>오히려 가장 위험한 시나리오</strong>는 '어떻게든 군 데이터를 가져오면 될 것'이라는 낙관이나 'AI만 붙이면 해결'이라는 기술 낙관이다. 성실한 연구계획에는 달성 목표뿐 아니라 <strong>어디에서 멈출지</strong>가 들어 있어야 한다.</p>\n<h2 id=\"chapter-08\">08. 돈·행정·이동: 실무자가 반드시 확인할 숫자</h2>\n<h3 id=\"sub-35-638732\">8-1. 등록금은 '2026 기준'과 '내가 낼 돈'을 구분한다</h3>\n<p>이전 조사에서는 2026년 일반대학원 공학계열 학기 수업료 <strong>7,643,000원</strong>, 별도 입학금 <strong>996,000원</strong>, 군무원 20% 수업료 감면 및 교육부장관 취학추천의 50% 감면을 확인했다고 기록돼 있다. 그러나 <strong>2027년 확정 금액과 50% 장학의 실제 연속 적용 요건은 이 보고서에서 별도로 검증되지 않았다.</strong> 아래는 입력값이 그대로라고 가정한 단순 시나리오다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P47\">P47</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S05\">S05</a></sup></p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>가정(수업료 기준)</th>\n<th style=\"text-align:right\">학기 1회</th>\n<th style=\"text-align:right\">4학기 합계</th>\n<th>비고</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>감면 없음</td>\n<td style=\"text-align:right\">7,643,000원</td>\n<td style=\"text-align:right\">30,572,000원</td>\n<td>2026 값 고정 가정</td>\n</tr>\n<tr>\n<td>20% 감면</td>\n<td style=\"text-align:right\">6,114,400원</td>\n<td style=\"text-align:right\">24,457,600원</td>\n<td>군무원 일반 감면 가정</td>\n</tr>\n<tr>\n<td>50% 감면</td>\n<td style=\"text-align:right\">3,821,500원</td>\n<td style=\"text-align:right\">15,286,000원</td>\n<td>추천·자격·기간 충족 가정</td>\n</tr>\n<tr>\n<td>첫 입학금</td>\n<td style=\"text-align:right\">별도 996,000원</td>\n<td style=\"text-align:right\">996,000원</td>\n<td>수업료 4학기 합계에 미포함</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>50% 가정의 수업료 + 첫 입학금 합계 = 16,282,000원.</strong> 여기에 교재·교통·학회·기자재·기타 경비는 포함하지 않았다. 학비와 시간 모두 <strong>장학 유지가 보장되지 않을 때도 감당 가능한지</strong> 검토해야 한다.</p>\n<h3 id=\"sub-22-563232\">8-2. 취학추천과 전형은 단계가 다르다</h3>\n<p>2027년 공식 모집 공고는 <strong>일반전형(군위탁전형 아님)</strong>과 <strong>군위탁전형(정원외)</strong>을 분리한다. 군위탁전형은 교육부장관 취학추천을 받은 현역군인·군무원을 대상으로 안내한다. 군 내부 승인과 교육부 추천, 학교 명단 반영, 원서의 전형구분, 서류 도착 여부, 장학 심사는 <strong>같은 단계가 아니다</strong>. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a></sup></p>\n<p>이전 47개 항목에는 한 차례 취소 후 재도전하는 과정과 '최종 미확정'이라는 문구가 함께 담겨 있고, 그 뒤 개인적으로 진행된 내부 승인 내용까지 시점별로 달라질 수 있다. 따라서 이 페이지는 <strong>추천의 현재 최종 상태를 확정하지 않는다.</strong> 실제 면접 전에는 학교에 정확한 전형 반영과 서류 도착을 직접 확인해야 한다. '매 학기 취학추천을 재발급해야 50% 감면을 받는가'도 질문으로 남아 있다.</p>\n<h3 id=\"sub-21-157219\">8-3. 날짜는 면접 전후로 나눠 본다</h3>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>날짜</th>\n<th>확인한 내용</th>\n<th>상태</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>2026.09.30~10.14</td>\n<td>2027 전기 대학원 인터넷 원서 접수</td>\n<td>공식 모집 공고 <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a></sup></td>\n</tr>\n<tr>\n<td>2026.11.05(목) 예정</td>\n<td>세종캠퍼스 구술면접 세부 사항 공지</td>\n<td>학교 공식 공고의 <strong>예정</strong> 날짜 <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a></sup></td>\n</tr>\n<tr>\n<td><strong>2026.11.07(토)</strong></td>\n<td>세종캠퍼스 대면 구술면접</td>\n<td>공식 날짜. <strong>시각은 최종 공지 재확인</strong> <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a></sup></td>\n</tr>\n<tr>\n<td>2026.12.07(월) 18시 예정</td>\n<td>합격 발표</td>\n<td>공식 예정 <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S01\">S01</a></sup></td>\n</tr>\n<tr>\n<td>2027.03</td>\n<td>입학·수강 시작을 가정</td>\n<td>합격·등록 후 성립하는 시나리오</td>\n</tr>\n<tr>\n<td>2029.02</td>\n<td>4학기 학위취득 목표</td>\n<td>학위요건·연구·승인 충족 시 가능</td>\n</tr>\n</tbody>\n</table></div>\n<p>과거 조사 원문에 11월 7일 <strong>10시부터</strong>라는 기재가 있었지만, 공식 웹 모집공지에서 확인되는 것은 <strong>11월 7일이라는 날짜</strong>와 세부 공지 예정일이다. 시간은 수험표와 최종 안내에서 다시 확인한다. 과거 기록과 최신 공식안내가 다르면 최신 공고가 우선이다.</p>\n<h2 id=\"chapter-09\">09. 그럼 왜 하필 홍익대 국방AI융합학과인가</h2>\n<p>일반적인 AI 대학원은 모델과 알고리즘 자체를 깊게 파는 데 장점이 있다. 하지만 네 질문은 <strong>코드의 오류만도 아니고, 군수정책만도 아니다.</strong> 어떤 정보가 먼저 필요하고, 누구의 판단이 필요한지, 도구가 있어도 사람이 마지막 검증을 어떻게 할지의 문제다. 홍익대 학과는 AI 활용·국방 운영·경영을 함께 다룬다는 점에서 이 경계를 연구하기 좋은 구조다. 이건 <strong>학과의 교육방향과 네 연구질문 사이의 적합성에 대한 판단</strong>이지, 해당 연구를 지도할 교수가 확정됐다는 뜻이 아니다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S04\">S04</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S05\">S05</a></sup></p>\n<p>서울캠퍼스 산업·데이터공학과 수업이나 연구교류는 과거에 검토했던 <strong>보조 선택지</strong>다. 학교 2026년 규정에서 석사 타학과 전공을 총 9학점까지 인정한다고 해도, 실제 서울 수업을 듣게 된다는 보장은 없다. 세종의 소속 학과와 지도교수 중심으로 학업을 안정시킨 뒤 <strong>필요하면 0~1과목 검토</strong>하는 편이 현실적이다. GPU·연구실을 서울캠 학생처럼 자유롭게 쓸 수 있다는 약속도 하지 않는다. <sup><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 S02\">S02</a><a class=\"cite-token\" href=\"#facts\" data-page=\"facts\" title=\"출처 P47\">P47</a></sup></p>\n<h3 id=\"sub-18-879018\">교수의 시선으로 본 세 가지 경고</h3>\n<p><strong>① “이미 AI를 잘 쓴다”는 자기소개는 오히려 얕아 보일 수 있다.</strong> 실무 AI 활용경험은 장점이지만, 학생으로서 배워야 할 검증·연구방법을 분명히 말해야 한다.</p>\n<p><strong>② 연구제목에 '에이전틱'을 너무 앞세우면 개발 범위가 커 보인다.</strong> 먼저 RAG/검색 비교의 유효성을 검증하고, 도구 호출 자동화는 후속 범위로 둔다.</p>\n<p><strong>③ 학업과 근무 병행을 쉽게 말하면 준비가 덜 된 인상을 준다.</strong> 2026 실제 시간표와 2026 학점/시험 규정을 구분해 확인했다는 사실을 보여주는 편이 강하다.</p>\n<h2 id=\"chapter-10\">10. 네 가지 면접 답변은 보고서의 '요약 결론'이다</h2>\n<p>이 질문들은 프로젝트의 중심이 아니라 <strong>위 현실검토가 정확히 이해됐는지를 구술로 확인하는 마지막 관문</strong>이다. 외울 문장을 지나치게 길게 만들지 않고 핵심 구조를 유지한다.</p>\n<h3 id=\"sub-40-350649\">1. 자기소개와 지원동기 — “문제 하나가 시스템 여러 층으로 이어졌다”</h3>\n<p>현재 군에서 전산직 군무원으로 근무하며 물류정보체계와 창고관리시스템을 운영·유지보수하고 있습니다. 이 과정에서 화면, 서버 프로그램, 데이터베이스, 자동화설비가 서로 연결된 문제를 자주 다뤘습니다. 바코드 인식 문제나 화면 조회 항목을 수정하면서, 같은 장애라도 담당자가 체계 전체의 관계를 알아야 해결할 수 있다는 점을 느꼈습니다. 특히 신규 담당자는 필요한 자료를 찾는 데 시간이 많이 걸리고 숙련자의 경험에 의존하게 됩니다. 단순히 그때그때 장애를 해결하는 것에서 나아가 이런 진입장벽을 체계적으로 분석하고 싶었습니다. AI와 데이터 분석뿐 아니라 국방 운영과 공급사슬관리까지 함께 배울 수 있는 홍익대 국방AI융합학과에 지원한 이유입니다.</p>\n<p><strong>면접관이 붙잡을 부분:</strong> 실제 수정했던 한 사례, 왜 문제의 원인을 찾기 어려웠는지, 'AI'가 아니라 <strong>공유되지 않는 지식</strong>이 왜 핵심 문제인지.</p>\n<h3 id=\"sub-35-338378\">2. 입학 후 계획 — “처음엔 배우고, 다음엔 작게 검증한다”</h3>\n<p>입학 후에는 데이터 분석과 AI의 기본 원리, 결과 검증 방법, 정보보호를 먼저 배우겠습니다. 실무에서 생성형 AI로 코드를 해석하거나 SQL 초안을 만든 경험은 있지만, 모델의 답이 왜 맞는지 확인하는 능력은 더 필요하다고 느꼈습니다. 이후 공급사슬관리와 의사결정 관련 학습을 통해 WMS를 물류 운영 전체에서 보겠습니다. 연구는 신규 담당자가 코드·DB·로그·장애기록을 찾는 과정을 좁은 과제로 정하고, 독립적으로 만든 모사 데이터에서 기존 검색 방식과 RAG 보조방식을 비교하는 방향을 생각하고 있습니다. 실제 과목 개설과 연구 범위는 지도교수와 협의해 조정하겠습니다.</p>\n<p><strong>면접관이 붙잡을 부분:</strong> 지도교수 상담, 실제 데이터 반출 금지, RAG와 에이전트의 차이, 실험 가능한 평가 기준.</p>\n<h3 id=\"sub-30-198906\">3. 졸업 후 포부 — “AI보다 먼저 지식을 남긴다”</h3>\n<p>졸업 후에는 연구 결과를 인수인계와 장애 대응절차 개선에 활용하고 싶습니다. 현재는 오래된 체계의 구조와 과거 조치 경험이 숙련자의 머릿속에 많이 남아 있어 담당자가 바뀌면 비슷한 문제를 다시 추적하기 쉽습니다. 그래서 관련 코드와 데이터 구조, 장애이력, 확인 순서를 체계적으로 정리하는 것이 첫 목표입니다. 근거를 제시하는 AI 보조방식이 실제 탐색시간과 정확도 개선에 도움이 된다는 결과가 나올 때에만, 보안 검토와 승인 아래 단계적인 활용을 검토하겠습니다. 특정 AI 모델을 도입하는 것보다 담당자가 바뀌어도 안정적으로 운영할 수 있는 업무방식을 남기고 싶습니다.</p>\n<p><strong>면접관이 붙잡을 부분:</strong> 조직이 받는 이익, 연구가 기대만큼 성공하지 않을 때의 대안, 졸업과 실제 배포의 차이.</p>\n<h3 id=\"sub-41-551065\">4. 야간수업 가능 여부 — “과거 시간표와 2027 실제 편성은 다르다”</h3>\n<p>현재 세종에서 근무하고 거주해 세종캠퍼스와의 접근성이 좋습니다. 지원 전에 실제 시간표를 확인했고 평일 저녁 시간에 운영되는 과목이 여러 개 있었습니다. 그래서 근무 후 수업을 병행하는 계획을 세울 수 있다고 생각합니다. 다만 행정상 주간 과정이고 일부 낮 시간이나 토요일 수업도 있을 수 있어 모든 수업이 야간·온라인이라고 생각하지는 않습니다. 실제 수강신청 때 강의방식과 학점·출석 요건을 확인하고, 주간 대면수업이나 지도 면담이 필요한 경우 소속기관의 정해진 절차에 따라 미리 일정을 조정하겠습니다. 야근·출장과 충돌할 때도 정식 학사 절차와 업무 협업을 통해 대응하겠습니다.</p>\n<p><strong>면접관이 붙잡을 부분:</strong> '수업 가능'을 말할 객관적 근거, 주간 과목 충돌 대응, 9학점 강의시간 외의 과제·연구시간.</p>\n<p><strong>네 문항의 가장 짧은 연결:</strong> <strong>현장의 병목을 발견했다 → 기본기를 보완한다 → 작게 검증한다 → 조직이 재사용할 결과를 남긴다.</strong> 이 순서가 흔들리지 않으면 꼬리질문을 받아도 논리가 유지된다.</p>\n<h2 id=\"chapter-11\">11. 입학 확정 전 확인해야 할 열린 질문</h2>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>우선순위</th>\n<th>확인할 대상</th>\n<th>확인 질문</th>\n<th>이유</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>대학원 교학팀</td>\n<td>군위탁 추천명단이 내 원서 전형에 정확히 반영됐나? 서류 접수 상태는?</td>\n<td>전형 자격과 추천절차는 별개</td>\n</tr>\n<tr>\n<td>2</td>\n<td>대학원 교학팀</td>\n<td>2027년 실제 수업시간·온라인 허용 범위는?</td>\n<td>현실적인 출석 계획의 전제</td>\n</tr>\n<tr>\n<td>3</td>\n<td>학과</td>\n<td>논문·개별연구과제·교과목이수 중 어떤 경로가 가능한가?</td>\n<td>학기별 학점 구조가 달라짐</td>\n</tr>\n<tr>\n<td>4</td>\n<td>학과</td>\n<td>선수과목이 지정되는가? 종합시험·외국어시험 조건은?</td>\n<td>학점만 채워도 졸업 못할 위험</td>\n</tr>\n<tr>\n<td>5</td>\n<td>학과·교수</td>\n<td>실제 지도 가능한 연구 분야와 지도교수 신청 절차는?</td>\n<td>연구주제 현실화</td>\n</tr>\n<tr>\n<td>6</td>\n<td>군 인사·학교</td>\n<td>50% 장학을 매 학기 유지하는 데 추천 재발급이 필요한가?</td>\n<td>재정계획 불확실성</td>\n</tr>\n<tr>\n<td>7</td>\n<td>소속기관 보안 담당</td>\n<td>실무 기록의 학술 활용이 어디까지 승인되는가?</td>\n<td>독립 모사 데이터와 실제 자료 경계</td>\n</tr>\n<tr>\n<td>8</td>\n<td>대학원 학사 담당</td>\n<td>서울 타과 수강의 신청·인정·출석 조건은?</td>\n<td>보조 학습 선택지의 실제 가능성</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>판단 기준:</strong> 위 질문 가운데 (2) 강의 시간표와 (3) 학위청구 경로, (7) 실험 데이터 경계가 해결되기 전에는 '2년 안에 운영체계용 에이전트를 만들겠다'는 구체적 약속을 하지 않는 편이 타당하다.</p>\n<h2 id=\"sources\">12. 출처와 검증 범위</h2>\n<p>여기의 자료는 <strong>① 제출 수학계획서 원문(P01) ② 과거 조사 47개 항목 원문(P47) ③ 2026년 10월 31일 현재 공개 확인 가능한 학교 공식자료(S) ④ 연구방법 참고자료(R)</strong>를 구분한다. 과거 원문은 그 당시 회수된 판단과 상황을 보존하기 위한 <strong>기록</strong>이지 현재 공식 고시로 대체되지 않는다.</p>\n<div class=\"table-wrapper\"><table>\n<thead>\n<tr>\n<th>코드</th>\n<th>자료</th>\n<th>근거 수준 / 사용하는 범위</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><strong>P01</strong></td>\n<td>이 대화에서 제공한 홍익대 수학계획서 4개 장</td>\n<td>지원자 직접 제공 원문. 표현은 변경하지 않고 부록 수록</td>\n</tr>\n<tr>\n<td><strong>P47</strong></td>\n<td>이전 조사 47개 항목의 종합 기록</td>\n<td>사용자가 제공한 과거 연구·행정상태. 현재 확인과 구별</td>\n</tr>\n<tr>\n<td><strong>S01</strong></td>\n<td><a href=\"https://www.hongik.ac.kr/kr/admission/notice-military.do?article.offset=0&amp;articleLimit=10&amp;articleNo=157298&amp;mode=view\">홍익대 2027 전기 군위탁 포함 모집 공고</a> · 2026.09.18</td>\n<td>전형구분, 원서기간, 11/07 세종 면접, 12/07 발표, 상세공지 예정일</td>\n</tr>\n<tr>\n<td><strong>S02</strong></td>\n<td><a href=\"https://www.hongik.ac.kr/kr/newscenter/notice.do?articleNo=147598&amp;mode=view\">홍익대 2026-1 대학원 수강신청 공지</a></td>\n<td>수업원칙, 군위탁 비대면 예외, 학점·타과수강·학위발표·선수과목 규정의 <strong>2026 사례</strong></td>\n</tr>\n<tr>\n<td><strong>S03</strong></td>\n<td><a href=\"https://grad00.hongik.ac.kr/common_pdf/guide06_06.pdf\">홍익대 석사 학위청구방법·시험 안내 PDF</a></td>\n<td>24/30학점, 종합시험·외국어시험·학위청구 신청 절차. 학과별 예외 확인 필요</td>\n</tr>\n<tr>\n<td><strong>S04</strong></td>\n<td><a href=\"https://www.hongik.ac.kr/kr/newscenter/news.do?article.offset=0&amp;articleLimit=12&amp;articleNo=134371&amp;mode=view\">홍익대 국방AI융합학과 신설 소식</a> · 2025.04.09</td>\n<td>학과 신설과 교육목표</td>\n</tr>\n<tr>\n<td><strong>S05</strong></td>\n<td><a href=\"https://kookbang.dema.mil.kr/newsWeb/m/20251209/1/ATCE_CTGR_0010010000/view.do\">국방일보 학교·학과 소개</a> · 2025.12.08</td>\n<td>융합영역, Webex·야간 운영 <strong>소개사례</strong>, 50% 감면 안내</td>\n</tr>\n<tr>\n<td><strong>S06</strong></td>\n<td><a href=\"https://gbai.hongik.ac.kr/gbai/0401.do\">학과 교육과정 공식 페이지</a></td>\n<td>과목을 확인할 공식 경로. 동적 목록은 웹 수집에서 최신 과목명 전체 확인 제한</td>\n</tr>\n<tr>\n<td><strong>S07</strong></td>\n<td><a href=\"https://gbai.hongik.ac.kr/gbai/0301.do?articleNo=156353&amp;mode=view\">학과 대학 AI 활용 윤리 가이드라인</a> · 2026.09.04</td>\n<td>대학 AI 사용 윤리 준수 참고</td>\n</tr>\n<tr>\n<td><strong>R01</strong></td>\n<td><a href=\"https://arxiv.org/abs/2005.11401\">Lewis et al., Retrieval-Augmented Generation</a> · 2020</td>\n<td>RAG의 원형 연구 소개</td>\n</tr>\n<tr>\n<td><strong>R02</strong></td>\n<td><a href=\"https://arxiv.org/abs/2309.15217\">RAGAS: Automated Evaluation of RAG</a> · 2023</td>\n<td>검색·답변·근거 충실도 분리 평가의 선행연구</td>\n</tr>\n<tr>\n<td><strong>R03</strong></td>\n<td><a href=\"https://genai.owasp.org/llm-top-10/\">OWASP Top 10 for LLM Applications 2025</a></td>\n<td>인젝션·민감정보 유출·과도한 권한 등 보안 위험 분류</td>\n</tr>\n<tr>\n<td><strong>R04</strong></td>\n<td><a href=\"https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence\">NIST Generative AI Profile</a> · 2024</td>\n<td>생성형 AI 위험관리·인간 감독 참고 틀</td>\n</tr>\n</tbody>\n</table></div>\n<p><strong>검증 한계:</strong> 2027년 등록금과 실제 개설 과목·시간표·해당 교수의 지도 가능 여부는 이 보고서에서 확정하지 못했다. 학위청구 경로 역시 학교 공통 규정의 내용과 <strong>해당 학과 실제 적용</strong>을 혼동하지 않도록 남겨두었다. 완전한 입학·졸업 시뮬레이션이 되려면 이 질문들을 합격 후 반드시 학교에 확인해야 한다.</p>\n",
  "version": "면접 아틀리에 · 졸업요건 원문 검증 2026-11-02 · 시간표 2026-11-01",
- "factAudit": [
-  {
-   "topic": "국방AI융합학과",
-   "statement": "세종캠퍼스 일반대학원, 2025 신설",
-   "status": "확인",
-   "ref": "S14"
-  },
-  {
-   "topic": "면접 날짜",
-   "statement": "2026.11.07(토)",
-   "status": "확인",
-   "ref": "S1"
-  },
-  {
-   "topic": "면접 시작시각",
-   "statement": "과거 자료의 10:00 표기, 최종 상세공지 필요",
-   "status": "미확정",
-   "ref": "P47"
-  },
-  {
-   "topic": "세종 실제 저녁 수업",
-   "statement": "2026-1·2 시간표 화면: 19~22시 다수, 수 18~21시·화 16~19시·토 10~13시 예외 있음. 2027 편성은 미확정",
-   "status": "사용자 제공 화면",
-   "ref": "T26-A"
-  },
-  {
-   "topic": "2027 전과목 야간·온라인",
-   "statement": "확정된 근거 없음",
-   "status": "미확정",
-   "ref": "S4"
-  },
-  {
-   "topic": "학기당 수강학점",
-   "statement": "2026 주간 석사 6~9학점 일반 안내",
-   "status": "확인",
-   "ref": "S4"
-  },
-  {
-   "topic": "논문 4학기 발표",
-   "statement": "2026 수강안내: 주간 석사는 24학점 취득 다음 학기에 논문 발표 가능 → 4학기 발표는 3학기 말까지 24학점(과 심사 전 1개 지도학기) 필요. 2027 적용은 별도 확인",
-   "status": "확인",
-   "ref": "S4"
-  },
-  {
-   "topic": "비논문 30학점",
-   "statement": "국방AI 허용 확인(2026.9.1). 신청·승인과 공통요건 필요",
-   "status": "확인",
-   "ref": "G1"
-  },
-  {
-   "topic": "지도교수",
-   "statement": "1차 학기 신청 사례, 실제 배정 별도",
-   "status": "부분확인",
-   "ref": "S11"
-  },
-  {
-   "topic": "외국어·종합시험",
-   "statement": "국방AI 한국인 영어. 종합2과목·윤리교육은 세 경로 공통",
-   "status": "확인",
-   "ref": "G6"
-  },
-  {
-   "topic": "타과 수강",
-   "statement": "2026 석사 타과 인정 9학점 안내",
-   "status": "확인",
-   "ref": "S4"
-  },
-  {
-   "topic": "2027 과목 개설",
-   "statement": "34개 이전 교과목 기록 ≠ 실제 개설",
-   "status": "미확정",
-   "ref": "S3"
-  },
-  {
-   "topic": "취학추천",
-   "statement": "행정 절차와 대학 전형 반영 구분 필요",
-   "status": "미확정",
-   "ref": "S1"
-  },
-  {
-   "topic": "수업료 50% 감면 유지",
-   "statement": "이전 안내는 있으나 학기별 조건 확인 필요",
-   "status": "미확정",
-   "ref": "F-SCH"
-  },
-  {
-   "topic": "군 자료 연구 활용",
-   "statement": "취학추천과 무관하게 승인 필요",
-   "status": "주의",
-   "ref": "S13"
-  },
-  {
-   "topic": "RAG 성능",
-   "statement": "검색증강 구조이나 환각 방지 보장 아님",
-   "status": "확인",
-   "ref": "R01"
-  },
-  {
-   "topic": "에이전틱 연구",
-   "statement": "읽기전용 도구 선택/순차 호출 확장 가능",
-   "status": "부분확인",
-   "ref": "R03"
-  },
-  {
-   "topic": "Private GitHub",
-   "statement": "군 자료 저장 승인영역이 아님",
-   "status": "주의",
-   "ref": "R06"
-  },
-  {
-   "topic": "2026 종합시험 구체 자격",
-   "statement": "주간 석사 3학기 이상 등록·18학점·선수과목 및 평균 B0 이상 등",
-   "status": "확인",
-   "ref": "S16"
-  },
-  {
-   "topic": "2026-1 시간표 11과목",
-   "statement": "지원자가 제출한 공식 시간표 화면에 세종 국방AI융합학과(주간) 필터가 설정된 상태로 11개 전공선택 3학점 과목이 표시됨.",
-   "status": "사용자 제공 화면",
-   "ref": "T26-A"
-  },
-  {
-   "topic": "2026-2 시간표 12과목",
-   "statement": "지원자 화면에 12개 과목이 보이나 학과·캠퍼스 검색필터의 선택값이 ‘선택하세요’로 표시돼 전공귀속까지 독립 확정할 수 없음.",
-   "status": "부분확인",
-   "ref": "T26-B"
-  },
-  {
-   "topic": "공급사슬관리 2026 개설",
-   "statement": "첨부된 2026-1·2 화면에 공급사슬관리 명칭의 교과목은 없음. 교육과정 후보와 학기 개설을 구별할 것.",
-   "status": "미확정",
-   "ref": "T26-A"
-  },
-  {
-   "topic": "2026-1 동시간대 충돌",
-   "statement": "국방소프트웨어관리와 AI·빅데이터 경영연구방법론은 화요일 19~22시로 겹쳐 동일 학기 동시 수강 불가.",
-   "status": "사용자 제공 화면",
-   "ref": "T26-A"
-  }
- ],
  "lastMinute": [
   "면접 최종 시각·장소, 수험표·신분증 확인",
   "자기소개→지원동기→연구주제 흐름을 60초에 말하기",
@@ -1786,7 +2311,118 @@ window.ATELIER_SCHOOLS.hongik = {
     "2026년 세 학위 경로 허용은 확인했다. 2027 개정 여부·개인 선수 지정·종합시험 응시과목은 별도다.",
     "해당 학기 공지·클래스넷 개인 학사정보"
    ]
-  ]
+  ],
+  "notes": {
+   "overall": {
+    "label": "OVERALL ASSESSMENT",
+    "lines": [
+     "직장 병행은 조건부로 가능하지만,",
+     "주간대학원 4학기 졸업과 실제 WMS 적용을 보장할 수는 없어."
+    ],
+    "body": "학교가 제시한 수강·시험 제도와 이전 저녁 강의 기록은 실현 가능성을 뒷받침해. 다만 2027 수업시간·개인별 학위청구 승인·취학추천 개인 반영·실제 자료 활용 승인은 현재 조사에서 확정할 수 없었어."
+   },
+   "burden": {
+    "title": "4학기 설계의 실제 부담",
+    "sub": "2026 규정에 대입한 계산 예시",
+    "summary": "학기별 예시 수강학점과 현실적 우선과제 표는 [[2년 대학원 시뮬레이션|roadmap:roadmap-detail]]의 학기 카드 ‘현실 부담’ 줄로 옮겼어. 요약하면 9 → 9 → 6학점으로 3학기까지 24학점을 채우고, 4학기는 논문 경로 0학점·교과목이수 경로 6학점이야.",
+    "basis": "근거: 홍익대 2026 수강신청 공지(S4). 논문 4학기 발표는 3학기까지 24학점을 취득했다는 조건에 연결돼. 2026 학과 소개는 전 과목 선택 운영, 현황표는 세 학위 경로 허용이야. 2027 실제 개설·적용 기준과 개인 승인 여부는 별도야."
+   },
+   "timeBudget": "9학점 수업을 세 과목 × 주 3시간으로 가정하면 강의만 9시간이고, 과제·복습·문헌·실험에 최소 주 6~9시간을 추가 배정하는 설계야. 합계 약 15~18시간은 학교 통계가 아니라 **내가 계산한 계획상 시간**이야. 실제 수업이 두 요일에 모인다는 보장은 없어.",
+   "timeBudgetMoved": "주간 시간예산 계산(강의 9시간 + 자율학습 6~9시간)과 심층 보고서 4-1의 평일 한 주 표는 [[2년 대학원 시뮬레이션 · 생활 리듬|roadmap:time-budget]]에 모았어. 판정은 아래 REVIEW 카드 그대로야.",
+   "interview": {
+    "title": "면접에서는 이렇게 답하면 돼.",
+    "body": "저녁 강의가 있는 과거 시간표와 학교의 수강제도를 확인했지만, 실제 개설·출석방식에 따라 조정하겠다고 말해. 확인하지 못한 사항을 이미 보장된 것처럼 말하지 않아도 돼."
+   }
+  },
+  "money": {
+   "title": "장학과 등록금: 무엇이 확정됐나",
+   "sub": "금액을 단정하지 않는 이유",
+   "ruleRows": [
+    10,
+    11
+   ],
+   "amountRow": 12,
+   "unanswered": [
+    2
+   ],
+   "rule": {
+    "label": "SCHOLARSHIP RULE",
+    "title": "20%와 50%는 공식 제도",
+    "body": "학교 장학안내는 일반 군무원 등 재직자 대상 수업료 20%, 별도 학군협약·교육부장관 추천 요건을 충족한 군인·군무원 대상 50% 감면을 명시해. 50% 장학은 자동 지급이나 4학기 무조건 유지 확약이 아니야.",
+    "refs": [
+     "F-SCH",
+     "F-SCHA"
+    ]
+   },
+   "budgetTitle": "이전 기록 숫자로 만든 단순 시나리오",
+   "budgetLead": "아래는 이전 조사의 2026 공학계열 수업료가 그대로라고 가정한 계산이야. 청구서가 아니라 예산의 범위를 가늠하는 표야.",
+   "budgetNote": "여기에 교재·교통·학회·기자재·기타 경비는 포함하지 않았다. 학비와 시간 모두 장학 유지가 보장되지 않을 때도 감당 가능한지 검토해야 한다.",
+   "budgetSource": "dossierHTML 8-1 · archiveHTML #11 (이전 조사 기록 · 미검증)",
+   "amount": {
+    "label": "TUITION AMOUNT",
+    "title": "2027 실제 납부액은 미확정",
+    "body": "기존 조사에 수업료 7,643,000원, 입학금 996,000원이 남아 있지만, 이번 조회에서 학교 FAQ의 이미지 표를 텍스트로 독립 확인하지 못했어. 따라서 이전 숫자로 만든 20%·50% 시나리오는 확정 청구서가 아니야.",
+    "note": "50% 적용 여부와 시점은 별도이며, 등록 전에 실제 고지액으로 재산정해야 해.",
+    "refs": [
+     "F-TUITION"
+    ]
+   },
+   "question": {
+    "source": "archiveHTML #10",
+    "conflict": "공식 모집요강에는 50% 장학의 기간이 “재직중”이라고 되어 있는데, 학교 담당자와 통화 과정에서는 매 학기 취학추천을 다시 받아야 한다는 취지의 설명을 들었다고 했지.",
+    "text": "최초 입학 시 교육부장관 취학추천을 받아 군위탁전형으로 입학한 경우, 이후 학기에도 50% 장학을 받으려면 국방인사정보관리체계에서 취학추천을 매 학기 새로 받아야 하는지, 아니면 군 재직증명서만 매 학기 제출하면 되는지?"
+   }
+  },
+  "weekTable": {
+   "row": 13,
+   "metrics": [
+    [
+     "강의",
+     "주 9시간",
+     "3학점 × 3과목"
+    ],
+    [
+     "과제·복습·연구",
+     "주 6~9시간",
+     "과목당 2~3시간 가정"
+    ],
+    [
+     "합계",
+     "약 15~18시간",
+     "학교 통계 아님"
+    ]
+   ],
+   "title": "정말 가능한 평일 한 주인가",
+   "source": "dossierHTML 4-1 (심층 보고서 원문에서 복사)",
+   "head": [
+    "시간",
+    "수업 있는 날(예시)",
+    "수업 없는 날(예시)"
+   ],
+   "rows": [
+    [
+     "근무시간",
+     "평소 직무·운영 장애 대응, 학업 때문에 임의 이탈하지 않음",
+     "동일"
+    ],
+    [
+     "퇴근 후",
+     "식사/이동 → 19~22시 강의 혹은 학교가 승인한 실시간 원격",
+     "60~90분 강의 복습·논문 읽기"
+    ],
+    [
+     "주말",
+     "약 3~4시간 과제·문헌·모사 실험",
+     "다음 주 일정과 마감 확인"
+    ],
+    [
+     "야근·출장 발생",
+     "사전에 교수·부서와 규정 범위 내 일정 조정, 대체수강 허용 여부 확인",
+     "새 과제 확대보다 출석·필수 제출물 우선"
+    ]
+   ],
+   "calc": "주 9시간 강의 + 강의당 2~3시간 과제·복습을 가정하면 주 15~18시간 이상 학업을 위한 시간이 필요하다. 이는 학교가 보장하는 시간이 아니라 계획상의 적정 규모를 가늠하는 예시다. 일시적 과제 집중주에는 훨씬 더 늘어날 수 있다. 가족·건강·당직·출장의 변동을 고려하면 9학점은 매 학기 자동으로 가능한 선택이 아니다."
+  }
  },
  "actualCourses": [
   {
@@ -2211,7 +2847,34 @@ window.ATELIER_SCHOOLS.hongik = {
   "first": "2026학년도 1학기: 세종, 국방AI융합학과(주간) 필터가 보이는 시간표 화면. 표시된 11개 과목 모두 3학점·전공선택.",
   "second": "2026학년도 2학기: 12개 과목이 화면에 보이지만 캠퍼스·대학원·세부전공 선택창은 '선택하세요'로 표시돼 있어 학과 귀속은 필터 적용 화면과 동일한 확실성으로 볼 수 없음. 과목 코드·세종 표기상 연관성이 높음.",
   "termLimit": "2026년 시간표 조회 결과 ≠ 2027년 과목 개설 보장. 실제 수강 가능 여부·교수별 출석·실라버스 상세·평가방식은 미확인.",
-  "supply": "과거 교육과정 조사에는 'AI 및 데이터 기반 공급사슬관리' 또는 표기변형이 있지만, 첨부된 2026년 1·2학기 시간표에는 없어서 2027 필수 이수과목처럼 말하면 안 됨."
+  "supply": "과거 교육과정 조사에는 'AI 및 데이터 기반 공급사슬관리' 또는 표기변형이 있지만, 첨부된 2026년 1·2학기 시간표에는 없어서 2027 필수 이수과목처럼 말하면 안 됨.",
+  "summary": "1학기 캡처에는 국방AI융합학과 필터가 보이지만, 2학기는 필터가 “선택하세요”로 표시돼 학과 귀속을 같은 수준으로 확정할 수 없어. 과목별 내용은 **강의계획서 원문이 아니라 일반 학문적 의미에 대한 해설**이야. 2027 편성·대면 여부를 보장하지 않아.",
+  "levelLabels": {
+   "first": "2026-1 · 학과 필터 확인",
+   "second": "2026-2 · 필터 “선택하세요”",
+   "termLimit": "2027 이후 개설",
+   "supply": "교육과정 후보 ≠ 시간표"
+  },
+  "terms": [
+   {
+    "term": 1,
+    "label": "2026-1",
+    "stat": "학과 필터 확인",
+    "tag": "학과 필터 확인"
+   },
+   {
+    "term": 2,
+    "label": "2026-2",
+    "stat": "필터 주의",
+    "tag": "2학기 필터 주의"
+   }
+  ],
+  "creditStat": {
+   "label": "학점",
+   "value": "3",
+   "note": "화면의 과목별 기준"
+  },
+  "planNote": "2026년 시간표를 토대로 연구방법·레거시 관리·보안 과목의 시간 충돌을 계산했어. 1학기 경영연구방법론과 국방소프트웨어관리는 같은 화요일에 겹치고, 공급사슬관리 과목의 실제 개설은 확인되지 않았어."
  },
  "coursePlans": [
   {
@@ -2287,7 +2950,7 @@ window.ATELIER_SCHOOLS.hongik = {
    "title": "과목 후보와 옛 답변 정정 (2026.11.01).",
    "date": "2026-11-01",
    "source": "T26-A, T26-B",
-   "body": "보고서의 학기별 과목 후보(1학기 데이터사이언스·정보보호 및 보안, 2학기 공급사슬관리 등)는 2026 실제 시간표 확인(2026.11.01) 전에 작성됐어. 2026 편성상 데이터사이언스·정보보호 및 보안은 2학기 과목이고, 공급사슬관리 명칭 과목은 없었어. 최신 조합은 [[2년 대학원 생활|roadmap]]·[[실제 교과목 탐구|coursebook]] 화면을 따라. 또 2026-11-01 정정으로 공급사슬관리 과목은 2026 시간표에 없음을 확인했어. 아래 옛 답변의 '공급사슬관리' 문장은 쓰지 말고 [[핵심 4문항|interview]]의 최신 대본을 사용해.",
+   "body": "보고서의 학기별 과목 후보(1학기 데이터사이언스·정보보호 및 보안, 2학기 공급사슬관리 등)는 2026 실제 시간표 확인(2026.11.01) 전에 작성됐어. 2026 편성상 데이터사이언스·정보보호 및 보안은 2학기 과목이고, 공급사슬관리 명칭 과목은 없었어. 최신 조합은 [[2년 대학원 생활|roadmap]]·[[실제 교과목 탐구|coursebook]] 화면을 따라. 아래 옛 답변의 '공급사슬관리' 문장은 쓰지 말고 [[핵심 4문항|interview]]의 최신 대본을 사용해.",
    "issues": [
     "CR-F2",
     "NA-F9"
@@ -2302,7 +2965,7 @@ window.ATELIER_SCHOOLS.hongik = {
    "title": "출처 번호 대응표.",
    "date": "2026-10-31",
    "source": "dossierHTML 12장 · D.sources",
-   "body": "이 보고서의 출처 번호는 2026.10.31 작성 당시 체계야. 현재 [[팩트체크|facts]] 번호로는 S01→S1, S02→S4, S03→S6, S04→S14, S05→S15(국방일보 학교·학과 소개, 출처 목록에 새로 추가), S06→S3, S07→S9, R01→R01, R02→R07, R03→R06, R04→R05에 해당해.",
+   "body": "이 보고서의 출처 번호는 2026.10.31 작성 당시 체계야. 현재 [[근거·출처|facts]] 번호로는 S01→S1, S02→S4, S03→S6, S04→S14, S05→S15(국방일보 학교·학과 소개, 출처 목록에 새로 추가), S06→S3, S07→S9, R01→R01, R02→R07, R03→R06, R04→R05에 해당해.",
    "issues": [
     "DA-D1"
    ]
@@ -2319,41 +2982,42 @@ window.ATELIER_SCHOOLS.hongik = {
    "body": "국방AI 세 학위 경로가 모두 허용됨을 원문에서 확인했어. 최신 세부요건은 [[졸업요건 보기|graduation]]에서 볼 수 있어."
   },
   {
-   "id": "archive-record",
+   "id": "record-vs-current",
    "pages": [
     "archive"
    ],
    "tone": "warn",
-   "title": "원문과 최신 사실은 달라.",
-   "date": "2026-10-31",
-   "source": "P01, P47",
-   "body": "원문에 적힌 과거 취학추천 진행상태, 모델명, 개강 일정, 면접 세부 공지 예정일은 작성 당시 표현이야. 이 아카이브는 기록 보존용이지 최신 공식 안내가 아니야."
-  },
-  {
-   "id": "archive-later-fixes",
-   "pages": [
-    "archive"
-   ],
-   "tone": "warn",
-   "title": "이후 정정된 원문 표현.",
+   "title": "기록 vs 현재 · 원문과 최신 사실은 달라.",
    "date": "2026-11-07",
-   "source": "S1, F-ADMISSION, T26-A, T26-B",
-   "body": "원문의 '11월 7일 10시부터'는 학과별 시각 공지 이전 기록이야. 학과별 시작시각은 11월 6일 공지분과 수험표가 기준이야. 원문의 저녁수업 약 2회는 이후 9학점=3과목·주 3회 기준으로 정정됐어.",
-   "issues": [
-    "DA-D5",
-    "CR-F9"
-   ]
-  },
-  {
-   "id": "archive-grad-20261102",
-   "pages": [
-    "archive"
+   "source": "P01, P47 · S1, F-ADMISSION, T26-A, T26-B · G1",
+   "body": "원문에 적힌 과거 취학추천 진행상태, 모델명, 개강 일정, 면접 세부 공지 예정일은 작성 당시 표현이야. 이 아카이브는 기록 보존용이지 최신 공식 안내가 아니야.",
+   "alertRefs": [
+    3
    ],
-   "tone": "info",
-   "title": "기록 이후 확인:",
-   "date": "2026-11-02",
-   "source": "G1",
-   "body": "2026 학과 현황표의 국방AI 행은 세 경로 모두 ○야. 과거 원문의 미확인 표현은 당시 기록으로 읽고 [[현재 졸업요건|graduation]]을 참고해."
+   "items": [
+    {
+     "title": "이후 정정된 원문 표현.",
+     "body": "원문의 '11월 7일 10시부터'는 학과별 시각 공지 이전 기록이야. 학과별 시작시각은 11월 6일 공지분과 수험표가 기준이야. 원문의 저녁수업 약 2회는 이후 9학점=3과목·주 3회 기준으로 정정됐어.",
+     "date": "2026-11-07",
+     "source": "S1, F-ADMISSION, T26-A, T26-B",
+     "issues": [
+      "DA-D5",
+      "CR-F9"
+     ]
+    },
+    {
+     "title": "기록 이후 확인:",
+     "body": "2026 학과 현황표의 국방AI 행은 세 경로 모두 ○야. 과거 원문의 미확인 표현은 당시 기록으로 읽고 [[현재 졸업요건|graduation]]을 참고해.",
+     "date": "2026-11-02",
+     "source": "G1"
+    }
+   ],
+   "merged": [
+    "archive-record",
+    "archive-later-fixes",
+    "archive-grad-20261102",
+    "alerts[3]"
+   ]
   },
   {
    "id": "plan-courses-20261101",
@@ -2698,7 +3362,7 @@ window.ATELIER_SCHOOLS.hongik = {
    "area": "자료 메타",
    "where": "version · generated · studyNotesVersion",
    "before": "면접 아틀리에 · 국방AI 졸업요건 공식 원문 검증 / 2026-10-31 / 2026.11.01 · ② 수강계획 9-9-6, 4학기 24논문/30조건부 경로 통합",
-   "after": "면접 아틀리에 · 졸업요건 원문 검증 2026-11-02 · 시간표 2026-11-01 / 2026-11-07 / 2026.11.01 · ② 수강계획 9-9-6, 4학기 24논문/30 교과목이수(허용 확인·개인 승인 필요) 경로 통합",
+   "after": "면접 아틀리에 · 졸업요건 원문 검증 2026-11-02 · 시간표 2026-11-01 / 2026-11-06 / 2026.11.01 · ② 수강계획 9-9-6, 4학기 24논문/30 교과목이수(허용 확인·개인 승인 필요) 경로 통합",
    "reason": "졸업요건 원문 검증은 2026-11-02, 시간표는 2026-11-01이고, 30학점 교과목이수는 「조건부」가 아니라 허용 확인·개인 승인 필요다.",
    "source": "G1 (확인 2026.11.02) · T26-A/B (2026.11.01)",
    "issues": [
@@ -2842,7 +3506,7 @@ window.ATELIER_SCHOOLS.hongik = {
    "area": "원문·조사 기록",
    "where": "archive() 화면 설명 문장",
    "before": "2026-10-31 기준으로 바뀐 사실은 이 원문이 아니라 ‘팩트체크’에서 따로 표시했어.",
-   "after": "2026-10-31 이후(시간표 11.01, 졸업요건 11.02 포함) 바뀐 사실은 이 원문이 아니라 ‘팩트체크’와 ‘졸업요건’ 탭, 그리고 이 화면 위 「이후 정정」 안내에서 따로 표시했어.",
+   "after": "2026-10-31 이후(시간표 11.01, 졸업요건 11.02 포함) 바뀐 사실은 이 원문이 아니라 ‘근거·출처’와 ‘졸업요건’ 탭, 그리고 이 화면 위 「이후 정정」 안내에서 따로 표시했어.",
    "reason": "팩트체크에 반영된 최신 확인일은 2026-11-01(시간표)과 2026-11-02(졸업요건)이다.",
    "source": "T26-A/B (2026.11.01) · G1~G11 (2026.11.02)",
    "issues": [
@@ -2852,7 +3516,7 @@ window.ATELIER_SCHOOLS.hongik = {
   },
   {
    "id": "REV-37",
-   "area": "팩트체크",
+   "area": "근거·출처",
    "where": "facts() 상태 필터 칩",
    "before": "전체 | 확인 | 이전 기록 | 미확정 | 원칙",
    "after": "전체 | 확인 | 부분확인 | 사용자 제공 화면 | 이전 기록 | 미확정 | 원칙 (+ 데이터에 새 상태가 생기면 자동 추가)",
@@ -2881,7 +3545,7 @@ window.ATELIER_SCHOOLS.hongik = {
    "area": "이후 정정 안내",
    "where": "notices · dossier-courses-20261101 (dossier 화면 상단) · 새로 추가",
    "before": "(없음 · 원문은 그대로 두고 안내만 추가)",
-   "after": "과목 후보와 옛 답변 정정 (2026.11.01). 보고서의 학기별 과목 후보(1학기 데이터사이언스·정보보호 및 보안, 2학기 공급사슬관리 등)는 2026 실제 시간표 확인(2026.11.01) 전에 작성됐어. 2026 편성상 데이터사이언스·정보보호 및 보안은 2학기 과목이고, 공급사슬관리 명칭 과목은 없었어. 최신 조합은 2년 대학원 생활·실제 교과목 탐구 화면을 따라. 또 2026-11-01 정정으로 공급사슬관리 과목은 2026 시간표에 없음을 확인했어. 아래 옛 답변의 '공급사슬관리' 문장은 쓰지 말고 핵심 4문항의 최신 대본을 사용해.",
+   "after": "과목 후보와 옛 답변 정정 (2026.11.01). 보고서의 학기별 과목 후보(1학기 데이터사이언스·정보보호 및 보안, 2학기 공급사슬관리 등)는 2026 실제 시간표 확인(2026.11.01) 전에 작성됐어. 2026 편성상 데이터사이언스·정보보호 및 보안은 2학기 과목이고, 공급사슬관리 명칭 과목은 없었어. 최신 조합은 2년 대학원 생활·실제 교과목 탐구 화면을 따라. 아래 옛 답변의 '공급사슬관리' 문장은 쓰지 말고 핵심 4문항의 최신 대본을 사용해.",
    "reason": "원문(dossierHTML·planHTML·archiveHTML)은 고치지 않는다는 원칙에 따라 화면 상단 안내로 처리.",
    "source": "T26-A, T26-B",
    "issues": [
@@ -2895,7 +3559,7 @@ window.ATELIER_SCHOOLS.hongik = {
    "area": "이후 정정 안내",
    "where": "notices · dossier-source-codes (dossier 화면 상단) · 새로 추가",
    "before": "(없음 · 원문은 그대로 두고 안내만 추가)",
-   "after": "출처 번호 대응표. 이 보고서의 출처 번호는 2026.10.31 작성 당시 체계야. 현재 팩트체크 번호로는 S01→S1, S02→S4, S03→S6, S04→S14, S05→S15(국방일보 학교·학과 소개, 출처 목록에 새로 추가), S06→S3, S07→S9, R01→R01, R02→R07, R03→R06, R04→R05에 해당해.",
+   "after": "출처 번호 대응표. 이 보고서의 출처 번호는 2026.10.31 작성 당시 체계야. 현재 근거·출처 번호로는 S01→S1, S02→S4, S03→S6, S04→S14, S05→S15(국방일보 학교·학과 소개, 출처 목록에 새로 추가), S06→S3, S07→S9, R01→R01, R02→R07, R03→R06, R04→R05에 해당해.",
    "reason": "원문(dossierHTML·planHTML·archiveHTML)은 고치지 않는다는 원칙에 따라 화면 상단 안내로 처리.",
    "source": "dossierHTML 12장 · D.sources",
    "issues": [
@@ -3031,6 +3695,32 @@ window.ATELIER_SCHOOLS.hongik = {
    "source": "public/wms/overview-data.js WMS_GUIDE_NOTES",
    "issues": [
     "NA-F6"
+   ],
+   "date": "2026-11-07"
+  },
+  {
+   "id": "REV-51",
+   "area": "근거·출처",
+   "where": "alerts[0].text (근거·출처 화면 NOTICE / 01)",
+   "before": "학교 모집공고는 구체적인 면접 안내 11월 5일 예정, 학과별 시작시각 안내 11월 6일 예정으로 나누어 고지했어. 최종 공고를 확인해야 하지만 두 날짜가 모순되는 건 아니야.",
+   "after": "학교 모집공고는 구체적인 면접 안내를 11월 5일, 학과별 시작시각을 11월 6일 공지로 나눠 고지했어. 면접 당일은 11월 6일 공지분과 수험표 시각이 최종 기준이야.",
+   "reason": "면접 당일(2026-11-07)에도 시작시각 공지를 「예정」 시제로 안내해, 같은 화면의 facts[1](REV-21)·홈 카드(REV-27)와 시제가 어긋났다.",
+   "source": "S1 (2026.09.18) · F-ADMISSION (2026.11.01)",
+   "issues": [
+    "DA-D5"
+   ],
+   "date": "2026-11-07"
+  },
+  {
+   "id": "REV-52",
+   "area": "면접 브리핑",
+   "where": "briefing() 마지막 배너 문장",
+   "before": "연구설계와 대학원 현실성은 팩트체크 화면에서 근거까지 다시 읽을 수 있어.",
+   "after": "연구설계와 대학원 현실성은 근거·출처 화면에서 근거까지 다시 읽을 수 있어.",
+   "reason": "「팩트체크와 근거」 화면 이름이 「근거·출처」로 바뀌어, 없는 화면 이름을 가리키고 있었다.",
+   "source": "화면 등록부(pages registry) · 내비게이션",
+   "issues": [
+    "UI-RENAME"
    ],
    "date": "2026-11-07"
   }
@@ -3517,7 +4207,188 @@ window.ATELIER_SCHOOLS.hongik = {
     }
    ]
   }
- ]
+ ],
+ "curriculum": {
+  "title": "교육과정 전체 34과목",
+  "basis": "이전 조사에 기록된 34개 과목 · 실제 2027 개설 확정 아님",
+  "lead": "과목명은 정규 교육과정에 있다는 뜻이지 2027년 1·2학기에 실제로 열린다는 약속이 아니다. 학과 홈페이지는 교과목 목록을 동적으로 표시하기 때문에 이번 조사에서 웹 검색 결과만으로 모든 과목의 최신 개설 여부를 재확인할 수는 없었다.",
+  "format": "이전 조사에서 확인된 일반 전공선택은 모두 석사 1학기 / 전공선택 / 3학점 / 3시간으로 표시돼 있었어.",
+  "matchNote": "2026 개설 배지는 과목명의 띄어쓰기·가운뎃점을 지우고 2026년 1·2학기 시간표(23과목)와 맞춘 결과야. 배지가 없으면 2026 두 시간표에서 보이지 않은 교육과정 후보야.",
+  "outsideLabel": "34과목 목록 외 2026 개설",
+  "topicSource": "dossierHTML 2-2 · 34과목을 주제별로 재배열 · 우선순위는 네 연구 목적 기준",
+  "topics": [
+   {
+    "name": "기초·AI·보안",
+    "priority": "높음",
+    "why": "기초·평가·구조 이해",
+    "courses": [
+     "데이터 사이언스",
+     "정보보호 및 보안",
+     "빅데이터 마이닝",
+     "국방 AI기술 응용",
+     "국방 지능형 정보보호 특론",
+     "국방 사물인터넷 특론",
+     "국방 소프트웨어 관리",
+     "국방 IT 융합·정책"
+    ]
+   },
+   {
+    "name": "데이터·경영 분석",
+    "priority": "높음~중간",
+    "why": "실험방법과 적용 판단",
+    "courses": [
+     "AI와 빅데이터를 활용한 경영연구방법론",
+     "인공지능 솔루션: 생성형 AI 활용",
+     "빅데이터를 이용한 비즈니스 분석",
+     "인공지능과 서비스 경영",
+     "생성형 AI와 전략경영"
+    ]
+   },
+   {
+    "name": "군수·의사결정",
+    "priority": "높음~중간",
+    "why": "현장 전체 맥락",
+    "courses": [
+     "AI 및 데이터 기반 공급사슬관리",
+     "AI 기반 의사결정 및 최적화 모델",
+     "국방획득 및 사업관리",
+     "국방 AI 프로젝트 관리",
+     "국방기획론",
+     "국방경제학",
+     "국방경영전략과 자율무기체계"
+    ]
+   },
+   {
+    "name": "국방·조직·정책",
+    "priority": "선택",
+    "why": "학습 영역 확장",
+    "courses": [
+     "국가안보론",
+     "군사학 이론",
+     "군 조직이론",
+     "국방정책론",
+     "국방 AI 정책 세미나",
+     "조직 리더십",
+     "인적자원관리",
+     "국방 마케팅 전략"
+    ]
+   },
+   {
+    "name": "기술 확장",
+    "priority": "주제 전환 시",
+    "why": "검토",
+    "courses": [
+     "우주위성 통신체계",
+     "블록체인",
+     "스마트시티와 기술융합",
+     "무인체계와 미래산업",
+     "국방 AI 무인체계",
+     "자율드론과 로봇"
+    ]
+   }
+  ],
+  "descriptions": [
+   [
+    "AI 기반 의사결정 및 최적화 모델",
+    "선형·정수계획, 네트워크 최적화, 시뮬레이션, 머신러닝·강화학습 등을 다룸"
+   ],
+   [
+    "AI 및 데이터 기반 공급사슬관리",
+    "수요예측, 재고·보급정책, 자원배분, 수송·경로, 창고·물류센터 운영, 공급망 리스크를 다룸"
+   ],
+   [
+    "국방획득 및 사업관리",
+    "획득 전 과정과 AI·SW 중심 체계의 사업관리까지 다룸"
+   ]
+  ],
+  "descSource": "archiveHTML #3 (이전 조사 기록 · 강의계획서 아님)",
+  "exam": {
+   "summary": "이전 조사 기록(미검증) — 시험과목으로 단정 금지",
+   "lead": "이전 조사에서 ‘종합시험용 0학점 과목’으로 기록된 15개 명칭이야. 공식 지정과목으로 검증된 목록이 아니고 해당 학기 응시과목도 아니니, 면접에서 시험과목으로 말하지 마.",
+   "tag": "종합시험 응시과목",
+   "rule": "2과목을 응시하되 해당 학기 과목명·문제은행은 클래스넷에서 확인해. 기존 조사에 적힌 과목명 목록은 공식 지정과목으로 검증되지 않아 여기서 시험과목으로 표시하지 않았어.",
+   "source": "archiveHTML #3"
+  }
+ },
+ "dossierFrame": {
+  "docTitle": "지원서에서 실제 2년으로 — 홍익대학교 국방AI융합학과 현실 검증 보고서",
+  "eyebrow": "RESEARCH DOSSIER NO. 01 · 2026.10.31",
+  "heroLead": "지원서에서",
+  "heroEm": "실제 2년으로.",
+  "lead": "전산직 군무원의 WMS 유지보수 경험은 홍익대학교 국방AI융합학과 석사과정에서 어떤 공부가 되고, 어떤 연구로 이어지며, 어떻게 다시 조직에 남을 수 있을까.",
+  "meta": [
+   "홍익대학교 일반대학원",
+   "세종캠퍼스 · 국방AI융합학과",
+   "2027.03 — 2029.02 가정"
+  ],
+  "sidenote": "2027~2029년 석사과정의 가능성을 조사한 개인 리서치 도큐먼트. 면접 훈련용 앱이 아니라 실제 생활·학업 설계서.",
+  "toolbarTitle": "국방 AI · 진학 현실화 조사",
+  "toolbarSub": "/ 개인용 자료 · 비공개 저장소",
+  "printLabel": "PDF로 인쇄 ↗",
+  "readFirstLabel": "읽기 전:",
+  "readFirst": "이 보고서는 '대학원에 합격한 후 실제로 다니는 사람'을 가정한 연구와 설계다. 합격·등록·군위탁·장학·수업 편성·실제 연구자료 승인 여부가 아직 전부 확정된 것은 아니므로 확정 사실처럼 다루지 않는다. 웹앱·플래시카드·타이머 대신 근거와 대안을 중심으로 구성했다.",
+  "legend": [
+   {
+    "label": "공식자료로 검증한 규정",
+    "tone": "official"
+   },
+   {
+    "label": "개인 원문·과거 조사",
+    "tone": "old"
+   },
+   {
+    "label": "가정·계획·확인 필요",
+    "tone": "hypo"
+   }
+  ],
+  "evidenceTitle": "증거를 구분해서 읽기",
+  "evidenceKeys": [
+   "S = 학교·공개자료",
+   "P = 제출원문·이전 조사",
+   "R = 연구방법 선행자료"
+  ],
+  "checkedAt": "최신 확인: 2026.10.31",
+  "tocLabel": "CONTENTS · 본문",
+  "appendixNav": "부록 · 원문 전체",
+  "appendixPart": "DOCUMENTARY APPENDIX",
+  "appendixTitle": "생략 없이 남겨둔 원문",
+  "appendixExplainer": "해석·재구성한 본문과 원래 제공한 문장을 섞지 않았다. 두 자료는 분리된 전문 보존본이야. 아래 제목을 누르면 전체 내용이 열린다.",
+  "appendix": [
+   {
+    "label": "부록 A · 제출 수학계획서 전체 원문",
+    "range": "1~4항",
+    "code": "P01",
+    "tab": "plan"
+   },
+   {
+    "label": "부록 B · 기존 홍익대 조사 47항목 전체",
+    "range": "1~47항",
+    "code": "P47",
+    "tab": "history"
+   }
+  ],
+  "appendixNote": "예전 단독 보고서 파일에 함께 묶여 있던 두 부록은 같은 원문을 「원문·조사 기록」 화면에 한 벌만 보존하고, 여기서는 그 화면으로 연결해.",
+  "colophonLabel": "이 자료의 목적:",
+  "colophon": "입학 전 '될 수 있다'는 희망을 2027년부터의 수강·시간·연구·보안·학위 요건에 맞춰 검토한다. 서류의 확신과 실제 가능성의 간격을 숨기지 않는 것이 이 보고서의 판단기준이다.",
+  "footer": [
+   "HONGIK DEFENSE AI · GRADUATE REALITY DOSSIER",
+   "Private · v2.0 · 2026-10-31"
+  ],
+  "codeLegendTitle": "보고서 출처 코드 ↔ 현재 출처 번호",
+  "codeLegendNote": "보고서 본문(2026.10.31 작성)의 출처 코드는 그대로 두고, 현재 근거·출처 화면의 번호와 대응만 표시해. 번호가 같아도 다른 문서일 수 있으니(예: 보고서 R03 = OWASP, 현재 R03 = ReAct) 반드시 이 표로 찾아.",
+  "localCodes": [
+   {
+    "code": "P01",
+    "label": "제출 수학계획서 원문",
+    "tab": "plan"
+   },
+   {
+    "code": "P47",
+    "label": "이전 조사 47개 항목의 종합 기록",
+    "tab": "history"
+   }
+  ]
+ }
 }
 };
 /* 호환 별칭: build.mjs 검사와 기존 코드가 참조한다. */

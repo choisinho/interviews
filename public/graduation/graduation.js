@@ -2,27 +2,27 @@
 window.ATELIER_MODULES=window.ATELIER_MODULES||{};
 window.ATELIER_MODULES.graduation=function(app){
 const {state,saved,escape,section,pill,btn,check,checked,progress,$}=app;
-const GRAD_SOURCES=[
- ['G1','학과별 석사학위청구방법 현황','https://ibook.hongik.ac.kr/Viewer/SKHSIBY3H5QR','2/2쪽 · 국방AI융합학과 ○/○/○ · 2026.9.1 기준'],
- ['G2','일반대학원 학칙','https://www.hongik.ac.kr/kr/introduction/regulations-book.do?mode=list&srCategoryId=111','제12·13·18·20·22·24·29~35조 · 기간·학점·학위'],
- ['G3','일반대학원 학사내규','https://www.hongik.ac.kr/kr/introduction/regulations-book.do?mode=list&srCategoryId=112','제4·17~24조 · 선수과목·시험 자격과 합격기준'],
- ['G4','2026-2 석사학위청구방법 신청·변경','https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=155587&mode=view','2026.8.24 · 신청 시기·승인·교과목이수 신청 의무'],
- ['G5','2026-2 논문·개별연구과제 심사 안내책자','https://ibook.hongik.ac.kr/Viewer/COVWAKL776FU','3쪽 비교 / 5~6쪽 지도교수 / 12쪽 자격 / 31쪽 심사료 / 37쪽 제출 / 44쪽 교과목이수'],
- ['G6','졸업자격시험 공식 학사안내','https://www.hongik.ac.kr/kr/education/graduation-examination.do','종합시험·영어 대체점수·석사과목확인 PDF'],
- ['G7','2026-2 외국어시험 안내','https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154829&mode=view&noCat=377','2026.8.4 · 대체성적의 제출일 유효성·방식별 마감'],
- ['G8','2026-2 연구윤리교육 안내','https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154973&mode=view','2026.8.10 · 2시간 이상·교과목이수 졸업자도 의무'],
- ['G9','2026-2 논문·개별연구과제 양식과 심사 안내','https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=159627&mode=view','2026.10.27 · 심사·표절검사·인쇄본 의무 제출 폐지'],
- ['G10','국방AI융합학과 교육과정','https://gbai.hongik.ac.kr/gbai/0401.do','학과 공개 교육과정 · 개인별 선수 지정 및 졸업학기 공지와 구별'],
- ['G11','학과 공식 소개자료 · 국방과 기술 제570호','https://gbai.hongik.ac.kr/gbai/0301.do?articleNo=155331&mode=view','2026.8.19 게시 · 첨부 PDF 4/12쪽(인쇄73쪽), 11/12쪽(인쇄80쪽): 모든 교과목 선택 운영'],
- ['G12','2026-2 종합시험 안내','https://www.hongik.ac.kr/kr/education/notice-grad.do?articleNo=154826&mode=view&noCat=377','신청·시험 공통요건 · 해당 학기 응시과목은 클래스넷 조회']
-];
+const D=()=>(app.data&&app.data())||{};
+/* 앱 공통 근거(D.sources)·현실성 판정(D.feasibility.rows)을 졸업요건 카드에서 그대로 인용한다. */
+/* D.sources는 URL당 1개 항목(records에 원래 번호별 이름·설명, aliases에 별칭 번호). 어떤 옛 번호로 찾아도 같은 문서로 해석한다. */
+const findSrc=id=>{for(const e of D().sources||[]){const r=(e.records||[e]).find(x=>x.id===id);if(r)return {...e,...r,url:r.url||e.url}}return null};
+const srcRef=(...ids)=>'<span class="graduation-refs">'+ids.map(id=>{const s=findSrc(id);return s?`<a href="${escape(s.url)}" target="_blank" rel="noopener noreferrer" title="${escape(s.name)}">${id} ↗</a>`:escape(id)}).join(' ')+'</span>';
+const feas=subject=>((D().feasibility||{}).rows||[]).find(r=>r.subject===subject);
+/* D.facts는 주제별 레지스트리(행마다 facts·audit 원문 목록). 옛 평면 형태({topic,value})도 그대로 읽는다. */
+const factValue=topic=>{for(const row of D().facts||[])for(const x of row.facts||[row])if(x.topic===topic)return x.value||'';return ''};
+/* 졸업요건 원문 목록(G1~G12)은 앱 공통 출처 레지스트리(D.sources records의 gradName·gradNote)에서 만든다. 모양은 예전과 같은 [번호, 제목, 주소, 확인 위치]. */
+const gradSources=()=>(D().sources||[]).flatMap(e=>(e.records||[]).filter(r=>r.gradName).map(r=>[r.id,r.gradName,r.gradUrl||r.url||e.url,r.gradNote])).sort((x,y)=>Number(x[0].slice(1))-Number(y[0].slice(1)));
 const GRAD_ROUTES={
  thesis:{name:'학위논문',credits:24,output:'논문 + 심사·구술시험',label:'연구를 논문으로 완성',steps:['교과 9학점 · 지도교수 상담','교과 9학점 · 연구계획','교과 6학점 · 지도·종합시험','논문 작성·심사·최종 제출'],note:'논문심사와 구술시험을 통과한 뒤 최종 원문과 인준서류까지 제출해야 해. 학칙은 교과 24학점 외에 논문·작품 6학점을 별도로 표기해.',checks:[['adviser','심사 전 1개 지도학기를 완료했다'],['eligibility','논문제출자격 조회의 모든 항목이 PASS다'],['thesis-review','논문 심사·구술시험에 합격했다'],['thesis-final','최종 PDF·인준지 업로드와 학과 제출서류를 완료했다']]},
  project:{name:'개별연구과제',credits:24,output:'연구과제보고서 + 심사',label:'연구를 보고서로 완성',steps:['교과 9학점 · 지도교수 상담','교과 9학점 · 연구과제 설계','교과 6학점 · 지도·종합시험','보고서 작성·심사·최종 제출'],note:'지도교수가 보고서를 심사해. 공동지도교수가 있으면 2인이 심사해. 일반대학원 공식 근거는 24학점과 과제 심사이며, 별도 과제 6학점 수강을 필수로 추가하지 않았어.',checks:[['adviser','심사 전 1개 지도학기를 완료했다'],['eligibility','논문제출자격 조회의 모든 항목이 PASS다'],['project-review','개별연구과제보고서 심사에 합격했다'],['project-final','최종 PDF·인준지 업로드와 학과 제출서류를 완료했다']]},
  coursework:{name:'교과목이수학점',credits:30,output:'추가 교과목 이수',label:'논문·보고서 없이 학위 취득',steps:['교과 9학점','교과 9학점 · 방법 변경 신청','교과 6학점 · 종합시험','교과 6학점 · 졸업요건 조회'],note:'논문·개별연구보고서 제출과 그 심사는 없어. 다만 종합시험·영어·연구윤리·지정 선수과목은 그대로 필요해. 청구방법 신청·승인이 없으면 30학점을 채워도 이 방식의 졸업사정에서 제외돼.',checks:[['coursework-approval','교과목이수학점 방식의 신청·승인이 완료됐다'],['coursework-final','교과목이수학점 졸업요건 조회에서 최종 PASS를 확인했다']]}
 };
+/* 경로별 한 줄 설명: 2년 시뮬레이션의 TRACK A/B/C 카드에서 옮긴 문구(정본은 여기). */
+const GRAD_BRIEF={thesis:['TRACK A','교과 24학점(학칙상 논문·작품 6학점은 별도 표기이며 수업 과목이 아님) + 종합·영어시험·연구윤리·논문심사. 연구 설계와 결과 분석을 학술적 논문으로 정리.'],project:['TRACK B','일반 안내상 24학점 + 과제보고서 등 요건. 국방AI 허용 확인. 지도교수 심사와 공통 졸업요건을 충족해야 해.'],coursework:['TRACK C','일반 안내상 30학점. 국방AI 허용 확인. 방법 신청·승인과 시험·윤리·선수요건 필요.']};
 state.graduationTrack=Object.hasOwn(GRAD_ROUTES,saved['graduation-route'])?saved['graduation-route']:'thesis';
-function gradRef(...ids){return '<span class="graduation-refs">'+ids.map(id=>{const s=GRAD_SOURCES.find(x=>x[0]===id);return `<a href="${escape(s[2])}" target="_blank" rel="noopener noreferrer" title="${escape(s[1])}">${id} ↗</a>`}).join(' ')+'</span>'}
+/* 2년 시뮬레이션 스위치와 같은 의미로 맞춘다: 논문·개별연구과제 → 24학점+논문(thesis), 교과목이수 → 30학점(credits30). */
+state.roadmapTrack=state.graduationTrack==='coursework'?'credits30':'thesis';
+function gradRef(...ids){const list=gradSources();return '<span class="graduation-refs">'+ids.map(id=>{const s=list.find(x=>x[0]===id);if(!s){const o=findSrc(id);return o?`<a href="${escape(o.url)}" target="_blank" rel="noopener noreferrer" title="${escape(o.name)}">${id} ↗</a>`:escape(id)}return `<a href="${escape(s[2])}" target="_blank" rel="noopener noreferrer" title="${escape(s[1])}">${id} ↗</a>`}).join(' ')+'</span>'}
 function gradChecklist(){const r=GRAD_ROUTES[state.graduationTrack];return [
  ['registration','정규 4학기 이상 등록했다'],['credits-'+state.graduationTrack,`필수과목을 포함한 교과 ${r.credits}학점 이상과 평균 B0(3.0)를 충족했다`],
  ['prerequisites','개인별 지정 선수과목을 모두 이수했다 (미지정이면 해당 없음)'],['comprehensive','종합시험 2과목 합격이 반영됐다'],['english','영어시험 또는 대체성적·대체강좌 합격이 반영됐다'],['ethics','연구윤리교육 2시간 이상 이수가 반영됐다'],['method','학위청구방법과 필요한 승인 상태를 확인했다'],...r.checks,
@@ -38,7 +38,10 @@ return `<div class="graduation-page">
 
 <section id="graduation-route"><div class="section-heading"><h2>01. 어떤 방식으로 졸업할까?</h2><span>선택하면 아래 일정·체크리스트가 바뀌어</span></div>
 <div class="graduation-route-grid" role="group" aria-label="졸업 경로 선택">${Object.entries(GRAD_ROUTES).map(([key,x])=>`<button class="graduation-route ${key===route?'selected':''}" data-grad-route="${key}" aria-pressed="${key===route}"><span class="overline">${escape(x.label)}</span><strong>${x.credits}<small>교과학점</small></strong><h3>${escape(x.name)}</h3><span>${escape(x.output)}</span><b>${key===route?'선택한 경로 ✓':'경로 살펴보기 →'}</b></button>`).join('')}</div>
+<div class="callout graduation-guide-note" id="graduation-guide-summary"><span class="overline">2026.11.02 공식 원문 검증</span><strong>국방AI의 세 졸업 경로, 모두 확인했어.</strong><p>논문은 교과24학점과 심사(논문 6학점 별도 표기, 추가 수업 아님), 개별연구과제는 24학점과 보고서 심사, 교과목이수는 30학점. 세 경로 모두 시험·윤리교육·선수요건과 신청·승인이 필요해.</p></div>
+<ul class="graduation-route-briefs">${Object.entries(GRAD_ROUTES).map(([key,x])=>`<li class="${key===route?'selected':''}"><b>${escape(GRAD_BRIEF[key][0])} · ${escape(x.name)} ${x.credits}</b> ${escape(GRAD_BRIEF[key][1])}</li>`).join('')}</ul>
 <p class="graduation-route-default"><b>면접 답변 기준:</b> 논문 24학점을 우선 목표로, 교과목이수 30학점은 방법 신청·승인 시 대안으로 말한다.</p>
+<p class="graduation-route-link">이 선택은 2년 대학원 시뮬레이션의 24/30학점 스위치와 연결돼 있어. 논문·개별연구과제는 24학점 + 논문/보고서 심사(9 → 9 → 6 → 0), 교과목이수는 30학점(9 → 9 → 6 → 6) 일정으로 함께 바뀌어. ${btn('2년 시뮬레이션에서 학기별로 보기 →','go:roadmap:roadmap-plain','tiny')}</p>
 <div class="graduation-route-note" role="status"><strong>${escape(r.name)}</strong><p>${escape(r.note)} ${gradRef('G2','G5')}</p></div>
 <details class="graduation-details"><summary>24학점과 30학점을 정확히 구분하기</summary><p>논문 경로의 <b>교과 24학점 + 별도 논문·작품 6학점</b> 표기는 학칙 제29조①의 내용이야. 교과목 30학점 경로와는 다르며, 논문 6학점을 일반 수업 2과목으로 바꿔 계산하지 않아. 개별연구과제는 같은 조④와 안내책자에서 <b>24학점 + 보고서 심사</b>로 규정해. 특수대학원의 별도 연구과제 학점 규정을 이 학과에 적용하지 않았어. ${gradRef('G2','G5')}</p></details>
 <h3 class="graduation-subtitle">4학기 계획 예시 · ${escape(r.name)}</h3><div class="graduation-timeline">${r.steps.map((s,i)=>`<article><span>0${i+1} / ${i+1}학기</span><strong>${coursework?[9,9,6,6][i]:[9,9,6,0][i]}<small>교과학점</small></strong><p>${escape(s)}</p></article>`).join('')}</div>
@@ -48,6 +51,7 @@ return `<div class="graduation-page">
 <div class="graduation-common-grid">
 <article class="card"><span class="overline">등록 · 기간</span><h3>기본 4학기</h3><p>일반 석사 수업연한 2년, 재학연한 3년(6학기). 휴학기간은 재학연한에 포함되지 않아. 수료 후 논문 제출시한과 재학연한은 구분해야 해. ${gradRef('G2')}</p></article>
 <article class="card"><span class="overline">학점 · 성적</span><h3>평균 B0 · 3.0 이상</h3><p>경로별 교과 24 또는 30학점을 충족해야 해. 학점 인정은 C0 이상, 전체 평균은 B0 이상이야. 2026 학과 소개는 전 과목 선택 운영이라고 명시해. 2027 적용 교육과정은 입학 후 확인해. ${gradRef('G2','G11')}</p></article>
+${(()=>{const r=feas('주간 석사 수강학점'),other=factValue('타과전공');return r?`<article class="card" id="graduation-credit-rules"><span class="overline">수강신청 · 학점 규정</span><h3>학기당 6~9학점 · 4학기 6학점 이하</h3><p>${escape(r.conclusion)} ${srcRef(r.ref)}</p>${other?`<p><b>타과 전공 인정:</b> ${escape(other)} — 석사 과정 전체를 통틀어 9학점까지야. ${srcRef('S4','S5')}</p>`:''}<p class="graduation-caption">${escape(r.implication)} 2년 시뮬레이션의 9 → 9 → 6 예시는 이 상한 안에서 짠 계획이야. ${btn('학기별 계획 보기 →','go:roadmap:roadmap-plain','tiny')}</p></article>`:''})()}
 <article class="card"><span class="overline">개인별 지정</span><h3>선수과목 별도 이수</h3><p>학과가 필요하다고 인정하면 석사 선수과목을 지정해. 내규상 9학점 이내, C0(2.0) 이상. 선수학점은 졸업에 필요한 24·30학점에 합산하지 않아. ${gradRef('G2','G3')}</p></article>
 <article class="card"><span class="overline">연구윤리</span><h3>2시간 이상 · 1회 이상</h3><p>재학 또는 수료 기간에 대학원생 대상 ‘연구윤리’ 교육을 이수해야 해. 교과목이수 졸업자도 필수야. 클래스넷 반영을 확인하고 외부 교육은 이수증을 제출해. ${gradRef('G8')}</p></article>
 </div></section>
@@ -64,6 +68,7 @@ return `<div class="graduation-page">
 <li><b>학위청구방법 확인·신청</b><p>일반대학원의 기본값은 논문. 다른 방식은 2차부터 매 학기 초 신청하고 지도교수·학과장 승인을 확인해. 4월·10월 심사 신청 때 변경하는 절차가 아니야. ${gradRef('G4','G5')}</p></li>
 ${coursework?`<li><b>30학점과 공통요건 완료</b><p>남은 수업과 종합시험·영어·선수과목·윤리교육을 마치고, 고지된 연구등록금이 있는 경우 완납해. ${gradRef('G5')}</p></li><li><b>교과목이수학점 졸업요건 조회</b><p>클래스넷 ‘논문 및 졸업 → 교과목이수학점 졸업요건 조회’의 최종 자격을 확인해. 논문이나 과제보고서 심사·제출 단계는 없어. ${gradRef('G5')}</p></li>`:`<li><b>심사 전 학기에 지도·학점 준비</b><p>심사 전 1개 지도학기가 완료되어야 해. 4차 심사가 목표라면 늦어도 3차 초 지도교수 승인, 3차 말 교과 24학점 취득이 필요해. ${gradRef('G5')}</p></li><li><b>제출자격 PASS → 심사 신청·납부</b><p>클래스넷 ‘논문제출자격 조회’에서 자격을 확인하고 지도교수 허락 후 신청해. ${route==='thesis'?'논문은 통상 3인(공동지도 시 4인)이 심사하며 구술시험도 있어.':'개별연구과제는 지도교수(공동지도 시 2인)가 심사해.'} ${gradRef('G2','G5','G9')}</p></li><li><b>심사 통과 → 최종 제출</b><p>dCollection에 최종 PDF·인준지를 업로드하고, 학과에 인준지 원본·저작권동의서·윤리서약서·최종 표절검사결과 등 요구 서류를 제출해. 인쇄본 의무 제출은 폐지됐지만 심사위원 요청 시 가제본을 준비해. ${gradRef('G5','G9')}</p></li>`}
 </ol>
+${(()=>{const r=feas('지도교수 신청');return r?`<article class="card graduation-adviser" id="graduation-adviser"><span class="overline">지도교수 · 신청 시점</span><h3>1차 학기부터 신청 가능 · 배정은 별개</h3><p>${escape(r.conclusion)} ${srcRef(r.ref)}</p><p><b>근거:</b> ${escape(r.basis)}</p><p><b>계획상 의미:</b> ${escape(r.implication)} 1학기 목표의 ‘지도교수 상담과 연구질문 1쪽’은 이 제도를 전제로 해.</p><div class="pill-row">${btn('현실성 판정 보기','go:reality:review-'+(((D().feasibility||{}).rows||[]).indexOf(r)+1),'tiny')}${btn('1학기 계획 보기','go:roadmap:roadmap-detail','tiny')}</div></article>`:''})()}
 <details class="graduation-details"><summary>2026학년도 2학기 실제 일정 보기 (2027 입학생의 확정 일정 아님)</summary><div class="graduation-table-wrap"><table class="data-table"><thead><tr><th>업무</th><th>2026-2 사례</th><th>근거</th></tr></thead><tbody><tr><th>청구방법 신청</th><td>9.1~9.11 / 교수 승인 ~9.16</td><td>${gradRef('G4')}</td></tr><tr><th>논문·과제 졸업자의 영어 대체성적·윤리교육</th><td>9.30까지</td><td>${gradRef('G7','G8')}</td></tr><tr><th>교과목이수 졸업자의 영어 대체성적·윤리교육</th><td>12.31까지</td><td>${gradRef('G7','G8')}</td></tr><tr><th>심사 신청·납부</th><td>10.12~10.16 / 석사 논문 75,000원·과제 25,000원</td><td>${gradRef('G5')}</td></tr><tr><th>심사</th><td>11.9~12.11</td><td>${gradRef('G9')}</td></tr><tr><th>최종 원문 / 학과 서류</th><td>2027.1.6 / 1.8까지</td><td>${gradRef('G5')}</td></tr></tbody></table></div><p>마감은 졸업학기마다 달라져. 특히 심사 경로는 영어·윤리를 학기 말로 미루면 심사를 신청하지 못할 수 있어.</p></details>
 </section>
 
@@ -71,7 +76,7 @@ ${coursework?`<li><b>30학점과 공통요건 완료</b><p>남은 수업과 종�
 
 <section id="graduation-department"><div class="section-heading"><h2>06. 학과별 세부사항의 확인 범위</h2><span>확인한 것과 남은 것을 구분</span></div><div class="card"><p><b>전 과목 선택 운영:</b> 학과가 게시한 2026 소개자료 PDF 4쪽(인쇄 73쪽)과 학과장 인터뷰 11쪽(인쇄 80쪽)에서 직접 확인했어. 이를 ‘2027 입학생에게도 필수가 절대 없다’는 보장으로 확장하지 않았어. ${gradRef('G11')} <a href="https://gbai.hongik.ac.kr/gbai/0301.do?articleNo=155331&amp;attachNo=90819&amp;mode=download" target="_blank" rel="noopener noreferrer">확인한 소개 PDF ↗</a></p><p><b>공개 원문에서 아직 확정하지 못한 항목:</b> 실제 종합시험 2과목·문제은행, 학과 고유의 추가 연구실적·보고서 세부기준, 2027 교육과정의 최종 이수구분. 학과 공지와 소개자료·요람을 검토했으나 이 항목의 확정 자료는 찾지 못했어. 교육과정 웹페이지의 동적 목록도 오류 응답이어서 최신 행정상 이수구분을 검증할 수 없었어. ${gradRef('G10','G11','G12')}</p><p>개인별 선수 지정·지도교수 배정과 졸업학기의 추가 공지는 별도야. <b>세 졸업 경로가 모두 허용된다는 사실은 이미 원문으로 확인했어.</b></p><div class="graduation-contact"><span>시험·학사 교학팀 <a href="tel:023201297">02-320-1297</a></span><a href="mailto:grad1297@hongik.ac.kr">grad1297@hongik.ac.kr</a></div></div></section>
 
-<section id="graduation-sources"><div class="section-heading"><h2>07. 직접 확인한 원문</h2><span>문서 위치까지 남겼어</span></div><details class="graduation-details"><summary>학과별 학위청구방법 표 2페이지 펼치기</summary><p>제목: 일반대학원 석사학위청구방법 현황. 세종 → 공학계열 → 국방AI융합학과. 논문 / 개별연구과제 / 교과목이수학점 순서로 모두 ○. 하단 기준일 2026.9.1 및 지도교수·학과장 승인 조건을 함께 확인했어.</p><a href="graduation/degree-methods-page2.jpg" target="_blank" rel="noopener noreferrer"><img class="graduation-proof" loading="lazy" src="graduation/degree-methods-page2.jpg" alt="2026년 9월 1일 기준 일반대학원 석사학위청구방법 현황 2페이지. 국방AI융합학과 논문·개별연구과제·교과목이수학점 모두 동그라미." width="2037" height="2880"></a></details><div class="card">${GRAD_SOURCES.map(s=>`<article class="source-item"><span class="source-num">${s[0]}</span><div><h4><a href="${escape(s[2])}" target="_blank" rel="noopener noreferrer">${escape(s[1])} ↗</a></h4><p>${escape(s[3])}</p></div></article>`).join('')}</div><div class="callout"><b>이번 조사에서 바로잡은 내용</b><br>‘개별연구과제만 허용’ → 세 방식 모두 허용.<br>‘개별연구과제 6학점 별도 수강 필수’ → 일반대학원 근거에서 확인되지 않음.<br>‘영어성적은 졸업일까지 유효해야 함’ → 제출일에 유효한 성적을 제출.<br>‘수업 30학점이면 자동 졸업’ → 시험·윤리·선수·신청·승인 등도 필요.</div></section>
+<section id="graduation-sources"><div class="section-heading"><h2>07. 직접 확인한 원문</h2><span>문서 위치까지 남겼어</span></div><details class="graduation-details"><summary>학과별 학위청구방법 표 2페이지 펼치기</summary><p>제목: 일반대학원 석사학위청구방법 현황. 세종 → 공학계열 → 국방AI융합학과. 논문 / 개별연구과제 / 교과목이수학점 순서로 모두 ○. 하단 기준일 2026.9.1 및 지도교수·학과장 승인 조건을 함께 확인했어.</p><a href="graduation/degree-methods-page2.jpg" target="_blank" rel="noopener noreferrer"><img class="graduation-proof" loading="lazy" src="graduation/degree-methods-page2.jpg" alt="2026년 9월 1일 기준 일반대학원 석사학위청구방법 현황 2페이지. 국방AI융합학과 논문·개별연구과제·교과목이수학점 모두 동그라미." width="2037" height="2880"></a></details><div class="card">${gradSources().map(s=>`<article class="source-item"><span class="source-num">${s[0]}</span><div><h4><a href="${escape(s[2])}" target="_blank" rel="noopener noreferrer">${escape(s[1])} ↗</a></h4><p>${escape(s[3])}</p></div></article>`).join('')}</div><div class="callout"><b>이번 조사에서 바로잡은 내용</b><br>‘개별연구과제만 허용’ → 세 방식 모두 허용.<br>‘개별연구과제 6학점 별도 수강 필수’ → 일반대학원 근거에서 확인되지 않음.<br>‘영어성적은 졸업일까지 유효해야 함’ → 제출일에 유효한 성적을 제출.<br>‘수업 30학점이면 자동 졸업’ → 시험·윤리·선수·신청·승인 등도 필요.</div></section>
 </div>`;}
-return {GRAD_SOURCES,GRAD_ROUTES,graduation,refreshGradProgress};
+return {get GRAD_SOURCES(){return gradSources()},GRAD_ROUTES,graduation,refreshGradProgress};
 };

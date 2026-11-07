@@ -4,3 +4,7 @@
 @media print{.graduation-jumps,.graduation-route>b{display:none}.graduation-route-grid{grid-template-columns:repeat(3,1fr)}.graduation-verdict{background:#edf3e7;color:#203823;border:1px solid #9bb38e}.graduation-verdict p{color:#40543d}.graduation-page .card,.graduation-route,.graduation-process li{break-inside:avoid}.graduation-page details{display:block}.graduation-page details>*{display:block}.graduation-proof{max-height:230mm;object-fit:contain}.graduation-page section{break-before:auto}}
 
 .graduation-route-default{margin:14px 0 0;font-size:13px;color:#53674f;line-height:1.8}
+/* 2c: 2년 시뮬레이션에서 옮긴 경로 요약·학점 규정·지도교수 카드 */
+.graduation-guide-note{margin-top:14px}.graduation-guide-note .overline{display:block;margin-bottom:4px}.graduation-guide-note p{margin:6px 0 0}
+.graduation-route-briefs{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:13px;line-height:1.75;color:#4f6152}.graduation-route-briefs li{padding:8px 12px;border-radius:10px;border:1px solid #dfe6dc}.graduation-route-briefs li.selected{background:#f1f7ea;border-color:#b9d1a8}
+.graduation-route-link{font-size:13px;color:#53674f;line-height:1.8}.graduation-adviser{margin-top:16px}
