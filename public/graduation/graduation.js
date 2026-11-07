@@ -1,4 +1,7 @@
-// Inserted into the application's existing closure by scripts/build.mjs.
+/* 졸업요건 페이지 모듈. app.js가 ATELIER_MODULES.graduation(app)으로 앱의 상태·헬퍼를 넘겨 초기화한다. */
+window.ATELIER_MODULES=window.ATELIER_MODULES||{};
+window.ATELIER_MODULES.graduation=function(app){
+const {state,saved,escape,section,pill,btn,check,checked,progress,$}=app;
 const GRAD_SOURCES=[
  ['G1','학과별 석사학위청구방법 현황','https://ibook.hongik.ac.kr/Viewer/SKHSIBY3H5QR','2/2쪽 · 국방AI융합학과 ○/○/○ · 2026.9.1 기준'],
  ['G2','일반대학원 학칙','https://www.hongik.ac.kr/kr/introduction/regulations-book.do?mode=list&srCategoryId=111','제12·13·18·20·22·24·29~35조 · 기간·학점·학위'],
@@ -69,3 +72,5 @@ ${coursework?`<li><b>30학점과 공통요건 완료</b><p>남은 수업과 종�
 
 <section id="graduation-sources"><div class="section-heading"><h2>07. 직접 확인한 원문</h2><span>문서 위치까지 남겼어</span></div><details class="graduation-details"><summary>학과별 학위청구방법 표 2페이지 펼치기</summary><p>제목: 일반대학원 석사학위청구방법 현황. 세종 → 공학계열 → 국방AI융합학과. 논문 / 개별연구과제 / 교과목이수학점 순서로 모두 ○. 하단 기준일 2026.9.1 및 지도교수·학과장 승인 조건을 함께 확인했어.</p><a href="graduation/degree-methods-page2.jpg" target="_blank" rel="noopener noreferrer"><img class="graduation-proof" loading="lazy" src="graduation/degree-methods-page2.jpg" alt="2026년 9월 1일 기준 일반대학원 석사학위청구방법 현황 2페이지. 국방AI융합학과 논문·개별연구과제·교과목이수학점 모두 동그라미." width="2037" height="2880"></a></details><div class="card">${GRAD_SOURCES.map(s=>`<article class="source-item"><span class="source-num">${s[0]}</span><div><h4><a href="${escape(s[2])}" target="_blank" rel="noopener noreferrer">${escape(s[1])} ↗</a></h4><p>${escape(s[3])}</p></div></article>`).join('')}</div><div class="callout"><b>이번 조사에서 바로잡은 내용</b><br>‘개별연구과제만 허용’ → 세 방식 모두 허용.<br>‘개별연구과제 6학점 별도 수강 필수’ → 일반대학원 근거에서 확인되지 않음.<br>‘영어성적은 졸업일까지 유효해야 함’ → 제출일에 유효한 성적을 제출.<br>‘수업 30학점이면 자동 졸업’ → 시험·윤리·선수·신청·승인 등도 필요.</div></section>
 </div>`;}
+return {GRAD_SOURCES,GRAD_ROUTES,graduation,refreshGradProgress};
+};
