@@ -85,7 +85,13 @@ for(const [id,s] of Object.entries(SCHOOLS)){
   if(isObj(v))for(const f of Object.keys(v))if(!(f in s.data[k]))throw Error(id+'.data.'+k+' missing field: '+f)
  }
  if(!s.meta.storageKey||s.meta.storageKey===SCHOOLS.hongik.meta.storageKey)throw Error(id+' needs its own storageKey')
+ // 학교 전용 키: 홍익대 data에 없는 키는 meta.ownKeys에 선언해야 한다(오타·임의 키 방지). 선언한 키는 실제로 있어야 한다.
+ const own=s.meta.ownKeys||[]
+ for(const k of Object.keys(s.data))if(!(k in SCHOOLS.hongik.data)&&!own.includes(k))throw Error(id+'.data.'+k+' is not a Hongik key — declare it in '+id+'.meta.ownKeys')
+ for(const k of own){if(!(k in s.data))throw Error(id+'.meta.ownKeys lists missing data key: '+k);if(k in SCHOOLS.hongik.data)throw Error(id+'.meta.ownKeys must not repeat a shared key: '+k)}
 }
+const statuses=['planned','ready','archived']
+for(const [id,s] of Object.entries(SCHOOLS))if(!statuses.includes(s.meta.status))throw Error(id+'.meta.status must be one of '+statuses.join('/'))
 if(!publishedHTML.includes('function graduation()')||!publishedHTML.includes("id:'graduation'"))throw Error('Graduation page missing')
 
 // 4) 결과물 쓰기 + 졸업요건 원문 자료 복사 + 서비스 워커에 빌드 해시 주입.

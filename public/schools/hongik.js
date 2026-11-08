@@ -1,4 +1,6 @@
-/* 홍익대학교 국방AI융합학과 면접 자료 (기존 window.HONGIK_DATA 원본을 scripts 추출로 옮김). */
+/* 홍익대학교 국방AI융합학과 면접 자료 (기존 window.HONGIK_DATA 원본을 scripts 추출로 옮김).
+ * 2026-11-08 Stage 4: 면접(2026-11-07) 종료 → 아카이브(status: archived). 내용은 그대로 보존하고 더 이상 업데이트하지 않는다.
+ * 접두사 없는 옛 페이지 해시(#interview, #wms-practice/…, #foreign, #graduation)는 계속 이 학교로 열린다. */
 window.ATELIER_SCHOOLS = window.ATELIER_SCHOOLS || {};
 window.ATELIER_SCHOOLS.hongik = {
 "meta": {
@@ -15,7 +17,10 @@ window.ATELIER_SCHOOLS.hongik = {
  "breadcrumb": "HONGIK UNIVERSITY <span>/</span> DEFENSE AI CONVERGENCE",
  "footer": "HONGIK / AI · PERSONAL STUDY ATELIER",
  "title": "국방 AI · 면접 아틀리에 — 최종 준비판",
- "status": "ready"
+ "status": "archived",
+ "archivedAt": "2026-11-08",
+ "statusLabel": "아카이브 · 면접 종료 2026.11.07",
+ "order": 1
 },
 "data": {
  "scripts": [

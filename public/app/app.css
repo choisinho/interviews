@@ -21,6 +21,7 @@
   --info:#3c5f72;--info-bg:#eaf1f4;--info-line:#6b94a4;
   --ok:#3d683a;--ok-bg:#d9eed2;--danger:#93493a;--danger-bg:#f6e2d6;
   --focus:#4f8a43;--overlay:rgba(12,28,21,.68);
+  --on-accent:#122417;
   --shadow-sm:0 1px 2px rgba(30,50,38,.05);--shadow:0 12px 32px rgba(30,50,38,.06);--shadow-lg:0 25px 90px rgba(11,23,14,.42);
   /* 크기 */
   --r-xl:22px;--r-lg:18px;--r-md:14px;--r-sm:10px;--r-xs:6px;--radius:var(--r-xl);
@@ -154,7 +155,7 @@ h1,h2,h3,h4{line-height:1.38}
 .breadcrumb #breadcrumbSchool{padding:0;color:inherit}
 .breadcrumb strong{color:var(--ink-brand)}
 .top-actions{display:flex;gap:4px;flex:none}
-.icon-action,.menu-toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-radius:10px;background:transparent;padding:8px 11px;font-size:15px;color:var(--ink-2);min-height:38px}
+.icon-action,.menu-toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-radius:10px;background:transparent;padding:8px 11px;font-size:15px;color:var(--ink-2);min-height:40px;min-width:40px;justify-content:center}
 .icon-action:hover,.menu-toggle:hover{background:var(--surface-3)}
 .icon-action span{font-size:var(--fs-label);font-weight:700}
 .menu-toggle{display:none}
@@ -764,6 +765,121 @@ h1,h2,h3,h4{line-height:1.38}
 .placeholder-card ul{margin-top:8px}
 .shared-note{margin-top:0}
 
+
+/* ---------- 5b. Stage 4: 아카이브 표시 · 지원자 모드(아주대) 화면 ---------- */
+/* 학교 스위치 · 사이드바 상태 배지 · 홈 아카이브 배지 */
+.school-switch button{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:40px}
+.switch-archived{font-size:var(--fs-label);font-weight:700;letter-spacing:0;opacity:.85;border:1px solid currentColor;border-radius:6px;padding:0 5px;line-height:1.5}
+.school-status{margin:-14px 8px 22px;padding:7px 10px;border-radius:9px;border:1px dashed var(--side-line);color:var(--side-muted);font-size:var(--fs-label);font-weight:700;letter-spacing:.02em;text-align:center}
+.school-status[hidden]{display:none}
+.archive-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:12px;padding:5px 11px;border-radius:999px;background:var(--surface-3);border:1px solid var(--line-2);color:var(--ink-brand);font-size:var(--fs-label);font-weight:800;letter-spacing:.02em}
+.archive-badge:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--muted)}
+.callout.archive-note{border-color:var(--line-2);background:var(--surface-3);color:var(--ink-2)}
+/* breadcrumb: 학교 이름(긴 것/짧은 것) + 현재 화면. 현재 화면은 줄어들지 않게. */
+.breadcrumb{display:flex;align-items:center;gap:0}
+.breadcrumb #breadcrumbSchool{min-width:0;flex:0 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.breadcrumb .bc-short{display:none;flex:0 0 auto;color:inherit;padding:0;letter-spacing:.04em}
+.breadcrumb .bc-sep{flex:0 0 auto}
+.breadcrumb strong{flex:0 0 auto;white-space:nowrap}
+/* 꼬리질문 출처 표시 · 비공개 출처 */
+.q-from{margin-top:10px;font-size:var(--fs-label);color:var(--muted);font-weight:700}
+.q-check{margin-top:10px;padding:10px 12px;border-radius:var(--r-sm);background:var(--warn-bg);color:var(--warn);font-size:var(--fs-sm);line-height:1.7}
+.q-check b{display:block;font-size:var(--fs-label);letter-spacing:.04em;margin-bottom:2px;color:var(--warn-strong)}
+.source-private{display:inline-block;margin-top:6px;font-size:var(--fs-label);color:var(--muted);font-weight:700}
+.placeholder-check{margin-top:16px;padding:14px 16px;border-radius:var(--r-md);background:var(--warn-bg);color:var(--warn);font-size:var(--fs-sm);line-height:1.75}
+.placeholder-check b{display:block;color:var(--warn-strong);margin-bottom:4px}
+.placeholder-check ol{margin:0;padding-left:20px}
+.research-context{margin-top:0}
+/* 지원자 대시보드 */
+.today-practice{border-left:4px solid var(--accent-2);margin-bottom:8px}
+.today-practice .check-row{margin:10px 0 12px;font-size:var(--fs-md);font-weight:700;color:var(--ink)}
+.today-practice.done .check-row span{text-decoration:line-through;color:var(--muted)}
+.apply-summary{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:20px}
+.apply-cell{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 15px;min-width:0}
+.apply-cell small{display:block;font-size:var(--fs-label);font-weight:800;letter-spacing:.06em;color:var(--brand-text);margin-bottom:4px}
+.apply-cell b{display:block;font-size:var(--fs-sm);line-height:1.6;color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
+.applicant-kpis{margin-top:4px}
+/* 면접 참고자료 대조 */
+.issue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.issue-card{display:flex;flex-direction:column;gap:10px;margin:0}
+.issue-card h3{margin:2px 0 0}
+.issue-card .card-top{align-items:center;flex-wrap:wrap;gap:6px}
+.issue-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0}
+.issue-pair div{background:var(--surface-2);border-radius:var(--r-sm);padding:10px 12px;min-width:0}
+.issue-pair dt{font-size:var(--fs-label);font-weight:800;color:var(--brand-text);letter-spacing:.04em;margin-bottom:3px}
+.issue-pair dd{margin:0;font-size:var(--fs-xs);line-height:1.7;color:var(--ink-2);overflow-wrap:anywhere}
+.issue-answer,.issue-ask{border-radius:var(--r-sm);padding:10px 12px;font-size:var(--fs-sm);line-height:1.7}
+.issue-answer{background:var(--info-bg);color:var(--info)}
+.issue-ask{background:var(--warn-bg);color:var(--warn)}
+.issue-answer b,.issue-ask b{display:block;font-size:var(--fs-label);letter-spacing:.04em;margin-bottom:2px}
+.issue-answer p,.issue-ask p{margin:0}
+.form-table-card{padding:6px}
+.form-table th{white-space:normal;min-width:110px}
+.form-table td{vertical-align:top;font-size:var(--fs-xs)}
+.form-table .form-value{color:var(--ink);font-weight:700;min-width:150px}
+.form-table tr.has-issue th{box-shadow:inset 3px 0 0 var(--danger)}
+.form-q{margin:0;padding-left:16px}
+.form-q li{margin:2px 0}
+.form-links{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.form-caution{color:var(--warn)}
+.form-caution .reg-ref{margin-top:6px;color:var(--muted)}
+.ref-chip{border:1px solid var(--line-2);background:var(--surface-2);border-radius:6px;padding:1px 6px;font-size:var(--fs-label);font-weight:800;color:var(--brand-text);cursor:pointer}
+/* 경력·연구개발 */
+.career-line{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line-2)}
+.career-item{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 18px;padding:0 0 18px 8px}
+.career-item:before{content:'';position:absolute;left:-26px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent-2)}
+.career-item.kind-학력:before,.career-item.kind-자격:before{border-color:var(--info-line)}
+.career-item.kind-지원:before{border-color:var(--brand);background:var(--brand)}
+.career-when{font-size:var(--fs-xs);font-weight:800;color:var(--brand-text);font-variant-numeric:tabular-nums;padding-top:2px}
+.career-body{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 15px;min-width:0}
+.career-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.career-head b{font-size:var(--fs-md);color:var(--ink)}
+.career-role{font-size:var(--fs-xs);color:var(--ink-2);font-weight:700}
+.career-body p{margin:6px 0;font-size:var(--fs-sm);line-height:1.7;color:var(--ink-2)}
+.career-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.kv-table th{width:34%;white-space:normal}
+.reg-steps,.iris-steps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.reg-steps li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.reg-steps li:last-child{border-bottom:0}
+.reg-date{font-size:var(--fs-xs);font-weight:800;color:var(--brand-text);font-variant-numeric:tabular-nums}
+.reg-steps p,.iris-steps p{margin:2px 0 0;font-size:var(--fs-sm);line-height:1.7;color:var(--ink-2)}
+.iris-steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start}
+.iris-steps li>span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--surface-3);color:var(--ink-brand);font-weight:800;font-size:var(--fs-xs)}
+.tips-totals{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.tips-totals span{background:var(--surface-3);border-radius:999px;padding:6px 12px;font-size:var(--fs-xs);color:var(--ink-2)}
+.tips-totals b{color:var(--ink);font-weight:800}
+.month-card{padding:0;overflow:hidden;margin-bottom:10px}
+.month-card>summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:14px 18px;min-height:48px;list-style:none}
+.month-card>summary::-webkit-details-marker{display:none}
+.month-card>summary:before{content:'+';font-weight:800;color:var(--brand-text);width:14px}
+.month-card[open]>summary:before{content:'−'}
+.month-name{font-weight:800;color:var(--ink-brand)}
+.month-title{color:var(--ink-2);font-size:var(--fs-sm)}
+.month-count{margin-left:auto;font-size:var(--fs-label);font-weight:800;color:var(--brand-text)}
+.month-body{padding:0 20px 18px;border-top:1px solid var(--line)}
+.month-items{margin:12px 0 16px;padding-left:24px;font-family:var(--font);font-size:var(--fs-sm);line-height:1.75;color:var(--ink)}
+.month-items li{margin:4px 0;overflow-wrap:anywhere}
+.scope-ok{border-top:4px solid var(--ok)}
+.scope-no{border-top:4px solid var(--danger)}
+.scope-ok .overline{color:var(--ok)}
+.scope-no .overline{color:var(--danger)}
+.cert-list summary{font-weight:800;color:var(--ink-brand)}
+
+.wrap-table th{white-space:normal;min-width:90px}
+.btn.tiny{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+/* ---------- 5c. Stage 3 후속: 터치 영역 · 토큰 · 토스트 ---------- */
+/* 토스트는 위쪽(topbar 아래)에 띄워 하단 버튼·launch bar를 가리지 않게 */
+.toast{top:calc(var(--topbar-h) + 12px);bottom:auto;transform:translateY(-8px)}
+/* 2년 시뮬레이션 막대: 하드코딩 색 대신 토큰 */
+.plain-bar{color:var(--on-accent)}
+.plain-bar.last{background:var(--surface-3);color:var(--ink)}
+/* 홍익대 홈 '면접 종료 · 복습 모드' 카드: 좁은 열에서도 줄바꿈이 자연스럽게 */
+.hero-side.ended strong{font-size:clamp(20px,2.1vw,26px);word-break:keep-all;overflow-wrap:anywhere}
+.hero-side small{display:block;overflow-wrap:anywhere}
+/* 타이머 리셋(↺) 등 작은 버튼의 최소 터치 영역 */
+.timer-controls .btn-quiet{min-width:40px;min-height:40px;padding:8px 10px;border-radius:9px}
+.site-rev{display:inline-flex;align-items:center;min-height:40px}
+
 /* ---------- 6. 미디어: 1200 / 850 / 560 ---------- */
 @media (max-width:1200px){
   :root{--side-w:244px}
@@ -877,6 +993,46 @@ h1,h2,h3,h4{line-height:1.38}
   .plain-total-head strong{font-size:26px}
   .prep-meter strong{font-size:44px}
   .toast{left:16px;right:16px;bottom:16px}
+}
+
+/* ---------- 6b. Stage 4 미디어 (Stage 3 후속 터치 영역 포함) ---------- */
+@media (max-width:1200px){
+  .issue-grid{grid-template-columns:1fr}
+}
+@media (max-width:850px){
+  /* 768 전후 태블릿: 학교 이름은 짧은 이름으로, 현재 화면은 항상 보이게 */
+  .breadcrumb #breadcrumbSchool{display:none}
+  .breadcrumb .bc-short{display:inline}
+  /* 터치 영역 40px 이상 */
+  .icon-action,.menu-toggle{min-height:40px;min-width:40px;justify-content:center}
+  .school-switch.top button{min-height:40px}
+  .switch-archived{display:none}
+  .btn.tiny,.page-toc .btn.tiny,.evidence-jumps .btn.tiny,.cluster-index .filter-chip{min-height:40px}
+  .filter-chip,.segment,.course-filters button,.mock-ratings button,.mock-controls button{min-height:40px}
+  summary{min-height:40px;padding-top:8px;padding-bottom:8px}
+  .form-table thead{display:none}
+  .form-table,.form-table tbody,.form-table tr,.form-table th,.form-table td{display:block;width:100%}
+  .form-table tr{border-bottom:1px solid var(--line-2);padding:10px 4px}
+  .form-table th,.form-table td{border:0;padding:5px 8px;min-width:0}
+  .form-table td:before{content:attr(data-label);display:block;font-size:var(--fs-label);font-weight:800;color:var(--brand-text);letter-spacing:.04em}
+  .form-table th{font-size:var(--fs-sm)}
+}
+@media (max-width:700px){
+  .breadcrumb .bc-short,.breadcrumb .bc-sep{display:none}
+}
+@media (max-width:560px){
+  .icon-action,.menu-toggle{min-height:40px;min-width:40px;padding:7px}
+  .toast{left:16px;right:16px;bottom:auto;top:calc(var(--topbar-h) + 10px)}
+  .top-actions{gap:0}
+  .school-switch.top button{padding:6px 8px}
+  .issue-pair{grid-template-columns:1fr}
+  .career-line{padding-left:14px}
+  .career-item{grid-template-columns:1fr;padding-left:4px}
+  .career-item:before{left:-22px}
+  .reg-steps li{grid-template-columns:1fr;gap:2px}
+  .month-count{margin-left:0;flex-basis:100%}
+  .apply-summary{grid-template-columns:1fr 1fr}
+  .kv-table th{width:40%}
 }
 
 /* ---------- 7. 인쇄 ---------- */

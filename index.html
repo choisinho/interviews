@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101a18">
-  <meta name="description" content="홍익대학교 국방AI융합학과 석사 면접 및 연구계획 준비용 개인 아틀리에">
+  <meta name="description" content="아주대학교 정보통신대학원 인공지능전공 면접 준비 · 홍익대학교 국방AI융합학과 석사 면접 및 연구계획 준비용 개인 아틀리에(아카이브)">
   <title>국방 AI · 면접 아틀리에 — 최종 준비판</title>
-  <script>/* 저장된 화면 테마(atelier-prefs.theme)와 마지막 학교를 첫 렌더 전에 적용한다. */(function(){try{var p=JSON.parse(localStorage.getItem('atelier-prefs')||'{}')||{},d=document.documentElement;if(p.theme==='light'||p.theme==='dark')d.dataset.theme=p.theme;var h=location.hash.slice(1).split('/')[0];d.dataset.school=h==='ajou'||h==='hongik'?h:(!h&&p.school==='ajou'?'ajou':'hongik')}catch(e){}})();</script>
+  <script>/* 저장된 화면 테마(atelier-prefs.theme)와 마지막 학교를 첫 렌더 전에 적용한다. */(function(){try{var p=JSON.parse(localStorage.getItem('atelier-prefs')||'{}')||{},d=document.documentElement;if(p.theme==='light'||p.theme==='dark')d.dataset.theme=p.theme;var h=location.hash.slice(1).split('/')[0];d.dataset.school=h==='ajou'||h==='hongik'?h:!h?'ajou':h==='wms-practice'&&p.school==='ajou'?'ajou':'hongik'}catch(e){}})();</script>
   <link rel="stylesheet" href="./public/app/app.css">
   <script src="./public/schools/hongik.js"></script>
   <script src="./public/schools/ajou.js"></script>
@@ -32,12 +32,13 @@
       <div class="sidebar-overline">2027 · GRADUATE ADMISSION</div>
       <div class="side-subtitle">실무를<br>연구의 언어로.</div>
       <div class="school-switch" id="schoolSwitch" role="group" aria-label="지원 학교 전환"></div>
+      <div class="school-status" id="schoolStatus" hidden></div>
       <nav class="side-nav" id="sideNav" aria-label="페이지 목록"></nav>
       <div class="sidebar-bottom"><span class="status-dot"></span> LOCAL-FIRST · 개인 학습용<br><span class="micro">학습 체크는 현재 브라우저에만 저장돼.</span></div>
     </aside>
 
     <div class="main-wrap">
-      <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">☰</button><a class="site-rev" id="latestSiteLink" href="./" title="휴대폰에 이전 버전이 남아 있으면 눌러 최신판 다시 열기">↻</a><div class="school-switch top" id="schoolSwitchTop" role="group" aria-label="지원 학교 전환"></div><div class="breadcrumb"><span id="breadcrumbSchool">HONGIK UNIVERSITY <span>/</span> DEFENSE AI CONVERGENCE</span> <span>/</span> <strong id="breadcrumbCurrent">OVERVIEW</strong></div><div class="top-actions"><button class="icon-action" id="searchOpen" title="검색 (/)" aria-label="전체 검색">⌕ <span>검색</span></button><button class="icon-action" id="installPromptBtn" hidden title="홈 화면에 앱 설치" aria-label="앱 설치">⌂ 설치</button><button class="icon-action" id="fontToggle" title="글자 크기 변경" aria-label="글자 크기 변경">Aa</button><button class="icon-action theme-toggle" id="themeToggle" type="button" title="화면 테마: 시스템 설정" aria-label="화면 테마 전환 (현재: 시스템)"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">시스템</span></button><button class="icon-action" id="printBtn" title="현재 화면 인쇄">⎙</button></div></header>
+      <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sidebar">☰</button><a class="site-rev" id="latestSiteLink" href="./" title="휴대폰에 이전 버전이 남아 있으면 눌러 최신판 다시 열기">↻</a><div class="school-switch top" id="schoolSwitchTop" role="group" aria-label="지원 학교 전환"></div><div class="breadcrumb"><span id="breadcrumbSchool">HONGIK UNIVERSITY <span>/</span> DEFENSE AI CONVERGENCE</span><span class="bc-short" id="breadcrumbShort">아주대</span><span class="bc-sep">/</span><strong id="breadcrumbCurrent">OVERVIEW</strong></div><div class="top-actions"><button class="icon-action" id="searchOpen" title="검색 (/)" aria-label="전체 검색">⌕ <span>검색</span></button><button class="icon-action" id="installPromptBtn" hidden title="홈 화면에 앱 설치" aria-label="앱 설치">⌂ 설치</button><button class="icon-action" id="fontToggle" title="글자 크기 변경" aria-label="글자 크기 변경">Aa</button><button class="icon-action theme-toggle" id="themeToggle" type="button" title="화면 테마: 시스템 설정" aria-label="화면 테마 전환 (현재: 시스템)"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">시스템</span></button><button class="icon-action" id="printBtn" title="현재 화면 인쇄">⎙</button></div></header>
       <main class="content" id="content" tabindex="-1" aria-live="polite"></main>
       <footer class="footer"><span id="footerSchool">HONGIK / AI · PERSONAL STUDY ATELIER</span><span id="footerVersion"></span></footer>
     </div>

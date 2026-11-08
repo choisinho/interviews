@@ -21,7 +21,7 @@
   padding: 8px 9px; border-left: 2px solid transparent; border-radius: 0 6px 6px 0;
   color: var(--brand-text); font-size: .89em; line-height: 1.4; text-decoration: none;
 }
-.wms-guide-index a span { min-width: 2.65em; color: var(--brand-text); font-size: .85em; font-variant-numeric: tabular-nums; }
+.wms-guide-index a span { min-width: 2.65em; color: var(--brand-text); font-size: max(12px, .85em); font-variant-numeric: tabular-nums; }
 .wms-guide-index a:hover, .wms-guide-paging a:hover { background: var(--surface-2); }
 .wms-guide-index a[aria-current] { color: var(--ink-brand); border-color: var(--accent-2); background: var(--surface-3); font-weight: 750; }
 .wms-guide-picker { display: none; }
