@@ -42,9 +42,10 @@
 
 - 대시보드: D-day(2026-11-14), 지원 요약, 오늘 할 일(D-6~D-1), 핵심 서사, 주의 카드, 빠른 진입, 아직 채울 자료
 - 면접 참고자료 대조: 제출 양식 칸별 표(제출 내용 / 예상 질문 / 답변 포인트 / 주의) + 불일치·확인 필요 패널
-- 핵심 5문항(자기소개·지원동기·학업계획·연구관심·개발경험), 꼬리질문 40개(13개 주제), 모의면접, 직전 한 장
+- 핵심 5문항(자기소개·지원동기·학업계획·연구관심·개발경험), 꼬리질문 84개(17개 주제), 모의면접, 직전 한 장
 - 경력·연구개발: 경력 타임라인, 라잇웨잇 TIPS·IRIS 연구노트(월별 33항목 원문, 기술 5영역, 작성 절차 11단계, 확인/미확인, 말할 범위 vs 단정 금지)
-- 교육과정·시간표, 졸업요건·학비(공식 페이지 2026-11-08 기준), 근거·출처(AJ1~AJ24 + 개인 자료 P1~P4), 원문(제출 양식 전사 · 연구노트 기록 요약 원문)
+- 교육과정·시간표(수업형태 4가지 · 병행 현실성 · 과목 사슬 추천안), 졸업요건·학비(논문/비논문 표 · 종합시험 · 연구 트랙 · 지도교수 배정 · 문의처 · 참고 비교), 2년 시뮬레이션(4학기 추천안 · 논문/비논문 학점표), 연구 설계(교수진 최근 연구 · 탐색 우선순위 추천안 · 전신 전공 학위논문 · 원우회·외부활동)
+- 근거·출처(공식 AJ1~AJ37 + 공개 서지 AR1~AR12 + 개인 자료 P1~P5), 원문(제출 양식 전사 · 연구노트 기록 요약 원문 · 심층 분석 리서치(사용자 공유, 2026-11-08) 원문 + 검증 주석)
 
 **홍익대 (아카이브)**
 
@@ -74,7 +75,7 @@ index.html                         셸 + 로컬 public/ 태그 (빌드 시 모�
 public/app/app.css                 디자인 시스템: 토큰(:root·학교 테마·다크 모드) → 기본 → 레이아웃 → 컴포넌트 → 페이지 블록 → 미디어 → 인쇄
 public/app/app.js                  앱: 학교 모드 라우팅, 페이지 레지스트리(PAGES), 렌더 함수, 학습 기록, 검색, 테마 토글, 버전 상수
 public/schools/hongik.js           홍익대 자료 (status: archived) (ATELIER_SCHOOLS.hongik = {meta, data}, window.HONGIK_DATA 호환 별칭)
-public/schools/ajou.js             아주대 자료 (status: ready, 주력). 홍익대와 같은 키 + 전용 키 application·career·program
+public/schools/ajou.js             아주대 자료 (status: ready, 주력). 홍익대와 같은 키 + 전용 키 application·career·program·researchNoteHTML
 public/graduation/                 졸업요건 화면(graduation.js·graduation.css) + 원문 이미지·PDF (dist/graduation/로 복사)
 public/wms/                        WMS 연구 도해: 원고(content.js, 수정 금지) · 가이드 · 도판 · 그림 · 리더
 public/manifest.webmanifest        안드로이드 홈 화면 설치 정보
@@ -116,13 +117,13 @@ node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # �
 | 꼬리질문 (followups) | `followups`, `followupClusters` | 배열 index = 저장 키(뒤에만 추가). 다른 학교 질문을 가져오면 `from` 필드에 출처. `mock: false`면 모의면접 출제에서 뺌. 아직 확인 못 한 사실·자리표시는 `answer`에 대괄호로 넣지 말고 `check` 필드에(답변 아래 「답변에 넣지 않음 · 확인할 것」 메모로 표시, 모의면접·답 복사에는 안 나옴) |
 | 경력·연구개발 (career) · 아주대 전용 | `career` (`timeline`, `tips`, `wms`) | 타임라인 · TIPS/IRIS 연구노트(월별 원문) · 말할 범위 |
 | 실무 경험 (cases) | `experiences`, `terms` | WMS 공유 사례 3 + 라잇웨잇 사례 2 (`cautionLabel`로 주의 문구 이름) |
-| 연구 설계 (research) | `research` (+ `context`, `faculty`, `facultyNote`) | 연구 질문·조건·지표 · 지도교수·연구실 조사 |
-| 교육과정·시간표 (coursebook) · 졸업요건·학비 (graduation) | `program` · 아주대 전용 | 수업형태·교과과정·시간표 / 졸업요건·등록금·장학 (공식) |
-| 2년 시뮬레이션 (roadmap) | `semesters`, `week` | **비어 있음** — 2027-1 시간표 공개 전. 확인할 것 목록이 placeholder에 표시 |
-| 근거·출처 (facts) | `facts`, `sources`, `notices` | 출처 `AJ#`(공식, URL) · `P#`(개인 자료, URL 없음 → "원본 비공개") · 상태 확인/이전 안내/미확인/제출 양식/개인 기록/사용자 확인 필요 |
-| 원문 (archive) | `planHTML`, `archiveHTML` + `meta.archiveTabs` | 제출 양식 전사 · 연구노트 기록 요약 원문 |
+| 연구 설계 (research) | `research` (+ `context`, `faculty`, `facultyNote`, `facultyTable`, `facultyPriority`, `theses`, `community`) | 연구 질문·조건·지표 · 지도교수·연구실 조사 · 교수진 최근 연구표 · 탐색 우선순위(추천안) · 전신 전공 학위논문 · 원우회·외부활동 |
+| 교육과정·시간표 (coursebook) · 졸업요건·학비 (graduation) | `program` · 아주대 전용 (coursebook: `formats`, `rules`, `curriculum`(과목 `[이름, 학점, 꼬리표]`), `onlineQA`, `examPlaces`, `chain`, `fit`, `timetable`, `past`, `check` · graduation: `graduation.{thesis, nonThesis, table, rules, comp, tracks, advisor, contacts, plan, compare}`, `tuition`) | 수업형태·병행 현실성·교과과정·과목 사슬(추천안)·시간표 / 졸업요건·종합시험·연구 트랙·지도교수 배정·문의처·등록금·장학 (공식) + 두 학교 비교(참고, 접힘) |
+| 2년 시뮬레이션 (roadmap) | `semesters`, `week`, `program.roadmap` | 아주대는 `ajouRoadmap()`이 그림(홍익대 `roadmap()`과 분리). 4학기 추천안(학교 공식 순서 아님) · 가정 · 원문 두 버전 조정 · 논문/비논문 학점표 · 종합시험 시점 · 수원 방문 · 주간 리듬 |
+| 근거·출처 (facts) | `facts`, `sources`, `notices`, `revisions` | 출처 `AJ#`(공식, URL) · `AR#`(교수 논문·학위논문 공개 서지) · `P#`(개인 자료, URL 없음 → "원본 비공개") · 상태 확인/이전 안내/미확인/제출 양식/개인 기록/사용자 확인 필요 |
+| 원문 (archive) | `planHTML`, `archiveHTML`, `researchNoteHTML` + `meta.archiveTabs`(`note`, `notePill`) | 제출 양식 전사 · 연구노트 기록 요약 원문 · 심층 분석 리서치 원문(틀린 곳은 지우지 않고 「검증」 주석) |
 
-**학교 전용 키 규칙:** 홍익대 data에 없는 키는 `meta.ownKeys`에 이름을 올려야 빌드가 통과해(현재 `application`, `career`, `program`). 반대로 홍익대 키는 아주대에 빈 값이라도 모두 있어야 해(키 파리티). 학교별 화면 문구는 `meta.copy`(예: `interviewMeta`, `interviewBanner`, `casesIntro`, `factsIntro`, `auditHead`, `archiveIntro`)로 바꾸고, 홍익대 문구는 `app.js`의 기본값으로 남아 있어.
+**학교 전용 키 규칙:** 홍익대 data에 없는 키는 `meta.ownKeys`에 이름을 올려야 빌드가 통과해(현재 `application`, `career`, `program`, `researchNoteHTML`). 반대로 홍익대 키는 아주대에 빈 값이라도 모두 있어야 해(키 파리티). 학교별 화면 문구는 `meta.copy`(예: `interviewMeta`, `interviewBanner`, `casesIntro`, `factsIntro`, `auditHead`, `archiveIntro`)로 바꾸고, 홍익대 문구는 `app.js`의 기본값으로 남아 있어.
 
 #### 새 아주대 자료를 받았을 때 (private/ 폴더 규칙)
 

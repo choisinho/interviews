@@ -721,6 +721,10 @@ h1,h2,h3,h4{line-height:1.38}
 .md a{color:var(--brand-text)}
 .md ul,.md ol{padding-left:22px}
 .md li{margin:5px 0}
+/* 심층 분석 리서치 원문의 검증 주석(원문 문장 옆에 덧붙임) */
+.md .note-check{display:inline;padding:1px 6px;border-radius:6px;background:var(--info-bg);color:var(--info);font-size:var(--fs-xs);line-height:1.7;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.md .note-check-row td{background:var(--surface-2)}
+.md .note-diagram{color:var(--ink-2)}
 .research-links{margin:0 0 16px}
 /* 5-12 학교 준비 현황(아주대 등 status: planned) · 준비 중 카드 */
 .prep-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;align-items:stretch;margin-bottom:8px}
@@ -1062,4 +1066,21 @@ h1,h2,h3,h4{line-height:1.38}
   .plain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .plain-faq details p,.plain-courses ul{display:block}
   .q-cluster{break-inside:auto;background:#fff}
+}
+
+/* ---------- 좁은 화면 표: 칸 너비 완화 · 스크롤 힌트 · 교수 표 카드형 ---------- */
+.table-scroll{background:
+  linear-gradient(to right,var(--surface) 30%,transparent) left center/28px 100% no-repeat local,
+  linear-gradient(to left,var(--surface) 30%,transparent) right center/28px 100% no-repeat local,
+  linear-gradient(to right,var(--line-2),transparent) left center/10px 100% no-repeat scroll,
+  linear-gradient(to left,var(--line-2),transparent) right center/10px 100% no-repeat scroll}
+@media (max-width:600px){
+  .wrap-table th{min-width:64px}
+  .wrap-table th,.wrap-table td{padding:10px 8px;overflow-wrap:anywhere}
+  .stack-table,.stack-table tbody,.stack-table tr,.stack-table th,.stack-table td{display:block;width:auto;min-width:0}
+  .stack-table thead{display:none}
+  .stack-table tr{padding:12px 0;border-bottom:1px solid var(--line)}
+  .stack-table tr:last-child{border-bottom:0}
+  .stack-table th,.stack-table td{border-bottom:0;padding:4px 0}
+  .stack-table td[data-label]::before{content:attr(data-label);display:block;font-size:var(--fs-label);font-weight:800;color:var(--muted);margin-top:6px}
 }
