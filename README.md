@@ -75,7 +75,7 @@ index.html                         셸 + 로컬 public/ 태그 (빌드 시 모�
 public/app/app.css                 디자인 시스템: 토큰(:root·학교 테마·다크 모드) → 기본 → 레이아웃 → 컴포넌트 → 페이지 블록 → 미디어 → 인쇄
 public/app/app.js                  앱: 학교 모드 라우팅, 페이지 레지스트리(PAGES), 렌더 함수, 학습 기록, 검색, 테마 토글, 버전 상수
 public/schools/hongik.js           홍익대 자료 (status: archived) (ATELIER_SCHOOLS.hongik = {meta, data}, window.HONGIK_DATA 호환 별칭)
-public/schools/ajou.js             아주대 자료 (status: ready, 주력). 홍익대와 같은 키 + 전용 키 application·career·program·researchNoteHTML
+public/schools/ajou.js             아주대 자료 (status: ready, 주력). 홍익대와 같은 키 + 전용 키 application·career·company·program·researchNoteHTML
 public/graduation/                 졸업요건 화면(graduation.js·graduation.css) + 원문 이미지·PDF (dist/graduation/로 복사)
 public/wms/                        WMS 연구 도해: 원고(content.js, 수정 금지) · 가이드 · 도판 · 그림 · 리더
 public/manifest.webmanifest        안드로이드 홈 화면 설치 정보
@@ -116,19 +116,20 @@ node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # �
 | 핵심 문항 (interview) · 직전 한 장 · 모의면접 | `scripts`, `badPhrases`, `lastMinute` | 30/60/90초 답변 · factCheck(`sourceIds`) · 금지 표현 |
 | 꼬리질문 (followups) | `followups`, `followupClusters` | 배열 index = 저장 키(뒤에만 추가). 다른 학교 질문을 가져오면 `from` 필드에 출처. `mock: false`면 모의면접 출제에서 뺌. 아직 확인 못 한 사실·자리표시는 `answer`에 대괄호로 넣지 말고 `check` 필드에(답변 아래 「답변에 넣지 않음 · 확인할 것」 메모로 표시, 모의면접·답 복사에는 안 나옴) |
 | 경력·연구개발 (career) · 아주대 전용 | `career` (`timeline`, `tips`, `wms`) | 타임라인 · TIPS/IRIS 연구노트(월별 원문) · 말할 범위 |
+| 전 직장 · 라잇웨잇 (company) · 아주대 전용 | `company` (`answers`, `overview`, `founding`, `tenure`, `history`(`[연도, 사건, 교차확인/회사 발표, 근거, 신뢰도, before/during/year/after]`), `products`, `apps`, `arch`, `cloud`, `rnd`, `customers`, `finance`, `unknowns`, `matrix`, `sourceMap`, `reliability`, `assessment`) | 「어떤 회사였나요? / 무슨 일을 했나요?」 15초·30초 · 개요 · 연혁(재직 기간 표시) · 제품·사양·가격 · 앱·CRM 3계층 · 시스템 구조 도해 · AI·클라우드 데이터 흐름 · TIPS·특허·KC·투자 · 도입센터 18곳 · 재무·조직(2차 자료) · 미확인 · 신뢰도 · 출처 지도. 회사 사람 실명은 역할로만, 등록번호·도로명 주소 제외. 출처 `LW#`(공개자료) · `P6`(보고서) |
 | 실무 경험 (cases) | `experiences`, `terms` | WMS 공유 사례 3 + 라잇웨잇 사례 2 (`cautionLabel`로 주의 문구 이름) |
 | 연구 설계 (research) | `research` (+ `context`, `faculty`, `facultyNote`, `facultyTable`, `facultyPriority`, `theses`, `community`) | 연구 질문·조건·지표 · 지도교수·연구실 조사 · 교수진 최근 연구표 · 탐색 우선순위(추천안) · 전신 전공 학위논문 · 원우회·외부활동 |
 | 교육과정·시간표 (coursebook) · 졸업요건·학비 (graduation) | `program` · 아주대 전용 (coursebook: `formats`, `rules`, `curriculum`(과목 `[이름, 학점, 꼬리표]`), `onlineQA`, `examPlaces`, `chain`, `fit`, `timetable`, `past`, `check` · graduation: `graduation.{thesis, nonThesis, table, rules, comp, tracks, advisor, contacts, plan, compare}`, `tuition`) | 수업형태·병행 현실성·교과과정·과목 사슬(추천안)·시간표 / 졸업요건·종합시험·연구 트랙·지도교수 배정·문의처·등록금·장학 (공식) + 두 학교 비교(참고, 접힘) |
 | 2년 시뮬레이션 (roadmap) | `semesters`, `week`, `program.roadmap` | 아주대는 `ajouRoadmap()`이 그림(홍익대 `roadmap()`과 분리). 4학기 추천안(학교 공식 순서 아님) · 가정 · 원문 두 버전 조정 · 논문/비논문 학점표 · 종합시험 시점 · 수원 방문 · 주간 리듬 |
-| 근거·출처 (facts) | `facts`, `sources`, `notices`, `revisions` | 출처 `AJ#`(공식, URL) · `AR#`(교수 논문·학위논문 공개 서지) · `P#`(개인 자료, URL 없음 → "원본 비공개") · 상태 확인/이전 안내/미확인/제출 양식/개인 기록/사용자 확인 필요 |
+| 근거·출처 (facts) | `facts`, `sources`, `notices`, `revisions` | 출처 `AJ#`(공식, URL) · `AR#`(교수 논문·학위논문 공개 서지) · `LW#`(라잇웨잇 공개자료, URL 없으면 "링크 미기재") · `P#`(개인 자료, URL 없음 → "원본 비공개") · 상태 확인/이전 안내/미확인/제출 양식/개인 기록/사용자 확인 필요 |
 | 원문 (archive) | `planHTML`, `archiveHTML`, `researchNoteHTML` + `meta.archiveTabs`(`note`, `notePill`) | 제출 양식 전사 · 연구노트 기록 요약 원문 · 심층 분석 리서치 원문(틀린 곳은 지우지 않고 「검증」 주석) |
 
-**학교 전용 키 규칙:** 홍익대 data에 없는 키는 `meta.ownKeys`에 이름을 올려야 빌드가 통과해(현재 `application`, `career`, `program`, `researchNoteHTML`). 반대로 홍익대 키는 아주대에 빈 값이라도 모두 있어야 해(키 파리티). 학교별 화면 문구는 `meta.copy`(예: `interviewMeta`, `interviewBanner`, `casesIntro`, `factsIntro`, `auditHead`, `archiveIntro`)로 바꾸고, 홍익대 문구는 `app.js`의 기본값으로 남아 있어.
+**학교 전용 키 규칙:** 홍익대 data에 없는 키는 `meta.ownKeys`에 이름을 올려야 빌드가 통과해(현재 `application`, `career`, `company`, `program`, `researchNoteHTML`). 반대로 홍익대 키는 아주대에 빈 값이라도 모두 있어야 해(키 파리티). 학교별 화면 문구는 `meta.copy`(예: `interviewMeta`, `interviewBanner`, `casesIntro`, `factsIntro`, `auditHead`, `archiveIntro`)로 바꾸고, 홍익대 문구는 `app.js`의 기본값으로 남아 있어.
 
 #### 새 아주대 자료를 받았을 때 (private/ 폴더 규칙)
 
 1. 원본(이미지·PDF·대화 정리본 등)은 **`private/ajou/`** 에 넣고 `private/ajou/README.md` 표에 한 줄 적어. `private/`는 `.gitignore`에 있어 GitHub·Pages에 올라가지 않아.
-2. 공개 페이지(`ajou.js`)에는 **필요한 사실만** 옮겨. 성명·휴대폰·이메일, 제3자(라잇웨잇 공동창업자) 실명과 카카오톡 발화 원문·대화 파일명은 절대 옮기지 마. 제3자는 「공동창업자(대표)」로만.
+2. 공개 페이지(`ajou.js`)에는 **필요한 사실만** 옮겨. 성명·휴대폰·이메일, 제3자(라잇웨잇 공동창업자) 실명과 카카오톡 발화 원문·대화 파일명은 절대 옮기지 마. 제3자는 「회사 관계자」로만 — 「대표」 같은 직함을 붙여 회사 조사 화면의 대표와 이어지지 않게.
 3. 출처는 `data.sources`에 번호를 붙여(공식이면 `AJ#`+URL+확인일, 개인 자료면 `P#`+URL 없음), 값마다 상태를 적어. 모르면 지어내지 말고 「사용자 확인 필요」로.
 4. 라잇웨잇 33개 항목처럼 "기록된 과제 내역"은 원문 그대로 두되 본인 구현으로 단정하는 문장을 대본에 쓰지 마.
 5. `node scripts/build.mjs` → `npm run check` → 내용 보존 검사로 마무리하고, `grep`으로 dist/에 개인정보가 없는지 확인해.

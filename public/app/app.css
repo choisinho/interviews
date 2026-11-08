@@ -868,6 +868,32 @@ h1,h2,h3,h4{line-height:1.38}
 .scope-ok .overline{color:var(--ok)}
 .scope-no .overline{color:var(--danger)}
 .cert-list summary{font-weight:800;color:var(--ink-brand)}
+/* 전 직장 · 라잇웨잇 (아주대 전용) */
+.co-answer{display:flex;flex-direction:column;gap:10px;margin:0}
+.co-answer h3{margin:2px 0 0}
+.co-say{display:grid;gap:10px}
+.co-say-block{background:var(--surface-2);border-radius:var(--r-sm);padding:10px 12px}
+.co-say-block p{margin:6px 0 0;font-size:var(--fs-sm);line-height:1.75;color:var(--ink)}
+.co-tenure-legend{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.co-history .career-item{grid-template-columns:70px minmax(0,1fr)}
+.co-history .career-meta{margin-top:6px}
+.co-history .co-ten-during:before{border-color:var(--ok);background:var(--ok)}
+.co-history .co-ten-year:before{border-color:var(--info-line)}
+.co-history .co-ten-after .career-body{opacity:.82;border-style:dashed}
+.co-table th{min-width:96px}
+.co-fold>summary{cursor:pointer}
+.co-fold .month-body{padding-top:8px}
+.co-arch{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:12px 0 4px}
+.co-arch-tier{border:1px solid var(--line-2);border-radius:var(--r-md);background:var(--surface);padding:10px 12px}
+.co-arch-tier.mine{border:2px solid var(--brand);background:var(--surface-2)}
+.co-arch-tier.warn{border-style:dashed;border-color:var(--warn)}
+.co-arch-label{font-size:var(--fs-label);font-weight:800;letter-spacing:.04em;color:var(--brand-text);margin-bottom:6px}
+.co-arch-nodes{display:flex;flex-wrap:wrap;gap:6px}
+.co-arch-nodes span{background:var(--surface-3);color:var(--ink);border-radius:8px;padding:5px 9px;font-size:var(--fs-xs);line-height:1.5;overflow-wrap:anywhere}
+.co-arch-link{text-align:center;font-size:var(--fs-xs);font-weight:800;color:var(--muted);padding:4px 0}
+.co-arch-link.warn{color:var(--warn)}
+.co-arch-side{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+@media (max-width:560px){.co-history .career-item{grid-template-columns:1fr}}
 
 .wrap-table th{white-space:normal;min-width:90px}
 .btn.tiny{max-width:100%;white-space:normal;overflow-wrap:anywhere}
@@ -1083,4 +1109,5 @@ h1,h2,h3,h4{line-height:1.38}
   .stack-table tr:last-child{border-bottom:0}
   .stack-table th,.stack-table td{border-bottom:0;padding:4px 0}
   .stack-table td[data-label]::before{content:attr(data-label);display:block;font-size:var(--fs-label);font-weight:800;color:var(--muted);margin-top:6px}
+  .co-table .status{white-space:normal;max-width:100%}
 }
