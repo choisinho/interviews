@@ -55,14 +55,26 @@ const localTag=/<script\b[^>]*?\ssrc="\.\/(public\/[^"]+\.js)"[^>]*><\/script>|<
 const inlined=[]
 const sources={}
 for(const m of shell.matchAll(localTag)){const path=m[1]||m[2];if(!(path in sources))sources[path]=await readFile(path,'utf8')}
-const publishedHTML=shell.replace(localTag,(tag,js,css)=>{
+let publishedHTML=shell.replace(localTag,(tag,js,css)=>{
  const path=js||css, source=sources[path]
  if(/<\/(script|style)/i.test(source))throw Error('closing tag inside inlined source: '+path)
  inlined.push(path)
  return js?'<script>\n'+source+'\n</script>':'<style>\n'+source+'\n</style>'
 })
+// 1b) 독립 HTML 페이지: <script type="text/plain" data-inline-html="./public/x.html"></script> → window.ATELIER_STANDALONE['x'] 문자열(앱 안 iframe srcdoc — 오프라인 단일 HTML 유지).
+//     같은 파일을 dist/x.html로도 복사한다(전체 화면으로 열기). 외부 리소스를 불러오면 오프라인에서 깨지므로 실패시킨다.
+const htmlTag=/<script\b[^>]*\sdata-inline-html="\.\/public\/([^"]+)\.html"[^>]*><\/script>/g
+const standalone={}
+for(const m of shell.matchAll(htmlTag)){
+ const html=await readFile('public/'+m[1]+'.html','utf8')
+ if(!/<title>[^<]+<\/title>/.test(html))throw Error('standalone page needs a <title>: '+m[1])
+ if(/(?:src|href)="(?:https?:)?\/\//i.test(html))throw Error('standalone page must not load external resources: '+m[1])
+ standalone[m[1]]=html
+}
+const jsString=s=>JSON.stringify(s).replace(/</g,'\\u003c') // '</script>'·'<!--'가 인라인 스크립트를 끊지 않게
+publishedHTML=publishedHTML.replace(htmlTag,(tag,key)=>{inlined.push('public/'+key+'.html');return '<script>window.ATELIER_STANDALONE=Object.assign(window.ATELIER_STANDALONE||{},{'+JSON.stringify(key)+':'+jsString(standalone[key])+'});</script>'})
 if(/(?:src|href)="\.\/public\//.test(publishedHTML))throw Error('local ./public/ asset left un-inlined: '+publishedHTML.match(/(?:src|href)="\.\/public\/[^"]*"/)[0])
-for(const need of ['public/app/app.js','public/app/app.css','public/schools/hongik.js','public/schools/ajou.js','public/graduation/graduation.js','public/graduation/graduation.css','public/wms/reader.js'])if(!inlined.includes(need))throw Error('required source not loaded by index.html: '+need)
+for(const need of ['public/app/app.js','public/app/app.css','public/schools/hongik.js','public/schools/ajou.js','public/graduation/graduation.js','public/graduation/graduation.css','public/wms/reader.js','public/ajou/lw-strategy.html'])if(!inlined.includes(need))throw Error('required source not loaded by index.html: '+need)
 if(!publishedHTML.includes('window.HONGIK_DATA'))throw Error('index.html missing main app data')
 
 // 2) 인라인 스크립트 문법 검사.
@@ -98,6 +110,7 @@ if(!publishedHTML.includes('function graduation()')||!publishedHTML.includes("id
 await writeFile(join(output,'index.html'),publishedHTML)
 await mkdir(join(output,'graduation'),{recursive:true})
 for(const file of ['degree-methods-page2.jpg','foreign-subjects.pdf'])await copyFile(join('public','graduation',file),join(output,'graduation',file))
+for(const [key,html] of Object.entries(standalone)){await mkdir(join(output,key,'..'),{recursive:true});await writeFile(join(output,key+'.html'),html)}
 const buildHash=createHash('sha256').update(publishedHTML).digest('hex').slice(0,12)
 const sw=await readFile(join('public','sw.js'),'utf8')
 if(!sw.includes("const BUILD_ID='dev';"))throw Error('sw.js BUILD_ID placeholder missing')

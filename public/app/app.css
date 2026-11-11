@@ -894,6 +894,8 @@ h1,h2,h3,h4{line-height:1.38}
 .co-arch-link.warn{color:var(--warn)}
 .co-arch-side{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
 @media (max-width:560px){.co-history .career-item{grid-template-columns:1fr}}
+/* 라잇웨잇 질문 대응전략: 독립 페이지를 iframe으로 — 화면 높이만큼 두고 안에서 스크롤(자체 목차·진행 막대 유지). */
+.lw-frame{display:block;width:100%;height:calc(100vh - var(--topbar-h) - 24px);height:calc(100dvh - var(--topbar-h) - 24px);min-height:440px;margin:14px 0 0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);color-scheme:normal}
 
 .wrap-table th{white-space:normal;min-width:90px}
 .btn.tiny{max-width:100%;white-space:normal;overflow-wrap:anywhere}

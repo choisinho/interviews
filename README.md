@@ -43,7 +43,7 @@
 - 대시보드: D-day(2026-11-14), 지원 요약, 오늘 할 일(D-6~D-1), 핵심 서사(WMS 현장 → 학업 → 업무 환류), 주의 카드(「묻지 않은 약점을 먼저 말하지 않기」 먼저), 빠른 진입(WMS 사례 카드 → 핵심 5문항 → 양식·보조 근거 카드), 아직 채울 자료
 - 면접 참고자료 대조: 제출 양식 칸별 표(제출 내용 / 예상 질문 / 답변 포인트 / 주의) + 불일치·확인 필요 패널
 - 핵심 5문항(자기소개·지원동기·학업계획·연구관심·실무(WMS) 경험 — 모두 WMS 유지보수에서 출발), 꼬리질문 112개(18개 주제 · WMS 실무·연구·보안 먼저, 양식 기재 묶음은 맨 뒤 · 방어 문항 33개는 `defensive: true`), 모의면접, 직전 한 장
-- 실무 경험 정리 · 연구 설계 · WMS 연구 도해(답변의 중심) → 그 뒤에 「양식 기재 경력 · 보조 근거」(경력 타임라인, WMS 업무, 라잇웨잇 TIPS·IRIS 연구노트 월별 33항목 원문, 기술 5영역, 작성 절차 11단계, 확인/미확인, 물으면 답할 범위 vs 단정 금지)와 「전 직장 · 라잇웨잇 (보조 근거)」
+- 실무 경험 정리 · 연구 설계 · WMS 연구 도해(답변의 중심) → 그 뒤에 「양식 기재 경력 · 보조 근거」(경력 타임라인, WMS 업무, 라잇웨잇 TIPS·IRIS 연구노트 월별 33항목 원문, 기술 5영역, 작성 절차 11단계, 확인/미확인, 물으면 답할 범위 vs 단정 금지)와 「전 직장 · 라잇웨잇 (보조 근거)」, 「라잇웨잇 질문 대응전략」(독립 페이지 · 회사·제품 → 기술 구조 Area 1–5 → 질문 13개 → 말투·원칙 → 확인되지 않은 것)
 - 교육과정·시간표(수업형태 4가지 · 병행 현실성 · 과목 사슬 추천안), 졸업요건·학비(논문/비논문 표 · 종합시험 · 연구 트랙 · 지도교수 배정 · 문의처 · 참고 비교), 2년 시뮬레이션(4학기 추천안 · 논문/비논문 학점표), 연구 설계(교수진 최근 연구 · 탐색 우선순위 추천안 · 전신 전공 학위논문 · 원우회·외부활동)
 - 근거·출처(공식 AJ1~AJ37 + 공개 서지 AR1~AR12 + 개인 자료 P1~P5), 원문(제출 양식 전사 · 연구노트 기록 요약 원문 · 심층 분석 리서치(사용자 공유, 2026-11-08) 원문 + 검증 주석)
 
@@ -78,6 +78,8 @@ public/schools/hongik.js           홍익대 자료 (status: archived) (ATELIER_
 public/schools/ajou.js             아주대 자료 (status: ready, 주력). 홍익대와 같은 키 + 전용 키 application·career·company·program·researchNoteHTML
 public/graduation/                 졸업요건 화면(graduation.js·graduation.css) + 원문 이미지·PDF (dist/graduation/로 복사)
 public/wms/                        WMS 연구 도해: 원고(content.js, 수정 금지) · 가이드 · 도판 · 그림 · 리더
+public/ajou/lw-strategy.html       아주대 「라잇웨잇 질문 대응전략」 독립 페이지(자체 CSS·애니메이션, 공개판). index.html의 data-inline-html 태그로
+                                   빌드가 문자열(window.ATELIER_STANDALONE)로 인라인 → 앱 안 iframe srcdoc(오프라인·file:// 동작) + dist/ajou/로 복사(전체 화면)
 public/manifest.webmanifest        안드로이드 홈 화면 설치 정보
 public/sw.js                       서비스 워커 (빌드 해시가 캐시 이름에 들어감)
 public/favicon.svg                 아이콘 원형 (실행 중에는 학교 테마 색으로 다시 그림)
@@ -94,7 +96,7 @@ npm run check               # 모든 JS 소스 문법 검사 (node --check)
 node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # 내용 보존 검사 (missing 목록 출력)
 ```
 
-빌드는 다음이 어긋나면 실패해: 인라인되지 않은 `./public/` 태그, 인라인 스크립트 문법 오류, `ATELIER_SCHOOLS.hongik`/`ajou` 누락, 홍익대 저장 키(`hongik-study-v2`) 변경, **아주대 data에 홍익대 data의 최상위 키(객체면 그 안의 필드까지)가 빠진 경우**, **홍익대에 없는 학교 전용 키를 `meta.ownKeys`에 선언하지 않은 경우**(오타·임의 키 방지), `meta.status`가 planned/ready/archived가 아닌 경우.
+빌드는 다음이 어긋나면 실패해: 인라인되지 않은 `./public/` 태그, 인라인 스크립트 문법 오류, `ATELIER_SCHOOLS.hongik`/`ajou` 누락, 홍익대 저장 키(`hongik-study-v2`) 변경, **아주대 data에 홍익대 data의 최상위 키(객체면 그 안의 필드까지)가 빠진 경우**, **홍익대에 없는 학교 전용 키를 `meta.ownKeys`에 선언하지 않은 경우**(오타·임의 키 방지), `meta.status`가 planned/ready/archived가 아닌 경우, 독립 페이지(`data-inline-html`)에 `<title>`이 없거나 외부(http·//) 리소스를 불러오는 경우.
 
 ### 학교 모드
 
@@ -117,6 +119,7 @@ node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # �
 | 꼬리질문 (followups) | `followups`, `followupClusters` | 배열 index = 저장 키(뒤에만 추가). 묶음 순서는 `followupClusters` 배열 순서(WMS 실무 → 연구 → 보안 → … → 양식 기재 묶음은 맨 뒤). `defensive: true`면 「방어 문항 · 물으면 답할 것」 표시(불리한 주제는 여기에만), 그중 대부분은 `mock: false`. 다른 학교 질문을 가져오면 `from` 필드에 출처. `mock: false`면 모의면접 출제에서 뺌. 아직 확인 못 한 사실·자리표시는 `answer`에 대괄호로 넣지 말고 `check` 필드에(답변 아래 「답변에 넣지 않음 · 확인할 것」 메모로 표시, 모의면접·답 복사에는 안 나옴) |
 | 양식 기재 경력 · 보조 근거 (career) · 아주대 전용 · WMS 화면들 뒤 | `career` (`lead`, `timeline`, `wms`, `tips`) | 역할 안내(주인공은 WMS) · 타임라인 · WMS 업무(답변의 중심) · TIPS/IRIS 연구노트(월별 원문) · 물으면 답할 범위 |
 | 전 직장 · 라잇웨잇 (보조 근거) (company) · 아주대 전용 · career 다음 | `company` (`answers`, `overview`, `founding`, `tenure`, `history`(`[연도, 사건, 교차확인/회사 발표, 근거, 신뢰도, before/during/year/after]`), `products`, `apps`, `arch`, `cloud`, `rnd`, `customers`, `finance`, `unknowns`, `matrix`, `sourceMap`, `reliability`, `assessment`) | 「어떤 회사였나요? / 무슨 일을 했나요?」 15초·30초 · 개요 · 연혁(재직 기간 표시) · 제품·사양·가격 · 앱·CRM 3계층 · 시스템 구조 도해 · AI·클라우드 데이터 흐름 · TIPS·특허·KC·투자 · 도입센터 18곳 · 재무·조직(2차 자료) · 미확인 · 신뢰도 · 출처 지도. 회사 사람 실명은 역할로만, 등록번호·도로명 주소 제외. 출처 `LW#`(공개자료) · `P6`(보고서) |
+| 라잇웨잇 질문 대응전략 (lw-strategy) · 아주대 전용 · company 다음 | 데이터 키 없음 — 독립 페이지 `public/ajou/lw-strategy.html` (원본 `private/ajou/라잇웨잇_질문대응전략_원문.md`의 공개판) | 회사·제품 · 팁스 · 의료기기 여부 · 사업모델 · 아이티센 관계(추론 표시) · 재무(2차 자료) · 시스템 아키텍처 · Area 1–5 · 질문 13개(말할 수 있는 것 / 구분할 것) · 말투·WMS 전환 원칙 · 헷갈리지 않기 · 확인되지 않은 기술 세부. 앱 테마(`data-theme`)를 따라가고, 장·절·질문 제목이 검색에 잡힘(`#ajou/lw-strategy/lw-q3`처럼 위치 이동). **공개판 규칙:** 개인 사정, 등록·수행 경위, 대화 기록, 실명은 넣지 않고 원칙은 일반형(「회사 성과와 개인 실적은 구분한다」 · 「자료로 이해한 구조와 직접 경험은 구분해 말한다」)으로만. 원본을 고치면 `private/`에서 다시 다듬어 옮기기 |
 | 실무 경험 (cases) | `experiences`, `terms` | WMS 현장 사례 3(`wms` 링크가 있는 카드 — 대시보드 「WMS 현장 사례」 수) + 양식 기재 경력 사례 2(보조 근거, `cautionLabel`로 주의 문구 이름) |
 | 연구 설계 (research) | `research` (+ `context`, `faculty`, `facultyNote`, `facultyTable`, `facultyPriority`, `theses`, `community`) | 연구 질문·조건·지표 · 지도교수·연구실 조사 · 교수진 최근 연구표 · 탐색 우선순위(추천안) · 전신 전공 학위논문 · 원우회·외부활동 |
 | 교육과정·시간표 (coursebook) · 졸업요건·학비 (graduation) | `program` · 아주대 전용 (coursebook: `formats`, `rules`, `curriculum`(과목 `[이름, 학점, 꼬리표]`), `onlineQA`, `examPlaces`, `chain`, `fit`, `timetable`, `past`, `check` · graduation: `graduation.{thesis, nonThesis, table, rules, comp, tracks, advisor, contacts, plan, compare}`, `tuition`) | 수업형태·병행 현실성·교과과정·과목 사슬(추천안)·시간표 / 졸업요건·종합시험·연구 트랙·지도교수 배정·문의처·등록금·장학 (공식) + 두 학교 비교(참고, 접힘) |
@@ -128,9 +131,9 @@ node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # �
 
 1. **주인공은 WMS 유지보수.** 현장에서 찾은 문제 → 아주대 인공지능전공에서 배울 것 → 업무로 환류. 핵심 5문항·서사·대시보드·직전 한 장·모의면접·꼬리질문 순서가 모두 WMS에서 시작해. 홍익대 준비의 줄거리를 따르되 문장을 그대로 옮기지 말고, 아주대 사실(전공필수 인공지능 / 기계학습 및 데이터마이닝, 과목 사슬, 수업형태 4가지, 대전 지역센터 시험, 종합시험, 연구A → 연구B)로 바꿔 써. 홍익대 전용 사실(전공명·과목명·교수·외국어시험·캠퍼스가 가까워서 생긴 이점)은 쓰지 않아.
 2. **RPA/빅데이터분석담당은 편제상 직위명일 뿐.** 수행하지도, 할 예정도 아닌 업무라서 현재·예정 업무나 개선 대상으로 쓰지 않아. 직위명 원문이 남는 곳은 양식 전사(`planHTML`, `application.rows`의 현 업무 칸, `facts`·`sources`의 전사), 방어 한 건(대조 카드 + 꼬리질문 #6), 「하지 않을 주장」 한 줄, 용어 풀이, `revisions`의 이전 문구뿐이야. #6의 답은 “편제상 직위명이고 실제 업무는 WMS 유지보수”까지 — 앞으로 하겠다는 약속을 붙이지 않아.
-3. **라잇웨잇·TIPS 참여연구원·연구노트는 「양식 기재 경력 · 아주대에서 쓸 수 있는 보조 근거」.** 숨기지 않되 주인공으로 세우지 않아: 자기소개에 한 문장, 05 답변에서 WMS 사례 뒤 한 단락, 나머지는 물으면 답하는 꼬리질문(말하기 비중은 WMS 70~80%). 첫 문장과 지원동기에는 쓰지 않아. 범위는 「화면 개발 참여 · 참여연구원 등록 · 전달받은 내역으로 연구노트 작성」까지이고 33개 항목을 전부 본인 구현으로 말하지 않아. 아주대 학생창업으로 시작한 기업이라는 점은 선택해서 덧붙일 수 있는 한마디(`check` 메모 참고).
+3. **라잇웨잇·TIPS 참여연구원·연구노트는 「양식 기재 경력 · 아주대에서 쓸 수 있는 보조 근거」.** 숨기지 않되 주인공으로 세우지 않아: 자기소개에 한 문장, 05 답변에서 WMS 사례 뒤 한 단락, 나머지는 물으면 답하는 꼬리질문(말하기 비중은 WMS 70~80%). 첫 문장과 지원동기에는 쓰지 않아. 범위는 「참여연구원 등록(면접 참고자료 기재) · 기록상 영역은 머신용 안드로이드 태블릿 앱 · 전달받은 내역으로 연구노트 작성 · 창업 전 안드로이드 외주 경험(Java/XML)」까지야(2026-11-12 라잇웨잇 질문 대응전략 Q3 기준, `AJ-REV-271`~). 특정 기능·화면·스택을 구현했다고 말하지 않고, 회사 기술(Kotlin·Compose 등)은 자료로 이해한 구조로만 설명해. 33개 항목은 과제 기록이고 개인 실적과 구분해. 아주대 학생창업으로 시작한 기업이라는 점은 선택해서 덧붙일 수 있는 한마디(`check` 메모 참고).
 4. **묻지 않은 약점을 먼저 말하지 않기.** 핵심 대본·서사·대시보드·직전 한 장·전 직장 15초/30초 답에는 유리하거나 중립인 사실만 둬(거리·이동 부담, AI 실습 경험, 경력 사이 기간, 33개 항목 중 내 몫, 직위명, 업무대리·재직 기간, 취학추천·등록 여부, 양식 표기 차이, 다른 학교 지원은 꺼내지 않아). 이런 주제는 `defensive: true` 꼬리질문에만 두고, 답은 사실대로 짧게 한 뒤 한두 문장 안에 강점이나 구체적인 계획으로 돌아와. 공부용 메모는 소리 내어 읽지 않는 `check` 필드에. 사실을 틀리게 말하지 않기 위해서는 “수원이 가깝다” 같은 말을 하지 않으면 되고, 거리를 털어놓을 필요는 없어.
-5. 말하는 문장을 바꾸면 이전 문구를 `revisions`(다음 번호 `AJ-REV-240`~)에 before/after/reason으로 남기고, 사용자가 준 자료는 지우지 말고 자리만 옮겨.
+5. 말하는 문장을 바꾸면 이전 문구를 `revisions`(다음 번호 `AJ-REV-334`~)에 before/after/reason으로 남기고, 사용자가 준 자료는 지우지 말고 자리만 옮겨.
 
 **학교 전용 키 규칙:** 홍익대 data에 없는 키는 `meta.ownKeys`에 이름을 올려야 빌드가 통과해(현재 `application`, `career`, `company`, `program`, `researchNoteHTML`). 반대로 홍익대 키는 아주대에 빈 값이라도 모두 있어야 해(키 파리티). 학교별 화면 문구는 `meta.copy`(예: `interviewMeta`, `interviewBanner`, `casesIntro`, `factsIntro`, `auditHead`, `archiveIntro`)로 바꾸고, 홍익대 문구는 `app.js`의 기본값으로 남아 있어.
 
