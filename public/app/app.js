@@ -290,7 +290,7 @@ return title('00 / PREPARATION STATUS',escape(M.name)+' 준비 현황','아직 '
 +section('업데이트 방법','파일 하나만 고치면 돼')
 +'<ol class="prep-steps"><li><b>학교 정보</b>public/schools/'+escape(M.id)+'.js 의 <code>meta</code>에 학과·캠퍼스·면접일(interviewDate)을 적어.</li><li><b>자료 채우기</b><code>data</code>의 키를 public/schools/hongik.js와 같은 형식으로 채워. 비어 있는 키는 화면에서 \'준비 중\' 카드로 보여.</li><li><b>대시보드 전환</b>모든 자료가 갖춰지면 <code>meta.status</code>를 \'ready\'로 바꾸면 이 보드 대신 대시보드가 열려.</li><li><b>검사</b><code>npm run build</code> — build.mjs가 두 학교 자료의 키가 서로 맞는지 검사해.</li></ol>'
 +'<div class="atelier-launch"><div><strong>학교 공통 개인 자료는 지금도 열려.</strong><p>WMS 연구 도해와 실무 경험 정리는 학교와 상관없는 네 경험이라 그대로 쓰면 돼.</p></div>'+btn('WMS 연구 도해 →','go:wms-practice','primary')+btn('실무 경험','go:cases','tiny')+'</div>'}
-function render(){const p=pageInfo(state.page)||pagesFor()[0];root.innerHTML=`<div class="view-transition">${localize(p.ready&&!p.ready()?placeholder(p):p.fn())}</div>`;refreshChecks()}
+function render(){const p=pageInfo(state.page)||pagesFor()[0];root.innerHTML=`<div class="view-transition">${localize(p.ready&&!p.ready()?placeholder(p):(p.id==='wms-practice'?notices(p.id):'')+p.fn())}</div>`;refreshChecks()}
 /* 면접일(meta.interviewDate)과 오늘(한국 시간 날짜)의 차이. 당일은 0, 지나면 음수, 미정이면 null. */
 function interviewDay(){const iso=M.interviewDate;if(!iso)return null;const today=new Date(Date.now()+9*3600e3).toISOString().slice(0,10);return Math.round((Date.parse(iso)-Date.parse(today))/86400000)}
 function dDayLabel(days){return days==null?'면접일 미정':days>0?'D-'+days:days===0?'D-DAY':'면접 종료 · 복습 모드'}
