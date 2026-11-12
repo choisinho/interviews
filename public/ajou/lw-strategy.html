@@ -7,7 +7,7 @@
 <title>라잇웨잇 질문 대응전략</title>
 <meta name="description" content="아주대학교 대학원 면접(2026-11-14)에서 라잇웨잇 관련 질문에 답하기 위한 전략(공개판). 회사·제품, 기술 구조, 질문별 대응, 말투와 원칙, 확인되지 않은 것.">
 <meta name="color-scheme" content="light dark">
-<script>/* 테마: ?theme=light|dark(전체 화면으로 열 때) 또는 앱이 iframe의 <html data-theme>를 직접 맞춘다. */(function(){try{var t=new URLSearchParams(location.search).get('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}})();</script>
+<script>/* 테마: ?theme=light|dark(전체 화면으로 열 때) 또는 앱이 iframe의 <html data-theme>를 직접 맞춘다. */(function(){try{var t=new URLSearchParams(location.search).get('theme');if(t!=='light'&&t!=='dark'){var pr=JSON.parse(localStorage.getItem('atelier-prefs')||'{}');t=pr.theme}if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}})();</script>
 <style>
 :root{
   --bg:#f7f6f2; --surface:#ffffff; --surface-2:#f0eee8; --ink:#16181d; --ink-2:#3a3f4a; --muted:#646b78; --line:#dcd8ce;
@@ -415,12 +415,18 @@ footer{padding:48px 0 64px;color:var(--muted);font-size:14px}
   .hb .dot{left:calc(50% - 5px)}
 }
 @media print{.topbar{display:none}.js .reveal{opacity:1;transform:none}}
+
+/* back to the atelier + larger phone text (full-screen page, no iframe) */
+.topbar .wrap{display:flex;align-items:center;gap:10px}
+.back{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:999px;color:var(--accent-ink);background:var(--surface);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+.back:hover{background:var(--accent-soft)}
+@media (max-width:600px){body{font-size:18px}}
 </style>
 </head>
 <body>
 <div class="topbar" role="navigation" aria-label="장 목차">
   <div class="wrap">
-    <span class="brand">라잇웨잇 대응전략</span>
+    <a class="back" href="../#ajou/home" onclick="try{if(document.referrer&&document.referrer.indexOf(location.origin)===0&&history.length>1){history.back();return false}}catch(e){}return true">← 아틀리에</a><span class="brand">라잇웨잇 대응전략</span>
     <nav class="idx" id="idx">
       <a href="#map">지도</a>
       <a href="#ch1">1 자리</a>

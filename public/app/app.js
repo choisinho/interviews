@@ -193,15 +193,11 @@ return title('09 / REAL COURSE EVIDENCE','실제 교과목 탐구','2026학년�
 +'<div class="banner"><div class="badge-icon">↗</div><div><b>과목 선택의 이유를 면접에서 설명해 보자.</b><p>먼저 학습목표와 실제 수업 편성을 구분해 말하는 것이 핵심이야.</p></div>'+btn('입학 후 계획 답변 →','go:interview:study','primary')+'</div>';
 }
 
-/* 라잇웨잇 질문 대응전략(아주대 전용 · 독립 페이지 public/ajou/lw-strategy.html): 자체 CSS·애니메이션을 가진 페이지라 iframe으로 띄운다.
+/* 라잇웨잇 질문 대응전략(아주대 전용 · 독립 페이지 public/ajou/lw-strategy.html): 이중 스크롤을 없애려고 iframe 대신 같은 탭의 전체 화면 페이지로 연다(location.replace — 뒤로 가기는 이전 아틀리에 화면으로).
    빌드판은 window.ATELIER_STANDALONE 문자열을 srcdoc으로(오프라인·file:// 동작), 개발용 index.html은 파일을 src로 읽는다. 테마는 <html data-theme>로 맞춘다. */
 const LW_KEY='ajou/lw-strategy';
 function lwSource(){return (window.ATELIER_STANDALONE||{})[LW_KEY]||''}
-function lwStrategy(){const src=lwSource(),th=effectiveTheme(),full=(src?'./ajou/lw-strategy.html':'./public/ajou/lw-strategy.html')+'?theme='+th;
-const frame=src?'srcdoc="'+escape(src.replace(/<html\b([^>]*)>/i,(m,a)=>'<html'+a+' data-theme="'+th+'">'))+'"':'src="'+escape(full)+'"';
-return title('02 / LIGHTWEIGHT · Q&A STRATEGY','라잇웨잇 질문 대응전략','전 직장 라잇웨잇을 물었을 때의 최종 전략이야. 회사·제품, 기술 구조(Area 1→5), 질문 13개별로 말할 수 있는 것과 구분할 것, 말투와 원칙까지. 회사 성과와 개인 실적, 자료로 이해한 구조와 직접 경험은 끝까지 구분해.',pill('주인공은 WMS · 보조 근거')+pill('확실성 표시')+pill('질문 13개'))
-+'<nav class="related-row page-toc" aria-label="라잇웨잇 관련 화면"><span class="related-label">함께 보기</span><a class="btn tiny" href="'+escape(full)+'" target="_blank" rel="noopener">전체 화면으로 열기 ↗</a>'+btn('전 직장 · 라잇웨잇 →','go:company','tiny')+btn('회사 꼬리질문 →','go:followups:cluster-company','tiny')+btn('양식 기재 경력 · 말할 범위','go:career:career-scope','tiny')+'</nav>'
-+'<iframe class="lw-frame" id="lwFrame" title="라잇웨잇 질문 대응전략" '+frame+'></iframe>'}
+function lwStrategy(){const src=lwSource(),th=effectiveTheme(),an=state.lwAnchor;state.lwAnchor='';const url=(src?'./ajou/lw-strategy.html':'./public/ajou/lw-strategy.html')+'?theme='+th+(an?'#'+an:'');setTimeout(()=>location.replace(url),0);return title('02 / LIGHTWEIGHT · Q&A STRATEGY','라잇웨잇 질문 대응전략','전체 화면으로 여는 중이야.','')+'<p><a class="btn" href="'+escape(url)+'">열리지 않으면 여기를 눌러 전체 화면으로 열기 →</a></p>'}
 /* iframe이 열리면 테마를 맞추고, 검색·딥링크로 받은 위치(#q3, #ch2 …)로 이동한다. load는 버블링하지 않아 캡처 단계에서 받는다. */
 document.addEventListener('load',e=>{if(e.target&&e.target.id==='lwFrame'){syncLwTheme();const an=state.lwAnchor;state.lwAnchor='';if(an){try{const el=e.target.contentDocument.getElementById(an);if(el){e.target.scrollIntoView({block:'start'});el.scrollIntoView({block:'start'})}}catch{}}}},true);
 /* 검색용: 장·절·질문 제목을 원문 HTML에서 뽑는다(빌드판에서만 — 개발판은 화면 이름만 검색된다). */
