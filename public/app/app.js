@@ -20,7 +20,7 @@ const saved=readStore(M.storageKey||'hongik-study-v2');
 const prefs=readStore('atelier-prefs');
 function savePrefs(){try{localStorage.setItem('atelier-prefs',JSON.stringify(prefs))}catch{}}
 /* 클라이언트 버전: topbar '최신판 다시 열기' 링크와 footer가 이 상수 하나에서 만들어진다. */
-const APP_VERSION={label:'v5.2',date:'2026-11-11',rev:'20261111-atelier-v52',note:'아주대 주력 · 홍익대 아카이브'};
+const APP_VERSION={label:'v6.0',date:'2026-11-12',rev:'20261112-atelier-v60',note:'아주대 주력 · 홍익대 아카이브'};
 /* 학교별 화면 문구: 기본값(홍익대 문구)은 그대로 두고, 학교 meta.copy가 있으면 그 값을 쓴다. */
 const COPY_DEFAULT={factsIntro:'사용자 제공 조사자료와 새로 확인한 홍익대 공식 자료를 분리했어. 모든 값이 최신 확정 사실이라는 뜻은 아니므로 상태 표시부터 확인하면 돼.',auditHead:'심층조사 검증 결과',casesIntro:'수학계획서의 사례를 과장하지 않고 꺼내 쓰기 위한 카드야. 모든 기술 정보를 늘어놓기보다 한 사례에서 문제 → 대응 → 깨달음이 이어지게 설명하면 돼.'};
 function txt(k){const c=M&&M.copy;return c&&c[k]!=null?c[k]:COPY_DEFAULT[k]}
@@ -193,13 +193,23 @@ return title('09 / REAL COURSE EVIDENCE','실제 교과목 탐구','2026학년�
 +'<div class="banner"><div class="badge-icon">↗</div><div><b>과목 선택의 이유를 면접에서 설명해 보자.</b><p>먼저 학습목표와 실제 수업 편성을 구분해 말하는 것이 핵심이야.</p></div>'+btn('입학 후 계획 답변 →','go:interview:study','primary')+'</div>';
 }
 
-/* 라잇웨잇 질문 대응전략(아주대 전용 · 독립 페이지 public/ajou/lw-strategy.html): 이중 스크롤을 없애려고 iframe 대신 같은 탭의 전체 화면 페이지로 연다(location.replace — 뒤로 가기는 이전 아틀리에 화면으로).
+/* 라잇웨잇 질문 대응전략(아주대 전용 · 원본 public/ajou/lw-strategy.html): 앱 안에 iframe으로 넣되 높이를 내용에 맞춰 늘려 스크롤은 앱 하나만 쓴다(이중 스크롤 없음). 페이지 자체 상단바는 숨기고, 장 목차는 앱 쪽 고정 띠(lwChapters)로 보여 준다.
    빌드판은 window.ATELIER_STANDALONE 문자열을 srcdoc으로(오프라인·file:// 동작), 개발용 index.html은 파일을 src로 읽는다. 테마는 <html data-theme>로 맞춘다. */
 const LW_KEY='ajou/lw-strategy';
 function lwSource(){return (window.ATELIER_STANDALONE||{})[LW_KEY]||''}
-function lwStrategy(){const src=lwSource(),th=effectiveTheme(),an=state.lwAnchor;state.lwAnchor='';const url=(src?'./ajou/lw-strategy.html':'./public/ajou/lw-strategy.html')+'?theme='+th+(an?'#'+an:'');setTimeout(()=>location.replace(url),0);return title('02 / LIGHTWEIGHT · Q&A STRATEGY','라잇웨잇 질문 대응전략','전체 화면으로 여는 중이야.','')+'<p><a class="btn" href="'+escape(url)+'">열리지 않으면 여기를 눌러 전체 화면으로 열기 →</a></p>'}
+const LW_DEV_SRC='./public/ajou/lw-strategy.html';
+const LW_CH=[['map','지도'],['ch1','1 자리'],['ch2','2 회사·제품'],['ch3','3 기술 구조'],['ch4','4 질문별 대응'],['ch5','5 말투·원칙'],['ch6','6 미확인']];
+function lwStrategy(){const src=lwSource(),th=effectiveTheme();const doc=src?src.replace(/<html\b([^>]*)>/i,(m,a)=>'<html'+a+' data-theme="'+th+'">').replace('<\/head>','<style id=\"lw-inline\">.topbar{display:none!important}body{padding-top:0!important;background:transparent!important}html{scroll-behavior:auto!important}main>.wrap,.wrap{padding-left:0!important;padding-right:0!important}<\/style><\/head>'):'';const frame=src?'srcdoc="'+escape(doc)+'"':'src="'+LW_DEV_SRC+'?theme='+th+'"';return title('02 / LIGHTWEIGHT · Q&A STRATEGY','라잇웨잇 질문 대응전략','전 직장 라잇웨잇을 물었을 때의 최종 전략이야. 회사·제품, 기술 구조(Area 1→5), 질문 13개별로 말할 수 있는 것과 구분할 것, 말투와 원칙까지.',pill('주인공은 WMS · 보조 근거')+pill('확실성 표시')+pill('질문 13개'))+'<nav class="lw-chapters" id="lwChapters" aria-label="라잇웨잇 대응전략 장 목차">'+LW_CH.map(([id,l])=>'<button type="button" data-lwch="'+id+'">'+escape(l)+'</button>').join('')+'<i class="lw-prog" id="lwProg"></i></nav>'+'<iframe class="lw-frame" id="lwFrame" scrolling="no" title="라잇웨잇 질문 대응전략" '+frame+'></iframe>'}
+function lwFrameEl(){return document.getElementById('lwFrame')}
+function lwFit(){const f=lwFrameEl();if(!f)return;try{const d=f.contentDocument;if(!d||!d.documentElement)return;const h=Math.max(d.documentElement.scrollHeight,d.body?d.body.scrollHeight:0);if(h&&Math.abs(f.offsetHeight-h)>2)f.style.height=h+'px'}catch{}}
+function lwOffset(){const tb=document.querySelector('header.topbar'),ch=document.getElementById('lwChapters');return (tb?tb.getBoundingClientRect().height:0)+(ch?ch.getBoundingClientRect().height:0)+8}
+function lwScrollTo(id,smooth){const f=lwFrameEl();if(!f)return;try{const el=f.contentDocument.getElementById(id);if(!el)return;const y=window.scrollY+f.getBoundingClientRect().top+el.getBoundingClientRect().top-lwOffset();window.scrollTo({top:Math.max(0,y),behavior:smooth?'smooth':'auto'})}catch{}}
+function lwTrack(){const f=lwFrameEl(),nav=document.getElementById('lwChapters');if(!f||!nav)return;let k=0;try{const d=f.contentDocument,top=f.getBoundingClientRect().top,line=lwOffset()+40;LW_CH.forEach(([id],i)=>{const el=d.getElementById(id);if(el&&top+el.getBoundingClientRect().top<=line)k=i})}catch{}nav.querySelectorAll('[data-lwch]').forEach((btn,i)=>{const on=i===k;if(on!==btn.classList.contains('on')){btn.classList.toggle('on',on);if(on&&nav.scrollWidth>nav.clientWidth)nav.scrollTo({left:btn.offsetLeft-nav.clientWidth/2+btn.offsetWidth/2,behavior:'smooth'})}});const p=document.getElementById('lwProg');if(p){const r=f.getBoundingClientRect(),span=Math.max(1,r.height-window.innerHeight+lwOffset());p.style.width=Math.min(100,Math.max(0,(lwOffset()-r.top)/span*100))+'%'}}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-lwch]');if(!b)return;e.preventDefault();lwScrollTo(b.dataset.lwch,true)});
+window.addEventListener('scroll',()=>{if(lwFrameEl())requestAnimationFrame(lwTrack)},{passive:true});
+window.addEventListener('resize',()=>{if(lwFrameEl()){lwFit();lwTrack()}});
 /* iframe이 열리면 테마를 맞추고, 검색·딥링크로 받은 위치(#q3, #ch2 …)로 이동한다. load는 버블링하지 않아 캡처 단계에서 받는다. */
-document.addEventListener('load',e=>{if(e.target&&e.target.id==='lwFrame'){syncLwTheme();const an=state.lwAnchor;state.lwAnchor='';if(an){try{const el=e.target.contentDocument.getElementById(an);if(el){e.target.scrollIntoView({block:'start'});el.scrollIntoView({block:'start'})}}catch{}}}},true);
+document.addEventListener('load',e=>{if(!(e.target&&e.target.id==='lwFrame'))return;const f=e.target;syncLwTheme();lwFit();try{const d=f.contentDocument;d.querySelectorAll('.reveal,[data-bars]').forEach(x=>x.classList.add('in'));d.addEventListener('click',ev=>{const a=ev.target.closest&&ev.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);if(!d.getElementById(id))return;ev.preventDefault();ev.stopImmediatePropagation();lwScrollTo(id,true)},true);if(window.ResizeObserver&&d.body)new ResizeObserver(()=>lwFit()).observe(d.body);d.addEventListener('toggle',()=>lwFit(),true)}catch{}setTimeout(lwFit,300);setTimeout(lwFit,1200);const an=state.lwAnchor;state.lwAnchor='';if(an)setTimeout(()=>lwScrollTo(an,false),60);lwTrack()},true);
 /* 검색용: 장·절·질문 제목을 원문 HTML에서 뽑는다(빌드판에서만 — 개발판은 화면 이름만 검색된다). */
 function lwHeads(){const src=lwSource(),out=[];if(!src)return out;const strip=s=>s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
 src.replace(/<section class="ch" id="(ch\d+)">[\s\S]*?<h2>([^<]+)<\/h2>/g,(_,id,t)=>{out.push({id,t:t,kind:'장'});return ''});

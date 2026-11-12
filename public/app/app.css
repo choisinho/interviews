@@ -895,7 +895,7 @@ h1,h2,h3,h4{line-height:1.38}
 .co-arch-side{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
 @media (max-width:560px){.co-history .career-item{grid-template-columns:1fr}}
 /* 라잇웨잇 질문 대응전략: 독립 페이지를 iframe으로 — 화면 높이만큼 두고 안에서 스크롤(자체 목차·진행 막대 유지). */
-.lw-frame{display:block;width:100%;height:calc(100vh - var(--topbar-h) - 24px);height:calc(100dvh - var(--topbar-h) - 24px);min-height:440px;margin:14px 0 0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);color-scheme:normal}
+.lw-frame{display:block;width:100%;height:1600px;margin:6px 0 0;border:0;background:transparent;overflow:hidden;color-scheme:normal}
 
 .wrap-table th{white-space:normal;min-width:90px}
 .btn.tiny{max-width:100%;white-space:normal;overflow-wrap:anywhere}
@@ -1113,3 +1113,10 @@ h1,h2,h3,h4{line-height:1.38}
   .stack-table td[data-label]::before{content:attr(data-label);display:block;font-size:var(--fs-label);font-weight:800;color:var(--muted);margin-top:6px}
   .co-table .status{white-space:normal;max-width:100%}
 }
+
+/* 라잇웨잇 대응전략: 앱 쪽 고정 장 목차 */
+.lw-chapters{position:sticky;top:var(--topbar-h);z-index:15;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:14px 0 0;padding:8px 0 10px;background:var(--bg);border-bottom:1px solid var(--line)}
+.lw-chapters::-webkit-scrollbar{display:none}
+.lw-chapters button{flex:none;min-height:38px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink-2);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.lw-chapters button.on{background:var(--ink-brand);border-color:var(--ink-brand);color:var(--bg)}
+.lw-prog{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--ink-brand);border-radius:2px}

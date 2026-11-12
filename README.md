@@ -66,7 +66,7 @@
 
 **군 내부자료, 실제 코드·로그·IP·부대·품목 식별값을 이 저장소에 추가하거나 GitHub Pages에 게시하지 마.**
 
-## 개발 구조 (v5.2 · 2026-11-11)
+## 개발 구조 (v6.0 · 2026-11-12)
 
 `index.html`은 **셸**(head 메타, 사이드바·topbar 틀, 검색 창)과 로컬 `./public/...` 스크립트·스타일 태그만 가진다. 실제 화면은 `public/` 아래 소스에서 만들어지고, 빌드가 모두 인라인해 **오프라인 단일 HTML**(`dist/index.html`, `file://`에서도 동작)을 만든다.
 
@@ -157,7 +157,7 @@ node scripts/content-atoms.mjs check <기준-조각.json> dist/index.html   # �
 - 글자는 최소 12px, 본문 15–16px·행간 약 1.75, 긴 글은 약 68자 폭, 한글은 `word-break: keep-all`. 흐린 글씨도 두 테마 모두 대비 4.5:1 이상.
 - 브레이크포인트는 1200 / 850 / 560px. 850px 이하에서는 사이드바가 서랍으로 바뀌고 학교 스위치가 topbar에 나와. 375px 폭에서도 가로 스크롤이 생기지 않아.
 - 터치 영역은 850px 이하에서 40px 이상(topbar 아이콘·학교 스위치·버전 링크·작은 버튼·칩·summary), 토스트는 topbar 아래에 떠서 하단 버튼을 가리지 않아. 768px 전후 breadcrumb는 학교 짧은 이름 + 현재 화면, 700px 이하는 현재 화면만.
-- 버전 표시(topbar `v5.2 ↻`, footer)는 `app.js`의 `APP_VERSION` 상수 하나에서 만들어져.
+- 버전 표시(topbar `v6.0 ↻`, footer)는 `app.js`의 `APP_VERSION` 상수 하나에서 만들어져.
 
 Cloudflare 파일/설정은 제거했어.
 
